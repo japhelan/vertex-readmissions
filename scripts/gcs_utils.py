@@ -113,3 +113,43 @@ def log_dataset_to_gcs(
         print(
             f"Logged dataset version to Vertex Experiments: {EXPERIMENT_NAME} / {RUN_NAME}"
         )
+
+
+def log_pipeline_run(
+    pipeline_job,
+    dataset_version: str,
+    training_dataset_path: str,
+    model_version: str,
+    PROJECT_ID: str,
+    LOCATION: str,
+    EXPERIMENT_NAME: str = "readmissions-pipeline-runs",
+):
+    """
+    Record which dataset version and model version a pipeline job was run against.
+
+    Args:
+        pipeline_job:           Submitted aiplatform.PipelineJob instance.
+        dataset_version:        Dataset version tag used as input (e.g. "v1.3").
+        training_dataset_path:  Full GCS path to the training CSV.
+        model_version:          Model version label for this run (e.g. "v0").
+        EXPERIMENT_NAME:        Vertex Experiment to log into.
+    """
+    run_name = re.sub(
+        r"[^a-z0-9-]+",
+        "-",
+        f"pipeline-run-{model_version}-{datetime.now(timezone.utc).strftime('%Y%m%d%H%M%S')}",
+    ).strip("-")[:120]
+
+    aiplatform.init(project=PROJECT_ID, location=LOCATION, experiment=EXPERIMENT_NAME)
+    aiplatform.start_run(run=run_name)
+    aiplatform.log_params(
+        {
+            "dataset_version": dataset_version,
+            "training_dataset_path": training_dataset_path,
+            "model_version": model_version,
+            "pipeline_job_display_name": pipeline_job.display_name,
+            "pipeline_resource_name": pipeline_job.resource_name,
+        }
+    )
+    aiplatform.end_run()
+    print(f"Logged pipeline run to Vertex Experiments: {EXPERIMENT_NAME} / {run_name}")

@@ -1,0 +1,367 @@
+{
+  "components": {
+    "comp-evaluate-model": {
+      "executorLabel": "exec-evaluate-model",
+      "inputDefinitions": {
+        "artifacts": {
+          "input_dataset": {
+            "artifactType": {
+              "schemaTitle": "system.Dataset",
+              "schemaVersion": "0.0.1"
+            }
+          },
+          "model_artifact": {
+            "artifactType": {
+              "schemaTitle": "system.Artifact",
+              "schemaVersion": "0.0.1"
+            }
+          }
+        },
+        "parameters": {
+          "id_col": {
+            "defaultValue": "patient_id",
+            "isOptional": true,
+            "parameterType": "STRING"
+          },
+          "target_col": {
+            "defaultValue": "target",
+            "isOptional": true,
+            "parameterType": "STRING"
+          }
+        }
+      },
+      "outputDefinitions": {
+        "artifacts": {
+          "evaluation_report": {
+            "artifactType": {
+              "schemaTitle": "system.Artifact",
+              "schemaVersion": "0.0.1"
+            }
+          },
+          "metrics": {
+            "artifactType": {
+              "schemaTitle": "system.Metrics",
+              "schemaVersion": "0.0.1"
+            }
+          },
+          "predictions_dataset": {
+            "artifactType": {
+              "schemaTitle": "system.Dataset",
+              "schemaVersion": "0.0.1"
+            }
+          }
+        }
+      }
+    },
+    "comp-load-validate-data": {
+      "executorLabel": "exec-load-validate-data",
+      "inputDefinitions": {
+        "parameters": {
+          "input_dataset_path": {
+            "parameterType": "STRING"
+          }
+        }
+      },
+      "outputDefinitions": {
+        "artifacts": {
+          "output_dataset": {
+            "artifactType": {
+              "schemaTitle": "system.Dataset",
+              "schemaVersion": "0.0.1"
+            }
+          }
+        }
+      }
+    },
+    "comp-split-data": {
+      "executorLabel": "exec-split-data",
+      "inputDefinitions": {
+        "artifacts": {
+          "input_dataset": {
+            "artifactType": {
+              "schemaTitle": "system.Dataset",
+              "schemaVersion": "0.0.1"
+            }
+          }
+        },
+        "parameters": {
+          "random_state": {
+            "defaultValue": 42.0,
+            "isOptional": true,
+            "parameterType": "NUMBER_INTEGER"
+          },
+          "test_size": {
+            "defaultValue": 0.2,
+            "isOptional": true,
+            "parameterType": "NUMBER_DOUBLE"
+          }
+        }
+      },
+      "outputDefinitions": {
+        "artifacts": {
+          "train_dataset": {
+            "artifactType": {
+              "schemaTitle": "system.Dataset",
+              "schemaVersion": "0.0.1"
+            }
+          },
+          "validation_dataset": {
+            "artifactType": {
+              "schemaTitle": "system.Dataset",
+              "schemaVersion": "0.0.1"
+            }
+          }
+        }
+      }
+    },
+    "comp-train-model": {
+      "executorLabel": "exec-train-model",
+      "inputDefinitions": {
+        "artifacts": {
+          "input_dataset": {
+            "artifactType": {
+              "schemaTitle": "system.Dataset",
+              "schemaVersion": "0.0.1"
+            }
+          }
+        },
+        "parameters": {
+          "id_col": {
+            "defaultValue": "patient_id",
+            "isOptional": true,
+            "parameterType": "STRING"
+          },
+          "max_depth": {
+            "defaultValue": 8.0,
+            "isOptional": true,
+            "parameterType": "NUMBER_INTEGER"
+          },
+          "n_estimators": {
+            "defaultValue": 200.0,
+            "isOptional": true,
+            "parameterType": "NUMBER_INTEGER"
+          },
+          "random_state": {
+            "defaultValue": 42.0,
+            "isOptional": true,
+            "parameterType": "NUMBER_INTEGER"
+          },
+          "target_col": {
+            "defaultValue": "target",
+            "isOptional": true,
+            "parameterType": "STRING"
+          }
+        }
+      },
+      "outputDefinitions": {
+        "artifacts": {
+          "model_artifact": {
+            "artifactType": {
+              "schemaTitle": "system.Artifact",
+              "schemaVersion": "0.0.1"
+            }
+          }
+        }
+      }
+    }
+  },
+  "deploymentSpec": {
+    "executors": {
+      "exec-evaluate-model": {
+        "container": {
+          "args": [
+            "--executor_input",
+            "{{$}}",
+            "--function_to_execute",
+            "evaluate_model"
+          ],
+          "command": [
+            "sh",
+            "-c",
+            "\nif ! [ -x \"$(command -v pip)\" ]; then\n    python3 -m ensurepip || python3 -m ensurepip --user || apt-get install python3-pip\nfi\n\nPIP_DISABLE_PIP_VERSION_CHECK=1 python3 -m pip install --quiet --no-warn-script-location 'pandas' 'numpy' 'scikit-learn' 'joblib'  &&  python3 -m pip install --quiet --no-warn-script-location 'kfp==2.16.0' '--no-deps' 'typing-extensions>=3.7.4,<5; python_version<\"3.9\"' && \"$0\" \"$@\"\n",
+            "sh",
+            "-ec",
+            "program_path=$(mktemp -d)\n\nprintf \"%s\" \"$0\" > \"$program_path/ephemeral_component.py\"\n_KFP_RUNTIME=true python3 -m kfp.dsl.executor_main                         --component_module_path                         \"$program_path/ephemeral_component.py\"                         \"$@\"\n",
+            "\nimport kfp\nfrom kfp import dsl\nfrom kfp.dsl import *\nfrom typing import *\n\ndef evaluate_model(\n    input_dataset: Input[Dataset],\n    model_artifact: Input[Artifact],\n    metrics: Output[Metrics],\n    predictions_dataset: Output[Dataset],\n    evaluation_report: Output[Artifact],\n    target_col: str = \"target\",\n    id_col: str = \"patient_id\"\n):\n    import os\n    import json\n    import joblib\n    import pandas as pd\n    from sklearn.metrics import (\n        f1_score,\n        precision_score,\n        recall_score,\n        confusion_matrix,\n        accuracy_score\n    )\n\n    # -----------------------------\n    # Load validation dataset\n    # -----------------------------\n    df = pd.read_csv(input_dataset.path)\n\n    print(f\"Validation dataset shape: {df.shape}\")\n\n    # -----------------------------\n    # Validate required columns\n    # -----------------------------\n    required_cols = [id_col, target_col]\n    missing_cols = [col for col in required_cols if col not in df.columns]\n    if missing_cols:\n        raise ValueError(f\"Missing required columns in validation dataset: {missing_cols}\")\n\n    # -----------------------------\n    # Load trained model + metadata\n    # -----------------------------\n    model_path = os.path.join(model_artifact.path, \"random_forest_model.joblib\")\n    metadata_path = os.path.join(model_artifact.path, \"model_metadata.json\")\n\n    if not os.path.exists(model_path):\n        raise ValueError(f\"Missing model file: {model_path}\")\n\n    if not os.path.exists(metadata_path):\n        raise ValueError(f\"Missing model metadata file: {metadata_path}\")\n\n    model = joblib.load(model_path)\n\n    with open(metadata_path, \"r\") as f:\n        model_metadata = json.load(f)\n\n    feature_cols = model_metadata[\"feature_cols\"]\n\n    # -----------------------------\n    # Build validation feature matrix\n    # -----------------------------\n    X_val = df.reindex(columns=feature_cols, fill_value=0)\n    y_val = df[target_col]\n\n    print(f\"Number of validation rows: {len(df)}\")\n    print(f\"Number of model features expected: {len(feature_cols)}\")\n\n    # -----------------------------\n    # Predict\n    # -----------------------------\n    y_pred = model.predict(X_val)\n\n    if hasattr(model, \"predict_proba\"):\n        y_prob = model.predict_proba(X_val)[:, 1]\n    else:\n        y_prob = None\n\n    # -----------------------------\n    # Compute evaluation metrics\n    # -----------------------------\n    f1 = f1_score(y_val, y_pred, zero_division=0)\n    precision = precision_score(y_val, y_pred, zero_division=0)\n    recall = recall_score(y_val, y_pred, zero_division=0)\n    accuracy = accuracy_score(y_val, y_pred)\n\n    cm = confusion_matrix(y_val, y_pred)\n    tn, fp, fn, tp = cm.ravel()\n\n    print(\"Evaluation metrics:\")\n    print(f\"F1 Score:   {f1:.4f}\")\n    print(f\"Precision:  {precision:.4f}\")\n    print(f\"Recall:     {recall:.4f}\")\n    print(f\"Accuracy:   {accuracy:.4f}\")\n    print(\"Confusion Matrix:\")\n    print(cm)\n\n    # -----------------------------\n    # Log metrics for Vertex / KFP\n    # -----------------------------\n    metrics.log_metric(\"f1_score\", float(f1))\n    metrics.log_metric(\"precision\", float(precision))\n    metrics.log_metric(\"recall\", float(recall))\n    metrics.log_metric(\"accuracy\", float(accuracy))\n    metrics.log_metric(\"true_negatives\", int(tn))\n    metrics.log_metric(\"false_positives\", int(fp))\n    metrics.log_metric(\"false_negatives\", int(fn))\n    metrics.log_metric(\"true_positives\", int(tp))\n\n    # -----------------------------\n    # Save predictions dataset\n    # -----------------------------\n    predictions_df = pd.DataFrame({\n        id_col: df[id_col],\n        \"actual\": y_val,\n        \"predicted\": y_pred\n    })\n\n    if y_prob is not None:\n        predictions_df[\"predicted_probability\"] = y_prob\n\n    predictions_df.to_csv(predictions_dataset.path, index=False)\n\n    # -----------------------------\n    # Save evaluation report artifact\n    # -----------------------------\n    os.makedirs(evaluation_report.path, exist_ok=True)\n\n    report = {\n        \"model_type\": model_metadata.get(\"model_type\", \"unknown\"),\n        \"n_validation_rows\": int(len(df)),\n        \"n_features_used\": int(len(feature_cols)),\n        \"metrics\": {\n            \"f1_score\": float(f1),\n            \"precision\": float(precision),\n            \"recall\": float(recall),\n            \"accuracy\": float(accuracy)\n        },\n        \"confusion_matrix\": {\n            \"tn\": int(tn),\n            \"fp\": int(fp),\n            \"fn\": int(fn),\n            \"tp\": int(tp)\n        }\n    }\n\n    with open(os.path.join(evaluation_report.path, \"evaluation_report.json\"), \"w\") as f:\n        json.dump(report, f, indent=2)\n\n    print(\"Saved evaluation report contents:\")\n    print(os.listdir(evaluation_report.path))\n\n"
+          ],
+          "image": "python:3.11"
+        }
+      },
+      "exec-load-validate-data": {
+        "container": {
+          "args": [
+            "--executor_input",
+            "{{$}}",
+            "--function_to_execute",
+            "load_validate_data"
+          ],
+          "command": [
+            "sh",
+            "-c",
+            "\nif ! [ -x \"$(command -v pip)\" ]; then\n    python3 -m ensurepip || python3 -m ensurepip --user || apt-get install python3-pip\nfi\n\nPIP_DISABLE_PIP_VERSION_CHECK=1 python3 -m pip install --quiet --no-warn-script-location 'pandas' 'numpy' 'fsspec' 'gcsfs'  &&  python3 -m pip install --quiet --no-warn-script-location 'kfp==2.16.0' '--no-deps' 'typing-extensions>=3.7.4,<5; python_version<\"3.9\"' && \"$0\" \"$@\"\n",
+            "sh",
+            "-ec",
+            "program_path=$(mktemp -d)\n\nprintf \"%s\" \"$0\" > \"$program_path/ephemeral_component.py\"\n_KFP_RUNTIME=true python3 -m kfp.dsl.executor_main                         --component_module_path                         \"$program_path/ephemeral_component.py\"                         \"$@\"\n",
+            "\nimport kfp\nfrom kfp import dsl\nfrom kfp.dsl import *\nfrom typing import *\n\ndef load_validate_data(input_dataset_path: str, output_dataset: Output[Dataset]):\n    import pandas as pd\n    import numpy as np\n\n    df = pd.read_csv(input_dataset_path)\n\n    # --- Basic dataset validation ---\n    if df.empty:\n        raise ValueError(\"Input dataset is empty\")\n\n    print(f\"Dataset shape: {df.shape}\")\n\n    # Drop accidental CSV index columns if present\n    df = df.loc[:, ~df.columns.str.contains(r\"^Unnamed\")]\n\n    # --- Required pipeline columns ---\n    target_col = \"target\"\n    id_col = \"patient_id\"\n\n    required_cols = [target_col, id_col]\n    missing_required = [col for col in required_cols if col not in df.columns]\n    if missing_required:\n        raise ValueError(f\"Missing required columns: {missing_required}\")\n\n    # --- Target validation ---\n    print(\"Target distribution:\")\n    print(df[target_col].value_counts(dropna=False))\n\n    if df[target_col].dropna().nunique() < 2:\n        raise ValueError(\n            f\"Target column '{target_col}' must contain at least two classes\"\n        )\n\n    # --- Save output ---\n    df.to_csv(output_dataset.path, index=False)\n\n"
+          ],
+          "image": "python:3.11"
+        }
+      },
+      "exec-split-data": {
+        "container": {
+          "args": [
+            "--executor_input",
+            "{{$}}",
+            "--function_to_execute",
+            "split_data"
+          ],
+          "command": [
+            "sh",
+            "-c",
+            "\nif ! [ -x \"$(command -v pip)\" ]; then\n    python3 -m ensurepip || python3 -m ensurepip --user || apt-get install python3-pip\nfi\n\nPIP_DISABLE_PIP_VERSION_CHECK=1 python3 -m pip install --quiet --no-warn-script-location 'pandas' 'scikit-learn'  &&  python3 -m pip install --quiet --no-warn-script-location 'kfp==2.16.0' '--no-deps' 'typing-extensions>=3.7.4,<5; python_version<\"3.9\"' && \"$0\" \"$@\"\n",
+            "sh",
+            "-ec",
+            "program_path=$(mktemp -d)\n\nprintf \"%s\" \"$0\" > \"$program_path/ephemeral_component.py\"\n_KFP_RUNTIME=true python3 -m kfp.dsl.executor_main                         --component_module_path                         \"$program_path/ephemeral_component.py\"                         \"$@\"\n",
+            "\nimport kfp\nfrom kfp import dsl\nfrom kfp.dsl import *\nfrom typing import *\n\ndef split_data(\n    input_dataset: Input[Dataset],\n    train_dataset: Output[Dataset],\n    validation_dataset: Output[Dataset],\n    test_size: float = 0.2,\n    random_state: int = 42,\n):\n\n    from sklearn.model_selection import train_test_split\n    import pandas as pd\n\n    df = pd.read_csv(input_dataset.path)\n\n    target_col = \"target\"\n    id_col = \"patient_id\"\n\n    X = df.drop(columns=[target_col, id_col])\n    y = df[target_col]\n    ids = df[id_col]\n\n    X_train, X_val, y_train, y_val = train_test_split(\n        X, y, test_size=test_size, stratify=y, random_state=random_state\n    )\n\n    train_df = pd.concat([X_train, y_train, ids.loc[X_train.index]], axis=1)\n    val_df = pd.concat([X_val, y_val, ids.loc[X_val.index]], axis=1)\n\n    train_df.to_csv(train_dataset.path, index=False)\n    val_df.to_csv(validation_dataset.path, index=False)\n\n    print(f\"Training set shape: {train_df.shape}\")\n    print(f\"Validation set shape: {val_df.shape}\")\n\n    print(\"Training target distribution:\")\n    print(train_df[target_col].value_counts(normalize=True))\n\n    print(\"Validation target distribution:\")\n    print(val_df[target_col].value_counts(normalize=True))\n\n"
+          ],
+          "image": "python:3.11"
+        }
+      },
+      "exec-train-model": {
+        "container": {
+          "args": [
+            "--executor_input",
+            "{{$}}",
+            "--function_to_execute",
+            "train_model"
+          ],
+          "command": [
+            "sh",
+            "-c",
+            "\nif ! [ -x \"$(command -v pip)\" ]; then\n    python3 -m ensurepip || python3 -m ensurepip --user || apt-get install python3-pip\nfi\n\nPIP_DISABLE_PIP_VERSION_CHECK=1 python3 -m pip install --quiet --no-warn-script-location 'pandas' 'numpy' 'scikit-learn' 'joblib'  &&  python3 -m pip install --quiet --no-warn-script-location 'kfp==2.16.0' '--no-deps' 'typing-extensions>=3.7.4,<5; python_version<\"3.9\"' && \"$0\" \"$@\"\n",
+            "sh",
+            "-ec",
+            "program_path=$(mktemp -d)\n\nprintf \"%s\" \"$0\" > \"$program_path/ephemeral_component.py\"\n_KFP_RUNTIME=true python3 -m kfp.dsl.executor_main                         --component_module_path                         \"$program_path/ephemeral_component.py\"                         \"$@\"\n",
+            "\nimport kfp\nfrom kfp import dsl\nfrom kfp.dsl import *\nfrom typing import *\n\ndef train_model(\n    input_dataset: Input[Dataset],\n    model_artifact: Output[Artifact],\n    target_col: str = \"target\",\n    id_col: str = \"patient_id\",\n    n_estimators: int = 200,\n    max_depth: int = 8,\n    random_state: int = 42\n):\n    import os\n    import json\n    import joblib\n    import pandas as pd\n    from sklearn.ensemble import RandomForestClassifier\n\n    # -----------------------------\n    # Load prepared training dataset\n    # -----------------------------\n    df = pd.read_csv(input_dataset.path)\n\n    print(f\"Training dataset shape: {df.shape}\")\n\n    # -----------------------------\n    # Validate required columns\n    # -----------------------------\n    required_cols = [id_col, target_col]\n    missing_cols = [col for col in required_cols if col not in df.columns]\n    if missing_cols:\n        raise ValueError(f\"Missing required columns: {missing_cols}\")\n\n    # -----------------------------\n    # Separate features and target\n    # -----------------------------\n    feature_cols = [col for col in df.columns if col not in [id_col, target_col]]\n\n    if len(feature_cols) == 0:\n        raise ValueError(\"No feature columns available for model training\")\n\n    X_train = df[feature_cols]\n    y_train = df[target_col]\n\n    print(f\"Number of training rows: {len(df)}\")\n    print(f\"Number of features: {len(feature_cols)}\")\n\n    print(\"Training target distribution:\")\n    print(y_train.value_counts(dropna=False))\n\n    # -----------------------------\n    # Fit model\n    # -----------------------------\n    model = RandomForestClassifier(\n        n_estimators=n_estimators,\n        max_depth=max_depth,\n        random_state=random_state,\n        n_jobs=-1\n    )\n\n    model.fit(X_train, y_train)\n\n    print(\"Model training complete.\")\n\n    # -----------------------------\n    # Save model artifact\n    # -----------------------------\n    os.makedirs(model_artifact.path, exist_ok=True)\n\n    joblib.dump(model, os.path.join(model_artifact.path, \"random_forest_model.joblib\"))\n\n    metadata = {\n        \"model_type\": \"RandomForestClassifier\",\n        \"target_col\": target_col,\n        \"id_col\": id_col,\n        \"feature_cols\": feature_cols,\n        \"n_estimators\": n_estimators,\n        \"max_depth\": max_depth,\n        \"random_state\": random_state,\n        \"n_training_rows\": int(len(df)),\n        \"n_features\": int(len(feature_cols))\n    }\n\n    with open(os.path.join(model_artifact.path, \"model_metadata.json\"), \"w\") as f:\n        json.dump(metadata, f, indent=2)\n\n    print(\"Saved model artifact contents:\")\n    print(os.listdir(model_artifact.path))\n\n"
+          ],
+          "image": "python:3.11"
+        }
+      }
+    }
+  },
+  "pipelineInfo": {
+    "name": "readmissions-training-pipeline"
+  },
+  "root": {
+    "dag": {
+      "tasks": {
+        "evaluate-model": {
+          "cachingOptions": {
+            "enableCache": true
+          },
+          "componentRef": {
+            "name": "comp-evaluate-model"
+          },
+          "dependentTasks": [
+            "split-data",
+            "train-model"
+          ],
+          "inputs": {
+            "artifacts": {
+              "input_dataset": {
+                "taskOutputArtifact": {
+                  "outputArtifactKey": "validation_dataset",
+                  "producerTask": "split-data"
+                }
+              },
+              "model_artifact": {
+                "taskOutputArtifact": {
+                  "outputArtifactKey": "model_artifact",
+                  "producerTask": "train-model"
+                }
+              }
+            }
+          },
+          "taskInfo": {
+            "name": "evaluate-model"
+          }
+        },
+        "load-validate-data": {
+          "cachingOptions": {
+            "enableCache": true
+          },
+          "componentRef": {
+            "name": "comp-load-validate-data"
+          },
+          "inputs": {
+            "parameters": {
+              "input_dataset_path": {
+                "componentInputParameter": "training_dataset_path"
+              }
+            }
+          },
+          "taskInfo": {
+            "name": "load-validate-data"
+          }
+        },
+        "split-data": {
+          "cachingOptions": {
+            "enableCache": true
+          },
+          "componentRef": {
+            "name": "comp-split-data"
+          },
+          "dependentTasks": [
+            "load-validate-data"
+          ],
+          "inputs": {
+            "artifacts": {
+              "input_dataset": {
+                "taskOutputArtifact": {
+                  "outputArtifactKey": "output_dataset",
+                  "producerTask": "load-validate-data"
+                }
+              }
+            }
+          },
+          "taskInfo": {
+            "name": "split-data"
+          }
+        },
+        "train-model": {
+          "cachingOptions": {
+            "enableCache": true
+          },
+          "componentRef": {
+            "name": "comp-train-model"
+          },
+          "dependentTasks": [
+            "split-data"
+          ],
+          "inputs": {
+            "artifacts": {
+              "input_dataset": {
+                "taskOutputArtifact": {
+                  "outputArtifactKey": "train_dataset",
+                  "producerTask": "split-data"
+                }
+              }
+            }
+          },
+          "taskInfo": {
+            "name": "train-model"
+          }
+        }
+      }
+    },
+    "inputDefinitions": {
+      "parameters": {
+        "training_dataset_path": {
+          "parameterType": "STRING"
+        }
+      }
+    }
+  },
+  "schemaVersion": "2.1.0",
+  "sdkVersion": "kfp-2.16.0"
+}
