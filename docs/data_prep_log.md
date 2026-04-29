@@ -9,3 +9,7 @@ v1 changes
 
 - removed 80 z-score detected outliers from the age column (all 100+ years by domain knowledge they were determined to be fradulent)
 - corrected issue where empty cells were not being filled with Null
+
+v1.2 changes
+
+- removed 10 bmi outliers as well
