@@ -1,10 +1,10 @@
 {
   "version_id": "v1.2",
-  "created_at_utc": "2026-04-28T23:53:47.455204+00:00",
+  "created_at_utc": "2026-04-29T18:11:46.355009+00:00",
   "dataset_uri": "gs://readmission-bucket/datasets/readmissions/v1.2/train.csv",
   "source_file": "/Users/jack/Repos/vertex-readmissions/data/interim/1.2-edited-data.csv",
   "sha256": "50c540964dd432049946c82b6264f124515e23e6c33cadc093280a3418fc1173",
-  "row_count": 8038,
+  "row_count": 7948,
   "column_count": 19,
   "columns": [
     "patient_id",
