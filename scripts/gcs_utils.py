@@ -115,6 +115,16 @@ def log_dataset_to_gcs(
         )
 
 
+def _extract_task_metrics(pipeline_job, task_name: str = "evaluate-model") -> dict:
+    """Pull logged metrics out of a completed pipeline task's Metrics artifact."""
+    for task in pipeline_job.task_details:
+        if task.task_name == task_name:
+            artifact_list = task.outputs.get("metrics")
+            if artifact_list and artifact_list.artifacts:
+                return dict(artifact_list.artifacts[0].metadata)
+    return {}
+
+
 def log_pipeline_run(
     pipeline_job,
     dataset_version: str,
@@ -123,9 +133,12 @@ def log_pipeline_run(
     PROJECT_ID: str,
     LOCATION: str,
     EXPERIMENT_NAME: str = "readmissions-pipeline-runs",
+    wait_for_completion: bool = False,
+    eval_task_name: str = "evaluate-model",
 ):
     """
     Record which dataset version and model version a pipeline job was run against.
+    Optionally waits for the job to finish and logs eval metrics from the pipeline.
 
     Args:
         pipeline_job:           Submitted aiplatform.PipelineJob instance.
@@ -133,6 +146,8 @@ def log_pipeline_run(
         training_dataset_path:  Full GCS path to the training CSV.
         model_version:          Model version label for this run (e.g. "v0").
         EXPERIMENT_NAME:        Vertex Experiment to log into.
+        wait_for_completion:    Block until the pipeline finishes and log eval metrics.
+        eval_task_name:         KFP task name that produces the Metrics artifact.
     """
     run_name = re.sub(
         r"[^a-z0-9-]+",
@@ -151,5 +166,16 @@ def log_pipeline_run(
             "pipeline_resource_name": pipeline_job.resource_name,
         }
     )
+
+    if wait_for_completion:
+        print("Waiting for pipeline to complete...")
+        pipeline_job.wait()
+        metrics = _extract_task_metrics(pipeline_job, task_name=eval_task_name)
+        if metrics:
+            aiplatform.log_metrics(metrics)
+            print(f"Logged eval metrics: {metrics}")
+        else:
+            print(f"Warning: no metrics found in task '{eval_task_name}'")
+
     aiplatform.end_run()
     print(f"Logged pipeline run to Vertex Experiments: {EXPERIMENT_NAME} / {run_name}")
