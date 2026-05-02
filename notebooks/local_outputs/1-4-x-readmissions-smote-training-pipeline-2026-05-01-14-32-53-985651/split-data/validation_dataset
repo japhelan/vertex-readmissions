@@ -1,0 +1,1591 @@
+age,gender,ethnicity,hospital_id,height_m,smoker,bmi,adjusted_weight_kg,has_diabetes,has_hypertension,exercise_frequency,diet_type,number_of_prior_visits,medications_prescribed,length_of_stay,type_of_treatment,target,patient_id
+35,Male,Hispanic,Hosp2,1.6,True,35.6,90.48829630885196,False,True,,High-fat,3.0,5.0,2,,0,1002551
+68,Male,Caucasian,Hosp1,1.7,False,28.9,83.80308954224778,False,False,Occasional,High-fat,4.0,1.0,0,Major Surgery,0,1005226
+34,Male,Caucasian,Hosp3,1.7,False,17.4,50.32597717370053,False,False,Occasional,Vegetarian,,5.0,0,Major Surgery,0,1009285
+54,Male,Hispanic,Hosp2,1.7,False,30.9,89.85332376092056,False,False,,Balanced,3.0,4.0,1,Major Surgery,0,1000359
+42,Male,Caucasian,Hosp2,1.7,False,20.3,58.35161854022541,False,False,Regular,High-fat,2.0,1.0,0,Major Surgery,0,1001421
+27,Male,Other,Hosp3,1.8,False,25.6,83.13749543778115,False,False,Occasional,Other,6.0,6.0,7,Minor Surgery,0,1007043
+78,Female,Hispanic,Hosp1,1.7,False,24.4,70.4266772584863,True,True,Occasional,Balanced,4.0,3.0,5,,1,1004713
+41,Female,Hispanic,Hosp2,1.7,False,38.5,111.4010330747315,False,False,,Vegetarian,1.0,2.0,0,Major Surgery,0,1003281
+95,Female,Other,Hosp3,1.8,False,27.2,87.92311753672902,False,False,,Other,2.0,5.0,5,,1,1005013
+53,Male,Caucasian,Hosp2,1.8,False,33.3,107.06618347086568,False,False,,Vegetarian,5.0,3.0,1,Other Treatment,0,1003591
+40,Female,African American,Hosp2,1.7,False,28.9,83.30981892548125,False,False,Occasional,Other,4.0,3.0,2,,0,1008056
+58,Male,Hispanic,Hosp1,1.8,False,23.2,74.73354195237435,False,True,Regular,Balanced,3.0,5.0,2,Minor Surgery,0,1007901
+74,Female,Caucasian,Hosp3,1.7,False,19.0,54.54442512596281,False,False,Regular,Balanced,4.0,6.0,4,,0,1004492
+57,Male,Caucasian,Hosp1,1.8,False,27.5,88.38831913439356,True,False,Regular,High-fat,,2.0,7,,0,1003972
+23,Female,Hispanic,Hosp3,1.7,True,26.5,76.06318066392106,False,False,Regular,Balanced,5.0,1.0,0,Major Surgery,0,1004963
+27,Female,Hispanic,Hosp3,1.6,False,14.7,37.4369219128414,False,False,Regular,High-fat,3.0,3.0,0,,0,1001514
+59,Female,Hispanic,Hosp2,1.7,False,12.0,34.87876439082496,False,False,Regular,High-fat,2.0,2.0,4,Other Treatment,0,1003785
+55,Male,Caucasian,Hosp2,1.6,False,29.5,75.30641073744374,True,True,,High-fat,0.0,3.0,6,Major Surgery,1,1006584
+51,Female,Hispanic,Hosp1,1.7,False,29.0,84.36095956873251,False,False,Occasional,Other,3.0,7.0,0,,0,1009801
+47,Male,Caucasian,Hosp1,1.7,False,28.7,82.62433348132667,False,False,,Other,4.0,1.0,1,Major Surgery,0,1008848
+18,Female,Caucasian,Hosp1,1.7,False,13.6,38.88293085542526,True,False,Regular,Balanced,2.0,,2,Minor Surgery,0,1005678
+53,Female,Caucasian,Hosp1,1.7,True,26.5,76.77222974935519,False,False,Regular,High-fat,2.0,1.0,0,Major Surgery,0,1009598
+61,Female,Caucasian,Hosp3,1.8,False,26.7,86.59378985207036,False,False,Occasional,Other,2.0,4.0,8,Minor Surgery,0,1008091
+69,Male,Caucasian,Hosp3,1.5,False,28.2,62.3172756963884,False,False,Regular,Balanced,3.0,0.0,1,,0,1001412
+51,Male,Hispanic,Hosp2,1.8,True,29.0,94.84117496166392,False,False,Occasional,Other,1.0,3.0,0,,0,1005040
+57,Female,Hispanic,Hosp1,1.7,True,28.8,83.20446748750042,False,True,Occasional,Vegetarian,7.0,5.0,3,Major Surgery,1,1001707
+50,Female,African American,Hosp2,1.9,True,23.3,84.2900594220276,False,False,,Vegetarian,3.0,6.0,0,Minor Surgery,0,1009901
+43,Female,African American,Hosp2,1.8,True,27.1,87.69029091875699,False,True,,Balanced,3.0,6.0,0,,1,1003319
+48,Male,Hispanic,Hosp3,1.9,False,26.0,92.996718499206,False,False,Occasional,High-fat,1.0,5.0,2,Major Surgery,0,1006361
+54,Female,Caucasian,Hosp1,1.5,False,26.5,58.85238520422878,False,False,Occasional,Other,0.0,6.0,3,Major Surgery,0,1006055
+58,Male,Hispanic,Hosp2,1.7,False,35.8,103.2492068003426,False,False,,Balanced,3.0,4.0,3,Major Surgery,0,1009075
+59,Female,African American,Hosp3,1.9,True,25.2,91.47985893308284,False,False,Occasional,Other,,0.0,3,Other Treatment,0,1008671
+30,Female,African American,Hosp1,1.7,True,38.4,109.67071978761118,True,False,Regular,High-fat,1.0,4.0,0,Major Surgery,0,1004014
+29,Female,Hispanic,Hosp1,1.7,True,21.7,62.08325836343677,False,False,Occasional,High-fat,6.0,4.0,5,,0,1005980
+64,Female,Hispanic,Hosp2,1.6,True,29.8,76.34778648465678,False,False,Occasional,High-fat,3.0,3.0,0,Major Surgery,0,1003047
+50,Male,Hispanic,Hosp3,1.7,False,31.6,90.85456127940968,False,True,,High-fat,3.0,1.0,0,,0,1008548
+24,Male,Caucasian,Hosp3,1.7,False,22.9,66.41362062550763,False,True,Occasional,Balanced,3.0,4.0,14,Major Surgery,0,1004729
+34,Male,Caucasian,Hosp1,1.7,False,23.3,67.01378050282281,False,False,Occasional,Balanced,4.0,4.0,6,Other Treatment,0,1002563
+30,Female,Caucasian,Hosp3,1.7,False,25.4,73.89268449941731,True,False,,High-fat,5.0,0.0,0,Other Treatment,0,1002829
+51,Male,African American,Hosp1,1.7,False,24.7,71.49438475717037,False,False,Regular,Vegetarian,2.0,5.0,10,,0,1004903
+46,Male,Hispanic,Hosp1,1.8,False,29.8,96.47522003394675,False,True,Occasional,Other,1.0,0.0,2,Other Treatment,0,1005354
+33,Male,Caucasian,Hosp3,1.9,False,25.0,90.08974144340354,False,False,Regular,Other,0.0,0.0,4,Major Surgery,0,1004238
+52,Female,Caucasian,Hosp2,1.9,True,19.0,68.64970813471764,True,False,Occasional,Balanced,0.0,2.0,0,Other Treatment,0,1004926
+42,Male,Hispanic,Hosp2,1.8,False,28.5,92.07219232101646,False,True,Occasional,High-fat,2.0,3.0,2,Major Surgery,0,1004287
+70,Female,Hispanic,Hosp2,1.7,False,27.1,78.32280188666337,True,False,Occasional,Balanced,2.0,7.0,1,Minor Surgery,1,1008204
+33,Male,Caucasian,Hosp3,1.7,False,21.0,61.048717615092926,False,True,Regular,Other,0.0,3.0,0,Major Surgery,0,1000616
+55,Female,Hispanic,Hosp3,1.6,True,24.0,61.21105462192291,False,False,Regular,Vegetarian,0.0,3.0,5,Major Surgery,0,1005870
+37,Male,Other,Hosp3,1.7,False,23.3,67.40808010593857,False,False,Occasional,High-fat,4.0,2.0,3,,0,1008390
+63,Female,Caucasian,Hosp3,1.8,False,24.5,78.82980243974006,False,False,Regular,Balanced,3.0,2.0,0,Other Treatment,0,1008949
+53,Female,Hispanic,Hosp3,1.7,False,20.6,59.483421601092104,False,False,Regular,High-fat,1.0,3.0,3,,0,1003110
+95,Male,Caucasian,Hosp2,1.9,True,25.8,92.63285041499958,False,False,Occasional,High-fat,3.0,2.0,0,Minor Surgery,1,1004345
+30,Male,Hispanic,Hosp3,1.8,False,25.7,83.1082862009601,False,False,Occasional,Vegetarian,3.0,4.0,4,,0,1004670
+50,Female,Hispanic,Hosp2,1.8,False,26.8,86.97845277445931,True,True,,Other,2.0,5.0,3,Minor Surgery,1,1007330
+45,Female,Caucasian,Hosp1,1.8,False,22.2,72.09645342640054,False,False,Regular,Vegetarian,5.0,4.0,4,Other Treatment,0,1003473
+66,Male,Caucasian,Hosp2,1.5,False,26.0,58.79783800189023,False,False,Regular,Other,2.0,,3,Major Surgery,0,1008745
+50,Female,Hispanic,Hosp1,1.7,False,35.5,102.84301458801292,False,True,Occasional,Balanced,1.0,6.0,1,Other Treatment,0,1004958
+85,Female,Caucasian,Hosp2,1.8,True,28.1,90.78264640701548,False,True,Occasional,High-fat,1.0,5.0,6,Other Treatment,1,1001394
+54,Male,Caucasian,Hosp2,1.7,True,21.1,60.99986496223722,False,False,Occasional,Vegetarian,3.0,1.0,4,Other Treatment,0,1003707
+60,Male,Caucasian,Hosp3,1.9,False,24.6,88.59789881531704,False,False,Occasional,High-fat,7.0,3.0,0,Major Surgery,1,1007531
+52,Female,Hispanic,Hosp3,1.8,False,21.4,69.51479611573012,False,False,Regular,Balanced,,2.0,0,Major Surgery,0,1007763
+40,Male,African American,Hosp2,1.8,False,23.6,76.01208756316845,False,True,Occasional,Vegetarian,4.0,4.0,1,Minor Surgery,0,1003542
+60,Female,Caucasian,Hosp1,1.8,False,25.2,81.73179104346801,False,False,Occasional,Balanced,4.0,4.0,0,Major Surgery,0,1006254
+67,Female,Hispanic,Hosp2,1.7,False,28.4,82.4984774549957,False,True,Regular,Vegetarian,1.0,2.0,3,Major Surgery,0,1002476
+57,Female,Caucasian,Hosp1,1.7,True,21.4,61.656272369957975,False,False,Occasional,Other,1.0,1.0,0,,0,1008494
+42,Male,African American,Hosp1,1.5,False,31.6,71.02284718842564,True,False,Occasional,Balanced,2.0,6.0,5,Other Treatment,0,1003599
+53,Male,African American,Hosp3,1.8,False,35.4,115.11128931445552,False,True,,Other,2.0,1.0,1,,0,1008910
+74,Male,Hispanic,Hosp3,1.9,False,21.2,75.76678462867149,False,False,Regular,Vegetarian,,2.0,2,,0,1003639
+47,Female,Caucasian,Hosp3,1.5,False,27.5,62.1563036152326,False,False,Occasional,Other,,7.0,1,Major Surgery,0,1005242
+41,Male,African American,Hosp2,1.7,False,38.3,110.29854852870182,True,True,Occasional,Other,3.0,4.0,1,,0,1005903
+75,Male,Hispanic,Hosp1,1.6,False,24.3,62.07216311852304,False,False,Regular,Vegetarian,6.0,2.0,0,,0,1006381
+18,Male,Hispanic,Hosp3,1.8,True,32.8,105.7506701425076,False,False,Occasional,Balanced,3.0,4.0,3,Other Treatment,0,1006342
+77,Male,Hispanic,Hosp2,1.8,False,29.7,96.19485645892708,True,False,Regular,High-fat,2.0,4.0,0,Major Surgery,0,1008924
+52,Female,Hispanic,Hosp1,1.7,False,29.8,86.02116617315284,False,False,Regular,High-fat,2.0,3.0,7,Major Surgery,0,1008322
+70,Female,African American,Hosp2,1.8,False,22.7,73.28592335835795,True,False,Regular,Vegetarian,3.0,6.0,1,Major Surgery,1,1009115
+69,Female,Caucasian,Hosp2,1.8,False,26.5,86.29062101401604,False,False,Regular,Vegetarian,1.0,5.0,1,Major Surgery,0,1000334
+86,Female,African American,Hosp1,1.7,True,39.7,115.50882517796052,False,False,,Balanced,3.0,1.0,3,Minor Surgery,0,1004833
+35,Female,African American,Hosp2,1.7,False,26.8,77.0875376215806,False,False,Regular,Other,6.0,3.0,3,,0,1008444
+39,Male,Other,Hosp1,1.8,True,17.8,58.06487575931657,False,False,Regular,Vegetarian,2.0,1.0,1,,0,1002350
+41,Female,Hispanic,Hosp1,1.6,False,21.5,54.71674365857514,False,False,,Balanced,3.0,,4,Major Surgery,0,1001837
+73,Male,African American,Hosp1,1.5,False,27.1,61.11774606978348,False,False,Regular,Other,2.0,4.0,6,Minor Surgery,0,1004627
+39,Female,Hispanic,Hosp2,1.7,False,24.1,68.46764240027191,False,False,Regular,Balanced,1.0,3.0,10,Major Surgery,0,1005686
+47,Female,Hispanic,Hosp2,1.8,False,25.2,81.61724390493082,False,False,Regular,High-fat,3.0,0.0,6,Major Surgery,0,1004132
+29,Male,Hispanic,Hosp3,1.4,False,33.7,66.38046932143051,False,False,Occasional,High-fat,3.0,1.0,1,Major Surgery,0,1006751
+37,Female,Caucasian,Hosp3,1.7,False,13.9,40.6633497145707,True,False,,High-fat,4.0,4.0,2,Minor Surgery,0,1004482
+44,Female,Caucasian,Hosp3,1.6,True,29.4,75.89825738760429,True,False,,High-fat,5.0,1.0,0,Major Surgery,0,1006075
+70,Male,Caucasian,Hosp1,1.7,True,26.8,77.6744934195969,False,False,Occasional,Balanced,0.0,6.0,0,Other Treatment,0,1008750
+53,Male,Caucasian,Hosp2,1.9,False,21.2,76.18362069633874,False,True,Regular,Vegetarian,5.0,5.0,5,Major Surgery,1,1003400
+39,Male,Caucasian,Hosp1,1.7,True,26.7,77.42611918557867,False,False,Regular,High-fat,4.0,5.0,0,Major Surgery,0,1007956
+43,Male,African American,Hosp3,1.7,False,24.7,70.70529535128631,False,False,Regular,Vegetarian,,1.0,0,,0,1006975
+61,Female,Caucasian,Hosp1,1.8,True,25.6,83.0837268920119,False,True,Regular,Balanced,3.0,3.0,0,,0,1001034
+44,Male,Caucasian,Hosp2,1.7,True,19.9,57.40387524140563,False,False,Regular,Balanced,3.0,4.0,14,Other Treatment,0,1008239
+49,Male,African American,Hosp2,1.8,False,26.0,84.92326062456867,False,False,,Other,7.0,1.0,3,Other Treatment,0,1009635
+81,Female,Hispanic,Hosp1,1.8,True,31.0,100.8956486632312,False,False,Occasional,Vegetarian,5.0,,0,,1,1005216
+58,Male,African American,Hosp1,1.9,False,22.3,81.20365339834075,False,True,Occasional,Balanced,2.0,5.0,3,Major Surgery,1,1002158
+42,Female,Hispanic,Hosp1,1.4,False,29.7,58.503318622046635,False,False,Regular,Vegetarian,2.0,0.0,19,Minor Surgery,0,1008437
+32,Female,Hispanic,Hosp1,1.7,False,33.0,95.18245953524745,True,False,,High-fat,3.0,2.0,2,,0,1004099
+44,Male,Hispanic,Hosp1,1.7,False,19.8,56.81261432168477,False,False,,Balanced,0.0,6.0,3,Minor Surgery,0,1009976
+48,Female,Caucasian,Hosp2,1.7,False,28.2,82.1721259687711,False,False,Regular,Vegetarian,3.0,5.0,0,Other Treatment,0,1008178
+65,Male,Hispanic,Hosp1,1.8,False,30.5,98.95949093799652,False,False,,Other,6.0,0.0,1,Minor Surgery,0,1007334
+68,Male,African American,Hosp3,1.6,False,30.1,77.74585821831968,False,False,,Other,3.0,4.0,1,Other Treatment,0,1004338
+41,Male,Caucasian,Hosp1,1.5,False,33.6,74.90331864665126,False,False,,Balanced,3.0,,4,Other Treatment,0,1007109
+51,Female,Other,Hosp2,1.6,False,30.1,77.77091315529728,True,True,,High-fat,4.0,2.0,0,,1,1000915
+62,Female,African American,Hosp3,1.8,False,29.2,94.54836677091396,False,False,Regular,Other,1.0,3.0,2,Other Treatment,0,1006946
+43,Female,Hispanic,Hosp1,1.7,False,28.6,82.99713910994514,False,False,Occasional,High-fat,2.0,0.0,1,Major Surgery,0,1004764
+48,Female,African American,Hosp2,1.6,False,25.0,63.832710855185255,False,False,Occasional,Other,1.0,4.0,1,Minor Surgery,0,1009542
+20,Female,Caucasian,Hosp3,1.5,False,23.6,53.021548414295026,False,False,Regular,Vegetarian,5.0,6.0,2,,0,1003770
+74,Female,Caucasian,Hosp3,1.8,False,24.8,80.97095482351216,False,False,Regular,Balanced,2.0,,3,Major Surgery,0,1006428
+42,Female,Hispanic,Hosp2,1.7,False,21.6,62.56882102607961,False,False,,Balanced,2.0,,0,,0,1006297
+89,Female,Other,Hosp1,1.7,False,30.3,87.59233417783075,False,False,,Other,7.0,,3,Major Surgery,1,1008205
+35,Female,Caucasian,Hosp3,1.9,False,22.5,81.07577764429963,False,False,Occasional,Balanced,4.0,7.0,6,,0,1008347
+61,Male,Hispanic,Hosp1,1.7,False,23.3,67.74971284611892,False,False,Regular,High-fat,3.0,2.0,4,Major Surgery,0,1004625
+48,Female,Caucasian,Hosp2,1.5,False,21.9,48.918216421918,False,True,,High-fat,3.0,,1,Major Surgery,1,1005993
+40,Male,Caucasian,Hosp2,1.8,False,24.0,78.24464056658412,False,False,Occasional,Vegetarian,4.0,2.0,3,,0,1003441
+62,Male,Caucasian,Hosp1,1.8,False,25.8,83.48802560549419,False,True,Regular,High-fat,2.0,5.0,1,,0,1008543
+43,Male,Caucasian,Hosp2,1.6,False,35.6,90.04458276240535,True,False,Regular,Vegetarian,2.0,7.0,8,Minor Surgery,0,1001762
+59,Female,Hispanic,Hosp1,1.5,True,24.9,55.95508777537741,False,False,Regular,High-fat,3.0,4.0,6,Major Surgery,0,1005315
+46,Male,African American,Hosp2,1.8,False,36.5,118.19576002526884,False,False,Regular,Other,5.0,1.0,7,,0,1003971
+59,Male,Caucasian,Hosp2,1.7,False,26.2,76.10746955121628,False,False,Regular,Other,2.0,3.0,4,,0,1002029
+60,Female,Hispanic,Hosp1,1.6,False,28.6,73.11644320768706,False,False,Occasional,Vegetarian,2.0,3.0,2,Other Treatment,0,1004513
+84,Female,Other,Hosp1,1.9,True,26.0,94.14928153253328,False,False,Occasional,High-fat,3.0,2.0,2,Minor Surgery,1,1003556
+44,Female,Other,Hosp1,1.7,False,22.0,64.08478740190992,False,False,Occasional,Balanced,2.0,4.0,0,Other Treatment,0,1004827
+55,Male,Caucasian,Hosp3,1.8,True,26.4,86.10074023625508,False,False,Regular,Other,4.0,2.0,1,,0,1004147
+41,Male,Caucasian,Hosp3,1.9,False,24.5,88.62136364773214,False,False,Occasional,Other,2.0,4.0,5,Minor Surgery,0,1009213
+54,Male,African American,Hosp2,1.7,True,33.8,98.07533055232956,False,True,,Balanced,3.0,0.0,1,Other Treatment,0,1005200
+50,Male,Hispanic,Hosp1,1.6,False,18.8,48.46740731031384,False,True,Regular,Vegetarian,2.0,7.0,7,Other Treatment,0,1009662
+45,Male,Hispanic,Hosp1,1.5,False,22.4,50.703108343164175,False,True,Regular,Balanced,3.0,2.0,7,Major Surgery,0,1005523
+54,Female,Hispanic,Hosp3,1.8,False,35.0,112.2111102850244,False,False,Occasional,Balanced,6.0,2.0,3,Major Surgery,0,1000185
+48,Female,African American,Hosp2,1.8,True,21.2,68.56294120024172,False,False,Regular,High-fat,4.0,2.0,0,,0,1004789
+66,Female,African American,Hosp3,1.5,False,15.4,34.130289187778196,False,False,Regular,Balanced,4.0,4.0,8,Minor Surgery,0,1001215
+28,Male,African American,Hosp2,1.7,True,26.1,75.24544286980823,False,False,Regular,Other,2.0,8.0,1,,0,1002635
+49,Male,Caucasian,Hosp1,1.8,True,24.7,80.45022543201264,True,False,Occasional,Balanced,1.0,4.0,5,Major Surgery,0,1007991
+55,Male,Hispanic,Hosp1,1.6,False,23.0,58.755401948682795,False,False,Occasional,Balanced,0.0,3.0,1,Other Treatment,0,1004300
+65,Male,African American,Hosp2,1.6,False,32.6,84.46701005622324,False,False,,Balanced,3.0,6.0,3,Minor Surgery,0,1006653
+68,Male,Caucasian,Hosp1,1.7,False,26.3,76.2323597124765,False,False,,Vegetarian,4.0,3.0,1,Major Surgery,0,1004148
+39,Female,African American,Hosp1,1.5,False,27.2,62.02303234044369,False,False,Regular,Vegetarian,2.0,5.0,3,Major Surgery,0,1006607
+41,Male,Caucasian,Hosp3,1.7,True,26.3,75.21159824096208,True,False,,Balanced,2.0,3.0,0,,0,1002496
+37,Male,Other,Hosp3,1.8,True,24.8,80.08404823268668,False,False,Regular,Balanced,1.0,3.0,7,,0,1000094
+32,Female,African American,Hosp2,1.6,False,29.3,74.37476915498539,False,False,Regular,Other,1.0,2.0,1,Other Treatment,0,1004473
+69,Female,Other,Hosp1,1.6,False,30.9,79.06473041980212,True,True,,High-fat,3.0,2.0,8,Other Treatment,1,1007625
+25,Male,Caucasian,Hosp2,1.8,False,27.2,87.56315136741638,False,False,Regular,High-fat,3.0,1.0,4,Other Treatment,0,1004820
+65,Male,African American,Hosp1,1.6,False,31.4,79.20290711608146,False,False,Occasional,Other,3.0,3.0,1,Major Surgery,0,1003766
+24,Male,Caucasian,Hosp3,1.8,False,22.4,72.54092637898825,False,False,,Balanced,5.0,4.0,0,,0,1006463
+93,Female,Other,Hosp1,1.8,False,22.3,72.27088457269335,False,False,Occasional,Balanced,3.0,2.0,11,Major Surgery,1,1009152
+33,Male,African American,Hosp3,1.5,True,29.4,64.94725424078581,True,False,Occasional,High-fat,4.0,,4,Major Surgery,0,1006521
+65,Female,Hispanic,Hosp1,1.9,True,22.5,80.95331735236776,False,True,Occasional,Vegetarian,2.0,6.0,8,Other Treatment,1,1009478
+46,Male,Caucasian,Hosp1,1.7,False,20.2,57.127206753387384,False,False,Regular,Balanced,4.0,6.0,0,,0,1007117
+68,Female,Hispanic,Hosp3,1.7,False,27.0,77.17994443741388,False,False,,Other,2.0,4.0,0,Major Surgery,0,1009312
+64,Male,African American,Hosp3,1.8,False,32.7,105.54015921107892,False,False,,High-fat,5.0,6.0,4,,0,1004041
+24,Female,Caucasian,Hosp2,1.7,False,27.5,79.70558384810457,False,False,Regular,High-fat,5.0,0.0,0,Minor Surgery,0,1008451
+48,Male,Other,Hosp2,1.6,False,32.2,82.21294371192494,False,True,,Balanced,6.0,,2,Other Treatment,0,1003440
+64,Female,Caucasian,Hosp1,1.6,False,26.1,66.7673937446857,False,True,Occasional,Balanced,4.0,4.0,7,Other Treatment,1,1001019
+41,Female,Caucasian,Hosp2,1.7,True,21.7,63.59025053511304,False,False,Occasional,High-fat,2.0,3.0,0,Major Surgery,0,1003371
+59,Female,Hispanic,Hosp2,1.8,True,27.7,89.75988969647118,False,True,Occasional,High-fat,3.0,1.0,2,Major Surgery,1,1004432
+70,Male,Caucasian,Hosp3,2.0,False,26.2,104.90111027643904,True,False,Occasional,High-fat,3.0,4.0,0,,1,1006208
+40,Female,Hispanic,Hosp3,1.6,True,19.6,50.01077452637821,False,False,Regular,Vegetarian,1.0,5.0,6,Minor Surgery,0,1001260
+43,Male,African American,Hosp2,1.7,False,29.3,84.35018710681071,False,False,Regular,Other,7.0,3.0,9,Other Treatment,0,1001767
+18,Male,Caucasian,Hosp3,1.8,False,22.6,73.010341142174,False,False,,Vegetarian,3.0,1.0,3,,0,1002490
+37,Female,Caucasian,Hosp3,1.6,True,17.3,45.00851635323279,False,False,Occasional,Balanced,4.0,3.0,10,,0,1001098
+26,Male,Hispanic,Hosp1,1.7,False,27.0,77.97164330050744,False,False,Occasional,Other,4.0,3.0,1,,0,1000148
+77,Female,African American,Hosp1,1.9,False,27.7,100.16790581511046,False,False,Regular,High-fat,3.0,2.0,0,Major Surgery,0,1002600
+55,Male,African American,Hosp2,1.8,False,28.7,93.33059112670064,False,False,Occasional,High-fat,3.0,1.0,4,Major Surgery,0,1004540
+53,Female,Caucasian,Hosp3,1.6,False,22.4,58.05347624077301,False,False,Regular,Vegetarian,2.0,3.0,0,,0,1003234
+66,Male,Hispanic,Hosp3,1.6,False,23.9,61.55034685889908,False,True,Occasional,Balanced,4.0,5.0,0,Minor Surgery,1,1001389
+34,Male,Other,Hosp2,1.5,False,29.1,65.01240447241477,False,False,Regular,Balanced,4.0,4.0,2,Minor Surgery,0,1005855
+57,Male,African American,Hosp2,1.7,False,21.5,61.85922941238845,False,False,,Vegetarian,0.0,5.0,1,Major Surgery,0,1007971
+69,Female,Caucasian,Hosp1,1.6,False,27.0,69.75240051233412,False,False,Occasional,High-fat,5.0,0.0,2,Minor Surgery,0,1000599
+51,Female,Caucasian,Hosp3,1.4,False,26.4,50.98757100725341,True,False,Occasional,Other,5.0,3.0,2,Major Surgery,1,1009507
+74,Female,African American,Hosp3,1.9,False,23.2,83.40046959152255,False,False,Regular,High-fat,2.0,7.0,1,Major Surgery,0,1004587
+72,Female,African American,Hosp1,1.6,True,26.0,66.96092994080561,False,True,Regular,High-fat,,7.0,1,,1,1002416
+32,Male,Caucasian,Hosp1,1.8,False,29.9,97.3861545199271,False,False,Occasional,High-fat,3.0,4.0,0,,0,1004888
+54,Female,Caucasian,Hosp2,1.7,False,28.9,84.07293920082797,False,False,,Balanced,2.0,,2,Major Surgery,0,1008569
+26,Male,Other,Hosp3,1.8,False,14.7,47.7977826787889,False,False,Regular,Balanced,2.0,2.0,0,,0,1005115
+82,Male,Caucasian,Hosp3,1.6,False,30.8,78.37995855908346,False,True,Occasional,Balanced,3.0,5.0,0,,1,1004946
+28,Female,Caucasian,Hosp1,1.7,False,35.9,102.7873316844058,False,True,,Other,2.0,4.0,4,Other Treatment,0,1001626
+48,Female,African American,Hosp1,1.9,True,22.9,82.1147895861585,False,False,,Balanced,3.0,2.0,3,Minor Surgery,0,1003533
+43,Female,Hispanic,Hosp2,1.8,False,38.0,123.23421920497888,False,False,,Other,0.0,4.0,0,Minor Surgery,0,1002944
+34,Male,Caucasian,Hosp1,1.8,True,17.0,55.75495478898417,False,False,Occasional,Vegetarian,3.0,3.0,0,Minor Surgery,0,1007516
+37,Female,African American,Hosp1,1.6,False,29.9,76.69854305693158,False,True,Regular,Other,6.0,0.0,1,,0,1002445
+46,Female,African American,Hosp1,1.8,False,24.4,79.01465011696996,False,False,Regular,High-fat,4.0,,1,Minor Surgery,0,1006676
+61,Male,Hispanic,Hosp2,1.6,False,30.4,78.41810182921041,False,False,Occasional,Balanced,3.0,5.0,1,Minor Surgery,0,1009185
+36,Female,Hispanic,Hosp1,1.7,False,31.6,91.88337389224549,False,False,,Other,3.0,5.0,4,Major Surgery,0,1004645
+46,Male,African American,Hosp2,1.8,False,32.0,102.32741229394706,False,False,Regular,Other,5.0,5.0,0,Minor Surgery,0,1005347
+67,Female,Caucasian,Hosp3,1.8,True,25.5,82.64541058019428,False,False,Regular,Vegetarian,3.0,4.0,6,,0,1008692
+73,Female,Other,Hosp2,1.7,True,28.2,82.21521786914751,True,True,Regular,Vegetarian,3.0,2.0,0,Minor Surgery,1,1009605
+52,Female,African American,Hosp3,1.6,False,21.3,54.639709874089895,True,False,Regular,Balanced,1.0,4.0,0,Major Surgery,0,1001463
+58,Female,Caucasian,Hosp1,1.4,True,19.7,38.44723785548639,False,False,Regular,High-fat,1.0,5.0,2,Other Treatment,0,1005235
+65,Male,African American,Hosp2,1.6,False,37.7,95.77005066330602,False,False,,Balanced,1.0,6.0,18,Other Treatment,0,1006138
+44,Male,Caucasian,Hosp2,1.5,True,24.4,54.77343085395188,False,False,Occasional,Vegetarian,4.0,3.0,7,Other Treatment,0,1000110
+44,Female,Other,Hosp1,1.6,False,26.0,66.30893873871086,True,False,Occasional,Balanced,4.0,4.0,1,,0,1008097
+19,Female,Hispanic,Hosp3,1.8,False,34.4,110.92286020879811,False,True,,Balanced,4.0,2.0,0,,0,1009919
+51,Male,African American,Hosp3,1.8,False,31.3,101.54592952421704,True,False,Occasional,High-fat,1.0,1.0,0,Minor Surgery,0,1003856
+57,Male,Hispanic,Hosp2,1.8,False,28.3,91.2912946996227,True,False,Occasional,High-fat,,1.0,2,Other Treatment,0,1008808
+77,Female,Hispanic,Hosp2,1.6,False,29.6,76.40971573463383,False,True,Regular,Other,5.0,3.0,2,Major Surgery,1,1004514
+38,Male,African American,Hosp2,1.7,False,31.3,89.876583195039,True,False,Occasional,Other,1.0,3.0,2,Major Surgery,0,1004644
+61,Male,Hispanic,Hosp2,1.8,False,27.3,88.47212156726545,False,True,Occasional,Vegetarian,6.0,3.0,6,,1,1008819
+53,Female,Hispanic,Hosp2,1.5,False,29.7,67.31565345052752,True,False,,High-fat,,4.0,3,Major Surgery,1,1006098
+77,Male,Caucasian,Hosp1,1.8,False,24.8,80.33964973788687,False,False,Occasional,Balanced,3.0,7.0,2,,1,1005098
+55,Female,Caucasian,Hosp2,1.7,True,26.1,75.45347940604925,False,False,Occasional,Balanced,2.0,7.0,0,,0,1006970
+27,Male,Caucasian,Hosp1,1.8,False,27.9,89.97140891144726,False,True,Regular,High-fat,3.0,1.0,1,Major Surgery,0,1007125
+53,Male,Caucasian,Hosp1,1.8,False,32.3,104.83254526158528,False,False,,Other,0.0,2.0,1,,0,1006534
+49,Female,Caucasian,Hosp1,1.6,False,17.8,44.577121735361224,False,False,Regular,Balanced,2.0,5.0,9,,0,1004721
+40,Female,African American,Hosp2,1.5,False,25.3,56.68252878316475,False,False,Regular,Balanced,1.0,0.0,4,Other Treatment,0,1002790
+55,Female,African American,Hosp1,1.9,False,25.7,93.3599802397041,False,False,Occasional,Vegetarian,4.0,6.0,3,Other Treatment,0,1007364
+58,Female,Caucasian,Hosp1,1.7,True,21.5,60.71875864408267,False,False,Regular,Balanced,3.0,5.0,0,,0,1008047
+77,Male,African American,Hosp2,1.8,False,30.5,98.60199880171496,False,False,Occasional,Other,2.0,4.0,0,Minor Surgery,0,1009423
+30,Male,Caucasian,Hosp2,1.7,False,20.1,58.07039545095032,False,True,,Balanced,8.0,1.0,4,Major Surgery,0,1000698
+49,Male,Caucasian,Hosp3,1.8,False,26.7,87.40898628936371,False,False,,Balanced,4.0,5.0,3,Other Treatment,0,1002003
+43,Male,Hispanic,Hosp1,1.9,False,35.3,127.9319413562898,False,False,Occasional,Balanced,2.0,7.0,0,Major Surgery,0,1002294
+35,Female,Hispanic,Hosp3,1.7,True,27.3,78.60541382601355,True,False,Occasional,High-fat,6.0,5.0,5,Other Treatment,1,1009950
+45,Female,Other,Hosp1,1.5,False,28.9,65.06015534715023,False,False,Regular,Balanced,3.0,2.0,0,,0,1000187
+64,Female,Hispanic,Hosp3,1.8,True,27.1,88.56792279421629,False,False,,High-fat,2.0,6.0,4,,1,1008175
+18,Female,African American,Hosp3,1.7,False,28.9,83.15777457023216,False,False,Regular,Vegetarian,1.0,6.0,6,Major Surgery,0,1009823
+38,Male,Hispanic,Hosp3,1.6,False,26.4,67.46484791641205,False,False,Occasional,Vegetarian,6.0,4.0,0,Minor Surgery,0,1004110
+60,Female,Caucasian,Hosp1,1.9,False,26.6,95.4530484066599,False,False,Regular,High-fat,4.0,2.0,0,Minor Surgery,0,1007404
+37,Female,Hispanic,Hosp2,1.7,True,27.4,79.53907061937534,False,False,Occasional,Other,3.0,4.0,1,Minor Surgery,0,1009360
+55,Female,Hispanic,Hosp1,1.8,True,25.4,82.09322430377172,False,False,,Other,4.0,1.0,4,,0,1000960
+25,Female,Hispanic,Hosp3,1.8,True,23.4,75.75340431469004,True,False,Regular,Vegetarian,,4.0,1,,0,1000604
+46,Female,Caucasian,Hosp1,1.6,False,22.3,57.34758216181172,False,False,Occasional,Other,3.0,1.0,1,,0,1002750
+59,Female,Hispanic,Hosp1,1.6,False,16.9,42.905660768786625,False,False,Occasional,Vegetarian,6.0,,23,Major Surgery,1,1009613
+41,Female,Caucasian,Hosp1,1.8,False,26.9,87.7446789795934,False,False,Regular,Balanced,7.0,6.0,1,Minor Surgery,0,1006253
+79,Female,Caucasian,Hosp2,1.6,False,20.2,50.96193479949922,False,False,Occasional,Balanced,1.0,4.0,2,Minor Surgery,0,1000763
+19,Male,Caucasian,Hosp3,1.7,False,23.7,68.21509095076073,False,False,Regular,Vegetarian,2.0,2.0,0,,0,1007142
+90,Female,Hispanic,Hosp1,1.6,False,28.1,71.61835589969628,False,False,Regular,High-fat,3.0,,12,,1,1001037
+29,Female,Caucasian,Hosp3,1.8,True,31.3,101.65069028890188,False,False,Occasional,High-fat,6.0,5.0,0,Major Surgery,0,1008116
+46,Female,Caucasian,Hosp1,1.7,False,27.3,78.96964259365852,True,False,Occasional,Balanced,1.0,1.0,1,,0,1005368
+24,Male,Hispanic,Hosp1,1.5,False,30.5,69.21765361200667,True,False,Occasional,Balanced,5.0,7.0,0,,0,1007082
+42,Male,African American,Hosp3,1.8,True,18.1,58.83676377726089,False,False,Regular,Vegetarian,1.0,,0,Major Surgery,0,1004554
+63,Male,Other,Hosp1,1.8,True,28.1,91.20063336638316,False,False,,High-fat,2.0,0.0,4,Other Treatment,0,1000595
+24,Female,Hispanic,Hosp1,1.6,True,26.6,67.99121931714836,True,False,Regular,Other,6.0,4.0,2,Other Treatment,0,1008783
+53,Male,Caucasian,Hosp1,1.6,False,22.2,56.52403545168036,False,True,Regular,High-fat,3.0,2.0,0,Minor Surgery,0,1001862
+38,Female,Hispanic,Hosp1,1.7,True,33.3,95.14214931606348,False,True,,Other,3.0,3.0,1,,0,1004989
+18,Male,Caucasian,Hosp1,1.8,True,26.2,84.99033840448209,False,False,Occasional,Vegetarian,2.0,2.0,0,Minor Surgery,0,1004504
+32,Female,Caucasian,Hosp1,1.7,False,28.2,81.38694372076542,False,False,Occasional,High-fat,3.0,4.0,1,,0,1000591
+63,Female,Hispanic,Hosp1,1.6,False,35.9,91.66742804268456,False,False,,Vegetarian,5.0,3.0,1,Other Treatment,0,1009574
+38,Male,Caucasian,Hosp1,1.7,False,28.7,82.87869041255449,False,False,Regular,Balanced,3.0,,0,Minor Surgery,0,1003174
+26,Female,African American,Hosp1,1.7,False,23.4,67.48547276687175,False,True,Occasional,Balanced,0.0,6.0,4,,0,1007252
+72,Male,African American,Hosp1,1.8,False,34.5,112.47224886285132,False,False,,High-fat,2.0,4.0,5,,0,1009091
+58,Female,Hispanic,Hosp3,1.6,False,22.0,56.43640707622758,True,False,Occasional,Vegetarian,3.0,4.0,2,Major Surgery,1,1001164
+63,Female,Caucasian,Hosp3,1.6,False,22.2,57.19143292932016,True,False,Regular,Vegetarian,3.0,,2,Major Surgery,0,1003942
+45,Male,Hispanic,Hosp1,1.7,False,33.5,96.97877676089296,False,False,,Other,3.0,4.0,5,Major Surgery,0,1002395
+49,Male,Hispanic,Hosp2,1.6,False,23.5,60.731923633507456,False,False,Regular,Balanced,4.0,9.0,2,Minor Surgery,0,1009112
+55,Female,Other,Hosp2,1.7,False,24.9,71.60257877618675,False,False,Occasional,Balanced,7.0,4.0,0,Major Surgery,0,1001789
+80,Female,Caucasian,Hosp2,1.7,False,28.3,82.18704538333985,False,False,,Other,3.0,3.0,4,,1,1004892
+71,Male,Caucasian,Hosp1,1.7,True,29.2,85.14794802121287,False,False,Occasional,High-fat,3.0,0.0,1,Other Treatment,0,1004788
+41,Female,African American,Hosp1,1.7,False,28.5,83.38788164759907,False,False,Occasional,High-fat,1.0,7.0,1,Other Treatment,0,1009538
+41,Male,African American,Hosp3,1.6,False,20.0,50.700466252255296,False,False,,High-fat,0.0,1.0,13,,0,1008103
+53,Female,Hispanic,Hosp2,1.7,False,22.7,66.1147250376912,False,False,Occasional,Other,6.0,4.0,3,Other Treatment,1,1003520
+39,Female,Other,Hosp2,1.8,False,29.3,94.28444925108548,False,False,Regular,High-fat,3.0,6.0,2,,0,1009890
+54,Male,Caucasian,Hosp1,1.8,True,16.8,53.95200323122799,False,False,Occasional,Balanced,2.0,3.0,0,,0,1006478
+70,Male,Caucasian,Hosp3,1.8,False,31.9,103.23001605194013,True,False,,Vegetarian,3.0,3.0,1,Major Surgery,1,1008227
+54,Female,Hispanic,Hosp1,1.5,True,38.0,85.64610140316515,False,False,,Other,3.0,3.0,4,,0,1001428
+64,Male,Caucasian,Hosp1,1.6,True,28.7,73.61291579779197,False,False,Occasional,High-fat,6.0,2.0,14,,1,1001340
+51,Male,Caucasian,Hosp3,1.8,False,23.0,74.14357917890018,True,True,Occasional,Other,4.0,8.0,3,Major Surgery,1,1003764
+76,Female,Caucasian,Hosp3,1.7,False,28.8,83.15329984502162,False,True,,Balanced,3.0,4.0,1,Other Treatment,1,1001173
+43,Female,African American,Hosp3,1.9,False,26.8,96.53040516912657,False,False,Occasional,High-fat,3.0,5.0,2,,0,1004703
+52,Female,Caucasian,Hosp3,1.8,False,22.3,72.46001454634762,True,False,,Balanced,7.0,5.0,1,,1,1008020
+39,Female,Hispanic,Hosp2,1.5,False,30.9,69.35119776717454,False,True,,Other,4.0,1.0,5,Major Surgery,0,1006141
+52,Female,Caucasian,Hosp1,1.8,False,25.7,83.21015104041965,False,False,,Other,2.0,6.0,3,Major Surgery,0,1002841
+42,Male,Caucasian,Hosp1,1.5,False,25.5,58.34855394216153,False,False,Regular,High-fat,1.0,2.0,1,,0,1007972
+33,Female,Hispanic,Hosp3,1.6,False,34.9,89.5470937148992,False,False,Occasional,Other,3.0,5.0,3,Minor Surgery,0,1005222
+38,Female,Hispanic,Hosp3,1.7,False,25.1,72.43069066609524,False,False,Occasional,Other,2.0,6.0,1,Major Surgery,0,1004450
+74,Female,Caucasian,Hosp2,1.5,False,23.6,52.666393627223435,False,False,,Vegetarian,2.0,2.0,0,Other Treatment,0,1009482
+33,Male,Hispanic,Hosp1,1.7,False,23.2,67.19076712872139,False,False,,Balanced,4.0,5.0,1,Major Surgery,0,1004444
+19,Female,Other,Hosp3,1.6,True,29.8,76.32254346261679,False,False,Occasional,High-fat,2.0,4.0,1,,0,1006951
+18,Male,Hispanic,Hosp3,1.7,False,26.3,76.31359443780843,True,False,Occasional,High-fat,1.0,2.0,2,Minor Surgery,0,1004250
+70,Male,Hispanic,Hosp2,1.7,False,35.0,101.46377898303152,False,False,,Vegetarian,3.0,4.0,2,Other Treatment,0,1001913
+43,Male,Hispanic,Hosp1,1.7,True,21.5,62.07056523695008,True,False,,Balanced,0.0,3.0,5,,0,1003342
+68,Male,African American,Hosp2,1.6,False,25.5,65.21774149963133,True,False,Occasional,Other,1.0,3.0,2,,1,1003163
+77,Female,African American,Hosp3,1.8,False,24.3,78.84922027741318,False,False,Occasional,Balanced,4.0,5.0,2,Other Treatment,1,1007248
+53,Male,Hispanic,Hosp1,1.7,False,25.8,75.326555754399,False,False,Occasional,High-fat,3.0,3.0,0,Major Surgery,0,1000791
+66,Female,Caucasian,Hosp3,1.5,True,21.1,47.36938022816467,False,False,Occasional,Balanced,0.0,2.0,2,Minor Surgery,0,1003044
+43,Female,Other,Hosp2,1.7,False,23.2,66.768406484389,False,True,Regular,Other,6.0,3.0,10,Major Surgery,1,1005156
+50,Female,Caucasian,Hosp2,1.7,False,21.2,61.48379928240125,False,False,Regular,Vegetarian,2.0,3.0,0,Major Surgery,0,1003901
+36,Male,Other,Hosp3,1.6,False,26.0,67.24924194588208,False,False,Regular,Other,2.0,1.0,1,Minor Surgery,0,1006157
+18,Female,Hispanic,Hosp2,1.7,False,33.4,95.69283875485418,False,False,,High-fat,5.0,,2,Major Surgery,0,1007157
+50,Female,Hispanic,Hosp3,1.7,True,31.6,91.77757056474177,False,False,Occasional,Balanced,3.0,4.0,3,Other Treatment,0,1004629
+34,Female,African American,Hosp1,1.7,True,29.9,87.31205074003975,True,False,Regular,Balanced,3.0,5.0,0,,0,1001861
+18,Male,Hispanic,Hosp2,1.6,False,30.2,76.72554481798076,False,False,Regular,Other,2.0,3.0,1,,0,1007670
+46,Female,Caucasian,Hosp1,1.6,True,29.4,75.03403975449297,True,False,Regular,High-fat,3.0,,1,Major Surgery,0,1003536
+72,Female,Caucasian,Hosp3,1.7,False,15.8,46.39127611292675,False,False,Occasional,Other,,4.0,1,Minor Surgery,0,1001596
+47,Female,Hispanic,Hosp1,1.8,False,33.9,111.2133269601284,False,False,Occasional,Other,4.0,3.0,3,Minor Surgery,0,1004206
+34,Male,Caucasian,Hosp2,1.7,False,28.2,81.88323618497682,False,False,Regular,Vegetarian,2.0,5.0,8,,0,1007797
+18,Female,African American,Hosp3,1.6,False,38.9,99.26223924260395,True,False,,Other,4.0,1.0,0,,0,1006555
+40,Female,Caucasian,Hosp3,1.5,False,24.9,55.15249495393336,True,False,Occasional,Balanced,2.0,1.0,1,Major Surgery,0,1004115
+18,Male,Caucasian,Hosp3,1.8,True,24.2,78.8320414788355,False,False,Regular,Balanced,1.0,8.0,4,,0,1003896
+35,Female,Caucasian,Hosp3,1.7,False,24.7,71.50161503979768,False,False,Occasional,High-fat,4.0,2.0,4,,0,1009715
+38,Male,Hispanic,Hosp2,1.7,False,27.6,80.32525223438644,False,False,,High-fat,0.0,2.0,0,Major Surgery,0,1002905
+50,Male,Hispanic,Hosp1,1.5,False,20.4,45.847252743552595,False,True,,Vegetarian,3.0,7.0,4,Major Surgery,1,1002514
+42,Male,Caucasian,Hosp2,1.6,False,23.7,60.72708122816012,False,True,Regular,Vegetarian,2.0,0.0,1,Major Surgery,0,1001376
+54,Female,Caucasian,Hosp2,1.8,False,24.5,80.15914537699734,False,False,Occasional,Vegetarian,3.0,3.0,0,Minor Surgery,0,1008772
+50,Female,Other,Hosp2,1.6,False,23.0,59.23460453733193,False,False,Regular,Other,3.0,3.0,5,Major Surgery,0,1002250
+56,Male,Caucasian,Hosp2,1.6,False,22.5,56.90238412533864,True,False,,High-fat,8.0,3.0,3,,1,1002747
+43,Male,Hispanic,Hosp3,1.7,False,20.1,58.63604436700612,False,False,Occasional,Balanced,2.0,4.0,7,Major Surgery,0,1001153
+39,Female,Caucasian,Hosp3,1.8,False,22.5,73.7348207324567,False,False,Regular,Vegetarian,3.0,2.0,4,Minor Surgery,0,1001764
+19,Male,Caucasian,Hosp3,1.8,False,21.0,67.80210235559181,False,False,Regular,Balanced,6.0,6.0,4,Minor Surgery,0,1001116
+52,Male,Caucasian,Hosp3,1.8,False,25.2,81.89893604758697,False,False,Regular,Other,4.0,6.0,4,Minor Surgery,0,1000910
+39,Male,Hispanic,Hosp3,1.7,False,19.5,55.921646697049965,False,False,Occasional,Balanced,7.0,4.0,1,,0,1009696
+49,Female,African American,Hosp1,1.6,True,25.8,66.17871627233562,False,False,,High-fat,2.0,6.0,2,Other Treatment,0,1001493
+76,Male,Hispanic,Hosp3,2.0,True,22.2,88.9645913118902,False,False,Occasional,High-fat,2.0,3.0,2,Other Treatment,0,1001168
+58,Male,Hispanic,Hosp2,1.8,True,27.4,88.64398439160317,False,False,Regular,High-fat,6.0,2.0,3,Minor Surgery,0,1008092
+22,Male,Hispanic,Hosp3,1.7,False,33.8,96.89917437769314,True,False,,Other,2.0,5.0,1,Major Surgery,0,1001323
+70,Female,Hispanic,Hosp1,1.7,False,33.9,97.89268257629207,False,False,,High-fat,3.0,4.0,2,Minor Surgery,0,1004649
+55,Female,African American,Hosp3,1.6,False,26.2,67.56923250518967,False,False,Occasional,High-fat,3.0,5.0,1,Major Surgery,0,1000232
+63,Female,Hispanic,Hosp3,1.7,False,26.6,76.36004061783989,False,False,Regular,Other,5.0,5.0,1,,0,1006318
+40,Male,Caucasian,Hosp3,1.7,False,26.3,75.41458523129602,True,False,Occasional,Vegetarian,4.0,2.0,1,Major Surgery,0,1007000
+72,Male,Other,Hosp1,1.7,True,24.0,69.66691249772637,False,False,Occasional,High-fat,4.0,3.0,1,,1,1004490
+57,Male,Caucasian,Hosp2,1.8,False,23.6,76.8650869566913,False,False,,Balanced,2.0,4.0,4,,0,1005600
+18,Male,Hispanic,Hosp2,1.6,False,26.6,68.41247651916125,False,False,Regular,Vegetarian,3.0,4.0,3,Major Surgery,0,1004878
+37,Male,Caucasian,Hosp3,1.6,False,26.1,67.0532516397482,True,False,Regular,Other,2.0,7.0,3,,0,1006910
+38,Male,Caucasian,Hosp2,1.8,False,29.4,94.18106385091905,False,False,Occasional,Balanced,2.0,0.0,3,Major Surgery,0,1008595
+34,Female,Hispanic,Hosp2,1.7,False,29.1,83.51568496345041,False,False,Regular,Vegetarian,4.0,3.0,5,,0,1005237
+76,Male,Caucasian,Hosp1,1.7,False,21.5,62.402536189725,False,False,Occasional,High-fat,3.0,5.0,0,Major Surgery,0,1005301
+45,Male,Other,Hosp3,1.6,False,23.4,59.60250636095707,False,False,Regular,High-fat,3.0,3.0,0,Major Surgery,0,1001653
+18,Male,Caucasian,Hosp1,1.5,False,22.2,49.27225095792062,False,False,Occasional,Vegetarian,1.0,0.0,3,Minor Surgery,0,1007178
+27,Male,Hispanic,Hosp3,1.8,False,30.8,99.32452529966092,False,False,,High-fat,5.0,1.0,5,Minor Surgery,0,1005053
+61,Male,African American,Hosp3,1.7,False,28.2,81.20497011190466,False,False,Regular,High-fat,5.0,5.0,1,Major Surgery,0,1002006
+52,Female,Caucasian,Hosp1,1.7,True,25.6,74.21570667672366,False,False,Regular,High-fat,5.0,3.0,2,Major Surgery,0,1006621
+34,Male,Hispanic,Hosp1,1.7,True,23.7,68.16184368240152,False,False,Regular,Other,1.0,0.0,5,,0,1008833
+48,Female,Hispanic,Hosp3,1.7,False,21.5,62.93967164715061,False,False,,Vegetarian,4.0,4.0,0,Other Treatment,0,1000772
+18,Male,Caucasian,Hosp1,1.7,False,21.7,62.3042653057929,False,False,Regular,Vegetarian,,3.0,0,,0,1009195
+70,Female,Caucasian,Hosp1,1.5,False,21.1,47.780539442751106,False,False,Regular,Vegetarian,2.0,4.0,2,,0,1000431
+62,Female,Caucasian,Hosp3,1.6,False,28.2,72.07129902669413,False,False,Regular,High-fat,3.0,2.0,7,Other Treatment,0,1001262
+29,Female,African American,Hosp3,1.7,False,31.6,91.32529551887728,False,False,,Balanced,2.0,,3,,0,1004690
+21,Female,Caucasian,Hosp1,1.7,False,26.4,76.24629008105131,True,True,,Other,1.0,4.0,1,,0,1004532
+95,Female,Other,Hosp1,1.5,False,23.0,52.294218288272866,False,False,Regular,Vegetarian,4.0,2.0,1,Major Surgery,0,1009428
+62,Female,Caucasian,Hosp3,1.8,False,23.2,75.15216220112627,False,False,Occasional,High-fat,3.0,4.0,3,Minor Surgery,0,1008955
+95,Female,Hispanic,Hosp2,1.8,True,23.8,76.95818370018026,False,False,,Balanced,3.0,6.0,1,Major Surgery,1,1003728
+61,Male,African American,Hosp2,1.7,False,24.4,69.95072414857444,False,False,Regular,Vegetarian,0.0,3.0,11,,0,1004399
+69,Male,Caucasian,Hosp2,1.6,True,25.1,63.62483937680838,False,False,Occasional,High-fat,6.0,4.0,1,Minor Surgery,1,1004150
+18,Male,Hispanic,Hosp3,1.8,False,29.4,94.88927600047772,False,False,Occasional,Other,1.0,2.0,0,Major Surgery,0,1001572
+90,Male,Hispanic,Hosp3,1.7,False,26.1,75.70793860250647,False,True,Regular,Other,2.0,2.0,1,Major Surgery,1,1007336
+50,Male,Hispanic,Hosp1,1.6,False,33.1,84.81473957942549,False,True,,Other,3.0,3.0,1,Other Treatment,0,1004895
+42,Female,Hispanic,Hosp3,1.6,False,31.5,79.88496234159001,False,False,,Other,4.0,5.0,5,,0,1004109
+62,Male,Caucasian,Hosp3,1.6,True,21.9,56.33004399700451,False,True,Occasional,Balanced,1.0,3.0,1,,0,1004254
+58,Male,Hispanic,Hosp2,1.7,False,27.4,78.80533936016407,False,False,Occasional,High-fat,3.0,3.0,2,Other Treatment,0,1009780
+49,Female,Caucasian,Hosp3,1.7,True,29.8,86.26263961939003,False,False,Regular,Other,3.0,,5,Major Surgery,0,1006749
+68,Female,African American,Hosp2,1.8,False,25.6,82.98026661944176,False,False,Occasional,High-fat,4.0,5.0,0,Minor Surgery,0,1000866
+54,Male,Hispanic,Hosp3,1.6,False,20.7,53.29030379494232,False,False,Occasional,Balanced,1.0,3.0,0,Major Surgery,0,1008436
+82,Female,Hispanic,Hosp3,1.7,False,19.8,57.71115752519721,False,False,Occasional,High-fat,5.0,4.0,0,Other Treatment,1,1008570
+41,Female,Caucasian,Hosp2,1.8,False,21.1,68.76536378677494,False,False,Regular,Other,3.0,3.0,3,,0,1009667
+58,Male,Caucasian,Hosp1,1.7,False,22.8,65.41359967752938,False,False,Regular,High-fat,1.0,2.0,7,,0,1004217
+71,Male,Hispanic,Hosp2,1.6,False,27.2,69.55113645545539,False,False,Occasional,High-fat,2.0,0.0,0,,0,1005231
+22,Female,Hispanic,Hosp3,1.7,False,28.2,81.57599662401161,False,False,Occasional,Vegetarian,3.0,,1,Major Surgery,0,1001632
+51,Male,Hispanic,Hosp2,1.8,False,21.7,69.8143116937341,False,False,Regular,High-fat,3.0,,0,Minor Surgery,0,1004181
+29,Male,Caucasian,Hosp3,1.7,True,19.0,55.5291063673087,False,False,,Balanced,3.0,0.0,3,Major Surgery,0,1005020
+18,Female,Caucasian,Hosp2,1.6,False,23.6,60.087480521170846,False,False,,High-fat,3.0,3.0,8,Major Surgery,0,1002821
+61,Male,Hispanic,Hosp1,1.8,False,27.8,89.97695340185638,False,False,Occasional,High-fat,5.0,1.0,0,Major Surgery,0,1002667
+80,Male,Hispanic,Hosp1,1.5,True,32.2,73.45593829658665,False,False,,High-fat,2.0,1.0,0,Major Surgery,0,1006325
+32,Male,Caucasian,Hosp2,1.9,True,35.5,128.26544442047367,False,False,Occasional,High-fat,4.0,5.0,2,,0,1008921
+42,Female,African American,Hosp1,1.5,False,32.6,73.44188952506975,True,True,,High-fat,3.0,2.0,0,,0,1007418
+85,Female,Caucasian,Hosp2,1.7,False,25.2,73.092364630708,False,False,Regular,High-fat,5.0,3.0,1,Minor Surgery,0,1006867
+38,Female,Caucasian,Hosp2,1.7,False,23.5,68.69115979851904,False,False,Occasional,Balanced,0.0,5.0,0,Major Surgery,0,1007544
+61,Male,Hispanic,Hosp1,1.7,True,29.7,85.8087823935144,False,False,Regular,Other,2.0,0.0,8,,0,1001250
+67,Female,African American,Hosp2,1.8,False,27.6,89.09454765095057,False,False,Regular,High-fat,1.0,,13,Major Surgery,0,1000860
+54,Female,African American,Hosp3,1.6,True,15.9,40.3014440537877,False,True,Regular,Vegetarian,8.0,1.0,4,,1,1007379
+69,Female,Other,Hosp2,1.6,True,27.4,70.07648571500413,False,True,Regular,Vegetarian,2.0,8.0,3,Other Treatment,1,1007983
+18,Female,Caucasian,Hosp2,1.6,False,27.1,69.79281630207412,False,False,,Balanced,5.0,4.0,2,Other Treatment,0,1007400
+18,Female,Hispanic,Hosp1,1.7,True,28.8,82.76869891797472,False,True,Occasional,High-fat,3.0,2.0,3,,0,1000848
+73,Female,Caucasian,Hosp2,1.7,True,18.4,52.89461796884256,False,False,Occasional,Balanced,,4.0,3,,0,1000023
+50,Male,African American,Hosp2,1.8,True,29.0,93.9716731235156,False,False,Occasional,Other,,5.0,3,,0,1002806
+53,Male,Caucasian,Hosp2,1.6,False,22.6,58.68174942800145,False,False,Regular,Balanced,6.0,4.0,19,,0,1007966
+30,Female,Other,Hosp3,1.8,False,39.7,129.2748891031178,False,True,,Vegetarian,1.0,4.0,0,,0,1008071
+43,Female,Caucasian,Hosp1,1.6,False,30.9,79.39394418728865,False,False,Occasional,Other,4.0,5.0,0,Other Treatment,0,1003043
+65,Female,Hispanic,Hosp2,1.8,False,21.9,71.08936313038056,False,True,Regular,High-fat,2.0,,0,,0,1003145
+51,Female,Caucasian,Hosp2,1.9,False,24.1,87.0320585179504,False,False,Regular,Vegetarian,,2.0,2,Minor Surgery,0,1005710
+49,Female,Caucasian,Hosp2,1.8,False,30.1,97.9249090491682,False,False,,Other,2.0,4.0,0,Minor Surgery,0,1002067
+58,Female,African American,Hosp2,1.8,False,30.9,99.56703715319576,False,False,Occasional,Other,,1.0,5,Minor Surgery,0,1002399
+28,Male,Caucasian,Hosp2,1.7,True,20.9,60.13510599603221,False,False,Regular,Vegetarian,2.0,8.0,1,Major Surgery,0,1005808
+58,Male,Hispanic,Hosp1,1.7,False,32.2,93.76019846117704,False,False,,High-fat,3.0,4.0,0,Major Surgery,0,1000902
+18,Female,Caucasian,Hosp3,1.5,True,23.2,51.74130421818942,True,True,Occasional,Other,1.0,3.0,4,Minor Surgery,0,1006754
+40,Female,Caucasian,Hosp3,1.7,True,25.0,72.02315628065914,False,True,Occasional,Balanced,4.0,2.0,5,Minor Surgery,0,1004621
+30,Male,Hispanic,Hosp1,1.7,False,30.0,87.32564647587802,False,True,,Other,4.0,5.0,2,Minor Surgery,0,1004139
+39,Female,Caucasian,Hosp3,1.5,False,24.1,53.82882049805607,False,False,Occasional,Other,4.0,2.0,0,Other Treatment,0,1008733
+66,Female,African American,Hosp2,1.7,False,35.1,101.92090906228589,True,True,,Balanced,5.0,2.0,6,Major Surgery,1,1005337
+38,Male,Caucasian,Hosp1,1.8,False,40.4,130.4647659554346,False,False,,High-fat,2.0,2.0,14,,0,1008853
+34,Male,Caucasian,Hosp2,1.8,False,22.6,72.88457163246899,False,True,Occasional,Balanced,2.0,3.0,6,Major Surgery,0,1007867
+51,Male,Hispanic,Hosp2,1.6,False,26.6,68.26505588722266,False,False,Occasional,High-fat,2.0,5.0,0,Other Treatment,0,1000912
+48,Female,Other,Hosp2,1.8,False,31.7,102.56699218434436,False,False,,Vegetarian,3.0,2.0,1,Other Treatment,0,1003347
+54,Female,Caucasian,Hosp3,1.6,False,19.4,49.5549631527376,False,False,,Balanced,4.0,2.0,0,Major Surgery,0,1004425
+53,Female,Hispanic,Hosp2,1.6,False,27.8,71.52106952839597,True,False,Regular,Other,7.0,6.0,4,Major Surgery,1,1008371
+33,Female,Hispanic,Hosp1,1.5,False,24.2,54.230573133036735,False,False,Occasional,Vegetarian,4.0,3.0,2,,0,1007467
+72,Female,African American,Hosp1,1.8,True,31.8,102.6678843559337,False,True,Regular,Balanced,,3.0,0,Minor Surgery,1,1005481
+83,Male,Hispanic,Hosp3,1.7,False,23.7,67.60583696897474,False,False,Regular,Balanced,3.0,4.0,2,Major Surgery,0,1007503
+46,Female,Caucasian,Hosp2,1.7,True,28.6,82.93828488989409,False,False,Occasional,Other,6.0,2.0,1,Other Treatment,0,1009071
+29,Male,Caucasian,Hosp1,1.7,False,18.7,53.93365134900933,False,False,Occasional,Balanced,,4.0,9,Other Treatment,0,1001273
+57,Female,Caucasian,Hosp1,1.7,False,16.8,48.158360938044154,False,False,Occasional,Balanced,2.0,7.0,0,,0,1009492
+38,Female,Hispanic,Hosp1,1.6,False,27.6,70.86543373989709,False,False,,Other,5.0,7.0,10,,0,1007786
+37,Female,Hispanic,Hosp1,1.6,False,20.7,53.05791569604998,False,False,Regular,Vegetarian,1.0,2.0,0,,0,1004494
+50,Male,African American,Hosp3,1.5,False,25.6,57.9736380828063,False,False,Regular,High-fat,1.0,4.0,1,Major Surgery,0,1008225
+36,Male,Hispanic,Hosp3,1.7,False,22.6,65.34336786600915,False,True,,Balanced,4.0,1.0,2,,0,1002882
+95,Male,Caucasian,Hosp2,1.7,False,20.6,60.4235892080288,False,False,,High-fat,4.0,12.0,0,Major Surgery,1,1009727
+74,Male,African American,Hosp1,1.6,False,41.1,104.64074739041094,True,False,,Other,5.0,2.0,3,,0,1008746
+73,Male,Caucasian,Hosp2,1.5,False,22.2,49.359692080562965,False,False,,High-fat,,2.0,2,Other Treatment,0,1003119
+61,Female,Hispanic,Hosp2,1.7,True,32.1,91.95491175994546,False,False,,High-fat,4.0,2.0,0,,0,1006855
+67,Female,Caucasian,Hosp3,1.8,False,27.7,90.08594778174104,False,False,Regular,High-fat,1.0,6.0,1,,0,1003133
+18,Male,Other,Hosp1,1.7,False,26.7,77.63013290267108,False,False,,High-fat,6.0,5.0,0,Major Surgery,0,1002828
+43,Female,Hispanic,Hosp2,1.5,False,25.8,57.98480243579645,False,True,Regular,Other,2.0,1.0,1,,0,1000756
+45,Female,Hispanic,Hosp2,1.5,False,27.4,61.313810260363745,True,False,,High-fat,6.0,3.0,2,Major Surgery,1,1004251
+56,Female,Other,Hosp1,1.7,False,32.0,93.27464429460382,False,False,,Vegetarian,2.0,2.0,9,,0,1001469
+66,Male,Caucasian,Hosp2,1.8,False,21.8,70.58447817595368,False,False,Regular,Vegetarian,7.0,5.0,0,Minor Surgery,0,1007814
+23,Female,Caucasian,Hosp2,1.8,True,23.2,74.69781058358447,False,False,Occasional,Vegetarian,3.0,4.0,2,Other Treatment,0,1004659
+75,Male,Hispanic,Hosp2,1.6,False,22.1,56.10975236541674,False,False,,Vegetarian,,6.0,2,Major Surgery,1,1006319
+35,Female,Caucasian,Hosp3,1.8,False,29.7,95.24614874519328,True,False,,Other,3.0,4.0,6,,0,1009244
+53,Female,Caucasian,Hosp3,1.7,True,27.6,79.72440492510749,False,False,,Balanced,1.0,4.0,9,Other Treatment,0,1008721
+54,Male,Caucasian,Hosp1,1.6,False,30.2,76.41937110376838,False,False,Occasional,High-fat,3.0,8.0,0,Major Surgery,0,1009136
+72,Male,Hispanic,Hosp1,1.7,False,17.3,50.385423811329886,False,False,Occasional,High-fat,2.0,2.0,1,Minor Surgery,0,1000301
+56,Male,African American,Hosp3,1.7,False,24.9,72.00443536902482,False,False,Regular,High-fat,4.0,,1,Other Treatment,0,1005445
+45,Male,Other,Hosp1,1.7,True,23.1,66.86273885310656,False,False,Occasional,Balanced,0.0,4.0,0,Minor Surgery,0,1006413
+66,Male,Hispanic,Hosp1,1.7,False,18.4,53.18863143112361,False,False,Occasional,Vegetarian,4.0,1.0,2,Major Surgery,0,1008253
+42,Male,Caucasian,Hosp3,1.7,False,25.6,74.53766609600316,False,False,,High-fat,1.0,3.0,0,,0,1005384
+18,Male,Hispanic,Hosp2,1.6,False,29.0,73.8955870125751,False,False,,Balanced,4.0,4.0,3,,0,1003621
+59,Male,African American,Hosp1,1.6,False,30.9,79.40707242611667,False,False,,Vegetarian,3.0,6.0,1,,0,1008858
+59,Female,Caucasian,Hosp2,1.8,True,20.7,66.90916827722359,False,True,Occasional,Other,0.0,,2,Other Treatment,1,1006627
+46,Male,African American,Hosp1,1.8,False,24.9,81.12817466236083,False,True,Occasional,Vegetarian,4.0,6.0,5,,1,1006287
+40,Female,Caucasian,Hosp3,1.6,False,19.1,48.276271929214495,True,False,Regular,Balanced,1.0,4.0,0,Major Surgery,0,1003008
+60,Female,Caucasian,Hosp1,1.7,False,26.4,76.76432356621413,False,False,Occasional,Other,5.0,5.0,0,,1,1006418
+68,Male,Caucasian,Hosp1,1.8,False,15.9,51.04846963111552,True,False,Occasional,Other,1.0,6.0,2,Minor Surgery,1,1004375
+54,Male,Hispanic,Hosp1,1.6,False,20.6,52.64659209258003,False,False,,Vegetarian,6.0,2.0,1,Minor Surgery,0,1009014
+35,Male,Caucasian,Hosp1,1.6,False,26.4,67.5506180700541,False,True,Occasional,Balanced,1.0,5.0,0,Minor Surgery,0,1005917
+84,Male,Caucasian,Hosp2,1.6,False,25.4,64.24283323789716,False,False,Regular,High-fat,3.0,3.0,3,Major Surgery,0,1000083
+53,Female,African American,Hosp2,1.6,False,17.7,45.58213158441129,False,False,Regular,Vegetarian,1.0,1.0,6,Other Treatment,0,1005689
+59,Male,African American,Hosp3,1.8,False,33.2,108.840876586208,False,False,,Other,7.0,3.0,4,,0,1008787
+52,Male,Caucasian,Hosp2,1.6,False,24.8,63.92903449713833,False,False,Regular,High-fat,1.0,11.0,2,Minor Surgery,0,1002335
+61,Female,Caucasian,Hosp1,1.6,True,28.6,73.56903385270215,False,False,,Other,3.0,6.0,0,,0,1000546
+45,Female,Hispanic,Hosp3,1.7,True,21.1,60.72151403952559,False,True,,Vegetarian,3.0,6.0,3,Minor Surgery,1,1000976
+36,Male,Other,Hosp3,1.7,True,20.2,58.09039037125984,False,False,Regular,Balanced,2.0,2.0,2,Minor Surgery,0,1005510
+61,Male,Other,Hosp3,1.8,False,23.1,75.3421423637928,False,False,Regular,Balanced,3.0,5.0,0,Minor Surgery,0,1007992
+68,Female,Caucasian,Hosp2,1.6,True,21.9,55.21321879023157,False,True,,Balanced,0.0,2.0,5,,1,1000556
+32,Female,Hispanic,Hosp3,1.8,False,28.8,93.83052955284305,True,False,,High-fat,1.0,4.0,2,Minor Surgery,0,1005143
+35,Female,African American,Hosp2,1.7,False,31.6,91.91580430635103,False,False,,Vegetarian,4.0,2.0,2,Minor Surgery,0,1009168
+26,Female,Caucasian,Hosp1,1.6,False,27.6,71.00157342666154,False,False,Regular,Other,6.0,2.0,1,Minor Surgery,0,1007302
+36,Female,Hispanic,Hosp1,1.7,False,27.1,78.27033909192727,False,True,Occasional,Other,3.0,5.0,1,,0,1004442
+27,Male,Hispanic,Hosp2,1.7,True,32.9,95.68697574822907,False,False,,High-fat,2.0,4.0,1,Major Surgery,0,1006332
+72,Female,Hispanic,Hosp2,1.6,False,10.9,28.191786707783468,False,False,Regular,Balanced,3.0,4.0,3,Other Treatment,0,1002516
+65,Male,Caucasian,Hosp2,1.7,False,15.2,43.09395374141107,False,False,Regular,Vegetarian,3.0,2.0,5,Other Treatment,0,1007577
+49,Male,African American,Hosp3,1.6,False,29.8,76.58490132004621,False,False,Occasional,Other,2.0,5.0,4,Minor Surgery,0,1008280
+30,Female,Caucasian,Hosp2,1.6,False,22.0,56.13421497643731,False,False,Regular,Balanced,8.0,1.0,2,Major Surgery,0,1003227
+74,Male,Hispanic,Hosp1,1.5,False,21.7,48.40131622209443,False,False,Regular,Balanced,6.0,2.0,1,Other Treatment,0,1008978
+74,Male,Hispanic,Hosp3,1.8,True,28.9,92.89095865187896,False,False,Occasional,High-fat,1.0,4.0,1,,0,1009502
+72,Female,Hispanic,Hosp1,1.6,False,24.9,64.6226131499776,False,True,,Balanced,4.0,4.0,2,,1,1000898
+46,Male,Caucasian,Hosp1,1.9,False,23.4,84.37949684555532,False,False,Regular,High-fat,5.0,5.0,3,,0,1009318
+49,Male,Caucasian,Hosp2,1.8,True,25.3,81.4244761994931,False,False,Regular,High-fat,2.0,3.0,2,Major Surgery,0,1003936
+21,Male,African American,Hosp2,1.7,False,19.7,57.02900230400818,False,False,Regular,Balanced,1.0,2.0,2,Minor Surgery,0,1009537
+56,Male,Caucasian,Hosp2,1.6,False,26.9,68.93796436379368,False,True,Regular,High-fat,3.0,3.0,2,Major Surgery,0,1003271
+22,Male,Caucasian,Hosp2,1.8,False,29.4,95.66259292103864,False,False,Occasional,Balanced,2.0,5.0,3,,0,1007203
+46,Male,Caucasian,Hosp2,1.7,False,26.2,75.82194651214625,True,False,,High-fat,2.0,6.0,3,Major Surgery,0,1008761
+29,Male,Hispanic,Hosp3,1.7,False,25.7,73.54915350634249,False,False,Regular,Vegetarian,3.0,2.0,6,Major Surgery,0,1000204
+95,Male,African American,Hosp2,1.8,False,32.6,105.56598806425242,False,False,Occasional,High-fat,5.0,5.0,4,Major Surgery,1,1007943
+45,Female,Hispanic,Hosp3,1.7,False,31.0,89.77152105282694,False,False,,Other,2.0,2.0,0,,0,1007417
+38,Male,African American,Hosp1,1.7,False,36.5,105.88117732088602,False,False,,High-fat,3.0,3.0,1,Major Surgery,0,1009793
+32,Female,Caucasian,Hosp1,1.6,False,21.2,55.81787468768794,False,False,Occasional,Balanced,5.0,5.0,0,Major Surgery,0,1003629
+55,Male,Other,Hosp1,1.6,True,30.2,77.89396244517181,False,False,,Other,7.0,5.0,2,,1,1007843
+64,Male,Hispanic,Hosp2,1.7,False,28.5,82.41528738422718,False,False,,Other,6.0,5.0,1,,1,1006349
+32,Male,Other,Hosp3,1.6,False,35.6,91.03824468792143,False,False,,High-fat,2.0,5.0,5,,0,1002573
+56,Female,Caucasian,Hosp1,1.7,False,27.0,78.92614070553726,False,False,Regular,Other,1.0,6.0,3,Major Surgery,0,1005246
+50,Female,Caucasian,Hosp2,1.7,False,28.6,82.03756313623842,False,False,Occasional,Balanced,5.0,5.0,1,Major Surgery,0,1000049
+64,Female,African American,Hosp2,1.7,False,30.3,87.45984558233803,False,False,,Other,,2.0,0,Other Treatment,1,1001099
+66,Male,Other,Hosp1,1.7,False,21.2,60.438022138169714,False,True,,Balanced,4.0,4.0,3,Other Treatment,1,1003719
+22,Male,Caucasian,Hosp3,1.6,False,25.8,65.70358067934065,False,False,Occasional,High-fat,1.0,4.0,4,Minor Surgery,0,1001065
+18,Male,African American,Hosp1,1.9,False,37.2,134.49167260871863,False,False,,High-fat,2.0,9.0,8,Major Surgery,0,1001385
+66,Female,Hispanic,Hosp3,1.7,False,28.0,81.61825334048653,False,False,,Other,3.0,,9,Major Surgery,1,1003277
+37,Male,African American,Hosp3,1.8,False,25.9,83.87685560023596,False,False,,Balanced,3.0,2.0,0,Other Treatment,0,1007441
+42,Female,Caucasian,Hosp3,1.8,True,30.8,100.03017086333516,False,False,,High-fat,4.0,6.0,0,,0,1003883
+23,Female,Caucasian,Hosp3,1.7,True,24.3,70.15298493871049,True,False,Regular,Balanced,9.0,9.0,4,Major Surgery,0,1007464
+52,Female,Caucasian,Hosp2,1.7,True,26.9,78.05015141425108,True,False,Occasional,High-fat,,5.0,5,Other Treatment,1,1006359
+58,Male,African American,Hosp3,1.8,True,26.2,85.08058525988851,False,False,Occasional,High-fat,4.0,,15,,1,1004094
+41,Female,African American,Hosp3,1.9,False,33.6,121.26243864204396,False,False,,Other,1.0,0.0,4,Major Surgery,0,1004149
+46,Male,Caucasian,Hosp3,1.7,False,29.8,85.92587651181765,False,False,Occasional,Balanced,3.0,6.0,1,Other Treatment,0,1008703
+18,Female,Hispanic,Hosp3,1.7,False,27.5,78.78318533989517,False,False,,Vegetarian,5.0,6.0,0,Major Surgery,0,1009974
+60,Male,Caucasian,Hosp3,1.7,False,23.2,67.0324699564721,False,True,Regular,Vegetarian,5.0,7.0,1,Major Surgery,1,1000566
+49,Female,Other,Hosp3,1.7,True,30.8,89.38115387976801,False,False,,Balanced,2.0,2.0,0,Major Surgery,0,1003144
+45,Female,Caucasian,Hosp2,1.8,True,23.3,75.55374270542417,False,False,Regular,Vegetarian,5.0,5.0,3,Minor Surgery,0,1008123
+36,Female,Caucasian,Hosp3,1.8,False,28.3,91.38492482305844,False,True,Regular,Other,4.0,4.0,0,Major Surgery,0,1008771
+63,Female,Hispanic,Hosp3,1.8,True,32.8,106.4169392005503,False,False,,High-fat,2.0,6.0,2,,0,1000008
+76,Female,Hispanic,Hosp2,1.8,True,29.1,94.1655182929612,False,False,Regular,Balanced,3.0,4.0,2,,0,1007667
+38,Female,Hispanic,Hosp2,1.8,False,25.7,83.37759396052948,False,False,Regular,High-fat,2.0,2.0,1,Major Surgery,0,1008852
+19,Male,Hispanic,Hosp2,1.9,False,31.2,112.93883719575436,False,False,Occasional,High-fat,4.0,0.0,0,Minor Surgery,0,1004354
+51,Male,Hispanic,Hosp2,1.7,False,23.6,68.819189686689,False,False,Regular,High-fat,3.0,3.0,0,Major Surgery,0,1002410
+69,Female,African American,Hosp3,1.8,True,27.7,89.95894319609357,False,False,Regular,Other,4.0,2.0,0,Minor Surgery,0,1009208
+85,Male,Other,Hosp3,1.7,False,26.0,76.17803912342964,True,False,Occasional,Vegetarian,3.0,4.0,5,,1,1003389
+61,Female,African American,Hosp3,1.6,False,19.2,49.012376645123595,False,False,Regular,High-fat,6.0,2.0,2,,0,1000287
+47,Male,Caucasian,Hosp2,1.8,False,19.9,64.27879157418047,False,False,Occasional,High-fat,1.0,1.0,1,Minor Surgery,0,1009111
+54,Male,Hispanic,Hosp2,1.8,False,24.0,78.08783495180613,False,False,Occasional,Balanced,7.0,4.0,8,Major Surgery,1,1009517
+48,Male,Caucasian,Hosp3,1.7,False,24.5,70.02076080304874,False,True,Occasional,Balanced,5.0,6.0,0,,1,1005541
+47,Male,Hispanic,Hosp3,1.6,False,21.3,55.28596846609048,False,False,Regular,High-fat,0.0,3.0,17,Minor Surgery,0,1006119
+29,Male,Hispanic,Hosp1,1.7,False,24.1,69.43369721964271,False,False,Occasional,Other,2.0,0.0,2,,0,1007889
+95,Male,Hispanic,Hosp2,1.8,False,30.7,99.92425203378173,False,False,Occasional,Other,2.0,2.0,0,Major Surgery,1,1007339
+41,Female,Caucasian,Hosp3,1.6,True,26.1,66.88675510775302,False,False,,Other,2.0,,1,Major Surgery,0,1006687
+38,Male,Hispanic,Hosp2,1.8,False,28.0,90.03023409655862,False,False,Regular,Other,2.0,3.0,0,Minor Surgery,0,1002442
+30,Male,African American,Hosp1,1.9,False,23.8,85.90749915948228,False,False,Occasional,Balanced,2.0,4.0,4,Major Surgery,0,1007258
+57,Male,African American,Hosp3,1.5,True,32.0,72.07678995485337,True,False,,High-fat,2.0,5.0,2,,1,1001287
+80,Female,Caucasian,Hosp2,1.7,False,14.3,41.45616090412396,False,False,,Balanced,5.0,6.0,1,Other Treatment,1,1003753
+43,Female,Hispanic,Hosp3,1.6,False,26.1,67.74449659642409,True,False,,High-fat,0.0,6.0,3,,0,1003990
+31,Male,Caucasian,Hosp2,1.8,False,18.7,60.88535709120862,True,False,,High-fat,2.0,3.0,0,Major Surgery,0,1009845
+63,Female,Caucasian,Hosp3,1.6,True,26.4,67.53672572841977,False,False,Regular,Other,1.0,0.0,7,,0,1008111
+18,Female,Hispanic,Hosp1,1.7,False,25.3,72.50334685987244,False,True,Occasional,Balanced,3.0,,1,,0,1002317
+82,Female,Caucasian,Hosp1,1.6,False,29.5,74.7149628690953,False,False,Occasional,High-fat,0.0,7.0,5,Other Treatment,1,1009611
+49,Male,African American,Hosp1,1.7,False,29.5,84.80115026479307,True,False,Regular,Other,,4.0,0,Minor Surgery,0,1005155
+56,Female,Hispanic,Hosp1,1.7,False,19.6,56.82333169632556,False,False,Occasional,Vegetarian,1.0,2.0,3,,0,1004705
+74,Male,Hispanic,Hosp2,1.7,False,38.4,111.829415391303,False,False,,Balanced,1.0,4.0,0,Minor Surgery,0,1004196
+35,Male,Hispanic,Hosp2,1.8,True,36.5,117.71758304295594,False,True,,Other,2.0,4.0,1,Major Surgery,0,1008005
+93,Male,Hispanic,Hosp3,1.7,False,29.0,83.16586883219024,False,False,,Other,4.0,3.0,5,Other Treatment,1,1003732
+45,Male,African American,Hosp1,1.6,True,23.4,59.73984683833739,False,False,,Balanced,1.0,3.0,0,Major Surgery,0,1003142
+37,Male,Caucasian,Hosp1,1.7,False,29.5,86.02309701506154,True,False,Regular,Balanced,2.0,5.0,2,Major Surgery,0,1003157
+33,Male,Caucasian,Hosp2,1.8,False,36.3,118.4801550223141,True,False,,High-fat,3.0,5.0,2,Major Surgery,0,1003687
+44,Female,Other,Hosp1,1.8,False,27.2,88.50637951907153,False,True,Occasional,High-fat,3.0,4.0,1,Minor Surgery,0,1004436
+26,Female,Hispanic,Hosp2,1.8,True,26.7,87.26109204667998,False,False,,Balanced,5.0,3.0,0,,0,1009074
+28,Male,Hispanic,Hosp1,1.6,False,29.7,76.5895339166669,False,False,Occasional,Other,5.0,4.0,7,Other Treatment,0,1008030
+25,Male,African American,Hosp1,1.8,False,31.4,101.67226453187318,False,False,Occasional,Other,7.0,,2,Minor Surgery,0,1000875
+56,Female,Hispanic,Hosp2,1.8,True,29.8,96.57337574958946,False,False,,Other,3.0,6.0,0,Other Treatment,0,1002678
+68,Male,African American,Hosp1,1.6,True,32.7,83.76477043914363,True,False,Regular,High-fat,2.0,5.0,0,,0,1002023
+47,Female,African American,Hosp2,1.8,True,29.0,94.28378528186047,False,False,Occasional,Balanced,2.0,5.0,0,Minor Surgery,0,1003414
+74,Male,Hispanic,Hosp2,1.5,True,21.2,47.21270445205801,False,False,Regular,Balanced,0.0,1.0,3,Major Surgery,0,1000343
+65,Male,African American,Hosp1,1.6,True,32.5,83.58387480045285,False,False,,Balanced,6.0,6.0,0,,0,1002111
+70,Female,Caucasian,Hosp1,1.6,False,33.1,83.65369072319547,False,False,Occasional,High-fat,8.0,3.0,1,Major Surgery,0,1003315
+29,Male,African American,Hosp2,1.7,False,32.0,91.81369133211312,False,True,Occasional,Other,2.0,5.0,2,Major Surgery,0,1009673
+61,Female,Caucasian,Hosp3,1.8,False,24.9,81.32272265436104,False,False,Occasional,Balanced,7.0,2.0,1,Minor Surgery,0,1002032
+43,Female,Caucasian,Hosp1,1.7,True,23.3,67.6924904821018,True,False,,Other,3.0,,4,,1,1001281
+37,Male,Caucasian,Hosp2,1.6,False,25.6,65.28397760911373,False,True,Occasional,Other,3.0,7.0,0,,0,1008059
+60,Male,Caucasian,Hosp3,1.8,False,27.6,89.63763177228488,True,True,Regular,High-fat,4.0,6.0,1,,1,1004190
+71,Female,Other,Hosp3,1.9,False,21.3,77.03193781735375,False,False,Occasional,Balanced,1.0,2.0,10,Minor Surgery,0,1005499
+21,Female,Hispanic,Hosp1,1.7,False,26.7,76.99237906547113,False,False,,Other,1.0,3.0,1,Major Surgery,0,1005330
+66,Male,Caucasian,Hosp2,1.6,False,25.5,65.19458173520337,False,False,Occasional,Other,2.0,5.0,7,Major Surgery,0,1004322
+65,Female,African American,Hosp1,1.6,False,24.8,64.05522231638346,False,False,Regular,Vegetarian,2.0,5.0,0,Other Treatment,0,1002518
+39,Male,Caucasian,Hosp1,1.7,False,21.4,62.039840227891936,False,False,Occasional,High-fat,3.0,2.0,11,Other Treatment,0,1007995
+58,Male,Caucasian,Hosp3,1.7,True,26.7,76.97385972812476,False,False,Occasional,High-fat,2.0,5.0,0,Major Surgery,0,1006933
+56,Male,African American,Hosp1,1.8,False,24.5,79.80318568019887,False,False,Occasional,Balanced,3.0,,0,Other Treatment,0,1009344
+68,Female,Caucasian,Hosp3,1.7,False,22.9,65.9291876975506,False,False,Occasional,Vegetarian,3.0,4.0,1,Other Treatment,0,1008466
+63,Female,Other,Hosp1,1.7,True,25.5,72.76558357148261,False,False,Occasional,Vegetarian,4.0,5.0,1,,1,1004628
+38,Female,African American,Hosp3,1.8,False,23.4,75.42481400954952,False,False,Regular,High-fat,2.0,5.0,1,Minor Surgery,0,1000172
+57,Male,Caucasian,Hosp3,1.7,True,30.1,86.65892513870814,False,True,,Other,4.0,8.0,0,,1,1008514
+72,Male,Caucasian,Hosp1,1.6,False,29.9,76.79981115770606,False,False,,Other,8.0,3.0,1,Major Surgery,1,1002899
+43,Male,Hispanic,Hosp3,1.6,False,24.0,61.55829775905249,False,False,Regular,Vegetarian,3.0,4.0,2,Major Surgery,0,1006404
+73,Male,Hispanic,Hosp1,1.4,False,31.5,61.868851426105415,False,True,,Vegetarian,0.0,3.0,2,Other Treatment,0,1009407
+35,Female,Caucasian,Hosp2,1.8,False,26.5,85.8101233025986,False,False,Occasional,High-fat,3.0,1.0,2,Major Surgery,0,1005018
+69,Female,Caucasian,Hosp1,1.7,False,26.4,76.43371702249372,False,True,Regular,Other,1.0,2.0,3,Other Treatment,0,1005885
+64,Male,African American,Hosp3,1.7,True,31.6,91.31784113649456,False,False,Occasional,Vegetarian,5.0,5.0,0,,1,1006057
+53,Male,Caucasian,Hosp3,1.7,False,29.7,85.50140455155817,False,False,Occasional,High-fat,3.0,5.0,0,Other Treatment,0,1009985
+33,Female,Caucasian,Hosp1,1.7,True,20.9,60.66455420881631,False,False,Regular,Vegetarian,1.0,8.0,0,Other Treatment,0,1008159
+61,Female,African American,Hosp3,1.7,False,31.3,89.79547831568719,False,False,,Other,2.0,4.0,1,,0,1007915
+71,Male,Caucasian,Hosp2,1.7,True,24.5,71.36175100074806,True,False,Regular,High-fat,4.0,1.0,3,Other Treatment,1,1004100
+38,Male,Caucasian,Hosp1,1.8,False,27.2,88.12512001618943,False,True,Occasional,Other,5.0,2.0,1,Other Treatment,1,1001527
+56,Male,Caucasian,Hosp1,1.8,False,23.5,76.53759299034375,True,True,Occasional,High-fat,4.0,2.0,0,Minor Surgery,1,1002716
+62,Female,African American,Hosp1,1.8,False,29.9,96.87917065335712,False,False,Regular,Other,3.0,,2,,0,1003889
+56,Female,African American,Hosp1,1.7,True,29.6,84.6986516134585,False,False,Regular,Balanced,6.0,3.0,8,Other Treatment,0,1005861
+86,Male,African American,Hosp2,1.7,False,32.6,94.64628864361568,False,False,,High-fat,4.0,3.0,0,Other Treatment,0,1006019
+53,Female,Caucasian,Hosp2,1.7,False,30.1,86.64758944656396,False,False,,Other,5.0,5.0,0,Major Surgery,0,1008749
+22,Female,Caucasian,Hosp1,1.5,False,26.4,59.25969650131853,False,False,Occasional,Other,3.0,7.0,0,Major Surgery,0,1007637
+54,Male,African American,Hosp3,1.8,False,30.9,99.3659088993404,False,False,Occasional,High-fat,3.0,4.0,0,Major Surgery,0,1003034
+58,Female,Hispanic,Hosp3,1.8,False,33.8,109.3025467684072,False,False,,Other,3.0,4.0,6,Other Treatment,0,1006923
+71,Female,Hispanic,Hosp1,1.7,True,26.2,76.59842943844434,False,False,Occasional,Balanced,2.0,1.0,1,Major Surgery,0,1007798
+70,Female,Other,Hosp1,1.7,True,28.9,83.95936331587033,False,False,Regular,Other,4.0,5.0,3,Minor Surgery,0,1003887
+41,Male,Hispanic,Hosp1,1.7,True,24.4,70.63267275754048,False,False,Occasional,Vegetarian,6.0,3.0,2,,0,1002572
+64,Female,Other,Hosp2,1.8,False,18.2,59.56178974834138,False,False,Occasional,Balanced,2.0,,0,,0,1005403
+29,Male,Hispanic,Hosp2,1.6,False,24.0,61.62568697289165,False,False,Regular,High-fat,3.0,1.0,2,Major Surgery,0,1000994
+50,Male,Hispanic,Hosp3,1.6,True,23.2,59.43771264149255,True,False,Occasional,Vegetarian,3.0,6.0,0,Major Surgery,1,1004630
+53,Male,African American,Hosp3,1.8,False,28.3,91.97679736471788,False,True,,Balanced,,6.0,3,Major Surgery,0,1009571
+48,Male,Caucasian,Hosp3,1.6,True,28.8,73.0629327673988,True,False,Occasional,High-fat,1.0,,0,Major Surgery,1,1007039
+51,Female,African American,Hosp1,1.8,True,25.8,83.78184289494558,False,False,Regular,Balanced,9.0,3.0,0,Other Treatment,0,1009007
+58,Male,Hispanic,Hosp3,1.8,False,20.5,66.40004870334494,False,False,Regular,High-fat,1.0,6.0,4,Other Treatment,0,1006943
+58,Female,Hispanic,Hosp2,1.7,False,23.5,69.14826412481759,False,True,Regular,Balanced,2.0,,2,Minor Surgery,0,1001790
+44,Female,Hispanic,Hosp3,1.7,False,27.9,80.83282004559227,True,True,Regular,High-fat,2.0,3.0,5,Other Treatment,1,1009781
+74,Male,Caucasian,Hosp3,1.7,False,26.2,76.21421977761676,False,False,Occasional,High-fat,1.0,2.0,0,Major Surgery,0,1007935
+71,Male,Caucasian,Hosp3,1.8,False,25.1,81.03514062380347,True,False,Regular,High-fat,2.0,1.0,1,Major Surgery,0,1004228
+38,Male,African American,Hosp3,1.8,False,33.6,109.24675024233586,False,False,,Other,2.0,4.0,1,,0,1006466
+42,Female,Caucasian,Hosp1,1.9,False,17.4,63.81125501870312,False,False,Regular,Vegetarian,1.0,2.0,1,Minor Surgery,0,1002620
+50,Male,Caucasian,Hosp1,1.8,False,19.5,63.22612199247316,False,False,Regular,High-fat,3.0,0.0,3,Other Treatment,0,1000168
+55,Male,African American,Hosp1,1.7,True,33.6,96.54837237600138,False,False,Occasional,Vegetarian,,,0,Major Surgery,0,1009269
+58,Female,African American,Hosp1,1.7,False,29.1,83.92592772542613,True,False,,Other,3.0,5.0,0,Minor Surgery,1,1004925
+48,Male,Hispanic,Hosp1,1.9,False,28.0,100.67410341591072,False,False,Occasional,Vegetarian,7.0,1.0,3,Minor Surgery,0,1001082
+24,Male,Hispanic,Hosp2,1.6,False,24.6,62.76429548706141,False,False,Occasional,Balanced,2.0,4.0,6,Major Surgery,0,1008726
+29,Male,Caucasian,Hosp3,1.8,True,21.7,69.38835383856622,False,False,Occasional,Vegetarian,5.0,,2,Minor Surgery,0,1006539
+58,Male,African American,Hosp2,1.7,False,28.9,83.90357922752743,False,False,Regular,High-fat,2.0,5.0,1,Major Surgery,0,1006575
+44,Female,Caucasian,Hosp2,1.7,False,21.1,60.7902379613607,False,True,Regular,High-fat,1.0,1.0,0,,0,1003165
+48,Female,African American,Hosp2,1.8,False,18.4,59.60086152972865,False,False,Regular,High-fat,3.0,2.0,1,Major Surgery,0,1002771
+52,Male,African American,Hosp2,1.9,False,21.5,77.87096272336855,False,True,Occasional,Balanced,3.0,6.0,5,Minor Surgery,1,1003929
+76,Male,Caucasian,Hosp3,1.7,False,22.3,64.67033920840413,False,False,Regular,Vegetarian,3.0,5.0,0,,0,1008688
+48,Male,African American,Hosp3,1.7,False,30.4,87.98208607073377,False,False,Regular,Balanced,4.0,5.0,0,Major Surgery,0,1004429
+79,Male,African American,Hosp1,1.6,False,30.4,78.21693559703282,False,False,,High-fat,2.0,1.0,2,Major Surgery,0,1001300
+56,Female,African American,Hosp3,1.5,False,32.3,72.46350128346435,False,False,,High-fat,1.0,2.0,4,Minor Surgery,0,1009909
+49,Female,Caucasian,Hosp3,1.8,False,16.5,54.06575962732745,False,False,Occasional,Vegetarian,3.0,1.0,2,,0,1004447
+44,Male,Caucasian,Hosp1,1.7,True,24.7,71.34303601520963,False,False,,Vegetarian,1.0,5.0,1,Other Treatment,0,1000990
+59,Male,African American,Hosp3,1.6,False,27.0,68.6154308499685,False,True,,Balanced,4.0,3.0,1,Other Treatment,1,1004295
+35,Male,Caucasian,Hosp2,1.6,False,18.9,48.34235374805314,False,False,Occasional,Other,4.0,3.0,0,Minor Surgery,0,1003014
+54,Female,Hispanic,Hosp2,1.8,False,29.1,94.69737303828592,False,False,Regular,Other,0.0,4.0,0,,0,1005279
+74,Female,Hispanic,Hosp3,1.5,False,28.1,63.05394738806211,False,False,Occasional,Balanced,2.0,3.0,1,,0,1003447
+48,Female,African American,Hosp3,1.7,False,30.3,88.25851831757414,False,True,,High-fat,1.0,6.0,0,,0,1004221
+46,Female,Hispanic,Hosp3,1.8,False,23.2,74.88675359585466,False,True,Occasional,Balanced,4.0,5.0,9,,1,1007119
+27,Male,Other,Hosp2,1.7,False,25.5,73.05053879920393,False,False,Occasional,High-fat,1.0,0.0,3,Major Surgery,0,1007246
+61,Male,Caucasian,Hosp3,1.7,False,22.4,64.61022040100839,False,False,,Vegetarian,1.0,5.0,3,Minor Surgery,0,1000852
+18,Female,Other,Hosp3,1.7,False,24.1,68.99073774390179,False,True,Occasional,Balanced,4.0,2.0,0,Minor Surgery,0,1007663
+51,Male,Caucasian,Hosp2,1.6,True,24.9,63.61201911598166,False,False,Occasional,High-fat,1.0,4.0,0,Major Surgery,0,1005777
+68,Female,Caucasian,Hosp2,1.6,False,28.3,72.82744781186234,False,False,Regular,High-fat,6.0,2.0,5,Other Treatment,0,1008927
+18,Male,Hispanic,Hosp3,1.7,False,31.9,92.03885336129196,True,False,,Vegetarian,0.0,6.0,8,Other Treatment,0,1000332
+26,Female,Caucasian,Hosp3,1.5,True,24.5,55.18026706872915,False,False,Regular,Balanced,6.0,4.0,1,,0,1008527
+39,Male,Caucasian,Hosp3,1.7,True,29.3,84.49246767993303,True,False,Occasional,Balanced,4.0,3.0,16,Major Surgery,1,1004162
+18,Male,Caucasian,Hosp3,1.8,False,24.2,78.56130724433332,False,False,Occasional,Balanced,3.0,5.0,0,Major Surgery,0,1000211
+49,Male,Hispanic,Hosp1,1.7,False,28.2,81.52662705257411,False,False,Occasional,Other,3.0,4.0,14,,0,1001139
+45,Male,Caucasian,Hosp3,1.6,False,27.2,69.5499655369438,False,False,Regular,Vegetarian,5.0,2.0,1,Major Surgery,0,1009322
+57,Female,Hispanic,Hosp2,1.8,True,31.2,100.81328415483848,False,False,,Vegetarian,2.0,6.0,0,,0,1008628
+46,Female,Caucasian,Hosp3,1.5,False,24.1,53.80422375088189,False,False,,High-fat,3.0,,1,,0,1001618
+34,Male,African American,Hosp1,1.8,True,27.9,90.31939743038716,True,True,Regular,Balanced,5.0,4.0,1,Major Surgery,0,1002031
+78,Male,Hispanic,Hosp1,1.6,False,20.4,53.523196358830695,False,False,Regular,Vegetarian,2.0,,3,Minor Surgery,0,1006812
+41,Male,Caucasian,Hosp1,1.8,False,23.0,73.7602586394949,False,False,,High-fat,1.0,7.0,5,Minor Surgery,0,1001712
+47,Male,African American,Hosp1,1.9,False,27.7,99.6723295031948,False,False,Occasional,Other,2.0,2.0,2,,0,1009506
+75,Female,Caucasian,Hosp1,1.7,False,31.8,92.53341889339188,True,False,Regular,Balanced,2.0,3.0,6,Major Surgery,0,1008728
+54,Female,Other,Hosp2,1.8,True,27.7,89.86184928787998,False,False,Regular,High-fat,4.0,6.0,1,Major Surgery,0,1007706
+36,Male,Caucasian,Hosp3,1.8,False,23.8,77.45392328508557,False,False,Occasional,Other,5.0,0.0,1,Minor Surgery,0,1009387
+58,Male,Caucasian,Hosp3,1.7,False,17.7,50.3018062175868,False,False,Regular,Vegetarian,1.0,1.0,1,,0,1009913
+57,Male,African American,Hosp3,1.7,True,18.3,53.35975976816688,False,False,Occasional,High-fat,2.0,5.0,3,Minor Surgery,1,1003953
+40,Female,Caucasian,Hosp1,1.7,False,29.7,85.4244814114792,False,False,Regular,High-fat,6.0,3.0,2,Minor Surgery,0,1003238
+61,Male,Hispanic,Hosp2,1.7,False,29.3,84.33149392551391,False,False,Occasional,High-fat,5.0,6.0,0,Major Surgery,0,1009154
+75,Female,Caucasian,Hosp1,1.6,False,23.6,60.226106924907825,False,False,Regular,Vegetarian,4.0,7.0,0,,0,1001973
+44,Female,Other,Hosp2,1.8,False,25.8,82.97042223980672,False,False,Regular,High-fat,5.0,3.0,0,,0,1006146
+18,Female,Hispanic,Hosp1,1.7,False,36.2,104.48025600861016,True,False,,Other,1.0,1.0,3,Minor Surgery,0,1008940
+36,Male,Caucasian,Hosp1,1.7,False,29.4,84.58808687249648,False,False,Occasional,Balanced,2.0,3.0,2,Major Surgery,0,1005441
+71,Male,African American,Hosp1,1.8,False,27.9,90.34012706719876,False,False,Regular,Other,2.0,3.0,0,,0,1008994
+18,Female,Caucasian,Hosp3,1.7,False,27.6,79.40194845800042,False,True,,Other,5.0,4.0,0,Minor Surgery,0,1007242
+44,Male,Caucasian,Hosp2,1.6,False,22.5,56.909874848108096,False,False,Regular,Balanced,0.0,,1,,0,1008428
+30,Male,Caucasian,Hosp1,1.7,True,22.4,64.70379040757152,False,False,Occasional,High-fat,3.0,8.0,0,Other Treatment,0,1002333
+27,Female,Caucasian,Hosp3,1.8,False,23.8,77.57010696342084,False,False,Regular,Balanced,4.0,5.0,4,Other Treatment,0,1005461
+39,Female,Other,Hosp1,1.7,True,36.1,105.18386228995894,True,False,,High-fat,3.0,4.0,3,,0,1009137
+60,Female,Caucasian,Hosp3,1.7,False,21.7,62.65486659589538,False,False,,Vegetarian,4.0,3.0,0,Minor Surgery,0,1005826
+66,Male,Hispanic,Hosp3,1.8,False,29.1,93.97232593114038,False,True,,Other,3.0,5.0,2,Other Treatment,1,1001866
+60,Female,Hispanic,Hosp2,1.6,False,35.9,91.30119941652168,False,False,,Balanced,3.0,,1,Other Treatment,0,1006452
+32,Male,Other,Hosp2,1.8,False,23.0,73.61998463706095,False,False,Regular,Balanced,4.0,4.0,0,Other Treatment,0,1002561
+39,Male,Hispanic,Hosp3,1.7,False,28.0,80.84234458423322,True,False,Occasional,High-fat,4.0,2.0,0,Major Surgery,0,1007191
+64,Male,Caucasian,Hosp2,1.6,False,18.6,47.647842729212414,False,False,Regular,High-fat,2.0,4.0,2,,0,1001554
+41,Female,Hispanic,Hosp1,1.6,False,26.4,68.11492331481982,False,False,,High-fat,4.0,,2,Major Surgery,0,1006979
+18,Female,Hispanic,Hosp2,1.7,False,21.0,59.85229722001731,False,False,Regular,Balanced,3.0,3.0,4,,0,1003325
+80,Male,Hispanic,Hosp1,1.7,False,24.4,69.51165624712631,False,False,Occasional,Other,3.0,6.0,1,,1,1006023
+66,Female,Caucasian,Hosp2,1.6,False,30.4,77.56677452847565,False,True,Regular,Balanced,1.0,4.0,1,Major Surgery,0,1008961
+48,Female,Hispanic,Hosp2,1.7,False,31.4,91.20689553233164,False,False,,High-fat,3.0,0.0,2,Major Surgery,0,1004485
+56,Male,Hispanic,Hosp2,1.7,True,31.3,90.16661120243636,True,False,,Vegetarian,2.0,,2,,1,1005716
+36,Female,Caucasian,Hosp3,1.6,False,21.3,54.79800919261527,False,False,Regular,Balanced,1.0,,0,Major Surgery,0,1003107
+67,Male,Caucasian,Hosp1,1.6,False,18.8,49.813515354506,False,True,,Vegetarian,1.0,2.0,7,Minor Surgery,1,1007341
+44,Female,Other,Hosp2,1.9,True,21.8,78.86729159208674,False,False,Regular,Vegetarian,1.0,2.0,4,Major Surgery,0,1005282
+43,Male,Caucasian,Hosp3,1.5,False,31.8,71.57332281191347,True,False,,High-fat,2.0,4.0,3,Minor Surgery,0,1004483
+47,Male,Hispanic,Hosp2,1.6,False,36.0,92.39673685751228,True,False,,Other,1.0,1.0,0,Major Surgery,0,1005120
+71,Female,Other,Hosp2,1.7,True,24.4,70.73439657204523,False,False,Regular,Vegetarian,2.0,5.0,0,Minor Surgery,0,1003045
+58,Male,Caucasian,Hosp1,1.6,True,20.1,50.28377738449119,False,False,Occasional,Other,3.0,3.0,2,,1,1007423
+71,Female,African American,Hosp2,1.7,False,24.3,69.62464881153426,False,False,Occasional,Balanced,,,5,,0,1002502
+57,Female,Hispanic,Hosp1,1.7,False,26.1,75.90971589807081,False,False,Regular,Balanced,6.0,4.0,1,Other Treatment,0,1005245
+70,Female,Caucasian,Hosp3,1.6,True,26.2,67.51488895235352,False,False,Occasional,Other,4.0,2.0,2,Minor Surgery,1,1008135
+48,Male,Caucasian,Hosp3,1.6,False,32.8,84.76792797528171,True,True,,High-fat,4.0,2.0,1,,1,1004615
+38,Female,Caucasian,Hosp3,1.7,True,30.5,88.06738607176192,False,False,Occasional,High-fat,2.0,5.0,4,,0,1001950
+61,Female,African American,Hosp1,1.8,False,32.1,105.18785245942357,False,False,,High-fat,2.0,1.0,0,,0,1007343
+36,Male,Caucasian,Hosp1,1.6,True,21.8,55.82536914584368,False,False,Occasional,Vegetarian,,,3,,0,1009962
+26,Male,Caucasian,Hosp1,1.8,False,32.9,107.11125466305384,False,False,,Balanced,3.0,7.0,3,Major Surgery,0,1006302
+80,Female,African American,Hosp3,1.7,False,31.6,91.21145121549834,True,False,,High-fat,2.0,2.0,0,Major Surgery,1,1004089
+21,Male,Hispanic,Hosp1,1.7,False,27.2,78.35327613991718,False,True,Occasional,High-fat,5.0,3.0,2,Major Surgery,0,1001172
+45,Female,African American,Hosp2,1.7,False,23.8,68.81441354487653,False,True,Regular,Balanced,2.0,2.0,0,Major Surgery,0,1004643
+62,Female,Caucasian,Hosp2,1.5,False,26.4,59.4357701281374,False,False,Occasional,High-fat,1.0,3.0,2,Minor Surgery,0,1001949
+68,Female,Caucasian,Hosp1,1.6,False,22.7,58.31636603490967,False,False,Regular,Balanced,6.0,5.0,0,,0,1005054
+48,Female,Caucasian,Hosp3,1.8,False,27.3,88.07386235086324,True,False,Regular,Balanced,6.0,,1,,0,1004142
+68,Female,Caucasian,Hosp1,1.6,False,22.7,58.78788866506491,False,False,Regular,High-fat,0.0,2.0,3,Other Treatment,0,1009633
+54,Male,African American,Hosp2,1.5,True,31.8,71.64835141931802,False,False,,High-fat,2.0,3.0,5,Major Surgery,0,1001816
+54,Female,Caucasian,Hosp1,1.7,False,26.0,74.73502291681865,False,True,Regular,Balanced,4.0,4.0,4,Other Treatment,0,1000744
+27,Female,Hispanic,Hosp2,1.8,True,25.5,82.34646452417336,False,False,Regular,Vegetarian,3.0,5.0,4,,0,1006187
+48,Female,Hispanic,Hosp2,1.6,True,20.1,50.79752175712692,False,False,Occasional,Balanced,6.0,6.0,0,Minor Surgery,0,1003090
+58,Female,Caucasian,Hosp1,1.7,False,29.8,86.10012862921154,False,True,Regular,Other,3.0,,8,,0,1008562
+56,Female,Caucasian,Hosp2,1.7,False,18.0,52.13943491320438,False,False,,Balanced,5.0,3.0,2,Minor Surgery,0,1005027
+63,Female,Hispanic,Hosp1,1.8,False,27.8,90.2029567275054,False,True,Occasional,Other,1.0,3.0,0,Major Surgery,0,1004383
+32,Male,Caucasian,Hosp2,1.7,False,20.2,57.79345656363271,False,False,Regular,Vegetarian,2.0,5.0,2,Other Treatment,0,1004063
+74,Female,Hispanic,Hosp2,1.7,False,21.1,61.08234441326923,False,False,Occasional,High-fat,6.0,3.0,0,Other Treatment,1,1008006
+35,Male,African American,Hosp3,1.9,False,27.0,97.5006017610744,False,False,Regular,Other,5.0,6.0,0,Minor Surgery,0,1001995
+24,Female,Hispanic,Hosp2,1.7,False,16.0,46.61391249612076,False,False,,Vegetarian,4.0,5.0,2,Other Treatment,0,1007582
+35,Male,Other,Hosp3,1.4,False,31.1,61.08939339538525,False,False,,Other,2.0,4.0,1,Other Treatment,0,1009159
+18,Female,Hispanic,Hosp2,1.6,True,28.4,73.28580654402955,False,True,Regular,High-fat,3.0,2.0,5,,0,1005763
+36,Female,Hispanic,Hosp3,1.6,False,34.5,87.69918663230136,True,False,,High-fat,4.0,2.0,3,,0,1006204
+68,Female,African American,Hosp3,1.8,False,21.8,70.61188994976145,False,False,Occasional,Balanced,4.0,4.0,1,Major Surgery,0,1005573
+73,Female,Hispanic,Hosp1,1.5,False,23.7,53.87227494474198,False,False,Regular,Vegetarian,6.0,6.0,3,,1,1004402
+18,Male,Hispanic,Hosp3,1.6,False,21.2,54.26406356630383,False,False,Regular,Balanced,5.0,5.0,1,Other Treatment,0,1008922
+49,Female,Other,Hosp2,1.6,False,22.7,58.457726096541016,False,False,Regular,Vegetarian,2.0,7.0,1,Major Surgery,0,1006546
+47,Female,Caucasian,Hosp2,1.8,False,27.1,87.83092204684667,False,False,,High-fat,,1.0,3,,0,1008815
+54,Female,Other,Hosp1,1.6,True,23.4,59.56667393833445,False,False,Occasional,Balanced,2.0,2.0,1,Other Treatment,0,1005339
+60,Female,Hispanic,Hosp2,1.7,False,16.1,46.06513097633045,False,True,Occasional,Vegetarian,2.0,2.0,1,Other Treatment,1,1008278
+61,Male,Caucasian,Hosp2,1.7,False,28.5,82.99929578699383,False,False,Occasional,Balanced,2.0,4.0,17,Minor Surgery,0,1002272
+32,Male,Caucasian,Hosp2,1.7,False,29.2,84.49468937553272,False,False,Occasional,Vegetarian,3.0,2.0,2,Other Treatment,0,1001938
+34,Male,African American,Hosp1,1.6,False,15.2,38.26419511525228,False,False,Regular,Other,,1.0,3,,0,1004298
+39,Male,Hispanic,Hosp2,1.6,False,31.7,81.06376415905721,False,False,Occasional,High-fat,2.0,0.0,7,,0,1004120
+50,Male,Other,Hosp2,1.8,False,24.7,79.78010966658704,False,False,,Other,1.0,8.0,0,Major Surgery,0,1003212
+21,Male,Hispanic,Hosp2,1.7,False,27.6,79.64821626205617,False,False,Occasional,Other,2.0,4.0,0,,0,1000307
+84,Female,Hispanic,Hosp1,1.9,False,20.1,72.59796351214402,True,False,Regular,Balanced,1.0,,1,,0,1005113
+44,Female,Other,Hosp1,1.5,False,21.6,48.31302802186071,True,False,Occasional,Vegetarian,2.0,2.0,3,Major Surgery,0,1009878
+31,Female,African American,Hosp3,1.8,True,23.4,75.209812553312,False,False,Occasional,Balanced,3.0,1.0,0,,0,1003285
+61,Female,African American,Hosp2,1.7,False,28.8,82.983880699032,False,False,Regular,Vegetarian,4.0,5.0,2,Major Surgery,0,1002444
+60,Female,Hispanic,Hosp1,1.8,False,19.4,63.14337283490101,True,False,Regular,Other,3.0,5.0,0,Minor Surgery,0,1008323
+25,Female,Hispanic,Hosp3,1.6,False,19.6,49.79400232711816,False,False,Regular,Vegetarian,6.0,3.0,2,Other Treatment,0,1003021
+50,Male,African American,Hosp2,1.7,False,25.3,73.2534165340971,False,False,Occasional,Other,2.0,2.0,2,,0,1002898
+25,Male,Other,Hosp1,1.7,False,21.8,63.44372835143206,False,False,,Vegetarian,3.0,2.0,0,,0,1007137
+36,Female,Hispanic,Hosp2,1.6,False,23.4,59.8625885203207,False,False,Regular,Vegetarian,7.0,4.0,1,Major Surgery,0,1007525
+35,Male,Other,Hosp1,1.6,True,27.2,69.7761664959784,False,False,Regular,High-fat,1.0,4.0,4,,0,1003706
+75,Female,Hispanic,Hosp3,1.6,True,27.3,69.93683154261481,True,False,Occasional,Vegetarian,1.0,2.0,0,Minor Surgery,1,1008247
+31,Male,Caucasian,Hosp3,1.7,True,22.6,64.70143712017467,False,False,Occasional,High-fat,2.0,2.0,3,Minor Surgery,0,1005712
+41,Female,Caucasian,Hosp3,1.6,True,33.6,86.01485399963533,False,False,Occasional,High-fat,4.0,3.0,6,Other Treatment,0,1003596
+58,Male,Hispanic,Hosp2,1.6,False,37.9,96.65439254210088,True,False,,Other,1.0,3.0,0,Other Treatment,0,1001983
+18,Male,African American,Hosp1,1.6,False,27.4,70.11141987321065,False,False,Regular,Balanced,4.0,0.0,1,Major Surgery,0,1007658
+51,Female,Hispanic,Hosp1,1.5,False,20.2,45.41737354734952,False,True,,Vegetarian,3.0,5.0,0,Minor Surgery,1,1001598
+57,Female,Hispanic,Hosp3,1.7,True,30.8,89.39489103260122,False,False,,High-fat,6.0,,1,,0,1005575
+41,Male,Other,Hosp3,1.6,False,20.6,52.355633733574706,False,True,Occasional,Balanced,4.0,,3,Minor Surgery,0,1002914
+48,Female,Hispanic,Hosp3,1.8,False,26.4,86.14111292535115,False,False,Occasional,High-fat,1.0,4.0,1,Minor Surgery,0,1005006
+18,Female,Caucasian,Hosp1,1.5,False,22.3,50.16902196686593,False,False,Occasional,High-fat,2.0,3.0,1,Major Surgery,0,1009557
+50,Male,Caucasian,Hosp3,1.8,False,26.7,85.45569192095158,False,False,Regular,High-fat,1.0,4.0,5,Minor Surgery,0,1003401
+30,Male,Other,Hosp2,1.8,False,28.1,90.47044460557504,False,False,Occasional,Other,2.0,6.0,1,Other Treatment,0,1007078
+61,Male,African American,Hosp2,1.7,False,27.6,79.68666980844867,False,False,Regular,Other,5.0,3.0,11,Other Treatment,0,1008934
+46,Male,Hispanic,Hosp2,1.7,False,24.8,71.5653666947285,True,False,,Other,3.0,8.0,1,Minor Surgery,1,1002240
+49,Male,African American,Hosp1,1.7,False,25.8,74.13030606550386,False,True,Occasional,Other,2.0,4.0,0,Other Treatment,0,1009550
+52,Male,Hispanic,Hosp3,1.8,False,32.7,105.89674041223778,True,False,,High-fat,2.0,,0,Other Treatment,0,1000957
+61,Male,African American,Hosp3,1.6,False,24.7,62.7885297951949,False,False,Regular,High-fat,6.0,3.0,1,,0,1001504
+53,Female,Caucasian,Hosp1,1.9,False,20.9,75.9339809561382,False,False,Regular,Other,1.0,,1,Other Treatment,0,1006759
+28,Male,Hispanic,Hosp2,1.7,False,27.7,80.05952379743752,False,True,,Other,4.0,2.0,2,Minor Surgery,0,1002672
+34,Male,African American,Hosp1,1.6,True,30.8,78.87980477378565,False,False,Regular,Other,2.0,2.0,6,,0,1008839
+55,Male,Caucasian,Hosp3,1.8,True,24.7,80.17872802880079,False,False,Occasional,High-fat,6.0,,3,,1,1008731
+42,Female,Caucasian,Hosp1,1.6,False,29.6,75.64421513059708,False,False,,Vegetarian,5.0,4.0,0,,0,1001070
+70,Male,Hispanic,Hosp2,1.8,False,23.1,75.14585690135407,False,False,Regular,Balanced,4.0,4.0,0,Major Surgery,0,1007730
+54,Male,African American,Hosp3,1.7,False,32.9,94.48759349099647,False,False,,Other,,4.0,5,Other Treatment,0,1009300
+76,Male,Other,Hosp3,1.8,False,26.4,86.08536522379215,False,False,Regular,Balanced,2.0,3.0,2,Minor Surgery,0,1008531
+49,Female,Hispanic,Hosp3,1.8,False,24.5,79.4546266123155,True,False,,Vegetarian,4.0,0.0,0,Minor Surgery,1,1007051
+88,Male,Other,Hosp1,1.6,True,23.2,60.399640483923655,False,False,Regular,Balanced,4.0,4.0,0,Major Surgery,0,1009894
+74,Male,Caucasian,Hosp3,1.6,False,24.0,61.73062471599885,False,False,Regular,Balanced,2.0,3.0,0,Minor Surgery,0,1000787
+33,Male,Hispanic,Hosp2,1.7,True,32.8,94.95072407541572,False,True,Occasional,High-fat,4.0,,4,Major Surgery,0,1001075
+35,Female,Caucasian,Hosp1,1.6,False,30.7,78.24062594734622,False,False,,Balanced,1.0,3.0,2,Minor Surgery,0,1006108
+49,Male,Hispanic,Hosp1,1.7,False,30.9,88.97363354626331,False,False,,Other,2.0,2.0,4,Major Surgery,0,1002992
+66,Male,Caucasian,Hosp2,1.8,False,20.1,64.69373456338383,True,False,Regular,Other,4.0,4.0,4,Other Treatment,1,1001723
+55,Male,Hispanic,Hosp3,1.8,True,31.9,103.02979284536664,False,False,Regular,High-fat,2.0,5.0,6,,0,1003330
+60,Female,Caucasian,Hosp2,1.6,False,21.2,54.76686555538972,False,False,Occasional,Balanced,2.0,,3,Major Surgery,0,1001049
+75,Male,African American,Hosp1,1.7,True,27.8,79.77617547070619,False,False,Regular,High-fat,0.0,0.0,11,Minor Surgery,0,1002760
+31,Male,Caucasian,Hosp3,1.7,False,21.3,61.22650477586252,False,False,Occasional,Balanced,3.0,1.0,1,Other Treatment,0,1009907
+39,Female,Caucasian,Hosp1,1.6,False,32.9,85.30344699763128,True,False,,High-fat,2.0,6.0,7,Major Surgery,0,1008756
+24,Female,Hispanic,Hosp3,2.0,True,20.5,81.5519205239006,True,False,Regular,High-fat,2.0,1.0,0,,0,1006300
+35,Female,Caucasian,Hosp2,1.6,False,29.8,75.88704590535265,False,False,,Other,4.0,2.0,5,,0,1002744
+59,Male,Hispanic,Hosp3,1.8,False,25.0,80.91070182455893,False,False,Occasional,Other,2.0,2.0,0,Major Surgery,0,1002993
+53,Male,Caucasian,Hosp2,1.7,False,27.7,80.33762159260323,True,False,Occasional,Balanced,1.0,3.0,0,Major Surgery,0,1001453
+53,Male,Hispanic,Hosp1,1.6,True,15.7,39.33383139728653,False,False,Regular,Other,1.0,3.0,0,,0,1008410
+47,Female,Caucasian,Hosp2,1.9,False,29.9,107.7219032535643,False,False,Occasional,High-fat,6.0,7.0,3,Major Surgery,1,1005469
+40,Female,Hispanic,Hosp2,1.8,False,14.0,46.46060035006283,False,True,Regular,Vegetarian,3.0,6.0,0,,0,1009416
+79,Female,Hispanic,Hosp3,1.7,False,22.1,63.920904235091335,False,False,Occasional,High-fat,2.0,4.0,3,Minor Surgery,1,1006125
+46,Female,Caucasian,Hosp1,1.7,False,28.6,82.11304301053713,False,False,Occasional,Balanced,4.0,1.0,2,,0,1003976
+80,Male,Other,Hosp3,1.6,False,27.2,69.21758659291402,False,False,Regular,High-fat,3.0,4.0,1,Minor Surgery,0,1003022
+63,Female,Caucasian,Hosp3,1.7,False,31.5,90.46785787525909,False,True,Occasional,Balanced,5.0,5.0,2,Minor Surgery,1,1001206
+78,Female,Other,Hosp2,1.6,True,25.4,64.79564995439033,False,False,,Balanced,6.0,0.0,4,Major Surgery,1,1003892
+51,Female,Caucasian,Hosp2,1.7,False,22.8,65.53801932539606,False,True,Regular,Balanced,3.0,6.0,0,Other Treatment,0,1004973
+40,Male,African American,Hosp1,1.7,False,28.3,82.69452351560682,False,True,,Balanced,4.0,1.0,0,Minor Surgery,0,1009671
+49,Male,Hispanic,Hosp2,1.5,False,32.6,73.72178973419778,False,False,Occasional,High-fat,2.0,1.0,4,Minor Surgery,0,1005127
+56,Female,Other,Hosp2,1.6,False,22.2,57.025790694146046,False,False,Regular,High-fat,3.0,,4,Minor Surgery,0,1001771
+47,Female,Caucasian,Hosp1,1.5,False,25.0,55.55352193300529,False,False,Occasional,Vegetarian,3.0,8.0,4,Major Surgery,0,1005239
+58,Male,Hispanic,Hosp2,1.8,False,26.5,86.37369414022464,False,True,,Balanced,3.0,0.0,2,Major Surgery,0,1007296
+54,Female,African American,Hosp3,1.7,True,27.0,78.11424771420302,False,False,Occasional,Balanced,5.0,0.0,1,,0,1004155
+56,Male,African American,Hosp1,1.7,False,28.3,81.43864915306149,False,False,Occasional,High-fat,2.0,2.0,8,Other Treatment,0,1009235
+54,Female,Caucasian,Hosp1,1.7,True,25.6,72.93871301056198,False,False,Occasional,Balanced,6.0,2.0,0,,0,1002288
+31,Male,Caucasian,Hosp1,1.7,False,21.5,62.31400168384841,False,False,,Balanced,4.0,5.0,5,,0,1008963
+67,Male,Hispanic,Hosp2,1.8,False,21.9,70.9503814774856,False,False,,Balanced,4.0,2.0,0,,0,1002615
+68,Male,Hispanic,Hosp1,1.6,False,23.6,61.55317900909395,False,False,,Vegetarian,6.0,3.0,5,,1,1001373
+31,Male,Hispanic,Hosp1,1.7,True,31.6,90.63629934515552,False,False,,High-fat,0.0,3.0,4,Major Surgery,0,1006849
+23,Male,Caucasian,Hosp1,1.6,False,28.2,73.12275796799334,False,False,Occasional,High-fat,4.0,2.0,3,Other Treatment,0,1004091
+54,Male,Caucasian,Hosp2,1.8,False,28.0,91.0031509686589,False,False,Occasional,High-fat,6.0,4.0,3,,1,1002021
+50,Female,Other,Hosp1,1.6,False,32.1,82.00386528207598,False,False,,High-fat,0.0,6.0,0,Major Surgery,0,1003811
+29,Female,Caucasian,Hosp2,1.7,False,33.8,97.23725246761651,False,False,,High-fat,3.0,5.0,2,Other Treatment,0,1009010
+68,Male,Caucasian,Hosp2,1.5,False,28.5,63.69168133562205,False,False,Occasional,Balanced,2.0,1.0,0,,0,1005434
+63,Male,Hispanic,Hosp3,1.7,False,24.1,70.75133450680603,False,False,Occasional,Balanced,6.0,3.0,0,,0,1001169
+48,Female,Caucasian,Hosp3,1.6,True,30.3,78.22112298557178,True,False,Occasional,Other,3.0,4.0,3,Other Treatment,1,1005838
+79,Female,Other,Hosp1,1.8,False,28.2,90.89235736656,False,False,Regular,High-fat,3.0,4.0,8,Other Treatment,0,1001085
+63,Female,Hispanic,Hosp3,1.9,True,21.4,78.28170199847773,False,False,Regular,Vegetarian,3.0,3.0,3,,0,1001006
+43,Male,Caucasian,Hosp3,1.7,False,24.3,69.6230481046797,True,False,,Other,5.0,1.0,2,Major Surgery,1,1006523
+35,Male,Hispanic,Hosp3,1.8,True,24.9,80.4400839678311,False,False,Occasional,High-fat,2.0,7.0,0,Major Surgery,0,1001922
+43,Male,Caucasian,Hosp3,1.8,False,30.6,99.43963269764572,False,True,,Vegetarian,3.0,2.0,1,Major Surgery,0,1007493
+27,Female,African American,Hosp2,1.7,False,31.8,91.79039343641288,True,False,,Balanced,,2.0,8,,0,1003622
+74,Male,Hispanic,Hosp2,1.6,False,24.4,62.90441145049504,False,False,Occasional,Vegetarian,2.0,1.0,1,,0,1006628
+64,Female,Caucasian,Hosp3,1.5,False,32.3,72.97418187428013,False,False,Regular,Balanced,4.0,2.0,8,Other Treatment,0,1003089
+18,Female,Hispanic,Hosp3,1.4,False,28.9,56.622074740308584,False,True,Occasional,High-fat,4.0,4.0,4,,0,1005093
+18,Female,Hispanic,Hosp3,1.7,False,22.5,65.09555487895496,False,True,Occasional,Vegetarian,3.0,7.0,0,Major Surgery,0,1004002
+57,Female,Caucasian,Hosp3,1.8,True,23.3,76.05051258098501,False,False,,Balanced,5.0,5.0,2,Major Surgery,0,1003491
+54,Male,African American,Hosp1,1.7,False,20.7,59.82880088734736,False,True,Occasional,High-fat,3.0,3.0,11,Minor Surgery,1,1000822
+51,Male,Caucasian,Hosp2,1.9,False,29.4,105.41188065183093,False,False,Regular,Other,5.0,2.0,3,Other Treatment,0,1003983
+82,Male,Hispanic,Hosp1,1.7,False,19.8,56.6464314966117,False,False,Regular,High-fat,3.0,6.0,1,Minor Surgery,1,1006181
+41,Male,Other,Hosp3,1.5,False,24.2,54.73051036528678,False,False,Regular,Balanced,1.0,1.0,0,,0,1007230
+59,Male,Caucasian,Hosp3,1.9,False,27.4,99.3382074609228,False,False,Regular,Balanced,0.0,7.0,1,,0,1004914
+66,Male,Caucasian,Hosp1,1.6,False,21.1,52.591000647225634,False,False,,Balanced,3.0,5.0,6,,0,1007202
+62,Male,Hispanic,Hosp1,1.6,True,36.2,92.57827888871644,False,False,Regular,Vegetarian,1.0,4.0,1,Minor Surgery,0,1006894
+61,Female,Caucasian,Hosp2,1.6,False,30.2,76.7965927450605,False,False,,High-fat,5.0,2.0,3,,0,1001331
+50,Female,Hispanic,Hosp3,1.6,False,25.9,66.41282567821506,False,False,,Other,1.0,,3,Major Surgery,0,1004114
+45,Male,African American,Hosp2,1.7,False,30.0,85.56535145835487,False,False,,Other,4.0,0.0,0,Minor Surgery,0,1003568
+82,Male,Caucasian,Hosp2,1.7,False,29.8,85.19574523216197,False,False,Occasional,Other,2.0,5.0,13,Other Treatment,1,1004416
+56,Male,Other,Hosp2,1.8,False,24.5,80.34475659187606,False,False,Occasional,Other,3.0,5.0,5,,0,1003007
+36,Female,Hispanic,Hosp3,1.7,False,25.4,73.00133233230224,False,False,Regular,High-fat,2.0,6.0,2,Major Surgery,0,1005457
+51,Female,Hispanic,Hosp1,1.8,True,28.4,91.80805966805296,False,False,Occasional,Other,4.0,0.0,0,Major Surgery,0,1004863
+59,Female,Other,Hosp3,1.9,False,28.9,103.86327976033876,True,False,,Vegetarian,2.0,0.0,7,Major Surgery,1,1003684
+51,Female,Caucasian,Hosp1,1.7,False,27.2,78.42967495410578,False,False,Occasional,Vegetarian,4.0,5.0,2,Major Surgery,0,1005869
+41,Male,Caucasian,Hosp3,1.6,False,25.8,66.57708194503246,False,False,,High-fat,0.0,,4,Other Treatment,0,1003429
+79,Female,Caucasian,Hosp2,1.6,False,33.2,84.62642601133794,False,False,,High-fat,3.0,5.0,1,,0,1000425
+43,Female,Other,Hosp3,1.7,False,28.4,81.54412502921981,False,False,Regular,High-fat,4.0,3.0,5,Minor Surgery,0,1008967
+42,Female,Caucasian,Hosp1,1.7,False,32.9,95.0510656340189,False,False,Occasional,High-fat,4.0,4.0,0,Minor Surgery,0,1006524
+58,Male,Caucasian,Hosp2,1.7,False,26.4,75.8594770882698,True,False,,High-fat,0.0,4.0,0,Other Treatment,0,1007741
+64,Male,Caucasian,Hosp3,1.6,False,23.6,61.04174624367418,False,False,Occasional,High-fat,2.0,5.0,9,Major Surgery,0,1002348
+37,Male,Hispanic,Hosp3,1.8,True,24.1,77.90259539167158,False,False,Regular,Other,2.0,3.0,11,Other Treatment,0,1006860
+74,Female,Other,Hosp2,1.9,False,16.4,59.43502696699115,False,False,Regular,Balanced,3.0,6.0,10,,0,1009102
+41,Male,Hispanic,Hosp3,1.8,True,24.0,78.14203027458072,False,False,,Balanced,3.0,5.0,2,,0,1009410
+41,Male,Hispanic,Hosp2,1.7,False,28.5,82.49587853436195,True,False,Regular,High-fat,3.0,2.0,1,Major Surgery,0,1001857
+63,Female,Hispanic,Hosp2,1.4,False,11.9,23.126323749712498,False,False,Occasional,Other,3.0,4.0,2,,0,1009395
+65,Male,Caucasian,Hosp1,1.8,True,22.4,72.19682820562515,False,False,Occasional,Vegetarian,0.0,2.0,0,,0,1006820
+21,Male,Caucasian,Hosp2,1.6,False,27.6,71.02137256396209,False,False,,High-fat,2.0,8.0,0,Other Treatment,0,1009872
+33,Female,Caucasian,Hosp3,1.6,False,33.2,84.92810231293983,True,False,,Other,1.0,,1,,0,1001624
+63,Female,Hispanic,Hosp3,1.5,False,25.1,56.76326806890613,True,False,,Other,2.0,3.0,2,Major Surgery,1,1005923
+36,Female,Caucasian,Hosp1,1.7,False,27.1,78.21284803930999,False,False,Regular,Other,2.0,5.0,7,,0,1008666
+52,Male,African American,Hosp3,1.7,False,27.4,79.03357707964669,True,False,,Other,3.0,2.0,0,Major Surgery,0,1000817
+64,Male,Caucasian,Hosp1,1.6,False,25.3,65.17456339251365,False,False,Regular,High-fat,0.0,3.0,2,Minor Surgery,0,1009059
+22,Male,Caucasian,Hosp2,1.7,False,18.1,52.89310774280045,False,False,Occasional,Vegetarian,2.0,0.0,6,Major Surgery,0,1007699
+64,Female,African American,Hosp3,1.7,True,30.2,87.26903366805932,False,False,,Balanced,2.0,3.0,2,Major Surgery,0,1002013
+29,Male,Caucasian,Hosp2,1.6,True,25.4,65.50344244822266,False,False,,High-fat,6.0,2.0,1,,0,1003040
+39,Female,African American,Hosp3,1.7,True,27.6,79.94654775140857,False,False,Regular,High-fat,,3.0,1,Major Surgery,0,1003331
+40,Male,Hispanic,Hosp1,1.6,False,40.1,103.59571491321311,True,False,Regular,High-fat,2.0,3.0,0,Major Surgery,0,1008217
+59,Female,Hispanic,Hosp1,1.8,True,28.7,92.97611403181553,False,False,Regular,Other,3.0,1.0,4,Major Surgery,0,1004650
+43,Female,Other,Hosp3,1.7,False,26.8,78.07122755986319,False,True,Occasional,High-fat,2.0,6.0,1,Other Treatment,0,1005776
+37,Female,Caucasian,Hosp1,1.8,False,28.4,90.5900413229364,True,False,Regular,High-fat,4.0,3.0,1,Other Treatment,0,1005664
+18,Female,Hispanic,Hosp1,1.8,False,34.0,110.49273145059723,False,False,,Balanced,2.0,1.0,6,Major Surgery,0,1009847
+75,Male,Caucasian,Hosp1,1.8,True,23.8,77.47625818918276,False,False,Regular,Vegetarian,3.0,6.0,0,,1,1000874
+63,Male,Hispanic,Hosp3,1.4,False,15.3,30.551876003621008,False,False,Regular,Balanced,3.0,1.0,6,Major Surgery,0,1003103
+36,Female,African American,Hosp2,1.7,False,23.8,69.09174508416338,False,False,,Balanced,5.0,3.0,0,Other Treatment,0,1008886
+62,Female,Hispanic,Hosp3,1.6,True,26.0,66.72533726841881,False,False,Occasional,Other,3.0,6.0,1,Other Treatment,1,1003427
+70,Male,Caucasian,Hosp2,1.8,False,26.8,85.88326207348375,False,False,,Other,1.0,5.0,2,Other Treatment,0,1006727
+20,Male,Caucasian,Hosp2,1.9,False,33.6,121.52575279644932,False,False,,High-fat,,6.0,2,,0,1009105
+36,Female,Hispanic,Hosp1,1.7,False,39.0,112.781350183821,True,False,Occasional,Vegetarian,9.0,3.0,0,,0,1000560
+71,Female,African American,Hosp3,1.7,True,24.5,70.37735033905655,False,False,Regular,Balanced,2.0,2.0,2,,0,1006439
+44,Male,Caucasian,Hosp3,1.6,False,32.2,83.06601902250465,True,True,Occasional,Other,3.0,7.0,1,,1,1003518
+58,Male,Caucasian,Hosp2,1.8,False,26.0,83.87836605294682,True,False,Regular,Other,4.0,5.0,2,,0,1009462
+34,Male,African American,Hosp1,1.8,False,32.8,106.65063814733794,False,False,Regular,Vegetarian,1.0,4.0,0,Major Surgery,0,1000809
+66,Female,Caucasian,Hosp2,1.6,True,27.0,68.80779799833098,False,False,Regular,Other,6.0,3.0,0,Minor Surgery,0,1008996
+41,Female,Hispanic,Hosp2,1.7,False,21.0,60.05940095276864,False,False,Regular,Other,4.0,1.0,0,Minor Surgery,0,1004212
+57,Male,Caucasian,Hosp1,1.6,True,23.5,59.296719247152765,False,False,Occasional,Vegetarian,2.0,,0,,0,1005021
+67,Male,Other,Hosp2,1.7,False,27.6,79.67493683859122,True,False,,High-fat,3.0,0.0,4,Major Surgery,1,1001807
+37,Female,African American,Hosp3,1.7,False,34.7,100.30687072410048,False,False,,High-fat,4.0,3.0,7,Minor Surgery,0,1009250
+41,Male,Caucasian,Hosp2,1.7,False,20.6,60.99499951963504,False,False,,Vegetarian,2.0,5.0,1,Other Treatment,0,1008252
+29,Male,Hispanic,Hosp1,1.7,False,22.3,63.9127077933139,False,False,Occasional,Vegetarian,2.0,5.0,0,Minor Surgery,0,1008585
+54,Male,Caucasian,Hosp1,1.7,False,27.7,79.6234073951104,False,False,Regular,Other,3.0,,6,Major Surgery,0,1008762
+50,Male,Hispanic,Hosp1,1.6,False,18.2,46.80858526717474,False,False,,Vegetarian,4.0,3.0,7,,0,1004065
+53,Male,African American,Hosp1,1.6,False,26.3,67.2152530108926,False,False,Regular,High-fat,6.0,5.0,2,,0,1005262
+80,Male,Hispanic,Hosp1,1.7,False,26.6,76.35766098759358,False,False,Occasional,High-fat,6.0,4.0,7,Minor Surgery,1,1008162
+73,Male,Hispanic,Hosp2,1.7,False,32.1,92.44853212113324,False,False,,Balanced,3.0,3.0,1,Major Surgery,0,1008150
+30,Male,Hispanic,Hosp2,1.5,False,21.4,46.7147173519557,False,False,,Balanced,4.0,2.0,0,,0,1007590
+33,Male,Caucasian,Hosp2,1.6,False,22.0,56.506350387910075,False,False,Occasional,Other,5.0,2.0,2,Major Surgery,0,1007095
+95,Male,Hispanic,Hosp2,1.6,False,24.9,63.58596339799232,False,True,,High-fat,2.0,6.0,2,Other Treatment,1,1000600
+45,Male,Caucasian,Hosp3,1.6,False,26.1,65.83704914438313,False,False,Regular,High-fat,2.0,2.0,3,,0,1009393
+51,Female,Hispanic,Hosp3,1.6,False,17.7,45.07048740909373,False,True,Regular,High-fat,2.0,0.0,13,,0,1003463
+42,Male,Hispanic,Hosp2,1.5,False,25.8,58.86014312133228,False,False,Occasional,Vegetarian,1.0,0.0,10,Major Surgery,0,1001654
+77,Male,African American,Hosp1,1.7,False,27.0,77.70306500479887,False,False,Occasional,Vegetarian,4.0,4.0,0,Minor Surgery,1,1000277
+24,Female,Caucasian,Hosp2,1.7,False,30.0,86.4380376289231,False,False,Occasional,High-fat,6.0,7.0,0,,0,1007201
+72,Male,Caucasian,Hosp3,1.6,False,27.4,70.64113571245156,False,True,Occasional,High-fat,1.0,1.0,6,Other Treatment,1,1000736
+34,Male,Hispanic,Hosp2,1.6,False,18.0,45.94023085241841,False,False,Occasional,Vegetarian,3.0,2.0,0,,0,1007666
+76,Male,Hispanic,Hosp2,1.7,False,23.5,68.46427902101814,False,False,,High-fat,6.0,1.0,0,,1,1006440
+62,Male,Caucasian,Hosp2,1.6,False,23.8,60.92540502652489,False,False,,Balanced,4.0,5.0,0,,0,1004503
+45,Female,Caucasian,Hosp3,1.7,False,21.7,61.82742708158504,False,False,Regular,Vegetarian,1.0,8.0,8,Major Surgery,0,1006191
+41,Male,Caucasian,Hosp2,1.8,False,26.9,87.63715530427147,False,False,,Other,3.0,3.0,0,Major Surgery,0,1001714
+74,Male,Hispanic,Hosp3,1.8,False,27.9,90.91808607317094,False,False,Regular,Vegetarian,2.0,5.0,1,Minor Surgery,0,1001467
+22,Male,Caucasian,Hosp3,1.9,False,22.4,81.06582259712192,False,False,,Vegetarian,2.0,5.0,1,Minor Surgery,0,1007586
+18,Male,Hispanic,Hosp3,1.7,True,28.3,82.03581712430173,False,True,,Vegetarian,4.0,3.0,4,Major Surgery,0,1005343
+70,Female,Caucasian,Hosp3,1.9,False,26.9,97.81679905245907,False,False,Occasional,High-fat,1.0,2.0,5,Other Treatment,0,1005275
+61,Female,Hispanic,Hosp2,1.8,True,23.4,76.12512522750004,False,False,Occasional,Other,6.0,4.0,2,Minor Surgery,1,1006040
+46,Male,Other,Hosp1,1.6,False,28.7,73.31784501740191,False,False,Regular,High-fat,2.0,0.0,1,Minor Surgery,0,1009494
+45,Male,African American,Hosp1,1.6,True,29.2,74.3323507737845,True,False,,High-fat,5.0,4.0,0,,1,1000016
+38,Male,Other,Hosp1,1.8,True,18.2,59.01519055262404,False,False,Regular,Balanced,,2.0,1,Other Treatment,0,1002539
+70,Male,Other,Hosp2,1.8,True,29.4,95.64683026331758,False,True,Regular,Balanced,1.0,1.0,2,Minor Surgery,0,1003786
+60,Female,Caucasian,Hosp3,1.7,False,20.2,58.01367079643343,False,False,,Vegetarian,4.0,2.0,5,,0,1006376
+43,Female,Hispanic,Hosp1,1.7,False,28.7,82.78046274633387,False,False,,High-fat,1.0,1.0,0,,0,1003777
+63,Female,African American,Hosp3,1.7,True,28.1,82.3964475178633,False,True,Occasional,Vegetarian,,6.0,0,,1,1006071
+85,Male,Other,Hosp3,1.8,False,26.3,85.33705772211685,False,False,Regular,Other,4.0,2.0,3,,0,1003782
+57,Male,African American,Hosp2,1.8,False,31.2,100.54444286807848,False,False,Occasional,Vegetarian,1.0,5.0,1,,0,1009238
+21,Female,African American,Hosp3,1.7,False,27.6,80.12971698144993,False,False,,High-fat,3.0,5.0,0,,0,1008693
+61,Male,African American,Hosp2,1.6,True,30.9,78.29665152168391,False,False,,Other,1.0,3.0,0,,0,1001774
+74,Female,African American,Hosp3,1.7,True,29.3,84.38797519811811,False,False,Occasional,High-fat,3.0,4.0,0,Major Surgery,1,1003243
+81,Male,Caucasian,Hosp3,1.7,False,32.0,92.90582177843194,False,False,Regular,High-fat,5.0,5.0,2,,0,1000984
+45,Male,Hispanic,Hosp2,1.6,False,40.4,103.93086296709228,False,False,,Balanced,2.0,6.0,0,Major Surgery,0,1007207
+18,Male,Caucasian,Hosp2,1.7,True,17.3,50.4944358267362,False,False,Regular,Vegetarian,5.0,0.0,6,Other Treatment,0,1004724
+22,Female,Hispanic,Hosp1,1.7,True,29.2,84.69850882688382,False,False,Occasional,High-fat,2.0,2.0,0,Major Surgery,0,1000234
+67,Female,Other,Hosp1,1.7,False,25.7,73.74413884317055,False,False,Occasional,High-fat,1.0,,0,,0,1001782
+54,Male,African American,Hosp2,1.5,False,26.8,60.53369269804138,False,True,Regular,High-fat,1.0,3.0,1,,0,1005928
+55,Male,Caucasian,Hosp3,1.6,False,33.4,86.47192751370716,False,False,Regular,High-fat,4.0,7.0,2,Major Surgery,0,1005978
+51,Female,African American,Hosp1,1.8,False,29.1,94.46785083156182,False,False,Regular,Vegetarian,3.0,,2,Major Surgery,0,1000006
+38,Male,African American,Hosp3,1.7,False,21.2,61.50239984636792,False,True,Occasional,Balanced,1.0,2.0,4,Other Treatment,0,1009798
+59,Male,African American,Hosp3,1.8,True,38.1,123.76107704156512,False,True,,Other,2.0,,2,,0,1003013
+43,Male,Caucasian,Hosp2,1.5,False,24.3,54.97047659789806,False,False,Regular,Balanced,2.0,3.0,1,,0,1006384
+48,Female,Caucasian,Hosp2,1.6,True,26.6,67.61479520431922,False,True,Occasional,Balanced,1.0,2.0,0,,0,1005081
+38,Male,Caucasian,Hosp3,1.6,False,21.6,54.70707966554738,False,False,Occasional,Other,5.0,6.0,1,,0,1006195
+31,Female,Other,Hosp1,1.7,False,27.5,80.20830314700132,False,False,Occasional,High-fat,2.0,1.0,3,,0,1008232
+24,Female,African American,Hosp3,1.7,False,23.0,66.9937947961784,False,False,Occasional,Vegetarian,2.0,5.0,2,Major Surgery,0,1007886
+52,Female,Caucasian,Hosp2,1.8,True,24.0,77.51977774449551,False,False,,High-fat,5.0,4.0,0,Minor Surgery,0,1000576
+58,Male,Hispanic,Hosp1,1.7,False,29.0,83.86419255429948,False,False,Occasional,Balanced,0.0,5.0,6,Major Surgery,0,1005509
+75,Female,Caucasian,Hosp3,1.7,True,22.5,65.16148507303542,True,True,,Balanced,2.0,3.0,1,Major Surgery,1,1009489
+29,Male,Caucasian,Hosp1,1.5,False,28.2,63.77459454564968,False,True,,Balanced,4.0,2.0,0,Major Surgery,0,1008314
+59,Female,Caucasian,Hosp1,1.7,False,23.3,66.83823350618867,False,False,Regular,Balanced,4.0,5.0,0,,0,1000851
+75,Male,Caucasian,Hosp3,1.8,False,22.2,71.2485017642904,False,False,Occasional,High-fat,2.0,5.0,1,Other Treatment,0,1008441
+70,Female,Caucasian,Hosp3,1.6,False,23.8,61.18606571045323,False,False,,Vegetarian,6.0,4.0,0,Other Treatment,1,1008079
+30,Male,Hispanic,Hosp1,1.6,False,20.8,52.92178828836457,False,False,Occasional,Balanced,1.0,3.0,5,Major Surgery,0,1006792
+87,Female,Other,Hosp3,1.7,False,24.5,71.03410263245478,False,True,Regular,Balanced,2.0,7.0,1,Minor Surgery,1,1008070
+31,Female,Hispanic,Hosp1,1.9,False,27.9,101.5787139338986,False,False,Occasional,High-fat,,9.0,2,Major Surgery,0,1003867
+71,Male,Caucasian,Hosp1,1.7,False,26.5,76.14993216171173,False,False,Regular,High-fat,,3.0,12,Major Surgery,1,1001316
+67,Female,Other,Hosp2,1.8,False,20.8,66.19106903175415,False,False,Occasional,Vegetarian,0.0,7.0,12,,1,1006793
+63,Female,Caucasian,Hosp2,1.9,False,21.4,77.81868444710136,False,False,,Balanced,4.0,2.0,2,,0,1007884
+18,Female,African American,Hosp1,1.7,False,33.6,97.2880679992237,False,False,,High-fat,1.0,2.0,3,Minor Surgery,0,1007827
+22,Male,Hispanic,Hosp1,1.7,True,27.6,79.27552574073744,False,False,Regular,Other,2.0,1.0,0,Major Surgery,0,1008291
+50,Male,Caucasian,Hosp1,1.9,False,32.4,117.64784654669812,False,False,,Vegetarian,2.0,6.0,2,Other Treatment,0,1000346
+39,Male,Caucasian,Hosp2,1.7,False,31.0,89.46460845044142,False,True,,High-fat,3.0,4.0,5,Other Treatment,0,1009942
+51,Female,Hispanic,Hosp3,1.8,True,28.4,92.66472822439822,False,False,Regular,Other,3.0,0.0,3,Major Surgery,0,1008235
+51,Male,Caucasian,Hosp2,1.8,False,25.4,82.61579193055293,False,False,Occasional,High-fat,2.0,3.0,4,,0,1002103
+50,Female,Caucasian,Hosp3,1.8,False,20.2,65.574734000872,False,False,,Balanced,7.0,4.0,0,Minor Surgery,0,1007940
+48,Male,African American,Hosp1,1.7,True,26.6,78.09728499727471,False,False,,Balanced,3.0,1.0,0,Major Surgery,0,1000456
+26,Male,African American,Hosp1,1.7,False,35.2,101.37628779942912,False,False,Occasional,High-fat,7.0,4.0,1,,0,1003118
+38,Female,Hispanic,Hosp1,1.6,True,21.6,53.783096575937414,False,False,,Balanced,,5.0,2,,0,1004074
+40,Female,Caucasian,Hosp2,1.6,False,20.5,52.4516817104103,False,False,Occasional,Balanced,5.0,3.0,1,Other Treatment,0,1000936
+65,Male,Other,Hosp3,1.6,False,30.2,76.89249561586045,True,False,,Other,2.0,5.0,5,,1,1009473
+61,Female,African American,Hosp1,1.6,False,32.1,82.210719665604,False,True,Occasional,High-fat,4.0,5.0,0,Major Surgery,1,1003195
+41,Male,Hispanic,Hosp3,1.6,False,22.6,58.65415374250341,True,False,Occasional,Vegetarian,2.0,1.0,0,Major Surgery,0,1007770
+39,Female,African American,Hosp1,1.7,True,24.2,70.43342328813247,False,False,,Balanced,4.0,6.0,3,,0,1003854
+63,Female,African American,Hosp1,1.6,False,25.6,65.48613038986062,False,True,Occasional,Other,3.0,1.0,7,,1,1004305
+32,Female,African American,Hosp3,1.7,True,32.7,94.50935092904922,False,False,,Balanced,6.0,5.0,2,,0,1009593
+32,Female,African American,Hosp2,1.6,False,25.7,65.85008323322607,False,False,,Vegetarian,4.0,7.0,0,Major Surgery,0,1003723
+47,Female,African American,Hosp1,1.9,False,31.0,111.4345708076449,False,False,,High-fat,8.0,4.0,0,,0,1008575
+72,Female,Caucasian,Hosp1,1.7,False,26.2,75.71469072515735,False,False,Regular,High-fat,4.0,6.0,7,Major Surgery,1,1006750
+54,Male,Caucasian,Hosp3,1.7,True,26.3,75.66347505732608,False,False,Regular,Vegetarian,6.0,6.0,6,Other Treatment,1,1000357
+70,Male,African American,Hosp1,1.7,False,26.6,76.63692233079907,False,False,Regular,Other,4.0,2.0,0,Other Treatment,0,1009792
+31,Female,Hispanic,Hosp1,1.7,False,18.7,53.21620886752265,False,False,Regular,Vegetarian,7.0,2.0,5,,0,1006233
+20,Female,Caucasian,Hosp1,1.6,False,33.1,84.45543922951566,True,True,Occasional,Other,2.0,6.0,3,,0,1003171
+47,Female,African American,Hosp2,1.7,False,31.8,92.25230552586332,True,False,,High-fat,4.0,6.0,0,Other Treatment,0,1001414
+53,Male,Caucasian,Hosp2,1.6,False,23.2,59.15079965650635,False,False,Regular,High-fat,5.0,4.0,1,,0,1003346
+63,Male,Hispanic,Hosp2,1.6,False,31.2,79.64037692874498,False,True,,Balanced,3.0,6.0,1,,1,1007860
+29,Male,Hispanic,Hosp2,1.8,False,29.7,97.47598297791528,False,False,Occasional,Other,3.0,2.0,1,Major Surgery,0,1005077
+78,Female,Caucasian,Hosp2,1.6,True,27.4,69.95606978827792,True,False,Occasional,Other,3.0,0.0,5,Major Surgery,1,1009343
+21,Female,Hispanic,Hosp3,1.6,False,21.3,54.71944162981568,True,False,,Vegetarian,2.0,2.0,1,,0,1003633
+31,Female,African American,Hosp3,1.7,False,24.1,70.48102101215962,False,False,Regular,High-fat,1.0,1.0,0,,0,1002231
+46,Male,Hispanic,Hosp1,1.7,False,20.1,57.33447377520482,False,False,Occasional,Vegetarian,1.0,3.0,0,Major Surgery,0,1001909
+50,Male,Caucasian,Hosp1,1.8,True,29.4,94.82937655226522,False,False,Occasional,Balanced,2.0,5.0,1,,0,1008520
+33,Male,Hispanic,Hosp1,1.7,True,31.1,90.34304738230948,True,False,Regular,High-fat,6.0,3.0,1,Minor Surgery,0,1006041
+61,Female,African American,Hosp3,1.7,True,26.3,75.85957973971742,False,False,Regular,Balanced,2.0,,4,,0,1005266
+66,Male,Hispanic,Hosp3,1.6,True,28.0,70.94231944064731,False,False,Occasional,Balanced,5.0,4.0,3,Minor Surgery,0,1005525
+49,Male,Caucasian,Hosp1,1.9,False,24.5,89.52845070838656,False,True,Occasional,High-fat,4.0,6.0,2,,1,1007327
+60,Female,Caucasian,Hosp1,1.7,False,23.5,67.72455212387577,False,False,,High-fat,,2.0,1,Other Treatment,0,1002969
+32,Female,Other,Hosp3,1.6,False,26.4,67.04999983052996,False,False,Occasional,Other,1.0,6.0,23,Other Treatment,0,1007118
+44,Male,Caucasian,Hosp3,1.6,False,25.6,65.50004420007451,False,False,,High-fat,2.0,4.0,0,,0,1004763
+39,Female,Caucasian,Hosp3,1.4,False,27.9,54.87784168155705,False,False,Regular,High-fat,1.0,3.0,2,Other Treatment,0,1002929
+27,Female,Hispanic,Hosp2,1.8,False,20.0,65.46056510543472,False,True,Occasional,High-fat,1.0,,4,Major Surgery,0,1005679
+31,Male,Other,Hosp1,1.5,False,25.4,57.06637645874398,False,False,Regular,Balanced,3.0,5.0,0,Other Treatment,0,1009730
+66,Female,African American,Hosp3,1.8,True,24.3,78.78222153488046,False,False,Regular,High-fat,4.0,3.0,5,Major Surgery,0,1004087
+46,Male,Caucasian,Hosp3,1.8,False,30.3,97.67453273104084,True,True,Regular,High-fat,4.0,6.0,5,Other Treatment,1,1000102
+75,Male,African American,Hosp2,1.6,True,25.8,65.9386346752577,False,False,,High-fat,2.0,3.0,2,,1,1001430
+59,Male,Hispanic,Hosp1,1.8,True,32.4,105.29406860053248,True,True,Occasional,Other,3.0,3.0,1,,1,1000596
+18,Female,Hispanic,Hosp2,1.8,False,26.7,87.04415005491559,False,False,Occasional,Balanced,2.0,4.0,1,Minor Surgery,0,1005656
+71,Male,Caucasian,Hosp2,1.9,False,27.7,99.99839957207048,False,False,,High-fat,1.0,8.0,3,Other Treatment,1,1001194
+28,Female,Hispanic,Hosp1,1.7,True,24.1,69.25869855282748,False,False,Occasional,Balanced,4.0,6.0,1,Other Treatment,0,1001051
+28,Female,Hispanic,Hosp3,1.8,False,26.4,85.22746356528414,True,False,Regular,Balanced,4.0,4.0,2,Major Surgery,0,1009151
+43,Male,Other,Hosp2,1.6,False,29.1,73.7853907206546,False,False,Occasional,High-fat,4.0,4.0,0,,0,1003607
+52,Male,Caucasian,Hosp2,1.8,True,25.6,82.82839468354392,False,True,,Vegetarian,0.0,6.0,2,,1,1002143
+60,Female,Caucasian,Hosp1,1.8,False,29.6,96.24718107775593,False,False,,Vegetarian,6.0,0.0,2,,0,1003814
+47,Male,Caucasian,Hosp2,1.8,False,24.2,78.70151560570702,False,False,Regular,Balanced,3.0,2.0,0,Other Treatment,0,1006313
+47,Female,Caucasian,Hosp3,1.6,False,32.0,81.9579497278503,True,True,Occasional,Other,4.0,1.0,3,Major Surgery,1,1003136
+38,Male,Caucasian,Hosp3,1.8,False,26.7,86.76059726601879,False,False,Regular,Vegetarian,5.0,2.0,5,Other Treatment,0,1003875
+68,Female,Other,Hosp3,1.7,False,26.4,76.24113900260154,False,False,Regular,High-fat,5.0,4.0,1,,0,1003946
+47,Female,African American,Hosp1,1.9,False,26.6,96.05349693734206,False,False,Occasional,High-fat,4.0,6.0,8,,0,1006006
+62,Female,Other,Hosp1,1.8,True,26.5,85.00144027678245,False,False,,Balanced,,5.0,3,,1,1007268
+64,Male,Caucasian,Hosp2,1.7,False,22.2,64.28228246977231,False,False,Occasional,Balanced,2.0,,9,Other Treatment,0,1000377
+65,Male,Caucasian,Hosp3,1.8,False,22.8,74.18871124708244,True,False,Regular,Vegetarian,3.0,3.0,7,Major Surgery,1,1004613
+66,Female,African American,Hosp1,1.7,False,25.1,71.64712314125259,False,False,Occasional,High-fat,3.0,1.0,7,Minor Surgery,0,1007847
+24,Female,Caucasian,Hosp2,1.9,True,23.6,84.29967275642166,False,False,Regular,Vegetarian,1.0,5.0,4,,0,1002391
+24,Female,Caucasian,Hosp3,1.6,True,26.9,68.67455276059634,False,False,,Vegetarian,3.0,2.0,2,Minor Surgery,0,1003906
+49,Female,Caucasian,Hosp1,1.7,False,25.7,73.37326885265362,False,False,Occasional,High-fat,2.0,1.0,0,Major Surgery,0,1000907
+41,Female,Caucasian,Hosp2,1.7,False,24.9,71.1455727377313,True,False,Regular,Balanced,2.0,0.0,0,Major Surgery,0,1006863
+65,Male,Hispanic,Hosp3,1.7,False,24.1,69.48508968421359,False,False,Occasional,Balanced,4.0,2.0,3,Major Surgery,0,1006872
+38,Male,Caucasian,Hosp2,1.7,False,25.1,72.05634310889081,False,False,,High-fat,2.0,6.0,8,,0,1005056
+45,Female,Caucasian,Hosp2,1.6,False,25.2,65.69624529743118,False,True,Occasional,Other,1.0,4.0,4,Minor Surgery,0,1003328
+36,Female,Other,Hosp2,1.8,True,26.5,84.84479356919724,False,False,,Other,1.0,1.0,2,,0,1003558
+35,Male,Hispanic,Hosp2,1.8,False,15.7,50.83722041831375,False,False,Regular,Balanced,2.0,4.0,4,Minor Surgery,0,1006218
+53,Female,Hispanic,Hosp1,1.7,False,18.9,54.76158739917679,True,False,Regular,High-fat,0.0,1.0,0,Major Surgery,0,1002777
+77,Male,Caucasian,Hosp3,1.8,False,21.7,69.58467165421916,False,False,Regular,High-fat,2.0,2.0,11,,0,1003891
+70,Female,African American,Hosp2,1.7,False,29.0,83.79824411028028,False,False,,High-fat,3.0,,0,,1,1000659
+59,Male,African American,Hosp1,1.7,True,20.2,58.35010418132444,False,False,Occasional,Vegetarian,1.0,1.0,4,Major Surgery,0,1002570
+38,Male,Caucasian,Hosp3,1.7,False,24.6,70.64692448251313,False,False,,Vegetarian,,3.0,1,Other Treatment,0,1005114
+88,Male,Caucasian,Hosp1,1.7,False,26.4,75.586414429831,False,False,Regular,Balanced,3.0,5.0,0,Other Treatment,0,1008679
+29,Male,Other,Hosp2,1.5,False,28.1,62.48824031819242,True,True,,Vegetarian,6.0,4.0,0,Major Surgery,1,1008610
+62,Male,Caucasian,Hosp3,1.7,False,23.9,69.65911108383004,False,False,Occasional,High-fat,3.0,0.0,0,,0,1008148
+35,Female,Caucasian,Hosp2,1.6,False,17.4,44.76067787183716,False,False,Occasional,Other,2.0,2.0,1,Major Surgery,0,1005438
+71,Male,Caucasian,Hosp2,1.7,False,19.6,57.371662551411006,False,False,Regular,High-fat,1.0,3.0,2,Major Surgery,0,1004357
+53,Female,Caucasian,Hosp2,1.6,False,26.6,67.94645583237039,False,False,Regular,Balanced,3.0,6.0,0,Other Treatment,0,1006064
+18,Female,African American,Hosp3,1.6,False,26.4,67.60297188862658,False,True,Regular,Balanced,2.0,4.0,2,Minor Surgery,0,1008412
+37,Male,Caucasian,Hosp2,1.5,True,27.3,61.566365320551384,False,False,Occasional,Other,5.0,8.0,2,Major Surgery,0,1007982
+72,Female,Caucasian,Hosp1,1.7,False,26.9,77.51653510989426,False,False,Regular,High-fat,2.0,1.0,4,,0,1000483
+85,Male,Hispanic,Hosp3,1.7,False,26.9,77.89010423355329,False,False,Occasional,High-fat,5.0,2.0,3,Other Treatment,1,1000584
+65,Male,Caucasian,Hosp1,1.7,False,32.7,94.75424354291496,False,False,,Vegetarian,2.0,2.0,2,,0,1005631
+21,Male,Caucasian,Hosp2,1.7,True,24.1,69.36737952557819,False,False,Regular,Balanced,,6.0,1,Major Surgery,0,1007925
+43,Male,African American,Hosp1,1.7,True,27.5,79.60101484071953,False,False,Occasional,Other,6.0,4.0,1,,0,1000014
+32,Female,African American,Hosp2,1.9,True,19.3,69.22540098173934,False,False,Occasional,High-fat,0.0,3.0,6,Major Surgery,0,1009490
+34,Female,Caucasian,Hosp1,1.6,False,32.2,82.38868771667251,False,False,,Other,,4.0,0,Other Treatment,0,1002986
+59,Male,Hispanic,Hosp2,1.8,False,24.9,80.20191322531169,False,False,Occasional,Balanced,4.0,0.0,3,Major Surgery,0,1000790
+35,Male,Hispanic,Hosp2,1.6,False,15.6,39.99667553993562,False,False,,Other,6.0,4.0,4,Other Treatment,0,1001163
+63,Female,Caucasian,Hosp1,1.6,True,20.6,52.902134912581786,False,False,Regular,Other,,5.0,1,Minor Surgery,0,1006335
+48,Female,Caucasian,Hosp1,1.7,False,26.7,77.1480627717307,False,False,Regular,Balanced,3.0,6.0,0,Minor Surgery,0,1003004
+51,Female,African American,Hosp2,1.7,False,16.7,48.493624370586176,False,True,Occasional,High-fat,2.0,2.0,0,Major Surgery,0,1005941
+58,Male,African American,Hosp3,1.7,False,30.8,87.7949671817253,False,False,,Balanced,5.0,4.0,0,Minor Surgery,0,1002722
+34,Female,African American,Hosp3,1.7,False,30.0,87.00162191784207,False,True,Regular,Other,5.0,,1,Major Surgery,0,1002495
+95,Female,Caucasian,Hosp3,1.6,False,22.1,55.60623147566898,True,False,Regular,Balanced,3.0,1.0,5,,1,1000348
+56,Female,Caucasian,Hosp2,1.8,False,26.7,86.38580784066417,False,False,Occasional,Vegetarian,5.0,2.0,0,,0,1007597
+49,Male,Caucasian,Hosp1,1.6,False,25.1,64.23102315849061,True,False,,Vegetarian,4.0,3.0,0,,1,1006164
+39,Male,African American,Hosp3,1.7,False,25.1,71.16976191645024,False,False,Occasional,Vegetarian,1.0,1.0,1,Minor Surgery,0,1001643
+70,Female,Caucasian,Hosp2,1.8,False,27.7,89.71769393570952,False,False,,Other,3.0,,0,Major Surgery,0,1000004
+28,Male,Caucasian,Hosp1,1.9,False,28.7,103.58206343098335,False,True,Occasional,Other,5.0,5.0,3,Minor Surgery,0,1002084
+54,Female,African American,Hosp1,1.8,False,29.1,93.93344243344428,False,False,,Balanced,3.0,1.0,0,,0,1005601
+58,Female,Hispanic,Hosp2,1.5,False,19.1,42.51712930765592,False,False,Regular,Vegetarian,7.0,3.0,1,Major Surgery,0,1003073
+18,Female,Caucasian,Hosp2,1.9,False,19.9,71.46019962075523,True,True,Occasional,Vegetarian,4.0,4.0,0,Major Surgery,1,1008974
+25,Male,Hispanic,Hosp2,1.7,False,28.8,83.87283681010265,False,False,,Balanced,5.0,3.0,5,Major Surgery,0,1009012
+40,Male,Caucasian,Hosp1,1.7,False,26.8,78.17350514477687,False,False,Occasional,Other,4.0,2.0,1,Other Treatment,0,1000302
+52,Female,Caucasian,Hosp3,1.7,False,23.1,67.29513233445365,False,False,Regular,Balanced,5.0,4.0,0,Major Surgery,0,1000199
+47,Male,African American,Hosp1,1.7,True,19.0,55.03210765564566,True,False,Occasional,Vegetarian,4.0,7.0,9,,1,1009705
+29,Female,Hispanic,Hosp1,1.7,True,39.1,113.0805874548449,False,True,Occasional,High-fat,2.0,0.0,3,Other Treatment,0,1001841
+74,Male,Caucasian,Hosp2,1.9,False,25.3,91.44438593661934,False,False,Regular,Other,1.0,3.0,4,Other Treatment,0,1000381
+38,Female,Hispanic,Hosp3,1.6,False,26.0,66.79082635441866,False,False,Regular,Other,1.0,3.0,0,,0,1009960
+51,Female,Hispanic,Hosp1,1.7,False,36.0,104.5738458569722,False,True,Occasional,High-fat,3.0,1.0,0,Minor Surgery,0,1003944
+18,Female,Other,Hosp3,1.8,False,26.6,86.6910370726905,False,False,Regular,Other,2.0,3.0,2,Major Surgery,0,1002799
+71,Female,Caucasian,Hosp1,1.8,True,30.3,99.21176291998115,True,True,,Balanced,6.0,4.0,8,Minor Surgery,1,1008588
+69,Female,Hispanic,Hosp2,1.6,False,31.8,80.55826435685078,True,False,,Other,6.0,4.0,1,Other Treatment,1,1009023
+66,Female,African American,Hosp1,1.9,False,28.3,102.97328767158054,True,False,Regular,Balanced,6.0,4.0,0,Minor Surgery,1,1007313
+51,Female,Hispanic,Hosp1,1.7,True,33.3,96.04867676954302,False,False,,Other,3.0,2.0,2,Minor Surgery,0,1009435
+41,Female,Hispanic,Hosp2,1.6,False,24.5,62.67745372996113,False,False,Occasional,Vegetarian,3.0,4.0,1,,0,1008442
+18,Female,Other,Hosp1,1.6,False,25.4,64.93344553254406,False,False,Regular,High-fat,4.0,1.0,3,Other Treatment,0,1009624
+59,Male,Other,Hosp2,1.9,False,18.2,65.45181204572145,False,False,Occasional,Vegetarian,3.0,8.0,0,Minor Surgery,0,1006131
+70,Male,Caucasian,Hosp3,1.8,False,28.2,91.63874036614718,False,False,,Other,2.0,5.0,4,,0,1008751
+50,Male,Caucasian,Hosp3,1.6,False,22.3,56.60794448844857,True,False,Regular,Balanced,4.0,6.0,2,Major Surgery,0,1003715
+24,Male,Hispanic,Hosp1,1.7,False,27.2,78.80143386106332,False,True,,Balanced,1.0,0.0,2,,0,1005203
+20,Male,African American,Hosp1,1.6,False,27.0,69.47421783173583,False,False,,Other,3.0,6.0,3,Major Surgery,0,1000682
+62,Female,Hispanic,Hosp2,1.8,True,25.8,83.10915465793637,False,True,Occasional,Balanced,2.0,0.0,0,Minor Surgery,0,1001009
+74,Female,African American,Hosp2,1.8,False,25.5,82.97246930618593,False,False,Occasional,High-fat,4.0,3.0,4,,1,1009183
+30,Male,Caucasian,Hosp3,1.6,False,19.6,50.71523148229365,True,True,Regular,Vegetarian,2.0,4.0,1,Major Surgery,0,1007604
+28,Male,Caucasian,Hosp2,1.7,False,22.9,66.01472791973512,False,True,Occasional,Vegetarian,3.0,2.0,1,,0,1006731
+50,Female,African American,Hosp2,1.6,False,27.4,69.92337811919975,False,False,Regular,High-fat,,1.0,3,,0,1004696
+38,Male,Caucasian,Hosp2,1.9,False,23.3,83.88263510343221,False,False,Occasional,Balanced,4.0,2.0,1,Major Surgery,0,1006596
+61,Female,Hispanic,Hosp2,1.7,False,26.7,77.07728473563482,True,False,Occasional,High-fat,4.0,6.0,6,Minor Surgery,1,1004194
+56,Male,Caucasian,Hosp1,1.6,False,31.7,81.08991550325713,False,False,,Balanced,6.0,3.0,7,Other Treatment,0,1001269
+18,Male,African American,Hosp2,1.9,True,28.2,101.9501031066393,False,False,Regular,High-fat,2.0,4.0,3,Minor Surgery,0,1007547
+56,Female,Other,Hosp3,1.9,False,18.4,66.12714200973447,False,False,Occasional,Vegetarian,4.0,2.0,0,Other Treatment,0,1006364
+20,Female,Hispanic,Hosp3,1.6,False,39.5,100.72934942818657,True,False,Regular,Other,2.0,7.0,2,,0,1002634
+18,Female,African American,Hosp3,1.9,True,24.0,87.1449842253428,False,False,,Balanced,3.0,1.0,2,Major Surgery,0,1005734
+33,Male,Caucasian,Hosp2,1.6,True,33.1,84.72237270429746,False,False,Occasional,High-fat,2.0,3.0,2,Minor Surgery,0,1009308
+64,Male,Caucasian,Hosp3,1.4,False,22.8,44.25863349831998,False,False,Regular,Balanced,6.0,2.0,0,Major Surgery,0,1005207
+28,Male,Caucasian,Hosp2,1.8,False,22.1,71.77767580366479,False,False,Occasional,Vegetarian,3.0,2.0,5,Other Treatment,0,1003272
+53,Female,Caucasian,Hosp2,1.6,True,23.9,60.55525376141117,False,False,Occasional,Balanced,5.0,1.0,0,Minor Surgery,0,1004216
+33,Male,Caucasian,Hosp2,1.7,False,22.1,64.30402076603808,False,False,,High-fat,7.0,3.0,3,Other Treatment,0,1008837
+68,Male,African American,Hosp1,1.8,False,22.8,73.78591971400242,False,False,,High-fat,3.0,1.0,1,Minor Surgery,0,1000511
+50,Female,Hispanic,Hosp1,1.7,False,34.5,99.92340080366137,False,False,Occasional,Other,5.0,3.0,2,Minor Surgery,0,1004866
+50,Male,Caucasian,Hosp2,1.9,True,19.2,69.04244966857483,False,False,Occasional,Vegetarian,,6.0,3,Major Surgery,0,1009286
+86,Male,Caucasian,Hosp3,1.6,False,23.9,61.68650943403958,False,True,Regular,Other,2.0,,2,,1,1001186
+55,Male,African American,Hosp1,1.8,True,27.5,87.98330936468754,False,False,Occasional,Vegetarian,3.0,2.0,0,Major Surgery,0,1005150
+23,Female,Caucasian,Hosp1,1.8,False,27.2,88.0667418698162,True,False,Regular,Vegetarian,6.0,4.0,0,,0,1002334
+72,Female,Caucasian,Hosp3,1.7,False,30.6,89.03717447246973,False,True,,Other,1.0,0.0,1,Minor Surgery,0,1000590
+44,Male,Hispanic,Hosp1,1.7,True,35.8,103.03729650837376,False,False,,Balanced,1.0,6.0,3,Other Treatment,0,1008108
+51,Female,Caucasian,Hosp2,1.9,False,24.2,86.51385514411167,False,False,,Other,3.0,,1,Major Surgery,0,1004594
+55,Female,Hispanic,Hosp1,1.6,True,19.9,51.049181035227434,False,False,Occasional,Balanced,3.0,2.0,2,,0,1006919
+54,Female,African American,Hosp1,1.7,False,25.2,72.22862555713597,False,False,Occasional,Other,6.0,1.0,7,Major Surgery,0,1002740
+53,Female,Hispanic,Hosp2,2.0,False,28.9,115.2565493184553,True,False,,Balanced,3.0,,0,Minor Surgery,0,1001001
+33,Male,Other,Hosp2,1.6,False,24.5,62.721701525223246,False,False,,Balanced,5.0,1.0,0,Major Surgery,0,1001511
+54,Male,Caucasian,Hosp1,1.8,False,16.6,54.38140358282593,False,False,,Balanced,4.0,2.0,0,Other Treatment,0,1008742
+28,Male,Hispanic,Hosp1,1.8,False,28.7,92.55928351009138,False,False,,Balanced,5.0,3.0,3,Other Treatment,0,1004547
+54,Male,Hispanic,Hosp2,1.6,False,18.6,47.77235977496869,False,False,Regular,Balanced,9.0,4.0,2,,0,1002911
+48,Male,Hispanic,Hosp2,1.8,False,27.6,89.6961970531658,False,False,Occasional,Vegetarian,8.0,1.0,0,Other Treatment,0,1003108
+48,Female,Hispanic,Hosp1,1.8,False,32.1,104.48390084076944,False,True,Occasional,Balanced,5.0,3.0,2,Major Surgery,0,1004141
+28,Male,Hispanic,Hosp2,1.8,False,25.9,84.48530301051795,False,False,Regular,Other,2.0,5.0,4,Major Surgery,0,1004941
+30,Male,Caucasian,Hosp1,1.6,False,22.0,56.0465926448999,False,False,,Vegetarian,4.0,6.0,0,Minor Surgery,0,1009651
+61,Male,Other,Hosp2,1.6,False,27.2,69.1799403455507,False,False,Occasional,Vegetarian,1.0,0.0,1,Major Surgery,0,1005627
+53,Female,Caucasian,Hosp3,1.7,False,27.4,79.26965061010385,False,False,Regular,High-fat,0.0,2.0,8,,0,1004163
+47,Female,Hispanic,Hosp1,1.8,False,18.6,60.55633890209067,False,False,Occasional,Balanced,3.0,0.0,1,Other Treatment,0,1003485
+46,Female,Hispanic,Hosp2,1.7,False,22.7,65.25913574983217,False,False,Occasional,Balanced,,6.0,6,Minor Surgery,0,1006282
+88,Female,Hispanic,Hosp2,1.5,False,24.8,55.335671025006846,False,False,Regular,Vegetarian,5.0,3.0,5,Other Treatment,1,1006024
+51,Female,Hispanic,Hosp2,1.8,False,32.1,104.09542484494506,False,True,Occasional,Balanced,1.0,0.0,0,Major Surgery,0,1008027
+33,Male,African American,Hosp1,1.7,False,28.4,82.87113047602116,False,False,Regular,High-fat,4.0,2.0,3,Other Treatment,0,1000527
+52,Female,Caucasian,Hosp1,1.7,False,26.4,76.81415517869769,False,True,Regular,High-fat,1.0,,0,Other Treatment,0,1004165
+19,Male,African American,Hosp1,1.8,False,34.6,112.39308175452577,False,False,,Other,4.0,0.0,6,Major Surgery,0,1002417
+41,Female,Hispanic,Hosp1,1.7,True,19.8,57.7632696023418,False,False,Regular,Balanced,1.0,7.0,1,,0,1001418
+31,Male,African American,Hosp1,1.8,False,29.0,93.92509642584076,False,True,Regular,Balanced,4.0,4.0,2,Major Surgery,0,1001475
+33,Female,Caucasian,Hosp2,1.5,False,31.0,69.68336884345835,False,False,Regular,Balanced,4.0,,0,Major Surgery,0,1001515
+23,Male,African American,Hosp1,1.9,False,37.2,134.56429218204474,True,True,Occasional,Balanced,8.0,0.0,3,Minor Surgery,0,1007951
+44,Male,African American,Hosp1,1.8,False,23.2,75.4913620676787,False,False,Regular,High-fat,1.0,3.0,3,Other Treatment,0,1004102
+59,Female,African American,Hosp2,1.8,True,29.7,96.5030055526966,False,True,,Other,3.0,2.0,0,,1,1004801
+24,Male,Caucasian,Hosp2,1.7,True,23.8,68.59985762309586,False,False,Regular,High-fat,3.0,2.0,1,Other Treatment,0,1004288
+68,Male,Hispanic,Hosp3,1.7,True,31.9,91.58405953586212,False,True,,High-fat,3.0,1.0,7,Major Surgery,1,1005834
+40,Female,Caucasian,Hosp1,1.7,False,24.6,71.32361915360741,False,True,,Vegetarian,1.0,4.0,1,,0,1005097
+54,Male,Hispanic,Hosp2,1.6,True,26.5,67.34891930037773,False,False,Occasional,High-fat,2.0,4.0,1,Other Treatment,0,1004378
+76,Male,Hispanic,Hosp2,1.7,False,22.8,66.57386707758856,False,True,Regular,Balanced,3.0,4.0,2,Minor Surgery,0,1006496
+31,Female,Hispanic,Hosp3,1.7,False,30.8,88.32175236518343,False,False,Occasional,High-fat,1.0,3.0,3,Minor Surgery,0,1004982
+39,Female,Hispanic,Hosp1,1.7,False,29.9,86.11493980451644,False,False,Regular,Balanced,2.0,3.0,3,Minor Surgery,0,1008013
+43,Female,African American,Hosp1,1.7,True,28.2,81.95209464782646,False,False,Occasional,High-fat,4.0,1.0,3,,0,1006126
+63,Female,Caucasian,Hosp3,1.7,False,26.4,76.58860266228656,False,False,,Other,2.0,8.0,1,Minor Surgery,0,1001457
+69,Female,Caucasian,Hosp1,1.7,True,16.4,47.7410099834816,True,False,Regular,Balanced,3.0,0.0,2,Other Treatment,0,1007698
+70,Female,African American,Hosp3,1.8,True,28.1,90.823316874008,False,False,Occasional,High-fat,5.0,5.0,9,,1,1002245
+82,Male,Hispanic,Hosp1,1.7,False,27.5,79.18913372898166,False,False,Occasional,Other,8.0,2.0,8,Other Treatment,1,1002729
+70,Male,Hispanic,Hosp3,1.8,False,19.6,64.0848790227407,True,False,Occasional,High-fat,4.0,1.0,0,Other Treatment,1,1000501
+41,Female,African American,Hosp1,1.7,False,27.0,78.33175382257775,True,False,Occasional,Balanced,2.0,4.0,0,Other Treatment,0,1004669
+18,Female,Caucasian,Hosp2,1.7,False,20.4,59.816816257929915,False,False,Occasional,High-fat,2.0,4.0,1,Major Surgery,0,1007830
+56,Male,Caucasian,Hosp3,1.8,True,25.9,84.07366440595167,False,False,Regular,Other,1.0,2.0,2,Major Surgery,0,1004680
+59,Male,Caucasian,Hosp3,1.7,False,19.2,55.88795240917208,True,False,,High-fat,,,7,,1,1007852
+42,Male,African American,Hosp2,1.6,False,24.1,62.065905066395175,False,False,,Balanced,2.0,5.0,10,Major Surgery,0,1008705
+38,Male,Hispanic,Hosp2,1.8,False,24.9,81.25997864310156,False,False,Regular,Vegetarian,3.0,,1,,0,1005665
+50,Male,Caucasian,Hosp1,1.7,True,25.0,72.45441734845637,False,False,,Balanced,3.0,7.0,2,,0,1006410
+44,Male,Hispanic,Hosp3,1.6,False,34.4,88.44123093134874,False,False,Regular,Balanced,4.0,3.0,0,Major Surgery,0,1006762
+75,Male,Caucasian,Hosp3,1.8,True,27.6,89.52670994240948,False,True,,High-fat,4.0,3.0,1,Major Surgery,1,1000938
+57,Female,Hispanic,Hosp3,1.7,False,23.8,68.81038914741771,False,False,Regular,High-fat,1.0,2.0,3,Other Treatment,0,1000703
+40,Male,Caucasian,Hosp1,1.7,False,15.2,44.80118103608927,False,True,Regular,Other,2.0,,6,Other Treatment,0,1001498
+43,Female,Caucasian,Hosp1,1.7,False,31.6,91.58400557590092,False,False,,Other,4.0,0.0,3,Other Treatment,0,1001200
+21,Male,Caucasian,Hosp1,1.7,False,19.0,54.554260364346575,True,False,Occasional,Other,4.0,2.0,6,Minor Surgery,0,1008262
+47,Male,Caucasian,Hosp1,1.8,False,19.9,64.74586785680579,False,False,Regular,High-fat,3.0,,11,,0,1005874
+42,Female,Other,Hosp2,1.8,False,18.0,57.84316327114325,False,False,,Vegetarian,5.0,0.0,13,Minor Surgery,0,1004991
+44,Male,Caucasian,Hosp2,1.6,False,23.6,60.00494081607734,False,False,Occasional,Vegetarian,1.0,3.0,0,Other Treatment,0,1008958
+55,Male,Hispanic,Hosp1,1.6,False,30.9,79.81643345954413,False,False,,Balanced,4.0,8.0,0,Major Surgery,0,1001920
+32,Male,Other,Hosp2,1.6,False,30.8,78.8785294719014,True,False,,High-fat,0.0,3.0,5,,0,1008354
+54,Male,African American,Hosp1,1.7,True,30.7,89.83739826428015,True,False,Occasional,High-fat,3.0,4.0,0,Minor Surgery,1,1002161
+49,Female,Caucasian,Hosp3,1.8,True,28.2,90.72784042167952,False,False,Regular,Balanced,4.0,,1,Major Surgery,0,1007410
+62,Male,Hispanic,Hosp2,1.8,False,42.2,136.38705908355365,True,True,,High-fat,3.0,3.0,4,,0,1001751
+51,Male,Caucasian,Hosp3,1.6,False,28.4,72.78501245605226,False,False,Occasional,High-fat,5.0,6.0,5,Other Treatment,0,1007841
+21,Male,Caucasian,Hosp2,1.7,True,25.1,71.77300597288914,True,False,Occasional,High-fat,3.0,2.0,1,Other Treatment,0,1007229
+50,Male,Caucasian,Hosp2,1.7,False,23.6,68.67416048809865,False,False,Regular,Other,2.0,3.0,10,Other Treatment,0,1002822
+43,Female,African American,Hosp2,1.8,False,30.1,97.12772767473916,False,False,Regular,High-fat,3.0,5.0,0,Other Treatment,0,1005466
+68,Male,Caucasian,Hosp2,1.8,False,28.5,92.19334580151096,False,False,Regular,High-fat,2.0,2.0,3,Major Surgery,0,1007014
+48,Male,Other,Hosp1,1.8,False,30.0,97.26218000982836,True,False,,Other,3.0,5.0,1,Other Treatment,0,1001341
+40,Female,African American,Hosp1,1.7,True,28.9,83.01380433239433,False,False,,High-fat,2.0,2.0,0,Major Surgery,0,1007261
+72,Female,Caucasian,Hosp1,1.7,False,27.8,80.70123956699669,False,False,Occasional,High-fat,2.0,7.0,0,Minor Surgery,1,1004700
+43,Female,Hispanic,Hosp1,1.6,False,31.1,79.814320588503,True,False,,High-fat,2.0,1.0,0,Other Treatment,0,1000224
+43,Female,Hispanic,Hosp1,1.7,False,33.8,97.71116511003484,False,False,Occasional,High-fat,4.0,6.0,1,,0,1007776
+54,Male,Caucasian,Hosp3,1.5,True,26.6,59.434790481314,False,False,Occasional,Other,3.0,6.0,0,Major Surgery,0,1002126
+43,Female,African American,Hosp2,1.6,True,33.5,85.2212139896273,False,False,Occasional,Other,1.0,6.0,1,Minor Surgery,0,1004414
+50,Female,Caucasian,Hosp1,1.7,False,29.2,84.96663733587056,False,False,Occasional,Balanced,1.0,,2,Major Surgery,0,1007066
+43,Male,Caucasian,Hosp1,1.8,True,22.3,72.05618840542672,False,False,,Vegetarian,3.0,1.0,1,Minor Surgery,0,1004396
+18,Female,African American,Hosp2,1.8,True,38.3,125.52201124905544,True,True,,Balanced,3.0,5.0,3,Major Surgery,0,1007291
+43,Female,African American,Hosp3,2.0,False,25.3,101.7587329622686,False,False,,Vegetarian,2.0,,3,Other Treatment,0,1007457
+54,Male,Caucasian,Hosp1,1.8,False,21.0,67.89402878435259,False,False,Occasional,High-fat,1.0,1.0,2,,0,1001988
+54,Female,Hispanic,Hosp2,1.6,True,22.3,56.690778709986056,False,False,Regular,Other,3.0,4.0,3,Minor Surgery,0,1001251
+52,Male,Caucasian,Hosp2,1.7,True,26.0,75.63966261331375,False,False,Occasional,Other,2.0,2.0,1,Other Treatment,0,1009540
+73,Male,African American,Hosp3,1.7,False,21.5,62.673220747075526,False,True,Occasional,Balanced,1.0,,0,Major Surgery,0,1005253
+26,Male,Caucasian,Hosp2,1.6,False,24.7,63.999989891168866,False,False,Regular,Vegetarian,5.0,0.0,2,,0,1006244
+50,Female,Other,Hosp3,1.7,False,14.8,42.40788511329757,False,False,Regular,Vegetarian,4.0,4.0,5,Major Surgery,0,1002903
+30,Male,Other,Hosp2,1.6,False,17.7,44.73927952079096,False,False,Occasional,Balanced,0.0,2.0,4,Other Treatment,0,1009591
+46,Male,Caucasian,Hosp1,1.5,False,23.8,53.78995985688817,False,False,Regular,Other,4.0,3.0,0,Major Surgery,0,1002808
+31,Male,Caucasian,Hosp2,1.8,False,19.2,62.48468350583395,False,False,,Balanced,5.0,8.0,1,Major Surgery,0,1002268
+41,Male,Hispanic,Hosp1,1.6,False,33.7,85.72177497132006,False,False,Occasional,Vegetarian,4.0,5.0,0,Other Treatment,0,1000710
+45,Male,Caucasian,Hosp1,1.7,True,29.0,84.53966219301523,False,False,Occasional,Balanced,3.0,4.0,3,Major Surgery,0,1007552
+29,Male,Hispanic,Hosp1,1.7,False,20.8,60.61976071435162,False,False,Regular,Balanced,7.0,4.0,14,Major Surgery,0,1005865
+59,Male,Hispanic,Hosp2,1.8,False,35.4,114.44549197300506,False,False,,High-fat,2.0,,1,Major Surgery,0,1006375
+75,Female,Hispanic,Hosp2,1.7,False,26.4,75.79026810838897,False,False,Regular,High-fat,5.0,3.0,3,Major Surgery,0,1009743
+44,Male,Caucasian,Hosp3,1.7,True,22.6,66.04785123205275,False,True,,Other,1.0,0.0,4,,0,1002948
+40,Male,Other,Hosp1,1.7,False,21.3,61.158278566188955,False,False,Regular,High-fat,2.0,5.0,0,Major Surgery,0,1009257
+76,Male,Caucasian,Hosp3,1.7,False,28.1,81.04582286370497,False,False,,Other,4.0,4.0,0,,1,1001069
+70,Female,Caucasian,Hosp1,1.8,False,23.1,74.58988893270579,False,False,,Balanced,4.0,6.0,0,,0,1006509
+57,Female,Other,Hosp2,1.8,False,24.0,77.52574314266646,False,False,Regular,Vegetarian,4.0,0.0,4,Minor Surgery,0,1003137
+62,Female,Caucasian,Hosp2,2.0,False,27.1,108.74714231994568,False,False,Regular,High-fat,2.0,4.0,1,,0,1000171
+82,Female,Caucasian,Hosp3,1.8,False,22.7,72.64432597582773,True,True,Regular,Balanced,2.0,,5,,1,1002041
+61,Female,Hispanic,Hosp3,1.8,False,24.3,78.94289628040126,False,False,Regular,Vegetarian,2.0,3.0,0,Major Surgery,0,1005297
+57,Male,Caucasian,Hosp1,1.9,True,24.0,86.95872326633142,False,False,Regular,Vegetarian,1.0,1.0,1,,0,1008954
+38,Male,Hispanic,Hosp1,1.7,True,25.1,72.25032961479377,False,True,Regular,Other,3.0,0.0,3,Major Surgery,0,1008720
+45,Female,Hispanic,Hosp3,1.8,True,31.0,100.5526342941146,False,False,Occasional,High-fat,3.0,4.0,2,Major Surgery,0,1001793
+61,Male,Caucasian,Hosp3,1.6,False,27.0,68.94282547267903,False,False,,Other,2.0,,1,Other Treatment,0,1006095
+92,Female,Hispanic,Hosp1,1.6,False,33.6,86.50918665864782,True,False,,Vegetarian,,0.0,1,,1,1009241
+34,Female,African American,Hosp1,1.7,True,23.3,67.6367583508704,False,True,Regular,High-fat,4.0,6.0,0,Minor Surgery,0,1008309
+64,Male,Other,Hosp2,1.7,False,28.2,82.83477915142419,True,True,Occasional,Other,1.0,6.0,0,Major Surgery,1,1004227
+50,Male,Other,Hosp2,1.7,False,14.4,42.137894745455746,False,False,,High-fat,1.0,1.0,1,,0,1008448
+50,Male,African American,Hosp1,1.7,False,33.0,94.85730225786332,True,False,,Other,4.0,,1,Minor Surgery,0,1001823
+25,Female,Hispanic,Hosp2,1.9,False,31.4,113.83087834102636,False,True,,Balanced,1.0,3.0,2,Major Surgery,0,1007684
+50,Female,Hispanic,Hosp2,1.7,False,29.4,84.77717434907437,False,False,Occasional,High-fat,1.0,,0,Minor Surgery,0,1000968
+48,Female,Caucasian,Hosp3,1.7,False,23.7,68.25319039211017,False,False,Occasional,Other,1.0,1.0,0,,0,1007294
+43,Male,African American,Hosp1,1.6,True,21.2,53.544513877056616,False,False,Occasional,Vegetarian,2.0,0.0,3,Other Treatment,0,1004612
+29,Male,Hispanic,Hosp1,1.5,False,34.6,77.72730704961863,False,True,,High-fat,2.0,1.0,9,Minor Surgery,0,1007323
+82,Male,Caucasian,Hosp2,1.7,True,25.1,72.45001697997895,False,False,Regular,High-fat,1.0,6.0,8,Major Surgery,1,1008294
+51,Male,Caucasian,Hosp3,1.7,False,22.0,63.21655730467815,False,False,,Vegetarian,1.0,3.0,6,Major Surgery,0,1009616
+89,Male,Hispanic,Hosp2,1.7,False,29.9,86.20326936794663,False,False,,Other,2.0,4.0,1,Other Treatment,1,1003149
+53,Female,Hispanic,Hosp2,1.8,False,25.1,81.41064354152309,False,False,Occasional,High-fat,4.0,4.0,2,Other Treatment,0,1004912
+35,Male,Hispanic,Hosp1,1.9,True,22.8,82.5294453306755,False,False,Occasional,Vegetarian,4.0,3.0,0,Major Surgery,0,1008515
+30,Female,African American,Hosp2,1.7,False,25.5,73.89398528196323,False,False,Occasional,High-fat,5.0,4.0,1,Other Treatment,0,1008270
+38,Female,Hispanic,Hosp1,1.6,False,22.3,57.41985485808972,False,False,Regular,High-fat,1.0,8.0,0,Major Surgery,0,1005726
+74,Male,Caucasian,Hosp3,1.6,True,23.6,60.82079088248219,False,False,Regular,High-fat,5.0,1.0,1,Other Treatment,1,1008973
+74,Female,African American,Hosp1,1.5,True,34.4,77.73088288518615,True,False,,High-fat,1.0,4.0,5,Major Surgery,1,1001203
+61,Male,African American,Hosp1,1.6,False,33.5,85.77657684807822,False,True,,Balanced,3.0,6.0,3,Major Surgery,0,1002824
+38,Female,Caucasian,Hosp2,1.6,False,24.8,62.31975145428374,False,False,Regular,Vegetarian,3.0,5.0,4,,0,1007396
+72,Male,Caucasian,Hosp2,1.7,False,31.5,91.79370931446223,False,False,,High-fat,5.0,6.0,3,Minor Surgery,1,1002946
+47,Male,African American,Hosp3,1.5,False,28.9,64.42977228055865,False,False,Regular,High-fat,3.0,4.0,0,Major Surgery,0,1001092
+70,Male,Caucasian,Hosp1,1.8,False,21.7,69.42326618785056,False,False,Regular,Balanced,4.0,4.0,2,Major Surgery,0,1005364
+56,Female,Hispanic,Hosp2,1.7,False,29.7,85.65183205598025,False,True,Regular,Other,2.0,,1,Minor Surgery,0,1002001
+33,Male,Hispanic,Hosp1,1.8,False,19.1,63.008948988801016,False,False,Occasional,Other,1.0,4.0,0,Major Surgery,0,1002773
+48,Female,African American,Hosp1,1.7,False,27.5,79.62649410892004,True,True,Regular,High-fat,4.0,4.0,1,Other Treatment,1,1000864
+38,Female,Caucasian,Hosp2,1.8,False,18.1,58.07499304023021,False,False,,Vegetarian,1.0,4.0,5,Minor Surgery,0,1004258
+43,Male,Caucasian,Hosp2,1.5,True,22.1,48.90962190646404,False,False,Occasional,Vegetarian,1.0,3.0,0,,0,1000493
+59,Female,Caucasian,Hosp1,1.6,False,26.2,66.7233989095847,False,False,Regular,High-fat,1.0,3.0,5,Other Treatment,0,1001336
+40,Male,Hispanic,Hosp2,1.7,False,25.9,75.20960009152229,False,True,,Other,5.0,4.0,0,Major Surgery,1,1005652
+33,Male,Hispanic,Hosp1,1.7,True,18.0,52.41511469725862,False,False,,Balanced,1.0,2.0,7,Minor Surgery,0,1007214
+18,Male,Caucasian,Hosp2,1.8,False,18.9,62.38271514759089,True,False,,Other,3.0,,2,Major Surgery,0,1000895
+61,Female,Caucasian,Hosp1,1.7,False,27.2,77.64517832746634,False,True,Occasional,High-fat,2.0,6.0,2,Minor Surgery,1,1005008
+49,Female,Caucasian,Hosp3,1.8,False,23.7,76.25278629314552,False,False,Occasional,Balanced,4.0,4.0,1,Minor Surgery,0,1000509
+89,Female,Hispanic,Hosp1,1.5,False,25.0,56.4272512266427,False,True,Occasional,High-fat,6.0,3.0,4,Major Surgery,1,1000393
+65,Male,Hispanic,Hosp3,1.7,False,28.7,81.13373387207614,False,False,,Other,,0.0,7,,0,1008660
+46,Female,African American,Hosp2,1.8,True,33.1,106.6360417931107,False,False,,High-fat,2.0,2.0,0,,0,1004154
+51,Male,Caucasian,Hosp2,1.6,False,20.3,51.98900555620765,False,True,Regular,High-fat,5.0,6.0,5,,1,1009519
+70,Male,Hispanic,Hosp2,1.7,False,25.6,73.28630716556728,False,False,Occasional,Other,2.0,0.0,8,Major Surgery,0,1005645
+78,Female,Caucasian,Hosp1,1.7,False,23.9,68.64480457827544,False,True,Occasional,Balanced,5.0,2.0,6,Other Treatment,1,1004393
+76,Male,African American,Hosp1,1.8,False,18.8,61.12169805282628,False,True,Regular,Balanced,4.0,0.0,2,Other Treatment,0,1001775
+70,Male,African American,Hosp1,1.7,True,34.5,99.01399972242906,False,False,Occasional,Other,,1.0,0,Minor Surgery,0,1006312
+52,Male,Hispanic,Hosp3,1.6,False,18.6,47.6393973284884,False,False,Occasional,Balanced,2.0,5.0,6,Major Surgery,0,1001759
+75,Male,African American,Hosp2,1.8,False,25.2,82.37110031445833,False,False,Regular,Other,3.0,3.0,3,Minor Surgery,0,1007703
+37,Male,Caucasian,Hosp1,1.7,False,29.6,85.14034252716195,True,False,Occasional,High-fat,3.0,2.0,1,,0,1006554
+28,Male,Hispanic,Hosp3,1.8,False,19.3,62.364833988984934,False,True,Regular,High-fat,2.0,0.0,0,Major Surgery,0,1000812
+48,Male,Caucasian,Hosp2,1.7,True,28.2,81.08933634995493,False,True,Regular,High-fat,2.0,4.0,7,Major Surgery,0,1001265
+23,Male,Caucasian,Hosp2,1.7,False,31.0,89.80975379058675,False,False,,Balanced,0.0,2.0,0,Major Surgery,0,1002839
+48,Female,Caucasian,Hosp2,1.7,True,26.4,77.74465281171759,False,False,,High-fat,4.0,3.0,0,,0,1004317
+51,Male,Caucasian,Hosp3,1.8,False,22.4,72.31614559058211,False,True,Occasional,Balanced,3.0,8.0,8,Major Surgery,1,1005900
+77,Male,Caucasian,Hosp1,1.7,True,27.2,78.43211963096847,False,False,Regular,High-fat,3.0,4.0,0,Minor Surgery,0,1005333
+33,Male,African American,Hosp2,1.6,False,19.4,49.83071644298035,False,False,Regular,Balanced,3.0,4.0,3,Other Treatment,0,1009787
+46,Male,Caucasian,Hosp1,1.8,True,27.1,88.38066845795092,False,True,Regular,High-fat,3.0,4.0,1,Major Surgery,0,1008237
+38,Male,Other,Hosp2,1.6,True,26.3,67.39899452945723,False,False,Occasional,High-fat,1.0,,2,Minor Surgery,0,1009108
+50,Male,African American,Hosp2,1.9,False,30.1,108.79637590913164,True,False,,High-fat,3.0,6.0,5,Major Surgery,1,1008077
+79,Female,African American,Hosp2,1.8,False,39.2,127.0020038479137,True,False,,Balanced,,5.0,3,,0,1000740
+46,Female,African American,Hosp3,1.7,True,29.8,86.17304034384848,False,False,,High-fat,3.0,7.0,3,Major Surgery,0,1009952
+50,Male,Hispanic,Hosp3,1.7,False,19.0,54.51899177367827,False,False,Regular,Vegetarian,3.0,4.0,4,Major Surgery,0,1001917
+57,Female,African American,Hosp2,1.8,False,22.6,73.6348367543269,False,False,Occasional,Balanced,,4.0,3,Other Treatment,0,1002056
+29,Female,Hispanic,Hosp1,1.6,False,29.2,73.93250411580608,False,False,Occasional,Balanced,3.0,3.0,5,Major Surgery,0,1006560
+39,Female,Hispanic,Hosp1,1.7,False,23.7,68.30094466639696,False,False,Regular,Balanced,2.0,,1,Other Treatment,0,1008018
+46,Male,Caucasian,Hosp2,1.9,True,21.9,78.55243486040087,False,False,Occasional,Balanced,2.0,3.0,4,Major Surgery,0,1008769
+18,Male,Other,Hosp1,1.7,False,24.4,71.23837431238162,False,False,Regular,Other,4.0,4.0,4,Minor Surgery,0,1008638
+63,Female,African American,Hosp3,1.5,False,30.9,69.21762263818384,False,False,,High-fat,4.0,5.0,1,Major Surgery,0,1007301
+93,Male,African American,Hosp1,1.9,False,31.0,111.99384913096551,False,False,Occasional,High-fat,3.0,2.0,9,Major Surgery,1,1005166
+61,Male,Caucasian,Hosp1,1.6,True,27.8,71.85976819014893,False,False,Occasional,High-fat,0.0,2.0,7,Major Surgery,0,1002465
+74,Female,Caucasian,Hosp2,1.7,False,23.9,68.99942992927738,False,False,Occasional,High-fat,2.0,3.0,0,,0,1008510
+67,Male,Hispanic,Hosp2,1.5,False,19.1,42.3018451263102,False,False,Occasional,Balanced,2.0,0.0,7,,0,1000144
+78,Male,African American,Hosp3,1.7,False,23.6,69.19531655362218,True,False,Occasional,High-fat,4.0,6.0,0,,1,1005151
+62,Male,African American,Hosp3,1.7,False,25.6,74.23215361270307,True,False,Occasional,High-fat,6.0,2.0,3,Major Surgery,1,1004824
+55,Female,Caucasian,Hosp2,1.9,False,25.2,91.0687408440284,False,False,,High-fat,6.0,3.0,0,Major Surgery,0,1000096
+61,Male,Caucasian,Hosp3,1.6,True,26.4,67.57643681123882,False,False,,High-fat,2.0,6.0,3,,0,1007893
+43,Female,Other,Hosp3,1.7,False,33.5,97.16684981084434,False,False,Occasional,Other,4.0,3.0,1,Other Treatment,0,1004994
+85,Female,Caucasian,Hosp1,1.7,False,27.3,79.51172093891125,True,False,Regular,Balanced,2.0,,4,,1,1009648
+57,Female,Hispanic,Hosp3,1.7,False,25.2,73.49337515318089,False,True,Occasional,Vegetarian,3.0,2.0,1,Major Surgery,1,1004235
+71,Female,Caucasian,Hosp1,1.7,False,29.0,83.6625001047915,True,False,Occasional,High-fat,2.0,2.0,1,Major Surgery,1,1007362
+29,Male,Caucasian,Hosp1,1.8,False,24.5,79.22294137298478,False,False,,Vegetarian,6.0,5.0,1,,0,1007266
+43,Male,African American,Hosp3,1.6,False,36.5,92.73633121970758,True,False,Occasional,Balanced,8.0,2.0,3,,0,1007438
+26,Male,Caucasian,Hosp1,1.8,False,24.5,78.85080350530824,False,False,Regular,Balanced,3.0,2.0,2,Minor Surgery,0,1004413
+74,Male,African American,Hosp2,1.6,False,17.0,44.39507953047471,False,False,Regular,High-fat,1.0,4.0,5,Minor Surgery,0,1007090
+69,Male,Hispanic,Hosp2,1.7,False,22.7,65.68670030934567,False,False,Occasional,Vegetarian,4.0,5.0,0,Minor Surgery,1,1003143
+45,Female,African American,Hosp2,1.7,True,21.6,62.16864479760464,False,False,Occasional,Other,5.0,6.0,5,Other Treatment,1,1009013
+18,Female,Caucasian,Hosp2,1.8,False,24.8,80.66084359330017,False,True,Regular,Vegetarian,4.0,3.0,0,Major Surgery,0,1005005
+48,Male,Hispanic,Hosp3,1.7,False,31.6,91.45788667739689,False,False,,Other,2.0,6.0,0,Major Surgery,0,1000082
+90,Male,Caucasian,Hosp3,1.7,True,31.4,91.42646011610186,True,False,,Vegetarian,3.0,8.0,5,Other Treatment,1,1003264
+73,Male,Other,Hosp2,1.7,False,20.1,57.85797918244011,False,False,Occasional,Vegetarian,2.0,0.0,4,Major Surgery,0,1003260
+65,Male,Hispanic,Hosp3,1.8,False,35.2,114.48378627570575,False,True,,High-fat,5.0,3.0,5,Other Treatment,0,1009022
+95,Female,Caucasian,Hosp3,1.8,False,27.1,88.05858372437544,True,False,,Other,3.0,5.0,6,,1,1000442
+66,Female,Caucasian,Hosp1,1.6,False,25.6,65.43719061461351,False,True,Regular,Other,1.0,3.0,1,,0,1008960
+44,Female,Caucasian,Hosp1,1.7,True,15.5,44.867738957633954,False,False,Occasional,High-fat,5.0,3.0,1,,0,1007073
+30,Female,African American,Hosp1,1.7,False,24.9,71.30982350619695,False,False,Regular,Vegetarian,1.0,4.0,3,,0,1000926
+26,Male,African American,Hosp2,1.5,True,21.9,49.06881071938655,False,False,Regular,Balanced,3.0,3.0,1,Major Surgery,0,1003242
+59,Male,Caucasian,Hosp2,1.7,False,26.6,76.675047972374,False,False,Regular,High-fat,5.0,3.0,1,Major Surgery,0,1008789
+49,Female,Caucasian,Hosp1,1.7,True,28.5,82.09479671696313,True,True,Occasional,High-fat,4.0,7.0,0,,1,1005289
+28,Female,African American,Hosp1,1.6,False,22.8,58.804293979044736,False,False,Occasional,Other,6.0,,1,,0,1003535
+56,Female,Hispanic,Hosp3,1.7,True,25.7,73.59204509965838,False,False,Occasional,High-fat,2.0,7.0,3,Major Surgery,1,1006828
+65,Male,Caucasian,Hosp2,1.6,False,21.6,54.22955052621006,True,False,Regular,Balanced,3.0,2.0,0,,0,1008345
+26,Female,African American,Hosp2,1.5,False,36.4,82.73731685472049,False,True,,Balanced,4.0,3.0,11,Minor Surgery,0,1008172
+38,Female,Hispanic,Hosp3,1.7,False,19.1,55.79974870060266,False,False,Regular,Vegetarian,1.0,8.0,2,Minor Surgery,0,1002047
+55,Male,African American,Hosp3,1.8,False,26.1,85.70075100987009,False,True,Regular,High-fat,4.0,4.0,0,Major Surgery,0,1004844
+33,Male,Caucasian,Hosp3,1.8,True,31.6,102.8763061676759,False,False,,Other,,5.0,1,,0,1000457
+44,Female,Caucasian,Hosp1,1.8,False,24.4,77.93376089050182,False,False,Regular,Vegetarian,4.0,3.0,2,,0,1001303
+62,Male,Other,Hosp3,1.6,False,24.2,61.66495556526339,False,False,,Balanced,3.0,3.0,0,Minor Surgery,0,1007617
+72,Female,Hispanic,Hosp2,1.7,False,34.3,99.84118906758104,False,False,Occasional,High-fat,4.0,5.0,1,,0,1003348
+18,Female,Caucasian,Hosp3,1.7,False,23.1,67.56193691760818,False,False,Occasional,Vegetarian,3.0,3.0,1,Major Surgery,0,1004189
+81,Female,African American,Hosp1,1.9,False,31.4,113.4493174639535,False,False,,Balanced,4.0,3.0,0,Other Treatment,0,1004951
+58,Female,Hispanic,Hosp1,1.8,False,32.4,104.76445016920182,False,True,Occasional,High-fat,3.0,0.0,2,Other Treatment,0,1004210
+75,Male,Other,Hosp2,1.6,False,15.2,38.396033583936934,False,False,Occasional,Vegetarian,1.0,5.0,4,,0,1003150
+79,Male,Caucasian,Hosp1,1.6,True,29.0,74.34963545084369,False,True,,High-fat,3.0,3.0,3,Other Treatment,1,1006472
+74,Male,Other,Hosp1,1.7,False,21.8,64.09583718782288,False,False,Regular,Balanced,3.0,1.0,10,Minor Surgery,0,1004756
+55,Male,Caucasian,Hosp2,1.6,False,31.2,80.45068799235979,False,False,Occasional,Balanced,4.0,2.0,0,,0,1000520
+80,Male,Hispanic,Hosp1,1.6,False,29.8,76.16741769184915,True,False,Occasional,Other,3.0,3.0,0,Minor Surgery,1,1009623
+70,Female,Caucasian,Hosp2,1.6,False,18.8,47.582889217472285,False,False,Regular,Vegetarian,1.0,4.0,6,Major Surgery,0,1005732
+34,Male,Other,Hosp3,1.8,False,31.4,100.836738399307,False,False,,Vegetarian,3.0,6.0,3,,0,1008804
+86,Female,Caucasian,Hosp3,1.8,False,25.1,81.41390439593856,False,False,Regular,High-fat,4.0,2.0,3,,0,1003991
+35,Female,Hispanic,Hosp2,1.6,False,29.1,75.09730343203229,False,False,Regular,Balanced,2.0,3.0,5,,0,1007523
+32,Female,Hispanic,Hosp1,1.7,False,27.5,79.61981660054974,False,True,Occasional,High-fat,3.0,4.0,2,Major Surgery,0,1003689
+53,Female,Caucasian,Hosp3,1.7,False,24.9,72.32728558387066,False,False,Regular,Other,4.0,4.0,0,,0,1007751
+59,Female,Caucasian,Hosp3,1.8,False,24.9,80.63775762149083,False,False,Regular,Balanced,2.0,4.0,1,Major Surgery,0,1006819
+73,Male,Hispanic,Hosp2,1.8,False,31.5,101.80521976961111,False,False,Occasional,High-fat,5.0,4.0,1,,0,1005565
+51,Male,Caucasian,Hosp1,1.6,False,20.0,51.085668703158454,False,False,Occasional,Other,4.0,3.0,4,Other Treatment,0,1003173
+40,Female,Other,Hosp3,1.7,False,24.2,69.51102000870463,False,False,Occasional,High-fat,3.0,5.0,1,Major Surgery,0,1004623
+25,Female,African American,Hosp3,1.8,False,35.4,114.74727186418728,True,True,,Vegetarian,6.0,5.0,4,Minor Surgery,0,1009252
+18,Female,Caucasian,Hosp2,1.6,True,19.5,49.932571105556114,False,False,,Vegetarian,1.0,2.0,1,Major Surgery,0,1001291
+60,Female,Hispanic,Hosp2,1.8,False,29.9,97.26872376699616,False,False,Regular,Other,3.0,4.0,4,Minor Surgery,0,1000286
+24,Male,Caucasian,Hosp2,1.7,False,23.1,66.27832077176693,False,True,Regular,Balanced,0.0,2.0,15,,0,1000761
+50,Female,Hispanic,Hosp3,1.5,False,32.1,72.55278173558833,True,False,,High-fat,0.0,3.0,0,Minor Surgery,0,1003024
+27,Male,Caucasian,Hosp3,1.7,False,26.1,75.63934872820884,False,False,,Other,2.0,4.0,2,,0,1007384
+35,Female,Caucasian,Hosp2,1.7,False,20.5,58.21821070180573,False,False,Regular,Vegetarian,3.0,,3,Major Surgery,0,1005086
+39,Female,Hispanic,Hosp3,1.7,False,32.4,93.0823389366391,False,True,,High-fat,1.0,,2,Minor Surgery,0,1009426
+51,Female,Other,Hosp1,1.6,False,34.9,89.0564370968508,False,False,,Balanced,1.0,4.0,0,,0,1006298
+62,Female,Caucasian,Hosp2,1.6,False,24.5,62.17487970741775,True,False,Occasional,Balanced,1.0,7.0,4,Other Treatment,1,1001646
+83,Male,Hispanic,Hosp3,1.8,True,31.6,101.82072559535864,False,False,,High-fat,2.0,2.0,0,,0,1007205
+44,Female,Caucasian,Hosp1,1.6,True,24.2,61.50003649151495,False,False,Occasional,High-fat,2.0,1.0,1,Minor Surgery,0,1007518
+44,Male,Caucasian,Hosp3,1.7,True,26.2,75.61450430873762,False,False,Regular,Balanced,1.0,0.0,0,,0,1006305
+49,Male,Caucasian,Hosp2,1.5,False,25.9,58.8897802548143,False,False,,High-fat,4.0,3.0,0,Other Treatment,0,1001471
+30,Female,African American,Hosp3,1.7,False,35.1,101.87936671975235,False,False,,High-fat,4.0,5.0,1,,0,1000993
+26,Male,Hispanic,Hosp3,1.7,False,28.7,83.72715839772161,False,False,Regular,Other,0.0,4.0,6,,0,1000583
+45,Male,Hispanic,Hosp2,1.7,False,22.6,64.99764785707441,False,False,Regular,Balanced,2.0,1.0,0,Minor Surgery,0,1005119
+46,Female,Caucasian,Hosp2,1.6,False,21.9,56.83665879384729,False,False,,Balanced,6.0,,0,Other Treatment,0,1002393
+18,Male,Caucasian,Hosp3,1.7,False,20.6,59.70145141070907,False,False,Occasional,Balanced,5.0,6.0,2,Minor Surgery,0,1002079
+62,Female,Hispanic,Hosp2,1.6,False,22.6,58.404058347979635,False,True,,Other,3.0,2.0,5,Other Treatment,1,1003745
+19,Male,African American,Hosp3,1.7,False,25.6,73.71132953649777,False,False,Regular,High-fat,,3.0,0,,0,1001179
+50,Female,Hispanic,Hosp1,1.8,False,22.2,71.59292922007677,False,False,Regular,Vegetarian,4.0,4.0,6,Major Surgery,0,1002611
+61,Female,Caucasian,Hosp2,1.6,False,16.4,41.34090160369747,False,False,,Vegetarian,3.0,2.0,0,Other Treatment,0,1005329
+37,Male,Hispanic,Hosp1,1.6,False,22.7,58.26828795757508,False,True,Regular,High-fat,3.0,1.0,6,Major Surgery,0,1002562
+28,Male,Hispanic,Hosp3,1.6,False,27.5,70.8509182338798,False,False,Regular,Balanced,3.0,6.0,4,Minor Surgery,0,1009964
+55,Male,African American,Hosp3,1.5,True,28.8,64.82706146704282,False,False,Occasional,Other,5.0,3.0,4,,1,1001320
+19,Female,Hispanic,Hosp2,1.8,False,29.3,94.98203907326952,True,True,Regular,Vegetarian,2.0,2.0,0,,0,1006656
+52,Male,African American,Hosp3,1.6,False,27.4,69.44156233603994,False,False,,Balanced,1.0,3.0,0,,0,1004781
+57,Male,Hispanic,Hosp2,1.9,False,23.2,83.93735800753292,False,False,Regular,Other,3.0,4.0,6,Minor Surgery,0,1005159
+52,Female,Caucasian,Hosp1,1.7,True,24.9,71.5831910651299,False,False,Regular,High-fat,4.0,5.0,1,Minor Surgery,0,1007812
+40,Female,Hispanic,Hosp2,1.6,False,38.1,97.41084298035096,True,False,Occasional,Balanced,2.0,2.0,7,,0,1001547
+95,Female,Caucasian,Hosp3,1.7,False,23.4,66.96819954461925,False,False,Regular,Balanced,1.0,,1,Minor Surgery,0,1002285
+48,Male,Caucasian,Hosp3,1.5,False,28.6,64.17403663995884,False,True,Occasional,High-fat,4.0,3.0,3,,1,1003345
+42,Female,Hispanic,Hosp1,1.7,True,29.5,85.05407725723546,False,True,Occasional,Other,4.0,3.0,0,Major Surgery,1,1000696
+61,Male,Caucasian,Hosp3,1.6,False,26.9,68.80664229695014,False,False,Regular,High-fat,2.0,3.0,3,Minor Surgery,0,1002583
+36,Male,African American,Hosp2,1.8,True,33.6,108.93991315543526,False,True,,High-fat,5.0,3.0,3,Major Surgery,0,1003117
+27,Female,African American,Hosp2,1.6,False,32.0,81.76182990401965,True,False,,High-fat,5.0,2.0,1,Minor Surgery,0,1002486
+37,Male,Caucasian,Hosp3,1.5,True,30.8,70.0660391049624,False,False,Occasional,High-fat,3.0,5.0,2,,0,1004355
+48,Female,Caucasian,Hosp2,1.6,False,21.0,53.58342980076747,False,False,Regular,High-fat,2.0,6.0,1,,0,1008213
+59,Female,Hispanic,Hosp1,1.7,False,26.9,77.33696817396385,False,False,Regular,Balanced,2.0,8.0,7,,0,1003804
+45,Female,Hispanic,Hosp3,1.7,False,23.6,68.17661243082678,False,False,Regular,Balanced,0.0,4.0,1,Major Surgery,0,1002814
+59,Male,Hispanic,Hosp1,1.7,False,30.4,87.1145403782084,True,True,,High-fat,3.0,2.0,7,Major Surgery,1,1007887
+30,Male,Other,Hosp1,1.6,False,26.8,68.61561183233759,False,False,Occasional,Other,3.0,3.0,3,Major Surgery,0,1005413
+19,Male,Hispanic,Hosp1,1.8,False,24.7,80.3028165751102,False,False,Occasional,Vegetarian,1.0,5.0,4,Minor Surgery,0,1004465
+34,Female,Other,Hosp2,1.5,True,33.0,75.12373742723987,False,False,,Other,5.0,3.0,13,Other Treatment,0,1007648
+57,Male,Caucasian,Hosp3,1.7,True,22.2,64.13612132928277,False,False,Occasional,Vegetarian,9.0,3.0,0,,1,1004057
+67,Female,Hispanic,Hosp3,1.8,False,27.5,89.30880159651494,False,False,,High-fat,3.0,5.0,10,Minor Surgery,1,1002004
+61,Female,Hispanic,Hosp1,1.8,False,22.3,72.38760552974848,False,False,Occasional,Vegetarian,3.0,4.0,4,Minor Surgery,0,1004084
+34,Male,African American,Hosp3,1.7,False,30.5,87.81399317727681,False,False,,Vegetarian,1.0,2.0,1,Major Surgery,0,1000214
+51,Female,Hispanic,Hosp1,1.7,False,33.5,96.78277940985087,False,False,,High-fat,5.0,1.0,0,Major Surgery,0,1007461
+60,Female,Caucasian,Hosp3,1.7,False,24.4,70.90090491561759,False,False,Regular,Balanced,6.0,4.0,7,Major Surgery,0,1006165
+51,Female,African American,Hosp2,1.6,False,24.0,61.777361640067426,False,False,Occasional,High-fat,6.0,5.0,1,Minor Surgery,0,1007046
+57,Male,Hispanic,Hosp3,1.9,False,32.0,115.14711423950972,False,False,,Vegetarian,3.0,4.0,0,,0,1000188
+95,Female,Hispanic,Hosp3,1.5,False,28.9,64.46612604950163,False,False,Occasional,Balanced,3.0,,2,Major Surgery,1,1001792
+40,Male,Caucasian,Hosp1,1.8,False,30.6,98.73583296156794,False,True,,Vegetarian,3.0,3.0,0,,0,1008629
+74,Female,Caucasian,Hosp2,1.6,True,26.9,68.92725749222483,False,True,Regular,Other,6.0,1.0,0,Major Surgery,1,1002873
+59,Female,Hispanic,Hosp1,1.8,True,29.9,96.336137834783,True,True,Occasional,Other,5.0,5.0,2,,1,1005003
+33,Male,Hispanic,Hosp1,1.8,False,30.5,98.91903638777224,False,False,,Other,4.0,2.0,1,Minor Surgery,0,1004819
+60,Male,Caucasian,Hosp3,1.7,False,24.7,71.86934606246635,False,False,Regular,Vegetarian,1.0,6.0,0,,0,1000237
+33,Male,Caucasian,Hosp3,1.8,False,26.0,84.65476668775959,False,False,Occasional,Other,1.0,3.0,3,Major Surgery,0,1006088
+33,Female,African American,Hosp3,1.6,True,27.6,70.7081525719846,False,False,Occasional,High-fat,2.0,1.0,4,Major Surgery,0,1008402
+73,Female,Caucasian,Hosp1,1.6,True,27.1,69.951851915426,False,False,Occasional,Other,4.0,6.0,2,Major Surgery,1,1007693
+70,Male,African American,Hosp1,1.8,False,24.1,78.13632469805658,False,False,Occasional,Balanced,3.0,3.0,4,Major Surgery,0,1005163
+49,Male,African American,Hosp1,1.6,True,18.4,47.44233280070923,False,False,Regular,Balanced,3.0,2.0,1,Major Surgery,0,1009132
+55,Female,Caucasian,Hosp3,1.7,False,23.2,67.68715020258628,False,False,Regular,Vegetarian,4.0,1.0,7,Other Treatment,0,1001522
+64,Female,African American,Hosp3,1.8,False,21.9,71.88540906322436,False,False,Regular,Vegetarian,2.0,,2,,0,1001556
+72,Male,Hispanic,Hosp1,1.8,True,22.9,74.60009751082129,False,False,,Balanced,4.0,2.0,15,Major Surgery,1,1006692
+77,Male,Caucasian,Hosp3,1.7,False,22.4,63.64206236802079,False,False,Regular,Vegetarian,3.0,6.0,5,,0,1006717
+55,Male,Other,Hosp3,1.6,False,25.8,65.87997936088217,False,False,,High-fat,6.0,3.0,1,Major Surgery,0,1007324
+71,Male,Caucasian,Hosp2,1.8,False,22.8,73.77488986208292,False,False,,Other,1.0,2.0,5,,0,1002724
+68,Male,Caucasian,Hosp1,1.7,True,28.8,83.68953542928146,False,False,Occasional,High-fat,2.0,6.0,3,Major Surgery,1,1007990
+31,Male,Hispanic,Hosp1,1.5,False,30.2,68.02848034279066,False,False,,High-fat,6.0,6.0,1,Minor Surgery,0,1006352
+24,Male,Caucasian,Hosp3,1.6,False,28.0,72.48800611475929,False,False,Regular,Other,2.0,,1,,0,1007756
+28,Male,Caucasian,Hosp2,1.8,False,22.9,74.22064029760647,False,True,Occasional,Vegetarian,3.0,2.0,4,Major Surgery,0,1001717
+45,Male,African American,Hosp1,1.8,True,23.4,75.9498710180273,False,False,Occasional,Balanced,0.0,3.0,0,,0,1008355
+71,Female,Hispanic,Hosp3,1.7,False,35.6,103.53800011645852,False,False,,High-fat,2.0,1.0,2,Minor Surgery,0,1001259
+18,Female,Caucasian,Hosp1,1.6,False,20.4,52.545580925304854,False,False,Regular,Vegetarian,,3.0,3,,0,1002264
+55,Male,African American,Hosp2,1.7,False,28.1,81.4303330363554,True,True,Occasional,Other,5.0,1.0,4,Minor Surgery,1,1002385
+61,Female,Other,Hosp1,1.8,True,32.8,105.45576733037184,True,True,Occasional,Balanced,4.0,4.0,2,Other Treatment,1,1006760
+68,Male,Other,Hosp3,1.5,True,31.0,69.22305755906154,False,True,,Other,2.0,5.0,2,Other Treatment,1,1008806
+63,Female,Other,Hosp1,1.6,True,27.2,69.20302366275008,False,False,Regular,High-fat,1.0,4.0,5,,0,1009246
+40,Male,Hispanic,Hosp3,1.5,False,33.8,75.23775157567492,False,False,Occasional,Balanced,1.0,3.0,0,Minor Surgery,0,1000360
+38,Female,Hispanic,Hosp3,1.6,False,27.0,69.680915361313,False,False,Regular,Balanced,,4.0,1,Major Surgery,0,1005522
+50,Male,Other,Hosp2,1.8,False,21.0,68.96765685049728,False,False,Occasional,High-fat,5.0,4.0,5,,0,1008209
+18,Female,Hispanic,Hosp3,1.9,True,18.8,67.49238972388771,False,False,,Balanced,2.0,7.0,0,,0,1003289
+44,Male,Caucasian,Hosp1,1.6,True,22.1,57.24834803736764,False,False,Regular,High-fat,2.0,6.0,1,Minor Surgery,0,1004772
+67,Female,African American,Hosp3,1.8,False,23.4,75.55538187706634,False,False,,Balanced,2.0,5.0,10,Other Treatment,0,1002587
+34,Female,Other,Hosp1,1.5,False,30.1,67.20273053511076,False,False,,Other,4.0,5.0,0,Other Treatment,0,1000630
+71,Female,African American,Hosp2,2.0,False,26.8,107.2676476499416,False,False,Occasional,Other,3.0,4.0,1,,0,1003589
+18,Female,Caucasian,Hosp2,1.7,False,33.1,95.43505834506456,False,True,,High-fat,3.0,2.0,3,,0,1008685
+65,Male,Hispanic,Hosp2,1.9,False,23.2,84.35165615149221,False,False,,High-fat,2.0,5.0,2,Major Surgery,0,1007820
+58,Female,Caucasian,Hosp3,1.7,False,27.2,78.68959729430435,False,False,Regular,Other,5.0,5.0,3,Major Surgery,0,1003677
+78,Male,Caucasian,Hosp3,1.7,False,24.6,69.99892008547369,False,True,,High-fat,2.0,2.0,0,,1,1003663
+68,Female,Caucasian,Hosp3,1.6,False,21.6,54.87122005146786,False,False,Regular,Balanced,0.0,,4,Other Treatment,0,1005324
+50,Male,Caucasian,Hosp2,1.7,True,21.0,60.28118322303739,False,False,Occasional,Vegetarian,4.0,4.0,0,,0,1007085
+61,Female,Caucasian,Hosp1,1.8,False,31.0,100.28613609816178,True,False,,High-fat,1.0,7.0,0,,1,1003066
+40,Male,Hispanic,Hosp2,1.5,True,20.0,45.48225759550834,False,False,Occasional,Balanced,0.0,3.0,0,Minor Surgery,0,1002778
+50,Male,African American,Hosp3,1.8,False,24.7,78.9300822352016,False,False,Regular,Balanced,4.0,2.0,0,Other Treatment,0,1009121
+54,Female,Other,Hosp1,1.8,True,32.9,105.7152262958654,False,True,Occasional,Balanced,1.0,0.0,0,,0,1009707
+77,Female,Caucasian,Hosp2,1.8,False,28.7,93.6214779704535,False,False,,High-fat,2.0,2.0,4,Minor Surgery,0,1007432
+43,Female,Hispanic,Hosp3,1.6,False,26.2,66.41454625343198,False,False,Occasional,Other,4.0,6.0,2,Major Surgery,0,1004167
+68,Male,African American,Hosp3,1.6,True,36.2,93.33218790043644,False,False,,High-fat,1.0,6.0,0,Major Surgery,0,1000399
+62,Female,Caucasian,Hosp2,1.7,False,26.3,75.99081472501385,False,False,,Other,3.0,1.0,2,Major Surgery,0,1006996
+46,Female,Caucasian,Hosp1,1.6,False,18.5,47.20201444756334,False,False,Occasional,Balanced,2.0,7.0,4,Minor Surgery,0,1004964
+43,Male,Caucasian,Hosp3,1.6,False,17.9,46.21208986975358,False,False,Regular,Balanced,8.0,3.0,1,,0,1008293
+58,Female,Hispanic,Hosp1,1.7,False,25.0,72.26102727582158,False,True,Regular,Other,3.0,4.0,12,Minor Surgery,1,1000250
+50,Male,Hispanic,Hosp2,1.6,True,27.0,67.93127898843079,False,False,,Other,5.0,,0,Other Treatment,0,1005307
+61,Male,Hispanic,Hosp2,1.8,False,25.8,83.80054930205628,True,False,Regular,High-fat,5.0,5.0,3,,1,1000728
+41,Male,African American,Hosp2,1.7,True,33.4,96.8907463746934,False,False,,Balanced,3.0,0.0,2,Major Surgery,0,1000193
+67,Female,Hispanic,Hosp1,1.6,False,29.0,74.4584132755053,False,True,Regular,High-fat,2.0,3.0,2,,0,1001622
+64,Male,Caucasian,Hosp2,1.6,False,24.5,63.07116336189407,False,False,Occasional,Balanced,4.0,1.0,2,Other Treatment,0,1006939
+60,Female,Other,Hosp2,1.6,False,23.5,60.01816817206141,False,True,Regular,Other,1.0,0.0,8,,0,1007821
+39,Female,African American,Hosp3,1.7,False,21.3,62.18462148828299,False,False,Regular,Vegetarian,2.0,0.0,0,Major Surgery,0,1005589
+62,Male,Caucasian,Hosp3,1.8,False,24.9,80.31205142857654,True,False,Regular,Balanced,4.0,,2,,0,1002764
+37,Female,Caucasian,Hosp2,1.8,False,23.6,77.18329771364182,False,False,,Vegetarian,1.0,1.0,3,,0,1009899
+49,Male,Caucasian,Hosp1,1.8,False,19.7,63.36559548901166,False,False,Regular,High-fat,3.0,7.0,6,Major Surgery,0,1001462
+64,Female,Hispanic,Hosp1,1.6,False,26.8,68.00795597979176,False,False,Regular,High-fat,1.0,0.0,2,,0,1001489
+54,Male,Caucasian,Hosp2,1.6,False,30.3,78.20828199396469,False,False,Regular,Balanced,5.0,6.0,0,,0,1002624
+49,Male,Hispanic,Hosp3,1.8,False,29.4,94.6215936832988,False,True,Regular,Other,3.0,3.0,4,,0,1004588
+40,Female,Hispanic,Hosp1,1.5,False,36.0,81.10429306935917,False,False,,High-fat,1.0,2.0,4,Major Surgery,0,1000372
+56,Female,African American,Hosp1,1.8,False,29.6,96.60994923491693,False,True,Regular,Balanced,1.0,2.0,2,,0,1004986
+64,Female,Caucasian,Hosp3,1.7,False,24.4,70.45453491711869,False,True,Occasional,Balanced,5.0,3.0,0,,1,1007918
+60,Male,Caucasian,Hosp1,1.7,False,23.5,66.95276290511707,False,False,Occasional,Balanced,5.0,1.0,1,,0,1008501
+50,Male,Hispanic,Hosp2,1.7,False,20.9,60.884655089765474,False,False,Regular,Balanced,1.0,5.0,6,Major Surgery,0,1007909
+56,Female,Other,Hosp1,1.6,False,24.9,64.0813139692564,False,False,Occasional,Balanced,3.0,6.0,0,Other Treatment,0,1008126
+40,Female,Hispanic,Hosp2,1.8,False,33.1,107.34297840360634,False,False,,Vegetarian,5.0,3.0,0,Major Surgery,0,1007338
+75,Male,Caucasian,Hosp3,1.7,False,31.9,92.20448572769996,True,False,Occasional,High-fat,3.0,5.0,2,Other Treatment,1,1008300
+42,Male,Caucasian,Hosp2,1.7,False,23.3,67.4688741502494,False,False,Occasional,Vegetarian,2.0,2.0,0,Major Surgery,0,1005236
+60,Female,Hispanic,Hosp2,1.4,True,27.8,54.74836028635776,False,True,Occasional,High-fat,9.0,3.0,3,,1,1007675
+40,Male,Hispanic,Hosp1,1.7,True,32.9,95.99869189289169,True,True,,Balanced,2.0,7.0,2,,1,1003027
+66,Male,Hispanic,Hosp2,1.6,True,24.5,63.84344269698725,False,False,Regular,High-fat,5.0,5.0,4,,0,1000775
+32,Female,Hispanic,Hosp3,1.9,True,27.5,99.93573035934426,False,False,,Balanced,1.0,4.0,0,Other Treatment,0,1009145
+60,Female,Hispanic,Hosp1,1.7,False,18.2,52.52622133484088,True,False,Regular,High-fat,6.0,7.0,1,,1,1001960
+67,Male,African American,Hosp1,1.6,False,24.5,63.018654335315986,False,False,Regular,High-fat,1.0,5.0,1,Minor Surgery,0,1003548
+52,Male,Other,Hosp1,1.8,False,27.1,87.1505290303077,True,False,Regular,Balanced,4.0,3.0,0,Major Surgery,0,1006351
+58,Female,Caucasian,Hosp3,1.8,False,26.0,83.94645455099835,False,False,,Vegetarian,6.0,3.0,3,Major Surgery,1,1004934
+35,Female,Caucasian,Hosp1,1.7,True,21.8,62.45069349184037,False,False,Occasional,Balanced,3.0,5.0,1,,0,1002061
+59,Female,Other,Hosp3,1.7,True,22.3,65.06007227912609,False,True,Occasional,Balanced,,2.0,1,Major Surgery,1,1009069
+33,Female,African American,Hosp3,1.7,False,33.2,95.4391224144451,False,True,,High-fat,2.0,3.0,0,,0,1001318
+42,Male,Caucasian,Hosp1,1.7,False,24.5,71.29824074440847,False,True,,Balanced,,4.0,1,Major Surgery,0,1007333
+18,Male,Other,Hosp1,1.4,False,24.8,48.458013362694146,False,False,Occasional,Balanced,1.0,6.0,10,Major Surgery,0,1009456
+56,Female,Hispanic,Hosp3,1.6,False,17.7,45.300803700290835,False,False,Regular,Balanced,0.0,3.0,0,Minor Surgery,0,1005721
+54,Male,African American,Hosp3,1.9,False,24.4,87.8530775077402,False,False,Occasional,Balanced,3.0,0.0,1,Other Treatment,0,1006859
+57,Female,Hispanic,Hosp2,1.6,False,32.6,83.89064755361338,False,False,,Other,1.0,1.0,2,Other Treatment,0,1001627
+39,Female,Caucasian,Hosp1,1.7,False,25.1,72.52641017634637,False,False,Occasional,Balanced,6.0,,3,Major Surgery,0,1007849
+57,Female,Caucasian,Hosp3,1.8,False,26.9,87.53216363571944,False,False,Occasional,Other,3.0,3.0,0,Major Surgery,0,1004403
+27,Female,Caucasian,Hosp1,1.6,True,30.7,78.61928738095901,False,False,,Other,5.0,0.0,13,Major Surgery,0,1005059
+40,Female,Hispanic,Hosp3,1.8,True,19.8,64.2747860289335,False,False,Occasional,Balanced,1.0,2.0,7,Major Surgery,0,1006437
+45,Female,African American,Hosp3,1.6,False,27.7,70.59829322213537,False,True,,Balanced,2.0,2.0,0,Major Surgery,0,1008975
+50,Female,Hispanic,Hosp2,1.7,False,27.7,80.5069578745912,True,False,Regular,High-fat,3.0,7.0,0,Major Surgery,0,1009880
+57,Male,African American,Hosp3,1.8,False,33.7,109.40254393637612,False,True,,Other,4.0,3.0,1,,0,1008571
+45,Female,Caucasian,Hosp2,1.8,False,29.4,95.99696221211538,False,False,,High-fat,2.0,,0,,0,1005366
+18,Female,African American,Hosp2,1.7,False,33.4,96.46399200077173,False,True,,High-fat,5.0,0.0,1,Other Treatment,0,1009694
+74,Female,Hispanic,Hosp3,1.8,False,26.0,84.22299170818329,False,False,Regular,High-fat,1.0,6.0,9,Minor Surgery,0,1000633
+42,Male,African American,Hosp3,1.6,True,29.5,75.55295084609006,False,False,Regular,Other,4.0,6.0,8,,0,1008081
+57,Female,Caucasian,Hosp1,1.6,False,25.8,65.53387750976225,False,False,Regular,Other,1.0,4.0,4,Major Surgery,0,1006084
+52,Female,Other,Hosp3,1.7,False,33.0,94.9681668773302,False,False,,Other,7.0,4.0,3,Other Treatment,0,1003839
+44,Male,Hispanic,Hosp3,1.6,False,29.3,74.50374283260753,False,False,,High-fat,3.0,2.0,4,Other Treatment,0,1002540
+79,Female,African American,Hosp3,1.9,False,25.8,93.83699222584072,False,False,Occasional,High-fat,4.0,,1,Major Surgery,1,1004039
+51,Female,Caucasian,Hosp3,1.9,False,33.4,121.23183618360756,False,False,,High-fat,0.0,1.0,0,Minor Surgery,0,1009706
+23,Female,Caucasian,Hosp3,1.9,False,28.5,103.76117200779612,True,False,,Vegetarian,5.0,2.0,2,Minor Surgery,0,1009761
+59,Male,Caucasian,Hosp3,1.7,True,17.6,51.42299468916643,False,True,Occasional,Balanced,2.0,3.0,4,Major Surgery,1,1001211
+74,Male,Hispanic,Hosp1,1.8,False,22.2,71.57148796249834,False,False,Regular,Balanced,3.0,3.0,2,Minor Surgery,0,1006419
+57,Male,Hispanic,Hosp2,1.8,True,33.5,108.4831232760169,False,True,,High-fat,1.0,,1,,0,1005429
+22,Female,Other,Hosp2,1.8,True,26.5,85.81413156575024,False,True,Regular,Vegetarian,3.0,5.0,1,Other Treatment,0,1008522
+63,Male,Caucasian,Hosp2,1.6,False,27.0,68.64617008337432,False,False,Regular,High-fat,3.0,5.0,0,Major Surgery,0,1004479
+37,Female,Other,Hosp2,1.7,True,21.2,60.846603719798026,False,False,Occasional,Balanced,1.0,2.0,0,Other Treatment,0,1009865
+22,Male,African American,Hosp3,1.6,False,32.8,84.41257665024821,False,True,,Other,1.0,7.0,3,Minor Surgery,0,1005819
+47,Male,Hispanic,Hosp2,1.7,False,33.2,95.1479479429898,False,False,Occasional,Other,3.0,5.0,2,,0,1001645
+59,Female,Other,Hosp1,1.8,False,28.6,92.67365888608414,False,True,Regular,Other,2.0,2.0,2,Minor Surgery,0,1001746
+54,Male,Hispanic,Hosp3,1.8,False,26.5,86.77700481257502,False,False,Occasional,Other,7.0,2.0,2,Major Surgery,0,1007227
+55,Female,Caucasian,Hosp2,1.6,False,20.7,53.138789467757725,False,False,Occasional,Balanced,3.0,7.0,1,Major Surgery,0,1009099
+51,Male,African American,Hosp1,1.8,True,19.0,61.80999301631779,False,True,Occasional,Other,4.0,2.0,5,,1,1008952
+41,Male,Hispanic,Hosp3,1.8,False,29.4,95.68185882111538,False,True,,High-fat,1.0,3.0,1,Other Treatment,0,1009015
+21,Female,Caucasian,Hosp3,1.6,False,26.5,66.94843199293041,False,False,Occasional,Other,0.0,2.0,1,,0,1006274
+44,Female,Caucasian,Hosp1,1.7,False,27.5,78.59746823272958,False,True,Occasional,Balanced,4.0,6.0,2,Minor Surgery,0,1007585
+29,Male,African American,Hosp1,1.5,False,28.6,64.4242077637517,False,True,Regular,Other,2.0,2.0,0,,0,1001304
+22,Female,Caucasian,Hosp1,1.7,True,28.2,80.59594462040816,False,True,Regular,High-fat,6.0,1.0,0,Other Treatment,0,1004278
+48,Male,Other,Hosp1,1.8,True,28.4,92.12807686297369,False,False,Regular,Vegetarian,3.0,2.0,6,Minor Surgery,0,1009052
+21,Male,Hispanic,Hosp1,1.8,False,33.5,108.44583237595847,False,False,,Balanced,4.0,1.0,0,,0,1004774
+31,Male,Caucasian,Hosp1,1.8,False,25.0,80.21882704502956,False,False,Regular,Other,3.0,2.0,10,Minor Surgery,0,1001903
+62,Male,Caucasian,Hosp2,1.7,False,29.4,84.78182161761744,False,False,Regular,Vegetarian,3.0,2.0,2,Other Treatment,0,1001383
+57,Female,Caucasian,Hosp3,1.8,False,31.2,101.47193165489524,False,True,,High-fat,4.0,6.0,0,Minor Surgery,1,1002579
+70,Male,African American,Hosp1,1.5,False,30.6,70.23883975812288,True,False,Occasional,Balanced,4.0,6.0,8,Other Treatment,1,1009609
+54,Male,Caucasian,Hosp2,1.8,True,18.8,59.89275915387682,False,False,,Balanced,2.0,0.0,9,Minor Surgery,0,1009558
+60,Male,Hispanic,Hosp2,1.7,False,26.3,75.29268086186758,False,False,,High-fat,3.0,1.0,7,,0,1006794
+36,Female,Hispanic,Hosp3,1.6,True,29.8,77.08748827589582,True,False,,High-fat,4.0,1.0,6,Other Treatment,1,1006127
+54,Female,Hispanic,Hosp3,1.8,False,29.8,96.35697955604878,False,False,Regular,Other,4.0,4.0,7,Major Surgery,0,1001232
+69,Female,Hispanic,Hosp3,1.8,False,26.5,85.73578833772368,False,False,,Vegetarian,4.0,2.0,1,Major Surgery,0,1003757
+40,Female,Other,Hosp3,1.8,True,22.8,74.2622408650189,False,False,,Balanced,2.0,2.0,3,Major Surgery,0,1002513
+43,Male,Hispanic,Hosp2,1.7,True,20.1,58.271670453983546,True,False,Occasional,High-fat,7.0,5.0,11,,1,1006800
+52,Male,African American,Hosp2,1.8,False,30.1,97.03809676199936,False,False,,High-fat,4.0,1.0,0,Other Treatment,0,1008186
+44,Female,Other,Hosp3,1.8,False,27.1,88.2533945650791,False,False,Regular,High-fat,6.0,4.0,5,,0,1007521
+63,Male,Other,Hosp3,1.9,False,17.6,63.93782458423064,False,False,Occasional,Vegetarian,7.0,5.0,2,Major Surgery,1,1004464
+63,Male,Caucasian,Hosp1,1.6,False,20.1,51.25581240416849,False,False,Regular,Balanced,3.0,4.0,5,Major Surgery,0,1002546
+41,Female,Caucasian,Hosp2,1.6,False,29.6,76.35602410775702,False,False,Occasional,Balanced,6.0,5.0,0,Minor Surgery,0,1004390
+67,Female,African American,Hosp1,1.7,False,32.0,93.5585511819732,True,False,,High-fat,4.0,2.0,1,Other Treatment,1,1008854
+76,Female,Caucasian,Hosp1,1.8,False,29.3,95.2515309236706,False,True,Regular,Other,,3.0,12,Major Surgery,1,1008656
+68,Female,African American,Hosp2,1.6,False,32.8,83.96636766226433,False,True,,Balanced,3.0,1.0,9,,0,1009751
+65,Female,Caucasian,Hosp2,1.7,False,24.8,72.03034750815699,False,True,Occasional,Balanced,1.0,3.0,2,Major Surgery,0,1002072
+52,Female,Caucasian,Hosp3,1.9,False,20.8,75.17019808956947,False,False,Occasional,Balanced,2.0,3.0,6,,0,1009620
+28,Female,Caucasian,Hosp2,1.7,False,22.6,64.54451597177197,False,False,Regular,High-fat,4.0,4.0,2,,0,1008976
+63,Female,Hispanic,Hosp3,1.8,True,19.6,63.30871541738706,False,False,,High-fat,1.0,,9,Major Surgery,1,1007048
+52,Female,Caucasian,Hosp3,1.8,False,23.2,75.2138538786933,False,False,Regular,High-fat,,,5,Other Treatment,0,1004365
+18,Male,African American,Hosp1,1.6,False,22.5,57.28446500444279,False,True,Occasional,Balanced,4.0,0.0,0,,0,1006277
+42,Female,Hispanic,Hosp1,1.9,False,32.2,115.84089765470095,False,True,Occasional,High-fat,2.0,8.0,0,,0,1001619
+31,Female,Caucasian,Hosp3,1.6,False,21.3,55.42703036878145,False,False,Occasional,Balanced,3.0,7.0,1,Minor Surgery,0,1000625
+31,Female,African American,Hosp3,1.6,False,31.2,79.91045481928843,False,False,,High-fat,1.0,8.0,7,Other Treatment,0,1003028
+38,Female,Caucasian,Hosp3,1.7,True,21.1,61.568886715984746,False,True,Occasional,High-fat,3.0,1.0,2,,0,1008914
+53,Female,Other,Hosp3,1.8,True,27.9,89.8684362829312,False,False,,High-fat,2.0,6.0,3,Minor Surgery,0,1002147
+31,Female,Caucasian,Hosp2,1.6,False,20.4,52.041610336152054,True,False,Regular,Vegetarian,2.0,3.0,3,Other Treatment,0,1004571
+39,Female,Hispanic,Hosp2,1.8,True,29.0,94.14768475948974,False,False,Occasional,Vegetarian,2.0,,6,,0,1005442
+78,Female,Hispanic,Hosp3,1.7,True,25.5,73.47847876953944,False,False,Occasional,High-fat,0.0,2.0,2,Major Surgery,0,1002397
+18,Male,Hispanic,Hosp2,1.5,True,29.6,66.15527800361272,False,False,Regular,High-fat,1.0,2.0,5,,0,1000174
+21,Male,African American,Hosp3,1.8,False,19.4,62.70109088373823,False,False,,Vegetarian,6.0,3.0,0,Major Surgery,0,1008016
+85,Female,Caucasian,Hosp2,1.8,False,26.6,85.60875338185181,False,False,,Other,6.0,3.0,0,,1,1008736
+39,Female,Caucasian,Hosp2,1.7,False,23.6,67.74902611236088,False,False,,High-fat,7.0,3.0,0,Minor Surgery,0,1003361
+69,Female,Caucasian,Hosp2,1.6,False,19.5,49.605253729978195,False,False,,High-fat,2.0,,0,,1,1003218
+43,Female,Caucasian,Hosp1,1.6,False,27.7,70.70240311228375,False,False,,High-fat,,0.0,4,Minor Surgery,0,1006396
+88,Female,Caucasian,Hosp3,1.6,False,25.8,66.19993601082683,False,False,Regular,High-fat,4.0,2.0,1,Other Treatment,0,1008906
+56,Male,Other,Hosp2,1.6,True,21.7,55.88913491330714,False,False,,Balanced,2.0,5.0,3,Other Treatment,0,1000699
+34,Male,Caucasian,Hosp1,1.7,True,20.1,57.74440377937177,False,False,,Balanced,3.0,6.0,2,Other Treatment,0,1005067
+51,Female,Hispanic,Hosp3,1.8,False,16.5,53.36907073255441,False,False,Occasional,Vegetarian,4.0,6.0,4,Major Surgery,0,1004263
+18,Male,Caucasian,Hosp3,1.7,False,26.4,76.83123062803377,False,False,Occasional,Balanced,1.0,,6,Major Surgery,0,1006868
+46,Male,Caucasian,Hosp3,1.6,False,32.0,81.71346939856645,False,True,Regular,High-fat,,6.0,3,Major Surgery,0,1002337
+70,Female,Caucasian,Hosp2,1.7,False,34.2,99.8375358489766,False,False,Occasional,Other,4.0,5.0,0,Minor Surgery,0,1005034
+52,Female,Caucasian,Hosp2,1.7,False,26.6,77.21724665811212,False,False,Regular,Vegetarian,4.0,,1,Major Surgery,0,1008174
+73,Male,African American,Hosp2,1.7,True,17.9,52.5515458245858,False,False,Regular,Balanced,2.0,1.0,4,Minor Surgery,0,1006657
+18,Female,Hispanic,Hosp1,1.6,False,25.8,65.92283326762734,False,False,Regular,High-fat,6.0,5.0,1,Major Surgery,0,1005205
+25,Female,Caucasian,Hosp3,1.5,False,25.6,57.73576948101904,False,False,Occasional,Other,1.0,0.0,2,,0,1000969
+61,Male,Hispanic,Hosp2,1.6,False,23.4,60.17808782966902,False,False,,High-fat,,5.0,8,Minor Surgery,1,1001292
+45,Male,Hispanic,Hosp3,1.9,False,22.0,79.9397306502662,False,False,,Balanced,4.0,1.0,1,Major Surgery,0,1004419
+47,Male,Caucasian,Hosp2,1.7,False,28.3,82.42055601481347,False,False,Regular,Balanced,1.0,1.0,1,Major Surgery,0,1003290
+44,Male,Other,Hosp3,1.8,False,29.7,96.39090758301404,False,False,,Balanced,2.0,8.0,4,Other Treatment,0,1007047
+27,Female,Hispanic,Hosp3,1.7,False,21.6,62.17278186240537,False,False,Occasional,Balanced,3.0,4.0,1,Other Treatment,0,1003252
+59,Male,Hispanic,Hosp3,1.6,False,32.8,84.02355745371939,False,True,,Balanced,3.0,6.0,0,Major Surgery,0,1009736
+38,Female,Hispanic,Hosp3,1.8,True,26.0,84.10735279983784,True,False,Regular,High-fat,4.0,6.0,3,Minor Surgery,0,1000553
+18,Male,Caucasian,Hosp3,1.6,False,26.5,67.58113645220992,False,True,Regular,Other,4.0,,8,Other Treatment,0,1002202
+46,Female,Hispanic,Hosp1,1.9,False,25.3,90.96990122312442,False,False,Occasional,High-fat,,2.0,1,Major Surgery,0,1003257
+41,Female,Other,Hosp3,1.6,False,29.3,75.33157867956923,False,False,Regular,Other,,3.0,1,Major Surgery,0,1001378
+55,Female,Caucasian,Hosp1,1.7,True,24.2,69.67369129223255,False,False,Occasional,Vegetarian,1.0,,6,Major Surgery,0,1005699
+61,Female,Caucasian,Hosp2,1.5,False,21.0,47.54194376137104,False,True,Regular,High-fat,2.0,3.0,2,Minor Surgery,0,1008034
+43,Female,Caucasian,Hosp3,1.8,False,25.0,81.08279166648686,False,False,Occasional,High-fat,5.0,0.0,1,,0,1008377
+37,Male,Hispanic,Hosp3,1.7,False,31.7,92.1147561759558,False,True,Regular,Balanced,5.0,5.0,3,,0,1002565
+65,Female,Hispanic,Hosp3,1.6,True,28.5,73.70388433829149,False,True,,High-fat,4.0,3.0,17,Major Surgery,1,1004113
+28,Male,African American,Hosp2,1.5,False,27.7,61.342269958431736,False,False,Regular,Other,3.0,6.0,7,,0,1004205
+80,Male,Hispanic,Hosp1,1.8,False,25.3,81.59924799832204,False,False,Occasional,High-fat,4.0,,3,,1,1005390
+38,Male,Other,Hosp1,1.6,False,25.3,64.85836134379653,False,False,Occasional,High-fat,4.0,5.0,12,,0,1007495
+68,Female,Hispanic,Hosp1,1.6,False,25.2,63.80330139122856,False,False,Regular,High-fat,2.0,2.0,2,Major Surgery,0,1007361
+52,Female,African American,Hosp1,1.5,False,35.7,80.5183703579753,True,False,,High-fat,5.0,2.0,4,Other Treatment,0,1003339
+18,Female,African American,Hosp3,1.8,False,29.3,95.5470205160284,False,False,,Other,6.0,2.0,2,Other Treatment,0,1005718
+48,Female,Hispanic,Hosp1,1.5,False,25.5,57.54585549475528,False,False,Regular,Vegetarian,0.0,2.0,0,Other Treatment,0,1005260
+50,Male,Hispanic,Hosp1,1.7,False,28.2,81.00352416831853,False,True,Regular,High-fat,2.0,3.0,2,Minor Surgery,0,1004734
+43,Female,Caucasian,Hosp2,1.7,False,22.2,64.79404389512158,False,True,Regular,Balanced,2.0,8.0,1,Minor Surgery,0,1005639
+48,Female,Caucasian,Hosp2,1.9,False,27.1,98.072228602791,False,False,,High-fat,3.0,2.0,1,,0,1007600
+79,Male,Hispanic,Hosp2,1.5,True,22.4,51.14036062871999,False,False,Regular,Vegetarian,3.0,3.0,1,,1,1007555
+72,Male,Caucasian,Hosp1,1.7,False,19.1,56.14589805468909,False,False,,Balanced,3.0,4.0,1,Minor Surgery,0,1003855
+23,Female,Hispanic,Hosp3,1.6,False,15.0,38.81913995436864,False,True,Occasional,Vegetarian,4.0,,0,,0,1003799
+42,Female,African American,Hosp3,1.7,False,32.8,94.08257309905632,False,False,,High-fat,4.0,0.0,7,Other Treatment,0,1005957
+27,Female,Hispanic,Hosp3,1.6,False,26.4,66.72615545405512,False,False,,Vegetarian,3.0,2.0,1,Minor Surgery,0,1001565
+66,Male,Caucasian,Hosp3,1.8,False,29.9,97.18335211328916,True,False,Occasional,Other,2.0,7.0,4,Other Treatment,1,1004930
+49,Female,Hispanic,Hosp3,1.7,False,37.4,107.86717617458184,False,False,Occasional,Other,7.0,,4,Other Treatment,0,1009857
+61,Male,Other,Hosp1,1.7,False,19.9,57.77398637039915,False,True,Regular,High-fat,4.0,4.0,0,Other Treatment,0,1004265
+63,Male,Caucasian,Hosp3,1.6,False,25.3,64.77409144576866,False,False,,High-fat,3.0,5.0,3,,0,1003487
+35,Female,Caucasian,Hosp1,1.5,False,25.6,56.99568557979581,False,False,,Other,5.0,2.0,9,Minor Surgery,0,1002436
+64,Male,Other,Hosp3,1.6,False,25.2,64.3043634211848,False,True,Regular,Other,3.0,,4,Minor Surgery,0,1007023
+46,Male,African American,Hosp2,1.8,True,35.9,116.2138923442524,False,False,Occasional,High-fat,2.0,0.0,13,Major Surgery,0,1000713
+74,Male,Caucasian,Hosp3,1.9,True,29.6,106.87737757083612,False,False,Regular,Other,4.0,3.0,3,,0,1001219
+50,Male,Other,Hosp2,1.5,False,21.2,47.56827075937357,False,False,Occasional,Balanced,0.0,3.0,3,,0,1005464
+47,Female,Caucasian,Hosp3,1.6,True,23.2,60.202912834727485,False,True,Regular,Vegetarian,3.0,3.0,0,Major Surgery,0,1007722
+34,Male,Hispanic,Hosp3,1.8,False,23.9,76.91384122256136,False,False,Regular,Vegetarian,,1.0,1,Major Surgery,0,1005079
+49,Male,Caucasian,Hosp3,1.6,True,22.8,57.14671739275826,False,False,Occasional,Vegetarian,0.0,5.0,9,Minor Surgery,0,1008825
+67,Female,Caucasian,Hosp1,1.7,False,18.1,52.01085878207166,False,False,,Vegetarian,3.0,3.0,4,,0,1004825
+55,Female,Caucasian,Hosp3,1.7,True,20.2,58.35290601284731,False,False,Regular,Vegetarian,3.0,6.0,0,Other Treatment,0,1001076
+30,Male,African American,Hosp1,1.6,False,33.5,85.15878571109855,True,False,Occasional,Other,4.0,5.0,0,Minor Surgery,0,1001178
+61,Male,Hispanic,Hosp2,1.7,True,32.5,94.3376197972902,False,False,Regular,Other,3.0,2.0,0,,0,1008817
+58,Female,Hispanic,Hosp1,1.8,False,31.1,101.4633675348593,True,False,,Balanced,2.0,3.0,12,Major Surgery,0,1001961
+45,Male,African American,Hosp1,1.6,False,31.2,80.65934982653224,False,False,,High-fat,6.0,,5,Major Surgery,0,1009961
+86,Male,Hispanic,Hosp1,1.7,True,31.3,91.02806746125142,True,False,Occasional,Balanced,2.0,8.0,2,,1,1009713
+91,Female,Hispanic,Hosp1,1.8,True,27.6,89.23300732015426,False,False,Occasional,Other,0.0,6.0,12,Major Surgery,1,1005416
+56,Male,Caucasian,Hosp2,1.8,False,27.0,86.61674185883649,False,False,Occasional,High-fat,4.0,,2,,0,1009592
+38,Female,Caucasian,Hosp1,1.8,True,20.4,66.25927033495785,True,False,Regular,Vegetarian,4.0,2.0,0,Other Treatment,0,1006073
+67,Female,Caucasian,Hosp2,1.8,False,27.7,88.99354489540617,False,False,Occasional,High-fat,1.0,4.0,0,Minor Surgery,0,1007463
+73,Female,African American,Hosp1,1.8,False,33.6,109.66024856803172,False,True,,Other,,5.0,8,Other Treatment,1,1001073
+67,Female,Caucasian,Hosp3,1.5,False,31.8,71.45755336260875,False,False,Occasional,Other,5.0,3.0,2,Major Surgery,0,1000295
+36,Male,African American,Hosp2,1.6,False,26.6,67.87490855231302,False,False,,Other,4.0,4.0,11,Major Surgery,0,1001484
+18,Male,Caucasian,Hosp2,1.8,True,21.2,68.91053735666543,False,False,Occasional,Balanced,4.0,4.0,2,Major Surgery,0,1000300
+54,Male,Caucasian,Hosp1,1.6,True,29.2,74.39944928772876,False,True,Regular,High-fat,3.0,0.0,4,,0,1006936
+54,Male,Hispanic,Hosp3,1.8,False,19.9,64.72473214074307,False,True,,High-fat,2.0,,1,,1,1009721
+27,Female,Hispanic,Hosp1,1.7,False,33.1,95.69683273889372,False,False,,Other,,1.0,2,Major Surgery,0,1004358
+18,Female,African American,Hosp3,1.7,False,28.8,83.24716726165595,False,False,,Other,2.0,4.0,0,Major Surgery,0,1009543
+81,Female,Hispanic,Hosp2,1.7,False,32.5,94.07813604386288,False,False,,High-fat,4.0,2.0,8,Major Surgery,0,1003297
+51,Male,Caucasian,Hosp2,1.6,False,26.7,68.60634475427291,False,False,Occasional,Other,5.0,2.0,0,Other Treatment,0,1009248
+23,Male,Caucasian,Hosp3,1.6,False,32.2,82.64284810158199,False,False,Occasional,Other,3.0,7.0,0,Other Treatment,0,1006799
+37,Female,African American,Hosp2,1.6,False,33.5,85.19139911079093,False,False,Occasional,High-fat,2.0,4.0,13,Major Surgery,0,1004722
+36,Male,African American,Hosp2,1.7,False,21.8,62.4929431551834,False,False,,Balanced,4.0,2.0,2,,0,1003726
+62,Female,Caucasian,Hosp2,1.9,False,20.7,75.03714066499009,False,False,,Balanced,3.0,3.0,8,Minor Surgery,0,1008536
+43,Male,Caucasian,Hosp3,1.6,False,25.7,66.14369715666611,False,False,Regular,High-fat,3.0,4.0,2,,0,1007256
+63,Male,Hispanic,Hosp1,1.7,False,31.3,90.55740155960504,True,True,Occasional,High-fat,5.0,1.0,4,Other Treatment,1,1008353
+44,Female,Other,Hosp2,1.8,False,28.5,92.2105309014068,False,False,,Other,4.0,5.0,3,Minor Surgery,0,1003273
+62,Male,African American,Hosp3,1.8,False,26.1,85.65648087361069,True,False,,Balanced,7.0,9.0,1,,1,1009805
+45,Male,Hispanic,Hosp1,1.5,False,17.2,39.140465940965825,False,False,Regular,Vegetarian,0.0,,0,,0,1006831
+54,Male,Hispanic,Hosp3,1.6,False,35.8,90.90610557288664,False,False,,High-fat,8.0,2.0,9,Major Surgery,0,1006079
+56,Female,Caucasian,Hosp2,1.6,False,28.5,71.83520674756325,True,False,Regular,High-fat,3.0,2.0,21,Other Treatment,1,1008622
+54,Male,Caucasian,Hosp2,1.7,False,21.9,64.34404298386005,False,False,Occasional,Balanced,5.0,0.0,2,Major Surgery,0,1006199
+46,Male,Caucasian,Hosp1,1.6,True,21.9,56.35245416202003,False,False,Regular,High-fat,4.0,3.0,4,Major Surgery,0,1008007
+36,Male,Caucasian,Hosp2,1.6,False,26.0,66.82224371636603,False,True,Occasional,Balanced,1.0,5.0,13,,0,1001345
+18,Male,African American,Hosp2,1.5,True,36.9,82.69381211808334,False,False,,Vegetarian,3.0,5.0,0,Minor Surgery,0,1006742
+41,Male,Hispanic,Hosp2,1.7,False,24.7,71.51422244163054,False,False,Occasional,Vegetarian,4.0,4.0,0,Minor Surgery,0,1006268
+46,Male,Other,Hosp1,1.7,False,22.3,64.32979673633012,False,True,,Balanced,1.0,1.0,3,Minor Surgery,0,1002676
+39,Male,Caucasian,Hosp1,1.6,False,19.0,48.177081183553796,False,False,Occasional,Other,4.0,3.0,2,Major Surgery,0,1000333
+56,Female,Caucasian,Hosp2,1.7,False,32.0,92.29040940881532,False,False,,High-fat,3.0,2.0,0,Other Treatment,0,1000397
+56,Female,African American,Hosp3,1.7,False,28.6,83.08152824542255,False,False,Occasional,Other,2.0,3.0,0,Minor Surgery,0,1005613

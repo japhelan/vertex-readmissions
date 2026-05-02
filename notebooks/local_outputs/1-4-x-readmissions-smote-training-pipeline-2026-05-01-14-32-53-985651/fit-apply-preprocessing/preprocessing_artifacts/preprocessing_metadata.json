@@ -1,0 +1,47 @@
+{
+  "target_col": "target",
+  "id_col": "patient_id",
+  "num_cols": [
+    "height_m",
+    "bmi",
+    "adjusted_weight_kg",
+    "number_of_prior_visits",
+    "length_of_stay_score"
+  ],
+  "categorical_cols": [
+    "gender",
+    "ethnicity",
+    "hospital_id",
+    "exercise_frequency",
+    "diet_type",
+    "type_of_treatment",
+    "age_group"
+  ],
+  "output_feature_columns": [
+    "height_m",
+    "smoker",
+    "bmi",
+    "adjusted_weight_kg",
+    "has_diabetes",
+    "has_hypertension",
+    "number_of_prior_visits",
+    "medications_prescribed",
+    "length_of_stay_score",
+    "gender_Male",
+    "ethnicity_Caucasian",
+    "ethnicity_Hispanic",
+    "ethnicity_Other",
+    "hospital_id_Hosp2",
+    "hospital_id_Hosp3",
+    "exercise_frequency_Regular",
+    "diet_type_High-fat",
+    "diet_type_Other",
+    "diet_type_Vegetarian",
+    "type_of_treatment_Minor Surgery",
+    "type_of_treatment_Other Treatment",
+    "age_group_26-40",
+    "age_group_41-65",
+    "age_group_66-80",
+    "age_group_81+"
+  ]
+}
