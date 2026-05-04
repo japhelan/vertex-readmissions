@@ -1,0 +1,727 @@
+{
+  "components": {
+    "comp-apply-preprocessing": {
+      "executorLabel": "exec-apply-preprocessing",
+      "inputDefinitions": {
+        "artifacts": {
+          "input_dataset": {
+            "artifactType": {
+              "schemaTitle": "system.Dataset",
+              "schemaVersion": "0.0.1"
+            }
+          },
+          "preprocessing_artifacts": {
+            "artifactType": {
+              "schemaTitle": "system.Artifact",
+              "schemaVersion": "0.0.1"
+            }
+          }
+        },
+        "parameters": {
+          "id_col": {
+            "defaultValue": "patient_id",
+            "isOptional": true,
+            "parameterType": "STRING"
+          },
+          "target_col": {
+            "defaultValue": "target",
+            "isOptional": true,
+            "parameterType": "STRING"
+          }
+        }
+      },
+      "outputDefinitions": {
+        "artifacts": {
+          "output_dataset": {
+            "artifactType": {
+              "schemaTitle": "system.Dataset",
+              "schemaVersion": "0.0.1"
+            }
+          }
+        }
+      }
+    },
+    "comp-evaluate-model": {
+      "executorLabel": "exec-evaluate-model",
+      "inputDefinitions": {
+        "artifacts": {
+          "input_dataset": {
+            "artifactType": {
+              "schemaTitle": "system.Dataset",
+              "schemaVersion": "0.0.1"
+            }
+          },
+          "model_artifact": {
+            "artifactType": {
+              "schemaTitle": "system.Artifact",
+              "schemaVersion": "0.0.1"
+            }
+          }
+        },
+        "parameters": {
+          "id_col": {
+            "defaultValue": "patient_id",
+            "isOptional": true,
+            "parameterType": "STRING"
+          },
+          "target_col": {
+            "defaultValue": "target",
+            "isOptional": true,
+            "parameterType": "STRING"
+          }
+        }
+      },
+      "outputDefinitions": {
+        "artifacts": {
+          "evaluation_report": {
+            "artifactType": {
+              "schemaTitle": "system.Artifact",
+              "schemaVersion": "0.0.1"
+            }
+          },
+          "metrics": {
+            "artifactType": {
+              "schemaTitle": "system.Metrics",
+              "schemaVersion": "0.0.1"
+            }
+          },
+          "predictions_dataset": {
+            "artifactType": {
+              "schemaTitle": "system.Dataset",
+              "schemaVersion": "0.0.1"
+            }
+          }
+        }
+      }
+    },
+    "comp-fit-apply-preprocessing": {
+      "executorLabel": "exec-fit-apply-preprocessing",
+      "inputDefinitions": {
+        "artifacts": {
+          "input_dataset": {
+            "artifactType": {
+              "schemaTitle": "system.Dataset",
+              "schemaVersion": "0.0.1"
+            }
+          }
+        },
+        "parameters": {
+          "id_col": {
+            "defaultValue": "patient_id",
+            "isOptional": true,
+            "parameterType": "STRING"
+          },
+          "target_col": {
+            "defaultValue": "target",
+            "isOptional": true,
+            "parameterType": "STRING"
+          }
+        }
+      },
+      "outputDefinitions": {
+        "artifacts": {
+          "output_dataset": {
+            "artifactType": {
+              "schemaTitle": "system.Dataset",
+              "schemaVersion": "0.0.1"
+            }
+          },
+          "preprocessing_artifacts": {
+            "artifactType": {
+              "schemaTitle": "system.Artifact",
+              "schemaVersion": "0.0.1"
+            }
+          }
+        }
+      }
+    },
+    "comp-load-validate-data": {
+      "executorLabel": "exec-load-validate-data",
+      "inputDefinitions": {
+        "parameters": {
+          "input_dataset_path": {
+            "parameterType": "STRING"
+          }
+        }
+      },
+      "outputDefinitions": {
+        "artifacts": {
+          "output_dataset": {
+            "artifactType": {
+              "schemaTitle": "system.Dataset",
+              "schemaVersion": "0.0.1"
+            }
+          }
+        }
+      }
+    },
+    "comp-oversample-training": {
+      "executorLabel": "exec-oversample-training",
+      "inputDefinitions": {
+        "artifacts": {
+          "input_dataset": {
+            "artifactType": {
+              "schemaTitle": "system.Dataset",
+              "schemaVersion": "0.0.1"
+            }
+          }
+        },
+        "parameters": {
+          "id_col": {
+            "defaultValue": "patient_id",
+            "isOptional": true,
+            "parameterType": "STRING"
+          },
+          "random_state": {
+            "defaultValue": 42.0,
+            "isOptional": true,
+            "parameterType": "NUMBER_INTEGER"
+          },
+          "target_col": {
+            "defaultValue": "target",
+            "isOptional": true,
+            "parameterType": "STRING"
+          }
+        }
+      },
+      "outputDefinitions": {
+        "artifacts": {
+          "output_dataset": {
+            "artifactType": {
+              "schemaTitle": "system.Dataset",
+              "schemaVersion": "0.0.1"
+            }
+          }
+        }
+      }
+    },
+    "comp-register-model": {
+      "executorLabel": "exec-register-model",
+      "inputDefinitions": {
+        "artifacts": {
+          "model_artifact": {
+            "artifactType": {
+              "schemaTitle": "system.Artifact",
+              "schemaVersion": "0.0.1"
+            }
+          }
+        },
+        "parameters": {
+          "location": {
+            "parameterType": "STRING"
+          },
+          "model_display_name": {
+            "parameterType": "STRING"
+          },
+          "project": {
+            "parameterType": "STRING"
+          },
+          "serving_container_image_uri": {
+            "defaultValue": "us-docker.pkg.dev/vertex-ai/prediction/sklearn-cpu.1-5:latest",
+            "isOptional": true,
+            "parameterType": "STRING"
+          },
+          "training_dataset_path": {
+            "parameterType": "STRING"
+          }
+        }
+      }
+    },
+    "comp-split-data": {
+      "executorLabel": "exec-split-data",
+      "inputDefinitions": {
+        "artifacts": {
+          "input_dataset": {
+            "artifactType": {
+              "schemaTitle": "system.Dataset",
+              "schemaVersion": "0.0.1"
+            }
+          }
+        },
+        "parameters": {
+          "random_state": {
+            "defaultValue": 42.0,
+            "isOptional": true,
+            "parameterType": "NUMBER_INTEGER"
+          },
+          "test_size": {
+            "defaultValue": 0.2,
+            "isOptional": true,
+            "parameterType": "NUMBER_DOUBLE"
+          }
+        }
+      },
+      "outputDefinitions": {
+        "artifacts": {
+          "train_dataset": {
+            "artifactType": {
+              "schemaTitle": "system.Dataset",
+              "schemaVersion": "0.0.1"
+            }
+          },
+          "validation_dataset": {
+            "artifactType": {
+              "schemaTitle": "system.Dataset",
+              "schemaVersion": "0.0.1"
+            }
+          }
+        }
+      }
+    },
+    "comp-train-model": {
+      "executorLabel": "exec-train-model",
+      "inputDefinitions": {
+        "artifacts": {
+          "input_dataset": {
+            "artifactType": {
+              "schemaTitle": "system.Dataset",
+              "schemaVersion": "0.0.1"
+            }
+          }
+        },
+        "parameters": {
+          "id_col": {
+            "defaultValue": "patient_id",
+            "isOptional": true,
+            "parameterType": "STRING"
+          },
+          "max_depth": {
+            "defaultValue": 8.0,
+            "isOptional": true,
+            "parameterType": "NUMBER_INTEGER"
+          },
+          "n_estimators": {
+            "defaultValue": 250.0,
+            "isOptional": true,
+            "parameterType": "NUMBER_INTEGER"
+          },
+          "random_state": {
+            "defaultValue": 42.0,
+            "isOptional": true,
+            "parameterType": "NUMBER_INTEGER"
+          },
+          "target_col": {
+            "defaultValue": "target",
+            "isOptional": true,
+            "parameterType": "STRING"
+          }
+        }
+      },
+      "outputDefinitions": {
+        "artifacts": {
+          "model_artifact": {
+            "artifactType": {
+              "schemaTitle": "system.Artifact",
+              "schemaVersion": "0.0.1"
+            }
+          }
+        }
+      }
+    }
+  },
+  "deploymentSpec": {
+    "executors": {
+      "exec-apply-preprocessing": {
+        "container": {
+          "args": [
+            "--executor_input",
+            "{{$}}",
+            "--function_to_execute",
+            "apply_preprocessing"
+          ],
+          "command": [
+            "sh",
+            "-c",
+            "\nif ! [ -x \"$(command -v pip)\" ]; then\n    python3 -m ensurepip || python3 -m ensurepip --user || apt-get install python3-pip\nfi\n\nPIP_DISABLE_PIP_VERSION_CHECK=1 python3 -m pip install --quiet --no-warn-script-location 'pandas' 'numpy' 'scikit-learn' 'joblib'  &&  python3 -m pip install --quiet --no-warn-script-location 'kfp==2.16.0' '--no-deps' 'typing-extensions>=3.7.4,<5; python_version<\"3.9\"' && \"$0\" \"$@\"\n",
+            "sh",
+            "-ec",
+            "program_path=$(mktemp -d)\n\nprintf \"%s\" \"$0\" > \"$program_path/ephemeral_component.py\"\n_KFP_RUNTIME=true python3 -m kfp.dsl.executor_main                         --component_module_path                         \"$program_path/ephemeral_component.py\"                         \"$@\"\n",
+            "\nimport kfp\nfrom kfp import dsl\nfrom kfp.dsl import *\nfrom typing import *\n\ndef apply_preprocessing(\n    input_dataset: Input[Dataset],\n    preprocessing_artifacts: Input[Artifact],\n    output_dataset: Output[Dataset],\n    target_col: str = \"target\",\n    id_col: str = \"patient_id\"\n):\n    import os\n    import json\n    import joblib\n    import numpy as np\n    import pandas as pd\n\n    # -----------------------------\n    # Load validation dataset\n    # -----------------------------\n    df = pd.read_csv(input_dataset.path)\n\n    print(f\"Input validation dataset shape: {df.shape}\")\n\n    # -----------------------------\n    # Load preprocessing artifacts\n    # -----------------------------\n    metadata_path = os.path.join(preprocessing_artifacts.path, \"preprocessing_metadata.json\")\n    median_imputer_path = os.path.join(preprocessing_artifacts.path, \"median_imputer.joblib\")\n    mode_imputer_path = os.path.join(preprocessing_artifacts.path, \"mode_imputer.joblib\")\n    scaler_path = os.path.join(preprocessing_artifacts.path, \"standard_scaler.joblib\")\n\n    if not os.path.exists(metadata_path):\n        raise ValueError(f\"Missing preprocessing metadata file: {metadata_path}\")\n\n    if not os.path.exists(scaler_path):\n        raise ValueError(f\"Missing scaler artifact file: {scaler_path}\")\n\n    with open(metadata_path, \"r\") as f:\n        metadata = json.load(f)\n\n    median_imputer = joblib.load(median_imputer_path)\n    mode_imputer = joblib.load(mode_imputer_path)\n    scaler = joblib.load(scaler_path)\n\n\n    num_cols = metadata[\"num_cols\"]\n    categorical_cols = metadata[\"categorical_cols\"]\n    expected_output_cols = metadata[\"output_feature_columns\"]\n\n    print(\"Numeric columns to impute and scale:\")\n    print(num_cols)\n    print(\"Categorical columns to encode:\")\n    print(categorical_cols)\n\n    # -----------------------------\n    # Separate ID and target\n    # -----------------------------\n    ids = df[[id_col]].copy()\n    y = df[[target_col]].copy()\n    X = df.drop(columns=[id_col, target_col]).copy()\n\n    # -----------------------------\n    # Apply same fixed-rule preprocessing\n    # -----------------------------\n\n    X[\"age_group\"] = pd.cut(\n        X[\"age\"],\n        bins=[0, 18, 25, 40, 65, 80, np.inf],\n        labels=[\"0-18\", \"19-25\", \"26-40\", \"41-65\", \"66-80\", \"81+\"],\n        right=False,\n    )\n    X = X.drop(columns=[\"age\"])\n\n    X[\"medications_prescribed\"] = X[\"medications_prescribed\"].replace(\"\", pd.NA)\n    X[\"medications_prescribed\"] = X[\"medications_prescribed\"].astype(float)\n\n    X[\"medications_prescribed\"] = X[\"medications_prescribed\"].apply(\n        lambda x: 1 if x > 0 else 0\n    )\n\n    X[\"number_of_prior_visits\"] = X[\"number_of_prior_visits\"].replace(\"\", pd.NA)\n    X[\"number_of_prior_visits\"] = X[\"number_of_prior_visits\"].astype(float)\n\n    X[\"length_of_stay_score\"] = X[\"length_of_stay\"].apply(\n        lambda x: (\n            1\n            if x <= 1\n            else (\n                2\n                if x <= 2\n                else (3 if x <= 3 else (4 if x <= 6 else (5 if x <= 14 else 7)))\n            )\n        )\n    )\n    X.drop(columns=[\"length_of_stay\"], inplace=True)\n\n    # -----------------------------\n    # Apply learned preprocessing\n    # -----------------------------\n\n    # Impute and scale numerics\n    X[num_cols] = median_imputer.transform(X[num_cols])\n    X[num_cols] = scaler.transform(X[num_cols])\n\n    # impute categories\n    X[categorical_cols] = mode_imputer.transform(X[categorical_cols])\n\n    #encode\n    X = pd.get_dummies(X, drop_first=True) #this may need to be changed in the future to ensure consistency but idk\n\n\n    # -----------------------------\n    # Align validation columns to training columns\n    # -----------------------------\n    # Important safeguard: ensure exact feature-space match with training output\n    X_prepared = X.reindex(columns=expected_output_cols, fill_value=0)\n\n    # -----------------------------\n    # Reconstruct final validation dataset\n    # -----------------------------\n    prepared_df = pd.concat([ids, X_prepared, y], axis=1)\n\n    print(f\"Prepared validation dataset shape: {prepared_df.shape}\")\n\n    # -----------------------------\n    # Save output dataset\n    # -----------------------------\n    prepared_df.to_csv(output_dataset.path, index=False)\n\n"
+          ],
+          "image": "python:3.11"
+        }
+      },
+      "exec-evaluate-model": {
+        "container": {
+          "args": [
+            "--executor_input",
+            "{{$}}",
+            "--function_to_execute",
+            "evaluate_model"
+          ],
+          "command": [
+            "sh",
+            "-c",
+            "\nif ! [ -x \"$(command -v pip)\" ]; then\n    python3 -m ensurepip || python3 -m ensurepip --user || apt-get install python3-pip\nfi\n\nPIP_DISABLE_PIP_VERSION_CHECK=1 python3 -m pip install --quiet --no-warn-script-location 'pandas' 'numpy' 'scikit-learn' 'joblib'  &&  python3 -m pip install --quiet --no-warn-script-location 'kfp==2.16.0' '--no-deps' 'typing-extensions>=3.7.4,<5; python_version<\"3.9\"' && \"$0\" \"$@\"\n",
+            "sh",
+            "-ec",
+            "program_path=$(mktemp -d)\n\nprintf \"%s\" \"$0\" > \"$program_path/ephemeral_component.py\"\n_KFP_RUNTIME=true python3 -m kfp.dsl.executor_main                         --component_module_path                         \"$program_path/ephemeral_component.py\"                         \"$@\"\n",
+            "\nimport kfp\nfrom kfp import dsl\nfrom kfp.dsl import *\nfrom typing import *\n\ndef evaluate_model(\n    input_dataset: Input[Dataset],\n    model_artifact: Input[Artifact],\n    metrics: Output[Metrics],\n    predictions_dataset: Output[Dataset],\n    evaluation_report: Output[Artifact],\n    target_col: str = \"target\",\n    id_col: str = \"patient_id\"\n):\n    import os\n    import json\n    import joblib\n    import pandas as pd\n    from sklearn.metrics import (\n        f1_score,\n        precision_score,\n        recall_score,\n        confusion_matrix,\n        accuracy_score\n    )\n\n    # -----------------------------\n    # Load validation dataset\n    # -----------------------------\n    df = pd.read_csv(input_dataset.path)\n\n    print(f\"Validation dataset shape: {df.shape}\")\n\n    # -----------------------------\n    # Load trained model + metadata\n    # -----------------------------\n    model_path = os.path.join(model_artifact.path, \"model.joblib\")\n    metadata_path = os.path.join(model_artifact.path, \"model_metadata.json\")\n\n    if not os.path.exists(model_path):\n        raise ValueError(f\"Missing model file: {model_path}\")\n\n    if not os.path.exists(metadata_path):\n        raise ValueError(f\"Missing model metadata file: {metadata_path}\")\n\n    model = joblib.load(model_path)\n\n    with open(metadata_path, \"r\") as f:\n        model_metadata = json.load(f)\n\n    feature_cols = model_metadata[\"feature_cols\"]\n\n    # -----------------------------\n    # Build validation feature matrix\n    # -----------------------------\n    X_val = df.reindex(columns=feature_cols, fill_value=0)\n    y_val = df[target_col]\n\n    print(f\"Number of validation rows: {len(df)}\")\n    print(f\"Number of model features expected: {len(feature_cols)}\")\n\n    # -----------------------------\n    # Predict\n    # -----------------------------\n    y_pred = model.predict(X_val)\n\n    if hasattr(model, \"predict_proba\"):\n        y_prob = model.predict_proba(X_val)[:, 1]\n    else:\n        y_prob = None\n\n    # -----------------------------\n    # Compute evaluation metrics\n    # -----------------------------\n    f1 = f1_score(y_val, y_pred, zero_division=0)\n    precision = precision_score(y_val, y_pred, zero_division=0)\n    recall = recall_score(y_val, y_pred, zero_division=0)\n    accuracy = accuracy_score(y_val, y_pred)\n\n    cm = confusion_matrix(y_val, y_pred)\n    tn, fp, fn, tp = cm.ravel()\n\n    print(\"Evaluation metrics:\")\n    print(f\"F1 Score:   {f1:.4f}\")\n    print(f\"Precision:  {precision:.4f}\")\n    print(f\"Recall:     {recall:.4f}\")\n    print(f\"Accuracy:   {accuracy:.4f}\")\n    print(\"Confusion Matrix:\")\n    print(cm)\n\n    # -----------------------------\n    # Log metrics for Vertex / KFP\n    # -----------------------------\n    metrics.log_metric(\"f1_score\", float(f1))\n    metrics.log_metric(\"precision\", float(precision))\n    metrics.log_metric(\"recall\", float(recall))\n    metrics.log_metric(\"accuracy\", float(accuracy))\n    metrics.log_metric(\"true_negatives\", int(tn))\n    metrics.log_metric(\"false_positives\", int(fp))\n    metrics.log_metric(\"false_negatives\", int(fn))\n    metrics.log_metric(\"true_positives\", int(tp))\n\n    # -----------------------------\n    # Save predictions dataset\n    # -----------------------------\n    predictions_df = pd.DataFrame({\n        id_col: df[id_col],\n        \"actual\": y_val,\n        \"predicted\": y_pred\n    })\n\n    if y_prob is not None:\n        predictions_df[\"predicted_probability\"] = y_prob\n\n    predictions_df.to_csv(predictions_dataset.path, index=False)\n\n    # -----------------------------\n    # Save evaluation report artifact\n    # -----------------------------\n    os.makedirs(evaluation_report.path, exist_ok=True)\n\n    report = {\n        \"model_type\": model_metadata.get(\"model_type\", \"unknown\"),\n        \"n_validation_rows\": int(len(df)),\n        \"n_features_used\": int(len(feature_cols)),\n        \"metrics\": {\n            \"f1_score\": float(f1),\n            \"precision\": float(precision),\n            \"recall\": float(recall),\n            \"accuracy\": float(accuracy)\n        },\n        \"confusion_matrix\": {\n            \"tn\": int(tn),\n            \"fp\": int(fp),\n            \"fn\": int(fn),\n            \"tp\": int(tp)\n        }\n    }\n\n    with open(os.path.join(evaluation_report.path, \"evaluation_report.json\"), \"w\") as f:\n        json.dump(report, f, indent=2)\n\n    print(\"Saved evaluation report contents:\")\n    print(os.listdir(evaluation_report.path))\n\n"
+          ],
+          "image": "python:3.11"
+        }
+      },
+      "exec-fit-apply-preprocessing": {
+        "container": {
+          "args": [
+            "--executor_input",
+            "{{$}}",
+            "--function_to_execute",
+            "fit_apply_preprocessing"
+          ],
+          "command": [
+            "sh",
+            "-c",
+            "\nif ! [ -x \"$(command -v pip)\" ]; then\n    python3 -m ensurepip || python3 -m ensurepip --user || apt-get install python3-pip\nfi\n\nPIP_DISABLE_PIP_VERSION_CHECK=1 python3 -m pip install --quiet --no-warn-script-location 'pandas' 'numpy' 'scikit-learn' 'joblib'  &&  python3 -m pip install --quiet --no-warn-script-location 'kfp==2.16.0' '--no-deps' 'typing-extensions>=3.7.4,<5; python_version<\"3.9\"' && \"$0\" \"$@\"\n",
+            "sh",
+            "-ec",
+            "program_path=$(mktemp -d)\n\nprintf \"%s\" \"$0\" > \"$program_path/ephemeral_component.py\"\n_KFP_RUNTIME=true python3 -m kfp.dsl.executor_main                         --component_module_path                         \"$program_path/ephemeral_component.py\"                         \"$@\"\n",
+            "\nimport kfp\nfrom kfp import dsl\nfrom kfp.dsl import *\nfrom typing import *\n\ndef fit_apply_preprocessing(\n    input_dataset: Input[Dataset],\n    output_dataset: Output[Dataset],\n    preprocessing_artifacts: Output[Artifact],\n    target_col: str = \"target\",\n    id_col: str = \"patient_id\",\n):\n    import os\n    import json\n    import joblib\n    import numpy as np\n    import pandas as pd\n    from sklearn.impute import SimpleImputer\n    from sklearn.preprocessing import StandardScaler\n\n    # -----------------------------\n    # Load training dataset\n    # -----------------------------\n    df = pd.read_csv(input_dataset.path)\n\n    print(f\"Input training dataset shape: {df.shape}\")\n\n    # -----------------------------\n    # Separate ID and target\n    # Keep them outside the fitted preprocessing logic\n    # -----------------------------\n    ids = df[[id_col]].copy()\n    y = df[[target_col]].copy()\n    X = df.drop(columns=[id_col, target_col]).copy()\n\n    # -----------------------------\n    # Fixed-rule preprocessing\n    # -----------------------------\n\n    X[\"age_group\"] = pd.cut(\n        X[\"age\"],\n        bins=[0, 18, 25, 40, 65, 80, np.inf],\n        labels=[\"0-18\", \"19-25\", \"26-40\", \"41-65\", \"66-80\", \"81+\"],\n        right=False,\n    )\n    X = X.drop(columns=[\"age\"])\n\n    X[\"medications_prescribed\"] = X[\"medications_prescribed\"].replace(\"\", pd.NA)\n    X[\"medications_prescribed\"] = X[\"medications_prescribed\"].astype(float)\n\n    X[\"medications_prescribed\"] = X[\"medications_prescribed\"].apply(\n        lambda x: 1 if x > 0 else 0\n    )\n\n    X[\"number_of_prior_visits\"] = X[\"number_of_prior_visits\"].replace(\"\", pd.NA)\n    X[\"number_of_prior_visits\"] = X[\"number_of_prior_visits\"].astype(float)\n\n    X[\"length_of_stay_score\"] = X[\"length_of_stay\"].apply(\n        lambda x: (\n            1\n            if x <= 1\n            else (\n                2\n                if x <= 2\n                else (3 if x <= 3 else (4 if x <= 6 else (5 if x <= 14 else 7)))\n            )\n        )\n    )\n    X.drop(columns=[\"length_of_stay\"], inplace=True)\n\n    num_cols = [\"height_m\", \"bmi\", \"adjusted_weight_kg\", \"number_of_prior_visits\", \"length_of_stay_score\"]\n    cat_cols = X.select_dtypes(include=[\"object\", \"category\", \"str\"]).columns.tolist()\n    # boolean handling taken out becasue fml add it back later ^_^\n\n    # -----------------------------\n    # Learned preprocessing\n    # -----------------------------\n\n    #impute median on numerics\n\n    median_imputer = SimpleImputer(strategy=\"median\", missing_values= pd.NA)\n    mode_imputer = SimpleImputer(strategy=\"most_frequent\", missing_values= pd.NA)\n\n\n    X[num_cols] = median_imputer.fit_transform(X[num_cols])\n    X[cat_cols] = mode_imputer.fit_transform(X[cat_cols])\n\n    #standardize numeric cols\n    scaler = StandardScaler()\n    X[num_cols] = scaler.fit_transform(X[num_cols])\n\n    # one hot encode categories\n    X = pd.get_dummies(X, drop_first=True)\n\n    # Reconstruct final training dataset\n    # -----------------------------\n    prepared_df = pd.concat([ids, X, y], axis=1)\n\n    print(f\"Prepared training dataset shape: {prepared_df.shape}\")\n\n    # -----------------------------\n    # Save transformed dataset\n    # -----------------------------\n    prepared_df.to_csv(output_dataset.path, index=False)\n\n    # -----------------------------\n    # Save preprocessing artifacts\n    # -----------------------------\n    os.makedirs(preprocessing_artifacts.path, exist_ok=True)\n\n    # Save encoder\n    joblib.dump(\n        scaler, os.path.join(preprocessing_artifacts.path, \"standard_scaler.joblib\")\n    )\n\n    # Save imputers\n\n    joblib.dump(\n        median_imputer, os.path.join(preprocessing_artifacts.path, \"median_imputer.joblib\")\n    )\n    joblib.dump(\n        mode_imputer, os.path.join(preprocessing_artifacts.path, \"mode_imputer.joblib\")\n    )\n\n    # Save preprocessing metadata\n    metadata = {\n        \"target_col\": 'target',\n        \"id_col\": 'patient_id',\n        \"num_cols\": num_cols,\n        \"categorical_cols\": cat_cols,\n        \"output_feature_columns\": X.columns.tolist(),\n\n    }\n    with open(\n        os.path.join(preprocessing_artifacts.path, \"preprocessing_metadata.json\"), \"w\"\n    ) as f:\n        json.dump(metadata, f, indent=2)\n\n    print(\"Preprocessing artifacts saved:\")\n    print(os.listdir(preprocessing_artifacts.path))\n\n"
+          ],
+          "image": "python:3.11"
+        }
+      },
+      "exec-load-validate-data": {
+        "container": {
+          "args": [
+            "--executor_input",
+            "{{$}}",
+            "--function_to_execute",
+            "load_validate_data"
+          ],
+          "command": [
+            "sh",
+            "-c",
+            "\nif ! [ -x \"$(command -v pip)\" ]; then\n    python3 -m ensurepip || python3 -m ensurepip --user || apt-get install python3-pip\nfi\n\nPIP_DISABLE_PIP_VERSION_CHECK=1 python3 -m pip install --quiet --no-warn-script-location 'pandas' 'numpy' 'fsspec' 'gcsfs'  &&  python3 -m pip install --quiet --no-warn-script-location 'kfp==2.16.0' '--no-deps' 'typing-extensions>=3.7.4,<5; python_version<\"3.9\"' && \"$0\" \"$@\"\n",
+            "sh",
+            "-ec",
+            "program_path=$(mktemp -d)\n\nprintf \"%s\" \"$0\" > \"$program_path/ephemeral_component.py\"\n_KFP_RUNTIME=true python3 -m kfp.dsl.executor_main                         --component_module_path                         \"$program_path/ephemeral_component.py\"                         \"$@\"\n",
+            "\nimport kfp\nfrom kfp import dsl\nfrom kfp.dsl import *\nfrom typing import *\n\ndef load_validate_data(input_dataset_path: str, output_dataset: Output[Dataset]):\n    import pandas as pd\n    import numpy as np\n\n    df = pd.read_csv(input_dataset_path)\n\n    # --- Basic dataset validation ---\n    if df.empty:\n        raise ValueError(\"Input dataset is empty\")\n\n    print(f\"Dataset shape: {df.shape}\")\n\n    # Drop accidental CSV index columns if present\n    df = df.loc[:, ~df.columns.str.contains(r\"^Unnamed\")]\n\n    # --- Required pipeline columns ---\n    target_col = \"target\"\n    id_col = \"patient_id\"\n\n    required_cols = [target_col, id_col]\n    missing_required = [col for col in required_cols if col not in df.columns]\n    if missing_required:\n        raise ValueError(f\"Missing required columns: {missing_required}\")\n\n    # --- Target validation ---\n    print(\"Target distribution:\")\n    print(df[target_col].value_counts(dropna=False))\n\n    if df[target_col].dropna().nunique() < 2:\n        raise ValueError(\n            f\"Target column '{target_col}' must contain at least two classes\"\n        )\n\n    # --- Save output ---\n    df.to_csv(output_dataset.path, index=False)\n\n"
+          ],
+          "image": "python:3.11"
+        }
+      },
+      "exec-oversample-training": {
+        "container": {
+          "args": [
+            "--executor_input",
+            "{{$}}",
+            "--function_to_execute",
+            "oversample_training"
+          ],
+          "command": [
+            "sh",
+            "-c",
+            "\nif ! [ -x \"$(command -v pip)\" ]; then\n    python3 -m ensurepip || python3 -m ensurepip --user || apt-get install python3-pip\nfi\n\nPIP_DISABLE_PIP_VERSION_CHECK=1 python3 -m pip install --quiet --no-warn-script-location 'pandas' 'numpy' 'scikit-learn' 'imbalanced-learn'  &&  python3 -m pip install --quiet --no-warn-script-location 'kfp==2.16.0' '--no-deps' 'typing-extensions>=3.7.4,<5; python_version<\"3.9\"' && \"$0\" \"$@\"\n",
+            "sh",
+            "-ec",
+            "program_path=$(mktemp -d)\n\nprintf \"%s\" \"$0\" > \"$program_path/ephemeral_component.py\"\n_KFP_RUNTIME=true python3 -m kfp.dsl.executor_main                         --component_module_path                         \"$program_path/ephemeral_component.py\"                         \"$@\"\n",
+            "\nimport kfp\nfrom kfp import dsl\nfrom kfp.dsl import *\nfrom typing import *\n\ndef oversample_training(\n    input_dataset: Input[Dataset],\n    output_dataset: Output[Dataset],\n    target_col: str = \"target\",\n    id_col: str = \"patient_id\",\n    random_state: int = 42\n):\n    import pandas as pd\n    from imblearn.over_sampling import RandomOverSampler\n\n    # --- Load dataset ---\n    df = pd.read_csv(input_dataset.path)\n\n    print(f\"Input training dataset shape: {df.shape}\")\n\n    # --- Validate required columns ---\n    if target_col not in df.columns:\n        raise ValueError(f\"Missing target column: {target_col}\")\n\n    if id_col not in df.columns:\n        raise ValueError(f\"Missing ID column: {id_col}\")\n\n    # --- Check class distribution before ---\n    print(\"Class distribution BEFORE oversampling:\")\n    print(df[target_col].value_counts(dropna=False))\n\n    # --- Separate components ---\n    # Note: ID is kept as part of the dataset but not used for modeling logic\n    X = df.drop(columns=[target_col])\n    y = df[target_col]\n\n    # --- Apply Random Oversampling ---\n    ros = RandomOverSampler(random_state=random_state)\n\n    X_resampled, y_resampled = ros.fit_resample(X, y)\n\n    # --- Reconstruct dataset ---\n    resampled_df = X_resampled.copy()\n    resampled_df[target_col] = y_resampled\n\n    # --- Log results ---\n    print(\"Class distribution AFTER oversampling:\")\n    print(resampled_df[target_col].value_counts(dropna=False))\n\n    print(f\"Original dataset shape: {df.shape}\")\n    print(f\"Oversampled dataset shape: {resampled_df.shape}\")\n\n    # --- Save output ---\n    resampled_df.to_csv(output_dataset.path, index=False)\n\n"
+          ],
+          "image": "python:3.11"
+        }
+      },
+      "exec-register-model": {
+        "container": {
+          "args": [
+            "--executor_input",
+            "{{$}}",
+            "--function_to_execute",
+            "register_model"
+          ],
+          "command": [
+            "sh",
+            "-c",
+            "\nif ! [ -x \"$(command -v pip)\" ]; then\n    python3 -m ensurepip || python3 -m ensurepip --user || apt-get install python3-pip\nfi\n\nPIP_DISABLE_PIP_VERSION_CHECK=1 python3 -m pip install --quiet --no-warn-script-location 'google-cloud-aiplatform' 'joblib'  &&  python3 -m pip install --quiet --no-warn-script-location 'kfp==2.16.0' '--no-deps' 'typing-extensions>=3.7.4,<5; python_version<\"3.9\"' && \"$0\" \"$@\"\n",
+            "sh",
+            "-ec",
+            "program_path=$(mktemp -d)\n\nprintf \"%s\" \"$0\" > \"$program_path/ephemeral_component.py\"\n_KFP_RUNTIME=true python3 -m kfp.dsl.executor_main                         --component_module_path                         \"$program_path/ephemeral_component.py\"                         \"$@\"\n",
+            "\nimport kfp\nfrom kfp import dsl\nfrom kfp.dsl import *\nfrom typing import *\n\ndef register_model(\n    model_artifact: Input[Artifact],\n    project: str,\n    location: str,\n    model_display_name: str,\n    training_dataset_path: str,\n    serving_container_image_uri: str = \"us-docker.pkg.dev/vertex-ai/prediction/sklearn-cpu.1-5:latest\",\n):\n    \"\"\"Uploads the trained model artifact directory to Vertex AI Model Registry.\n\n    Attaches dataset source and model hyperparameters as labels.\n    \"\"\"\n    import json\n    import os\n    import re\n    from google.cloud import aiplatform\n\n    def _to_label_val(value: str) -> str:\n        \"\"\"Sanitize a string to a valid GCP label value (lowercase, [a-z0-9_-], max 63 chars).\"\"\"\n        value = str(value).lower()\n        value = re.sub(r\"[^a-z0-9_\\-]\", \"-\", value)\n        value = re.sub(r\"-+\", \"-\", value).strip(\"-\")\n        return value[:63]\n\n    aiplatform.init(project=project, location=location)\n\n    print(f\"Artifact URI: {model_artifact.uri}\")\n    print(f\"Registering model: {model_display_name}\")\n\n    # ----------------------------------------\n    # Build labels from model metadata + dataset\n    # ----------------------------------------\n    labels = {}\n\n    # Dataset source: extract meaningful path segment (e.g. \"datasets/readmissions/v1-4/train\")\n    dataset_label = _to_label_val(\n        \"/\".join(training_dataset_path.replace(\"gs://\", \"\").split(\"/\")[1:])\n    )\n    labels[\"dataset-source\"] = dataset_label[:63]\n\n    # Model hyperparameters from saved metadata\n    metadata_path = os.path.join(model_artifact.path, \"model_metadata.json\")\n\n    if os.path.exists(metadata_path):\n        with open(metadata_path) as f:\n            meta = json.load(f)\n\n        labels[\"model-type\"] = _to_label_val(meta.get(\"model_type\", \"unknown\"))\n        labels[\"n-features\"] = _to_label_val(meta.get(\"n_features\", \"\"))\n        labels[\"n-training-rows\"] = _to_label_val(meta.get(\"n_training_rows\", \"\"))\n        labels[\"max-depth\"] = _to_label_val(meta.get(\"max_depth\", \"\"))\n        labels[\"n-estimators\"] = _to_label_val(meta.get(\"n_estimators\", \"\"))\n\n    print(f\"Labels: {labels}\")\n\n    registered_model = aiplatform.Model.upload(\n        display_name=model_display_name,\n        artifact_uri=model_artifact.uri,\n        serving_container_image_uri=serving_container_image_uri,\n        labels=labels,\n        sync=True,\n    )\n\n    print(f\"Model registered: {registered_model.resource_name}\")\n\n"
+          ],
+          "image": "python:3.11"
+        }
+      },
+      "exec-split-data": {
+        "container": {
+          "args": [
+            "--executor_input",
+            "{{$}}",
+            "--function_to_execute",
+            "split_data"
+          ],
+          "command": [
+            "sh",
+            "-c",
+            "\nif ! [ -x \"$(command -v pip)\" ]; then\n    python3 -m ensurepip || python3 -m ensurepip --user || apt-get install python3-pip\nfi\n\nPIP_DISABLE_PIP_VERSION_CHECK=1 python3 -m pip install --quiet --no-warn-script-location 'pandas' 'scikit-learn'  &&  python3 -m pip install --quiet --no-warn-script-location 'kfp==2.16.0' '--no-deps' 'typing-extensions>=3.7.4,<5; python_version<\"3.9\"' && \"$0\" \"$@\"\n",
+            "sh",
+            "-ec",
+            "program_path=$(mktemp -d)\n\nprintf \"%s\" \"$0\" > \"$program_path/ephemeral_component.py\"\n_KFP_RUNTIME=true python3 -m kfp.dsl.executor_main                         --component_module_path                         \"$program_path/ephemeral_component.py\"                         \"$@\"\n",
+            "\nimport kfp\nfrom kfp import dsl\nfrom kfp.dsl import *\nfrom typing import *\n\ndef split_data(\n    input_dataset: Input[Dataset],\n    train_dataset: Output[Dataset],\n    validation_dataset: Output[Dataset],\n    test_size: float = 0.2,\n    random_state: int = 42,\n):\n\n    from sklearn.model_selection import train_test_split\n    import pandas as pd\n\n    df = pd.read_csv(input_dataset.path)\n\n    target_col = \"target\"\n    id_col = \"patient_id\"\n\n    X = df.drop(columns=[target_col, id_col])\n    y = df[target_col]\n    ids = df[id_col]\n\n    X_train, X_val, y_train, y_val = train_test_split(\n        X, y, test_size=test_size, stratify=y, random_state=random_state\n    )\n\n    train_df = pd.concat([X_train, y_train, ids.loc[X_train.index]], axis=1)\n    val_df = pd.concat([X_val, y_val, ids.loc[X_val.index]], axis=1)\n\n    train_df.to_csv(train_dataset.path, index=False)\n    val_df.to_csv(validation_dataset.path, index=False)\n\n    print(f\"Training set shape: {train_df.shape}\")\n    print(f\"Validation set shape: {val_df.shape}\")\n\n    print(\"Training target distribution:\")\n    print(train_df[target_col].value_counts(normalize=True))\n\n    print(\"Validation target distribution:\")\n    print(val_df[target_col].value_counts(normalize=True))\n\n"
+          ],
+          "image": "python:3.11"
+        }
+      },
+      "exec-train-model": {
+        "container": {
+          "args": [
+            "--executor_input",
+            "{{$}}",
+            "--function_to_execute",
+            "train_model"
+          ],
+          "command": [
+            "sh",
+            "-c",
+            "\nif ! [ -x \"$(command -v pip)\" ]; then\n    python3 -m ensurepip || python3 -m ensurepip --user || apt-get install python3-pip\nfi\n\nPIP_DISABLE_PIP_VERSION_CHECK=1 python3 -m pip install --quiet --no-warn-script-location 'pandas' 'numpy' 'scikit-learn' 'joblib'  &&  python3 -m pip install --quiet --no-warn-script-location 'kfp==2.16.0' '--no-deps' 'typing-extensions>=3.7.4,<5; python_version<\"3.9\"' && \"$0\" \"$@\"\n",
+            "sh",
+            "-ec",
+            "program_path=$(mktemp -d)\n\nprintf \"%s\" \"$0\" > \"$program_path/ephemeral_component.py\"\n_KFP_RUNTIME=true python3 -m kfp.dsl.executor_main                         --component_module_path                         \"$program_path/ephemeral_component.py\"                         \"$@\"\n",
+            "\nimport kfp\nfrom kfp import dsl\nfrom kfp.dsl import *\nfrom typing import *\n\ndef train_model(\n    input_dataset: Input[Dataset],\n    model_artifact: Output[Artifact],\n    target_col: str = \"target\",\n    id_col: str = \"patient_id\",\n    n_estimators: int = 250,\n    max_depth: int = 8,\n    random_state: int = 42\n):\n    import os\n    import json\n    import joblib\n    import pandas as pd\n    from sklearn.ensemble import RandomForestClassifier\n\n    # -----------------------------\n    # Load prepared training dataset\n    # -----------------------------\n    df = pd.read_csv(input_dataset.path)\n\n    print(f\"Training dataset shape: {df.shape}\")\n\n\n    # -----------------------------\n    # Separate features and target\n    # -----------------------------\n    feature_cols = [col for col in df.columns if col not in [id_col, target_col]]\n\n    if len(feature_cols) == 0:\n        raise ValueError(\"No feature columns available for model training\")\n\n    X_train = df[feature_cols]\n    y_train = df[target_col]\n\n    print(f\"Number of training rows: {len(df)}\")\n    print(f\"Number of features: {len(feature_cols)}\")\n\n    print(\"Training target distribution:\")\n    print(y_train.value_counts(dropna=False))\n\n    # -----------------------------\n    # Fit model\n    # -----------------------------\n    model = RandomForestClassifier(\n        n_estimators=n_estimators,\n        max_depth=max_depth,\n        random_state=random_state,\n        n_jobs=-1\n    )\n\n    model.fit(X_train, y_train)\n\n    print(\"Model training complete.\")\n\n    # -----------------------------\n    # Save model artifact\n    # -----------------------------\n    os.makedirs(model_artifact.path, exist_ok=True)\n\n    joblib.dump(model, os.path.join(model_artifact.path, \"model.joblib\"))\n\n    metadata = {\n        \"model_type\": \"RandomForestClassifier\",\n        \"target_col\": target_col,\n        \"id_col\": id_col,\n        \"feature_cols\": feature_cols,\n        \"n_estimators\": n_estimators,\n        \"max_depth\": max_depth,\n        \"random_state\": random_state,\n        \"n_training_rows\": int(len(df)),\n        \"n_features\": int(len(feature_cols))\n    }\n\n    with open(os.path.join(model_artifact.path, \"model_metadata.json\"), \"w\") as f:\n        json.dump(metadata, f, indent=2)\n\n    print(\"Saved model artifact contents:\")\n    print(os.listdir(model_artifact.path))\n\n"
+          ],
+          "image": "python:3.11"
+        }
+      }
+    }
+  },
+  "pipelineInfo": {
+    "name": "1-4-x-readmissions-registry-pipeline"
+  },
+  "root": {
+    "dag": {
+      "tasks": {
+        "apply-preprocessing": {
+          "cachingOptions": {
+            "enableCache": true
+          },
+          "componentRef": {
+            "name": "comp-apply-preprocessing"
+          },
+          "dependentTasks": [
+            "fit-apply-preprocessing",
+            "split-data"
+          ],
+          "inputs": {
+            "artifacts": {
+              "input_dataset": {
+                "taskOutputArtifact": {
+                  "outputArtifactKey": "validation_dataset",
+                  "producerTask": "split-data"
+                }
+              },
+              "preprocessing_artifacts": {
+                "taskOutputArtifact": {
+                  "outputArtifactKey": "preprocessing_artifacts",
+                  "producerTask": "fit-apply-preprocessing"
+                }
+              }
+            }
+          },
+          "taskInfo": {
+            "name": "apply-preprocessing"
+          }
+        },
+        "evaluate-model": {
+          "cachingOptions": {
+            "enableCache": true
+          },
+          "componentRef": {
+            "name": "comp-evaluate-model"
+          },
+          "dependentTasks": [
+            "apply-preprocessing",
+            "train-model"
+          ],
+          "inputs": {
+            "artifacts": {
+              "input_dataset": {
+                "taskOutputArtifact": {
+                  "outputArtifactKey": "output_dataset",
+                  "producerTask": "apply-preprocessing"
+                }
+              },
+              "model_artifact": {
+                "taskOutputArtifact": {
+                  "outputArtifactKey": "model_artifact",
+                  "producerTask": "train-model"
+                }
+              }
+            }
+          },
+          "taskInfo": {
+            "name": "evaluate-model"
+          }
+        },
+        "fit-apply-preprocessing": {
+          "cachingOptions": {
+            "enableCache": true
+          },
+          "componentRef": {
+            "name": "comp-fit-apply-preprocessing"
+          },
+          "dependentTasks": [
+            "oversample-training"
+          ],
+          "inputs": {
+            "artifacts": {
+              "input_dataset": {
+                "taskOutputArtifact": {
+                  "outputArtifactKey": "output_dataset",
+                  "producerTask": "oversample-training"
+                }
+              }
+            }
+          },
+          "taskInfo": {
+            "name": "fit-apply-preprocessing"
+          }
+        },
+        "load-validate-data": {
+          "cachingOptions": {
+            "enableCache": true
+          },
+          "componentRef": {
+            "name": "comp-load-validate-data"
+          },
+          "inputs": {
+            "parameters": {
+              "input_dataset_path": {
+                "componentInputParameter": "training_dataset_path"
+              }
+            }
+          },
+          "taskInfo": {
+            "name": "load-validate-data"
+          }
+        },
+        "oversample-training": {
+          "cachingOptions": {
+            "enableCache": true
+          },
+          "componentRef": {
+            "name": "comp-oversample-training"
+          },
+          "dependentTasks": [
+            "split-data"
+          ],
+          "inputs": {
+            "artifacts": {
+              "input_dataset": {
+                "taskOutputArtifact": {
+                  "outputArtifactKey": "train_dataset",
+                  "producerTask": "split-data"
+                }
+              }
+            }
+          },
+          "taskInfo": {
+            "name": "oversample-training"
+          }
+        },
+        "register-model": {
+          "cachingOptions": {
+            "enableCache": true
+          },
+          "componentRef": {
+            "name": "comp-register-model"
+          },
+          "dependentTasks": [
+            "train-model"
+          ],
+          "inputs": {
+            "artifacts": {
+              "model_artifact": {
+                "taskOutputArtifact": {
+                  "outputArtifactKey": "model_artifact",
+                  "producerTask": "train-model"
+                }
+              }
+            },
+            "parameters": {
+              "location": {
+                "componentInputParameter": "location"
+              },
+              "model_display_name": {
+                "componentInputParameter": "model_display_name"
+              },
+              "project": {
+                "componentInputParameter": "project"
+              },
+              "training_dataset_path": {
+                "componentInputParameter": "training_dataset_path"
+              }
+            }
+          },
+          "taskInfo": {
+            "name": "register-model"
+          }
+        },
+        "split-data": {
+          "cachingOptions": {
+            "enableCache": true
+          },
+          "componentRef": {
+            "name": "comp-split-data"
+          },
+          "dependentTasks": [
+            "load-validate-data"
+          ],
+          "inputs": {
+            "artifacts": {
+              "input_dataset": {
+                "taskOutputArtifact": {
+                  "outputArtifactKey": "output_dataset",
+                  "producerTask": "load-validate-data"
+                }
+              }
+            }
+          },
+          "taskInfo": {
+            "name": "split-data"
+          }
+        },
+        "train-model": {
+          "cachingOptions": {
+            "enableCache": true
+          },
+          "componentRef": {
+            "name": "comp-train-model"
+          },
+          "dependentTasks": [
+            "fit-apply-preprocessing"
+          ],
+          "inputs": {
+            "artifacts": {
+              "input_dataset": {
+                "taskOutputArtifact": {
+                  "outputArtifactKey": "output_dataset",
+                  "producerTask": "fit-apply-preprocessing"
+                }
+              }
+            }
+          },
+          "taskInfo": {
+            "name": "train-model"
+          }
+        }
+      }
+    },
+    "inputDefinitions": {
+      "parameters": {
+        "location": {
+          "parameterType": "STRING"
+        },
+        "model_display_name": {
+          "parameterType": "STRING"
+        },
+        "project": {
+          "parameterType": "STRING"
+        },
+        "training_dataset_path": {
+          "parameterType": "STRING"
+        }
+      }
+    }
+  },
+  "schemaVersion": "2.1.0",
+  "sdkVersion": "kfp-2.16.0"
+}
