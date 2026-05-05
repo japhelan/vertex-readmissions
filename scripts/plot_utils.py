@@ -121,6 +121,7 @@ def plot_barplot(
     order="desc",
     palette="flare",
     single_color=None,
+    hue=None,
     ax=None,
 ):
     """
@@ -134,14 +135,24 @@ def plot_barplot(
         raise ValueError(f"Column '{column_name}' not found in dataframe")
 
     # get value counts of column for graphing
-    val_counts = (
-        plot_df[column_name]
-        .astype("string")
-        .fillna("Missing")
-        .value_counts(dropna=False)
-        .rename_axis(column_name)
-        .reset_index(name="count")
-    )
+    if hue is not None:
+        val_counts = (
+            plot_df[[column_name, hue]]
+            .astype("string")
+            .fillna("Missing")
+            .value_counts()
+            .rename("count")
+            .reset_index()
+        )
+    else:
+        val_counts = (
+            plot_df[column_name]
+            .astype("string")
+            .fillna("Missing")
+            .value_counts(dropna=False)
+            .rename_axis(column_name)
+            .reset_index(name="count")
+        )
 
     # optional order of value counts
     if order == "asc":
@@ -160,14 +171,20 @@ def plot_barplot(
         data=val_counts,
         x=column_name,
         y="count",
-        color=single_color if single_color is not None else "#9f86c0",
+        hue=hue if hue is not None else None,
+        color=(
+            single_color
+            if (single_color is not None and hue is None)
+            else ("#9f86c0" if hue is None else None)
+        ),
+        palette=palette if hue is not None else None,
         edgecolor="white",
         linewidth=1,
         ax=ax,
     )
 
-    # Apply one color per bar from the chosen palette.
-    if single_color is None:
+    # Apply one color per bar from the chosen palette (only when no hue).
+    if single_color is None and hue is None:
         bar_colors = sns.color_palette(palette, n_colors=len(ax.patches))
         for patch, color in zip(ax.patches, bar_colors):
             patch.set_facecolor(color)

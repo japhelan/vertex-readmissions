@@ -6,6 +6,10 @@
 \contentsline {section}{\numberline {4}Univariate Analysis}{5}{section.4}%
 \contentsline {subsection}{\numberline {4.1}Numeric Features}{5}{subsection.4.1}%
 \contentsline {subsection}{\numberline {4.2}Categorical Features}{7}{subsection.4.2}%
-\contentsline {section}{\numberline {5}Bivariate Analysis}{13}{section.5}%
-\contentsline {subsection}{\numberline {5.1}Feature vs.\ Target}{13}{subsection.5.1}%
-\contentsline {subsection}{\numberline {5.2}Feature Correlations}{13}{subsection.5.2}%
+\contentsline {section}{\numberline {5}Bivariate Analysis}{14}{section.5}%
+\contentsline {subsection}{\numberline {5.1}Feature vs.\ Target}{14}{subsection.5.1}%
+\contentsline {subsubsection}{\numberline {5.1.1}Categories}{14}{subsubsection.5.1.1}%
+\contentsline {subsubsection}{\numberline {5.1.2}Measures}{15}{subsubsection.5.1.2}%
+\contentsline {subsection}{\numberline {5.2}Feature Correlations}{16}{subsection.5.2}%
+\contentsline {section}{Appendices}{16}{section*.2}%
+\contentsline {section}{\numberline {A}Individual Category vs.~Readmission Charts}{17}{appendix.1.A}%

@@ -7,6 +7,7 @@
 \usepackage[section]{placeins}
 \usepackage{booktabs}
 \usepackage{float}
+\usepackage[toc,title]{appendix}
 \usepackage{listings}
 \usepackage{color}
 \definecolor{codegreen}{rgb}{0,0.6,0}
@@ -302,6 +303,139 @@ Output variable. Very skewed, should consider that in model selection and/or res
 
 \subsection{Feature vs.\ Target}
 
-\subsection{Feature Correlations}
+\subsubsection{Categories}
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=0.75\textwidth]{categories_vs_output_bars.png}
+  \caption{Categories vs.\ Readmission Bar Charts}
+  \label{fig:categories_vs_output_bars}
+\end{figure}
+
+Individual charts can be found in \nameref{sec:appendix-a}. Across most, the ratio of readmissions to non-readmissions is fairly consistent,
+however the features like \texttt{Smoker} and \texttt{Has Diabetes} have a higher proportion of positive readmissions when the feature is present
+(i.e.\ smoker vs.\ non-smoker, has diabetes vs.\ does not have diabetes). Based off of limited domain knowledge this makes sense, mostly it is
+just something to be aware of when considering feature importance.
+\subsubsection{Measures}
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=\textwidth]{measures_vs_output_box.png}
+  \caption{Measures vs.\ Readmission Box Plots}
+  \label{fig:measures_vs_output_boxplots}
+\end{figure}
+
+The most noticable distribution difference comes in age, with those who are readmitted
+being older on average than those who are not. This seems pretty intuitive, and there
+is not much to say about the others
+
+\newpage
+\begin{samepage}
+
+  \subsection{Feature Correlations}
+  Categorical features were one-hot encoded in order to include the entire dataset in the matrix.
+
+  \begin{figure}[H]
+    \centering
+    \includegraphics[width=\textwidth]{ohe_corr_matrix.png}
+    \caption{Correlation Matrix}
+    \label{fig:correlation_matrix}
+  \end{figure}
+\end{samepage}
+\begin{appendices}
+
+  \section{Individual Category vs.~Readmission Charts}
+  \label{sec:appendix-a}
+
+  \begin{figure}[H]
+    \centering
+    \includegraphics[width=\textwidth]{d_v_o.png}
+    \caption{Diabetes vs.\ Readmission}
+    \label{fig:diabetes_vs_read}
+  \end{figure}
+
+  \begin{figure}[H]
+    \centering
+    \includegraphics[width=\textwidth]{di_v_o.png}
+    \caption{Diet vs.\ Readmission}
+    \label{fig:diet_vs_read}
+  \end{figure}
+
+  \begin{figure}[H]
+    \centering
+    \includegraphics[width=\textwidth]{eth_v_o.png}
+    \caption{Ethnicity vs.\ Readmission}
+    \label{fig:ethnicity_vs_read}
+  \end{figure}
+
+  \begin{figure}[H]
+    \centering
+    \includegraphics[width=\textwidth]{ex_v_o.png}
+    \caption{Exercise vs.\ Readmission}
+    \label{fig:exercise_vs_read}
+  \end{figure}
+
+  \begin{figure}[H]
+    \centering
+    \includegraphics[width=\textwidth]{g_v_o.png}
+    \caption{Gender vs.\ Readmission}
+    \label{fig:gender_vs_read}
+  \end{figure}
+
+  \begin{figure}[H]
+    \centering
+    \includegraphics[width=\textwidth]{hei_v_o.png}
+    \caption{Height vs.\ Readmission}
+    \label{fig:height_vs_read}
+  \end{figure}
+
+  \begin{figure}[H]
+    \centering
+    \includegraphics[width=\textwidth]{hid_v_out.png}
+    \caption{Hospital ID vs.\ Readmission}
+    \label{fig:hospital_id_vs_read}
+  \end{figure}
+
+  \begin{figure}[H]
+    \centering
+    \includegraphics[width=\textwidth]{ht_v_o.png}
+    \caption{Hypertension vs.\ Readmission}
+    \label{fig:hypertension_vs_read}
+  \end{figure}
+
+  \begin{figure}[H]
+    \centering
+    \includegraphics[width=\textwidth]{los_v_o.png}
+    \caption{Length of Stay vs.\ Readmission}
+    \label{fig:length_of_stay_vs_read}
+  \end{figure}
+
+  \begin{figure}[H]
+    \centering
+    \includegraphics[width=\textwidth]{med_v_o.png}
+    \caption{Num Medications vs.\ Readmission}
+    \label{fig:num_medications_vs_read}
+  \end{figure}
+
+  \begin{figure}[H]
+    \centering
+    \includegraphics[width=\textwidth]{nm_v_o.png}
+    \caption{Num Prior Visits vs.\ Readmission}
+    \label{fig:num_prior_visits_vs_read}
+  \end{figure}
+
+  \begin{figure}[H]
+    \centering
+    \includegraphics[width=\textwidth]{s_v_o.png}
+    \caption{Smoker vs.\ Readmission}
+    \label{fig:smoker_vs_read}
+  \end{figure}
+
+  \begin{figure}[H]
+    \centering
+    \includegraphics[width=\textwidth]{tot_v_o.png}
+    \caption{Type of Treatment vs.\ Readmission}
+    \label{fig:type_of_treatment_vs_read}
+  \end{figure}
+
+\end{appendices}
 
 \end{document}
