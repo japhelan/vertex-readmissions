@@ -1,0 +1,559 @@
+{
+  "components": {
+    "comp-apply-preprocessing-v1": {
+      "executorLabel": "exec-apply-preprocessing-v1",
+      "inputDefinitions": {
+        "artifacts": {
+          "input_dataset": {
+            "artifactType": {
+              "schemaTitle": "system.Dataset",
+              "schemaVersion": "0.0.1"
+            }
+          },
+          "preprocessing_artifacts": {
+            "artifactType": {
+              "schemaTitle": "system.Artifact",
+              "schemaVersion": "0.0.1"
+            }
+          }
+        },
+        "parameters": {
+          "id_col": {
+            "defaultValue": "patient_id",
+            "isOptional": true,
+            "parameterType": "STRING"
+          },
+          "target_col": {
+            "defaultValue": "readmission_within_30_days",
+            "isOptional": true,
+            "parameterType": "STRING"
+          }
+        }
+      },
+      "outputDefinitions": {
+        "artifacts": {
+          "output_dataset": {
+            "artifactType": {
+              "schemaTitle": "system.Dataset",
+              "schemaVersion": "0.0.1"
+            }
+          }
+        }
+      }
+    },
+    "comp-fit-apply-preprocessing-v1": {
+      "executorLabel": "exec-fit-apply-preprocessing-v1",
+      "inputDefinitions": {
+        "artifacts": {
+          "input_dataset": {
+            "artifactType": {
+              "schemaTitle": "system.Dataset",
+              "schemaVersion": "0.0.1"
+            }
+          }
+        },
+        "parameters": {
+          "id_col": {
+            "defaultValue": "patient_id",
+            "isOptional": true,
+            "parameterType": "STRING"
+          },
+          "target_col": {
+            "defaultValue": "readmission_within_30_days",
+            "isOptional": true,
+            "parameterType": "STRING"
+          }
+        }
+      },
+      "outputDefinitions": {
+        "artifacts": {
+          "output_dataset": {
+            "artifactType": {
+              "schemaTitle": "system.Dataset",
+              "schemaVersion": "0.0.1"
+            }
+          },
+          "preprocessing_artifacts": {
+            "artifactType": {
+              "schemaTitle": "system.Artifact",
+              "schemaVersion": "0.0.1"
+            }
+          },
+          "preprocessing_metrics": {
+            "artifactType": {
+              "schemaTitle": "system.Metrics",
+              "schemaVersion": "0.0.1"
+            }
+          }
+        }
+      }
+    },
+    "comp-load-validate-data": {
+      "executorLabel": "exec-load-validate-data",
+      "inputDefinitions": {
+        "parameters": {
+          "id_col": {
+            "defaultValue": "patient_id",
+            "isOptional": true,
+            "parameterType": "STRING"
+          },
+          "input_dataset_path": {
+            "parameterType": "STRING"
+          },
+          "target_col": {
+            "defaultValue": "readmission_within_30_days",
+            "isOptional": true,
+            "parameterType": "STRING"
+          }
+        }
+      },
+      "outputDefinitions": {
+        "artifacts": {
+          "output_dataset": {
+            "artifactType": {
+              "schemaTitle": "system.Dataset",
+              "schemaVersion": "0.0.1"
+            }
+          }
+        }
+      }
+    },
+    "comp-oversample-training": {
+      "executorLabel": "exec-oversample-training",
+      "inputDefinitions": {
+        "artifacts": {
+          "input_dataset": {
+            "artifactType": {
+              "schemaTitle": "system.Dataset",
+              "schemaVersion": "0.0.1"
+            }
+          }
+        },
+        "parameters": {
+          "id_col": {
+            "defaultValue": "patient_id",
+            "isOptional": true,
+            "parameterType": "STRING"
+          },
+          "random_state": {
+            "defaultValue": 42.0,
+            "isOptional": true,
+            "parameterType": "NUMBER_INTEGER"
+          },
+          "target_col": {
+            "defaultValue": "readmission_within_30_days",
+            "isOptional": true,
+            "parameterType": "STRING"
+          }
+        }
+      },
+      "outputDefinitions": {
+        "artifacts": {
+          "output_dataset": {
+            "artifactType": {
+              "schemaTitle": "system.Dataset",
+              "schemaVersion": "0.0.1"
+            }
+          }
+        }
+      }
+    },
+    "comp-split-data": {
+      "executorLabel": "exec-split-data",
+      "inputDefinitions": {
+        "artifacts": {
+          "input_dataset": {
+            "artifactType": {
+              "schemaTitle": "system.Dataset",
+              "schemaVersion": "0.0.1"
+            }
+          }
+        },
+        "parameters": {
+          "id_col": {
+            "defaultValue": "patient_id",
+            "isOptional": true,
+            "parameterType": "STRING"
+          },
+          "random_state": {
+            "defaultValue": 42.0,
+            "isOptional": true,
+            "parameterType": "NUMBER_INTEGER"
+          },
+          "target_col": {
+            "defaultValue": "readmission_within_30_days",
+            "isOptional": true,
+            "parameterType": "STRING"
+          },
+          "test_size": {
+            "defaultValue": 0.2,
+            "isOptional": true,
+            "parameterType": "NUMBER_DOUBLE"
+          }
+        }
+      },
+      "outputDefinitions": {
+        "artifacts": {
+          "split_metrics": {
+            "artifactType": {
+              "schemaTitle": "system.Metrics",
+              "schemaVersion": "0.0.1"
+            }
+          },
+          "train_dataset": {
+            "artifactType": {
+              "schemaTitle": "system.Dataset",
+              "schemaVersion": "0.0.1"
+            }
+          },
+          "validation_dataset": {
+            "artifactType": {
+              "schemaTitle": "system.Dataset",
+              "schemaVersion": "0.0.1"
+            }
+          }
+        }
+      }
+    }
+  },
+  "deploymentSpec": {
+    "executors": {
+      "exec-apply-preprocessing-v1": {
+        "container": {
+          "args": [
+            "--executor_input",
+            "{{$}}",
+            "--function_to_execute",
+            "apply_preprocessing_v1"
+          ],
+          "command": [
+            "sh",
+            "-c",
+            "\nif ! [ -x \"$(command -v pip)\" ]; then\n    python3 -m ensurepip || python3 -m ensurepip --user || apt-get install python3-pip\nfi\n\nPIP_DISABLE_PIP_VERSION_CHECK=1 python3 -m pip install --quiet --no-warn-script-location 'pandas' 'numpy' 'scikit-learn' 'joblib'  &&  python3 -m pip install --quiet --no-warn-script-location 'kfp==2.16.0' '--no-deps' 'typing-extensions>=3.7.4,<5; python_version<\"3.9\"' && \"$0\" \"$@\"\n",
+            "sh",
+            "-ec",
+            "program_path=$(mktemp -d)\n\nprintf \"%s\" \"$0\" > \"$program_path/ephemeral_component.py\"\n_KFP_RUNTIME=true python3 -m kfp.dsl.executor_main                         --component_module_path                         \"$program_path/ephemeral_component.py\"                         \"$@\"\n",
+            "\nimport kfp\nfrom kfp import dsl\nfrom kfp.dsl import *\nfrom typing import *\n\ndef apply_preprocessing_v1(\n    input_dataset: Input[Dataset],\n    preprocessing_artifacts: Input[Artifact],\n    output_dataset: Output[Dataset],\n    target_col: str = \"readmission_within_30_days\",\n    id_col: str = \"patient_id\",\n):\n    import os\n    import joblib\n    import numpy as np\n    import pandas as pd\n\n    def engineer_features(X: pd.DataFrame) -> pd.DataFrame:\n        X = X.copy()\n        X[\"age_group\"] = pd.cut(\n            X[\"age\"],\n            bins=[0, 18, 25, 40, 65, 80, np.inf],\n            labels=[\"0-18\", \"19-25\", \"26-40\", \"41-65\", \"66-80\", \"81+\"],\n            right=False,\n        ).astype(str)\n        X = X.drop(columns=[\"age\"])\n        X[\"medications_prescribed\"] = (\n            X[\"medications_prescribed\"].replace(\"\", pd.NA).astype(float).apply(lambda x: 1 if x > 0 else 0)\n        )\n        X[\"number_of_prior_visits\"] = X[\"number_of_prior_visits\"].replace(\"\", pd.NA).astype(float)\n        X[\"length_of_stay_score\"] = X[\"length_of_stay\"].apply(\n            lambda x: 1 if x <= 1 else (2 if x <= 2 else (3 if x <= 3 else (4 if x <= 6 else (5 if x <= 14 else 7))))\n        )\n        X = X.drop(columns=[\"length_of_stay\"])\n        return X\n\n    df = pd.read_csv(input_dataset.path)\n    print(f\"Input validation shape: {df.shape}\")\n\n    preprocessor_path = os.path.join(preprocessing_artifacts.path, \"preprocessor.joblib\")\n    if not os.path.exists(preprocessor_path):\n        raise ValueError(f\"Missing preprocessor artifact: {preprocessor_path}\")\n\n    preprocessor = joblib.load(preprocessor_path)\n\n    ids = df[[id_col]].copy()\n    y = df[[target_col]].copy()\n    X = df.drop(columns=[id_col, target_col]).copy()\n\n    X = engineer_features(X)\n\n    X_transformed = preprocessor.transform(X)\n    feature_names = preprocessor.get_feature_names_out()\n    X_df = pd.DataFrame(X_transformed, columns=feature_names)\n\n    prepared_df = pd.concat(\n        [ids.reset_index(drop=True), X_df, y.reset_index(drop=True)], axis=1\n    )\n    print(f\"Output validation shape: {prepared_df.shape}\")\n    prepared_df.to_csv(output_dataset.path, index=False)\n\n"
+          ],
+          "image": "python:3.10-slim",
+          "resources": {
+            "cpuLimit": 1.0,
+            "memoryLimit": 4.0,
+            "resourceCpuLimit": "1",
+            "resourceMemoryLimit": "4G"
+          }
+        }
+      },
+      "exec-fit-apply-preprocessing-v1": {
+        "container": {
+          "args": [
+            "--executor_input",
+            "{{$}}",
+            "--function_to_execute",
+            "fit_apply_preprocessing_v1"
+          ],
+          "command": [
+            "sh",
+            "-c",
+            "\nif ! [ -x \"$(command -v pip)\" ]; then\n    python3 -m ensurepip || python3 -m ensurepip --user || apt-get install python3-pip\nfi\n\nPIP_DISABLE_PIP_VERSION_CHECK=1 python3 -m pip install --quiet --no-warn-script-location 'pandas' 'numpy' 'scikit-learn' 'joblib'  &&  python3 -m pip install --quiet --no-warn-script-location 'kfp==2.16.0' '--no-deps' 'typing-extensions>=3.7.4,<5; python_version<\"3.9\"' && \"$0\" \"$@\"\n",
+            "sh",
+            "-ec",
+            "program_path=$(mktemp -d)\n\nprintf \"%s\" \"$0\" > \"$program_path/ephemeral_component.py\"\n_KFP_RUNTIME=true python3 -m kfp.dsl.executor_main                         --component_module_path                         \"$program_path/ephemeral_component.py\"                         \"$@\"\n",
+            "\nimport kfp\nfrom kfp import dsl\nfrom kfp.dsl import *\nfrom typing import *\n\ndef fit_apply_preprocessing_v1(\n    input_dataset: Input[Dataset],\n    output_dataset: Output[Dataset],\n    preprocessing_artifacts: Output[Artifact],\n    preprocessing_metrics: Output[Metrics],\n    target_col: str = \"readmission_within_30_days\",\n    id_col: str = \"patient_id\",\n):\n    import os\n    import joblib\n    import numpy as np\n    import pandas as pd\n    from sklearn.compose import ColumnTransformer\n    from sklearn.impute import SimpleImputer\n    from sklearn.pipeline import Pipeline\n    from sklearn.preprocessing import OneHotEncoder, StandardScaler\n\n    def engineer_features(X: pd.DataFrame) -> pd.DataFrame:\n        X = X.copy()\n        X[\"age_group\"] = pd.cut(\n            X[\"age\"],\n            bins=[0, 18, 25, 40, 65, 80, np.inf],\n            labels=[\"0-18\", \"19-25\", \"26-40\", \"41-65\", \"66-80\", \"81+\"],\n            right=False,\n        ).astype(str)\n        X = X.drop(columns=[\"age\"])\n        X[\"medications_prescribed\"] = (\n            X[\"medications_prescribed\"].replace(\"\", pd.NA).astype(float).apply(lambda x: 1 if x > 0 else 0)\n        )\n        X[\"number_of_prior_visits\"] = X[\"number_of_prior_visits\"].replace(\"\", pd.NA).astype(float)\n        X[\"length_of_stay_score\"] = X[\"length_of_stay\"].apply(\n            lambda x: 1 if x <= 1 else (2 if x <= 2 else (3 if x <= 3 else (4 if x <= 6 else (5 if x <= 14 else 7))))\n        )\n        X = X.drop(columns=[\"length_of_stay\"])\n        return X\n\n    df = pd.read_csv(input_dataset.path)\n    print(f\"Input training shape: {df.shape}\")\n\n    ids = df[[id_col]].copy()\n    y = df[[target_col]].copy()\n    X = df.drop(columns=[id_col, target_col]).copy()\n\n    X = engineer_features(X)\n\n    num_cols = [\"height_m\", \"bmi\", \"adjusted_weight_kg\", \"number_of_prior_visits\", \"length_of_stay_score\"]\n    cat_cols = X.select_dtypes(include=[\"object\", \"category\"]).columns.tolist()\n\n    preprocessor = ColumnTransformer(\n        transformers=[\n            (\n                \"num\",\n                Pipeline([\n                    (\"impute\", SimpleImputer(strategy=\"median\")),\n                    (\"scale\", StandardScaler()),\n                ]),\n                num_cols,\n            ),\n            (\n                \"cat\",\n                Pipeline([\n                    (\"impute\", SimpleImputer(strategy=\"most_frequent\")),\n                    (\"encode\", OneHotEncoder(drop=\"first\", sparse_output=False, handle_unknown=\"ignore\")),\n                ]),\n                cat_cols,\n            ),\n        ],\n        remainder=\"passthrough\",\n    )\n\n    X_transformed = preprocessor.fit_transform(X)\n    feature_names = preprocessor.get_feature_names_out()\n    X_df = pd.DataFrame(X_transformed, columns=feature_names)\n\n    prepared_df = pd.concat(\n        [ids.reset_index(drop=True), X_df, y.reset_index(drop=True)], axis=1\n    )\n    print(f\"Output training shape: {prepared_df.shape}\")\n    prepared_df.to_csv(output_dataset.path, index=False)\n\n    os.makedirs(preprocessing_artifacts.path, exist_ok=True)\n    joblib.dump(preprocessor, os.path.join(preprocessing_artifacts.path, \"preprocessor.joblib\"))\n    print(\"Preprocessing artifact saved:\", os.listdir(preprocessing_artifacts.path))\n\n    preprocessing_metrics.log_metric(\"input_features\", int(X.shape[1]))\n    preprocessing_metrics.log_metric(\"output_features\", int(X_df.shape[1]))\n    preprocessing_metrics.log_metric(\"train_samples\", int(len(prepared_df)))\n\n"
+          ],
+          "image": "python:3.10-slim",
+          "resources": {
+            "cpuLimit": 2.0,
+            "memoryLimit": 8.0,
+            "resourceCpuLimit": "2",
+            "resourceMemoryLimit": "8G"
+          }
+        }
+      },
+      "exec-load-validate-data": {
+        "container": {
+          "args": [
+            "--executor_input",
+            "{{$}}",
+            "--function_to_execute",
+            "load_validate_data"
+          ],
+          "command": [
+            "sh",
+            "-c",
+            "\nif ! [ -x \"$(command -v pip)\" ]; then\n    python3 -m ensurepip || python3 -m ensurepip --user || apt-get install python3-pip\nfi\n\nPIP_DISABLE_PIP_VERSION_CHECK=1 python3 -m pip install --quiet --no-warn-script-location 'pandas' 'numpy' 'fsspec' 'gcsfs'  &&  python3 -m pip install --quiet --no-warn-script-location 'kfp==2.16.0' '--no-deps' 'typing-extensions>=3.7.4,<5; python_version<\"3.9\"' && \"$0\" \"$@\"\n",
+            "sh",
+            "-ec",
+            "program_path=$(mktemp -d)\n\nprintf \"%s\" \"$0\" > \"$program_path/ephemeral_component.py\"\n_KFP_RUNTIME=true python3 -m kfp.dsl.executor_main                         --component_module_path                         \"$program_path/ephemeral_component.py\"                         \"$@\"\n",
+            "\nimport kfp\nfrom kfp import dsl\nfrom kfp.dsl import *\nfrom typing import *\n\ndef load_validate_data(\n    input_dataset_path: str,\n    output_dataset: Output[Dataset],\n    target_col: str = \"readmission_within_30_days\",\n    id_col: str = \"patient_id\",\n):\n    import pandas as pd\n    import numpy as np\n\n    def format_columns(df: pd.DataFrame) -> pd.DataFrame:\n        df_transformed = df.copy()\n\n        if \"PatientID\" in df_transformed.columns:\n            df_transformed = df_transformed.rename(\n                columns={\"PatientID\": \"patient_id\"}\n            )\n\n        df_transformed.columns = (\n            df_transformed.columns.str.strip().str.lower().str.replace(\" \", \"_\")\n        )\n        df_transformed.columns = df_transformed.columns.str.replace(\"(\", \"\").str.replace(\n            \")\", \"\"\n        )\n        return df_transformed  \n\n    df = pd.read_csv(input_dataset_path)\n\n    if df.empty:\n        raise ValueError(\"Input dataset is empty\")\n\n    print(f\"Dataset shape: {df.shape}\")\n\n    df = df.loc[:, ~df.columns.str.contains(r\"^Unnamed\")]\n    df = format_columns(df)\n\n    missing = [c for c in [target_col, id_col] if c not in df.columns]\n    if missing:\n        raise ValueError(f\"Missing required columns: {missing}\")\n\n    print(\"Target distribution:\")\n    print(df[target_col].value_counts(dropna=False))\n\n    if df[target_col].dropna().nunique() < 2:\n        raise ValueError(f\"Target column '{target_col}' must contain at least two classes\")\n\n    df.to_csv(output_dataset.path, index=False)\n\n"
+          ],
+          "image": "python:3.10-slim",
+          "resources": {
+            "cpuLimit": 1.0,
+            "memoryLimit": 4.0,
+            "resourceCpuLimit": "1",
+            "resourceMemoryLimit": "4G"
+          }
+        }
+      },
+      "exec-oversample-training": {
+        "container": {
+          "args": [
+            "--executor_input",
+            "{{$}}",
+            "--function_to_execute",
+            "oversample_training"
+          ],
+          "command": [
+            "sh",
+            "-c",
+            "\nif ! [ -x \"$(command -v pip)\" ]; then\n    python3 -m ensurepip || python3 -m ensurepip --user || apt-get install python3-pip\nfi\n\nPIP_DISABLE_PIP_VERSION_CHECK=1 python3 -m pip install --quiet --no-warn-script-location 'pandas' 'numpy' 'scikit-learn' 'imbalanced-learn'  &&  python3 -m pip install --quiet --no-warn-script-location 'kfp==2.16.0' '--no-deps' 'typing-extensions>=3.7.4,<5; python_version<\"3.9\"' && \"$0\" \"$@\"\n",
+            "sh",
+            "-ec",
+            "program_path=$(mktemp -d)\n\nprintf \"%s\" \"$0\" > \"$program_path/ephemeral_component.py\"\n_KFP_RUNTIME=true python3 -m kfp.dsl.executor_main                         --component_module_path                         \"$program_path/ephemeral_component.py\"                         \"$@\"\n",
+            "\nimport kfp\nfrom kfp import dsl\nfrom kfp.dsl import *\nfrom typing import *\n\ndef oversample_training(\n    input_dataset: Input[Dataset],\n    output_dataset: Output[Dataset],\n    target_col: str = \"readmission_within_30_days\",\n    id_col: str = \"patient_id\",\n    random_state: int = 42,\n):\n    import pandas as pd\n    from imblearn.over_sampling import RandomOverSampler\n\n    df = pd.read_csv(input_dataset.path)\n\n    print(f\"Input shape: {df.shape}\")\n    print(\"Class distribution BEFORE oversampling:\")\n    print(df[target_col].value_counts(dropna=False))\n\n    missing = [c for c in [target_col, id_col] if c not in df.columns]\n    if missing:\n        raise ValueError(f\"Missing required columns: {missing}\")\n\n    X = df.drop(columns=[target_col])\n    y = df[target_col]\n\n    ros = RandomOverSampler(random_state=random_state)\n    X_resampled, y_resampled = ros.fit_resample(X, y)\n\n    resampled_df = X_resampled.copy()\n    resampled_df[target_col] = y_resampled\n\n    print(\"Class distribution AFTER oversampling:\")\n    print(resampled_df[target_col].value_counts(dropna=False))\n    print(f\"Output shape: {resampled_df.shape}\")\n\n    resampled_df.to_csv(output_dataset.path, index=False)\n\n"
+          ],
+          "image": "python:3.10-slim",
+          "resources": {
+            "cpuLimit": 1.0,
+            "memoryLimit": 4.0,
+            "resourceCpuLimit": "1",
+            "resourceMemoryLimit": "4G"
+          }
+        }
+      },
+      "exec-split-data": {
+        "container": {
+          "args": [
+            "--executor_input",
+            "{{$}}",
+            "--function_to_execute",
+            "split_data"
+          ],
+          "command": [
+            "sh",
+            "-c",
+            "\nif ! [ -x \"$(command -v pip)\" ]; then\n    python3 -m ensurepip || python3 -m ensurepip --user || apt-get install python3-pip\nfi\n\nPIP_DISABLE_PIP_VERSION_CHECK=1 python3 -m pip install --quiet --no-warn-script-location 'pandas' 'scikit-learn'  &&  python3 -m pip install --quiet --no-warn-script-location 'kfp==2.16.0' '--no-deps' 'typing-extensions>=3.7.4,<5; python_version<\"3.9\"' && \"$0\" \"$@\"\n",
+            "sh",
+            "-ec",
+            "program_path=$(mktemp -d)\n\nprintf \"%s\" \"$0\" > \"$program_path/ephemeral_component.py\"\n_KFP_RUNTIME=true python3 -m kfp.dsl.executor_main                         --component_module_path                         \"$program_path/ephemeral_component.py\"                         \"$@\"\n",
+            "\nimport kfp\nfrom kfp import dsl\nfrom kfp.dsl import *\nfrom typing import *\n\ndef split_data(\n    input_dataset: Input[Dataset],\n    train_dataset: Output[Dataset],\n    validation_dataset: Output[Dataset],\n    split_metrics: Output[Metrics],\n    test_size: float = 0.2,\n    random_state: int = 42,\n    target_col: str = \"readmission_within_30_days\",\n    id_col: str = \"patient_id\",\n):\n    from sklearn.model_selection import train_test_split\n    import pandas as pd\n\n    df = pd.read_csv(input_dataset.path)\n\n    X = df.drop(columns=[target_col, id_col])\n    y = df[target_col]\n    ids = df[id_col]\n\n    X_train, X_val, y_train, y_val = train_test_split(\n        X, y, test_size=test_size, stratify=y, random_state=random_state\n    )\n\n    train_df = pd.concat([X_train, y_train, ids.loc[X_train.index]], axis=1)\n    val_df = pd.concat([X_val, y_val, ids.loc[X_val.index]], axis=1)\n\n    train_df.to_csv(train_dataset.path, index=False)\n    val_df.to_csv(validation_dataset.path, index=False)\n\n    split_metrics.log_metric(\"train_size\", len(train_df))\n    split_metrics.log_metric(\"val_size\", len(val_df))\n    split_metrics.log_metric(\"train_positive_rate\", float(train_df[target_col].mean()))\n    split_metrics.log_metric(\"val_positive_rate\", float(val_df[target_col].mean()))\n\n    print(f\"Train shape: {train_df.shape}, Val shape: {val_df.shape}\")\n    print(\"Train target distribution:\")\n    print(train_df[target_col].value_counts(normalize=True))\n    print(\"Val target distribution:\")\n    print(val_df[target_col].value_counts(normalize=True))\n\n"
+          ],
+          "image": "python:3.10-slim",
+          "resources": {
+            "cpuLimit": 1.0,
+            "memoryLimit": 4.0,
+            "resourceCpuLimit": "1",
+            "resourceMemoryLimit": "4G"
+          }
+        }
+      }
+    }
+  },
+  "pipelineInfo": {
+    "name": "readmissions-preprocessing-pipeline"
+  },
+  "root": {
+    "dag": {
+      "tasks": {
+        "apply-preprocessing-v1": {
+          "cachingOptions": {
+            "enableCache": true
+          },
+          "componentRef": {
+            "name": "comp-apply-preprocessing-v1"
+          },
+          "dependentTasks": [
+            "fit-apply-preprocessing-v1",
+            "split-data"
+          ],
+          "inputs": {
+            "artifacts": {
+              "input_dataset": {
+                "taskOutputArtifact": {
+                  "outputArtifactKey": "validation_dataset",
+                  "producerTask": "split-data"
+                }
+              },
+              "preprocessing_artifacts": {
+                "taskOutputArtifact": {
+                  "outputArtifactKey": "preprocessing_artifacts",
+                  "producerTask": "fit-apply-preprocessing-v1"
+                }
+              }
+            },
+            "parameters": {
+              "id_col": {
+                "componentInputParameter": "id_col"
+              },
+              "target_col": {
+                "componentInputParameter": "target_col"
+              }
+            }
+          },
+          "taskInfo": {
+            "name": "apply-preprocessing-v1"
+          }
+        },
+        "fit-apply-preprocessing-v1": {
+          "cachingOptions": {
+            "enableCache": true
+          },
+          "componentRef": {
+            "name": "comp-fit-apply-preprocessing-v1"
+          },
+          "dependentTasks": [
+            "oversample-training"
+          ],
+          "inputs": {
+            "artifacts": {
+              "input_dataset": {
+                "taskOutputArtifact": {
+                  "outputArtifactKey": "output_dataset",
+                  "producerTask": "oversample-training"
+                }
+              }
+            },
+            "parameters": {
+              "id_col": {
+                "componentInputParameter": "id_col"
+              },
+              "target_col": {
+                "componentInputParameter": "target_col"
+              }
+            }
+          },
+          "taskInfo": {
+            "name": "fit-apply-preprocessing-v1"
+          }
+        },
+        "load-validate-data": {
+          "cachingOptions": {
+            "enableCache": true
+          },
+          "componentRef": {
+            "name": "comp-load-validate-data"
+          },
+          "inputs": {
+            "parameters": {
+              "id_col": {
+                "componentInputParameter": "id_col"
+              },
+              "input_dataset_path": {
+                "componentInputParameter": "training_dataset_path"
+              },
+              "target_col": {
+                "componentInputParameter": "target_col"
+              }
+            }
+          },
+          "taskInfo": {
+            "name": "load-validate-data"
+          }
+        },
+        "oversample-training": {
+          "cachingOptions": {
+            "enableCache": true
+          },
+          "componentRef": {
+            "name": "comp-oversample-training"
+          },
+          "dependentTasks": [
+            "split-data"
+          ],
+          "inputs": {
+            "artifacts": {
+              "input_dataset": {
+                "taskOutputArtifact": {
+                  "outputArtifactKey": "train_dataset",
+                  "producerTask": "split-data"
+                }
+              }
+            },
+            "parameters": {
+              "id_col": {
+                "componentInputParameter": "id_col"
+              },
+              "random_state": {
+                "componentInputParameter": "random_state"
+              },
+              "target_col": {
+                "componentInputParameter": "target_col"
+              }
+            }
+          },
+          "taskInfo": {
+            "name": "oversample-training"
+          }
+        },
+        "split-data": {
+          "cachingOptions": {
+            "enableCache": true
+          },
+          "componentRef": {
+            "name": "comp-split-data"
+          },
+          "dependentTasks": [
+            "load-validate-data"
+          ],
+          "inputs": {
+            "artifacts": {
+              "input_dataset": {
+                "taskOutputArtifact": {
+                  "outputArtifactKey": "output_dataset",
+                  "producerTask": "load-validate-data"
+                }
+              }
+            },
+            "parameters": {
+              "id_col": {
+                "componentInputParameter": "id_col"
+              },
+              "random_state": {
+                "componentInputParameter": "random_state"
+              },
+              "target_col": {
+                "componentInputParameter": "target_col"
+              },
+              "test_size": {
+                "componentInputParameter": "test_size"
+              }
+            }
+          },
+          "taskInfo": {
+            "name": "split-data"
+          }
+        }
+      }
+    },
+    "inputDefinitions": {
+      "parameters": {
+        "id_col": {
+          "defaultValue": "patient_id",
+          "isOptional": true,
+          "parameterType": "STRING"
+        },
+        "random_state": {
+          "defaultValue": 42.0,
+          "isOptional": true,
+          "parameterType": "NUMBER_INTEGER"
+        },
+        "target_col": {
+          "defaultValue": "readmission_within_30_days",
+          "isOptional": true,
+          "parameterType": "STRING"
+        },
+        "test_size": {
+          "defaultValue": 0.2,
+          "isOptional": true,
+          "parameterType": "NUMBER_DOUBLE"
+        },
+        "training_dataset_path": {
+          "parameterType": "STRING"
+        }
+      }
+    }
+  },
+  "schemaVersion": "2.1.0",
+  "sdkVersion": "kfp-2.16.0"
+}
