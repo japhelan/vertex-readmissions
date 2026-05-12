@@ -88,16 +88,44 @@
         }
       }
     },
+    "comp-importer": {
+      "executorLabel": "exec-importer",
+      "inputDefinitions": {
+        "parameters": {
+          "metadata": {
+            "parameterType": "STRING"
+          },
+          "uri": {
+            "parameterType": "STRING"
+          }
+        }
+      },
+      "outputDefinitions": {
+        "artifacts": {
+          "artifact": {
+            "artifactType": {
+              "schemaTitle": "system.Dataset",
+              "schemaVersion": "0.0.1"
+            }
+          }
+        }
+      }
+    },
     "comp-load-validate-data": {
       "executorLabel": "exec-load-validate-data",
       "inputDefinitions": {
+        "artifacts": {
+          "input_dataset": {
+            "artifactType": {
+              "schemaTitle": "system.Dataset",
+              "schemaVersion": "0.0.1"
+            }
+          }
+        },
         "parameters": {
           "id_col": {
             "defaultValue": "patient_id",
             "isOptional": true,
-            "parameterType": "STRING"
-          },
-          "input_dataset_path": {
             "parameterType": "STRING"
           },
           "target_col": {
@@ -270,6 +298,20 @@
           }
         }
       },
+      "exec-importer": {
+        "importer": {
+          "artifactUri": {
+            "runtimeParameter": "uri"
+          },
+          "metadata": {
+            "resourceName": "{{$.inputs.parameters['metadata']}}"
+          },
+          "typeSchema": {
+            "schemaTitle": "system.Dataset",
+            "schemaVersion": "0.0.1"
+          }
+        }
+      },
       "exec-load-validate-data": {
         "container": {
           "args": [
@@ -285,7 +327,7 @@
             "sh",
             "-ec",
             "program_path=$(mktemp -d)\n\nprintf \"%s\" \"$0\" > \"$program_path/ephemeral_component.py\"\n_KFP_RUNTIME=true python3 -m kfp.dsl.executor_main                         --component_module_path                         \"$program_path/ephemeral_component.py\"                         \"$@\"\n",
-            "\nimport kfp\nfrom kfp import dsl\nfrom kfp.dsl import *\nfrom typing import *\n\ndef load_validate_data(\n    input_dataset_path: str,\n    output_dataset: Output[Dataset],\n    target_col: str = \"readmission_within_30_days\",\n    id_col: str = \"patient_id\",\n):\n    import pandas as pd\n    import numpy as np\n\n    def format_columns(df: pd.DataFrame) -> pd.DataFrame:\n        df_transformed = df.copy()\n\n        if \"PatientID\" in df_transformed.columns:\n            df_transformed = df_transformed.rename(\n                columns={\"PatientID\": \"patient_id\"}\n            )\n\n        df_transformed.columns = (\n            df_transformed.columns.str.strip().str.lower().str.replace(\" \", \"_\")\n        )\n        df_transformed.columns = df_transformed.columns.str.replace(\"(\", \"\").str.replace(\n            \")\", \"\"\n        )\n        return df_transformed  \n\n    df = pd.read_csv(input_dataset_path)\n\n    if df.empty:\n        raise ValueError(\"Input dataset is empty\")\n\n    print(f\"Dataset shape: {df.shape}\")\n\n    df = df.loc[:, ~df.columns.str.contains(r\"^Unnamed\")]\n    df = format_columns(df)\n\n    missing = [c for c in [target_col, id_col] if c not in df.columns]\n    if missing:\n        raise ValueError(f\"Missing required columns: {missing}\")\n\n    print(\"Target distribution:\")\n    print(df[target_col].value_counts(dropna=False))\n\n    if df[target_col].dropna().nunique() < 2:\n        raise ValueError(f\"Target column '{target_col}' must contain at least two classes\")\n\n    df.to_csv(output_dataset.path, index=False)\n\n"
+            "\nimport kfp\nfrom kfp import dsl\nfrom kfp.dsl import *\nfrom typing import *\n\ndef load_validate_data(\n    input_dataset: Input[Dataset],\n    output_dataset: Output[Dataset],\n    target_col: str = \"readmission_within_30_days\",\n    id_col: str = \"patient_id\",\n):\n    import pandas as pd\n    import numpy as np\n\n    def format_columns(df: pd.DataFrame) -> pd.DataFrame:\n        df_transformed = df.copy()\n\n        if \"PatientID\" in df_transformed.columns:\n            df_transformed = df_transformed.rename(\n                columns={\"PatientID\": \"patient_id\"}\n            )\n\n        df_transformed.columns = (\n            df_transformed.columns.str.strip().str.lower().str.replace(\" \", \"_\")\n        )\n        df_transformed.columns = df_transformed.columns.str.replace(\"(\", \"\").str.replace(\n            \")\", \"\"\n        )\n        return df_transformed  \n\n    df = pd.read_csv(input_dataset.uri)\n\n    if df.empty:\n        raise ValueError(\"Input dataset is empty\")\n\n    print(f\"Dataset shape: {df.shape}\")\n\n    df = df.loc[:, ~df.columns.str.contains(r\"^Unnamed\")]\n    df = format_columns(df)\n\n    missing = [c for c in [target_col, id_col] if c not in df.columns]\n    if missing:\n        raise ValueError(f\"Missing required columns: {missing}\")\n\n    print(\"Target distribution:\")\n    print(df[target_col].value_counts(dropna=False))\n\n    if df[target_col].dropna().nunique() < 2:\n        raise ValueError(f\"Target column '{target_col}' must contain at least two classes\")\n\n    df.to_csv(output_dataset.path, index=False)\n\n    # Annotate artifact metadata \u2014 stored in Vertex ML Metadata and linked to every\n    # downstream pipeline run and model for automatic lineage tracking.\n    output_dataset.metadata[\"source_path\"] = input_dataset.uri\n    output_dataset.metadata[\"row_count\"] = len(df)\n\n"
           ],
           "image": "python:3.10-slim",
           "resources": {
@@ -427,6 +469,27 @@
             "name": "fit-apply-preprocessing-v1"
           }
         },
+        "importer": {
+          "cachingOptions": {
+            "enableCache": true
+          },
+          "componentRef": {
+            "name": "comp-importer"
+          },
+          "inputs": {
+            "parameters": {
+              "metadata": {
+                "componentInputParameter": "dataset_resource_name"
+              },
+              "uri": {
+                "componentInputParameter": "training_dataset_path"
+              }
+            }
+          },
+          "taskInfo": {
+            "name": "importer"
+          }
+        },
         "load-validate-data": {
           "cachingOptions": {
             "enableCache": true
@@ -434,13 +497,21 @@
           "componentRef": {
             "name": "comp-load-validate-data"
           },
+          "dependentTasks": [
+            "importer"
+          ],
           "inputs": {
+            "artifacts": {
+              "input_dataset": {
+                "taskOutputArtifact": {
+                  "outputArtifactKey": "artifact",
+                  "producerTask": "importer"
+                }
+              }
+            },
             "parameters": {
               "id_col": {
                 "componentInputParameter": "id_col"
-              },
-              "input_dataset_path": {
-                "componentInputParameter": "training_dataset_path"
               },
               "target_col": {
                 "componentInputParameter": "target_col"
@@ -528,6 +599,16 @@
     },
     "inputDefinitions": {
       "parameters": {
+        "dataset_resource_name": {
+          "defaultValue": "",
+          "isOptional": true,
+          "parameterType": "STRING"
+        },
+        "dataset_version": {
+          "defaultValue": "v0.0",
+          "isOptional": true,
+          "parameterType": "STRING"
+        },
         "id_col": {
           "defaultValue": "patient_id",
           "isOptional": true,
