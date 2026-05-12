@@ -1,0 +1,210 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath}
+\usepackage{graphicx}
+\usepackage{hyperref}
+\usepackage{microtype}
+\usepackage[section]{placeins}
+\usepackage{booktabs}
+\usepackage{float}
+\usepackage[toc,title]{appendix}
+\usepackage{listings}
+\usepackage{color}
+\definecolor{codegreen}{rgb}{0,0.6,0}
+\definecolor{codegray}{rgb}{0.5,0.5,0.5}
+\definecolor{codepurple}{rgb}{0.58,0,0.82}
+\definecolor{backcolour}{rgb}{0.95,0.95,0.92}
+\lstdefinestyle{mystyle}{
+  backgroundcolor=\color{backcolour},
+  commentstyle=\color{codegreen},
+  keywordstyle=\color{magenta},
+  numberstyle=\tiny\color{codegray},
+  stringstyle=\color{codepurple},
+  basicstyle=\ttfamily\footnotesize,
+  breakatwhitespace=false,
+  breaklines=true,
+  captionpos=b,
+  keepspaces=true,
+  numbers=left,
+  numbersep=5pt,
+  showspaces=false,
+  showstringspaces=false,
+  showtabs=false,
+  tabsize=2
+}
+\lstset{style=mystyle}
+\title{543 Readmissions Project Data Preparation Report}
+\author{Jack Phelan}
+\date{May 2026}
+\begin{document}
+\maketitle
+\tableofcontents
+\newpage
+
+% =============================================================================
+\section{Overview}
+% Briefly describe the purpose of this report and the starting dataset.
+% Input: healthcare_readmissions_dataset_train_post_eda.csv (post-EDA, age outliers already removed)
+% Output: healthcare_readmissions_dataset_train_preprocessed.csv
+% =============================================================================
+
+\par This report documents the steps taken following exploratory data analysis of
+\texttt{healthcare\_readmissions\_dataset\_train.csv}. From EDA, the dataset had 7958 rows
+and 19 features (including the target).
+
+% =============================================================================
+\section{Data Cleaning}
+% =============================================================================
+
+\subsection{Missing Data}
+% Describe which variables had missing values and decisions made.
+% number_of_prior_visits and medications_prescribed had missings.
+% Overlap between the two was small, so row-wise deletion was not used.
+% Imputation was deferred until after feature engineering (since medications_prescribed was transformed).
+% Final decision: number_of_prior_visits imputed to 0 (see Section 4).
+\par Only features \texttt{number\_of\_prior\_visits} and \texttt{medications\_prescribed}
+contained missing values (314 (4\%) and 657 (8\%) respectively). Among all rows with missing values,
+only 21 lacked both features, so plainly removing all rows with missing values was ruled out.
+Imputing strategies were deferred until after feature engineering as transformations were anticipated.
+
+\subsection{Outlier Handling}
+% BMI outliers removed using z-score threshold of 3.5.
+% This reduced the dataset from 8,038 to 7,951 rows.
+% Age outliers were handled in the prior EDA phase.
+
+\par During EDA, 80 rows were identified as outliers and removed for having impossible age values. BMI outliers were noted but not addressed.
+
+\par Using a $z$-score threshold of $|z| > 3.5$, 7 rows were identified for having BMI values outside the plausible range. These rows were removed,
+reducing the dataset to 7,951 rows, from 8,038 original and 7,958 post-EDA.
+
+\subsection{Errors and Duplicates}
+% Both handled in the EDA phase; nothing additional required here.
+
+\par No additional error correction or duplicate removal was necessary at this stage; both had been addressed during EDA.
+
+% =============================================================================
+\section{Feature Engineering}
+% =============================================================================
+
+\subsection{Single Variable Transforms}
+\label{subsec:single-var}
+
+\subsubsection{\texttt{medications\_prescribed} $\to$ \texttt{is\_prescribed}}
+% Binary encoding: 1 if medications_prescribed > 0, else 0.
+% Original column dropped. Missing values implicitly mapped to 0.
+\par \texttt{medications\_prescribed} was binarised into \texttt{is\_prescribed} (1 if the original value was greater than zero, 0 otherwise),
+As there was a long tail of values and for simpler imputation. Missing values were treated as 0.
+Other encoding apporaches might be looked at in the future (e.g.\ ordinal bins),
+but this was decided to be the baseline.
+
+\subsubsection{\texttt{length\_of\_stay} $\to$ \texttt{length\_of\_stay\_score}}
+% Converted to an ordinal score (1–7) following the LACE Index scoring convention.
+% LACE: Length of stay, Acuity of admission, Comorbidity, Emergency department use.
+% Bins: ≤1 day → 1, 2 days → 2, 3 days → 3, 4–6 days → 4, 7–14 days → 5, >14 days → 7.
+% Original column dropped.
+
+\par Continuous length of stay (days) was mapped to an ordinal risk score (1--7) following
+the LACE Index convention~\cite{van2010derivation}, a widely used readmission risk scoring system.
+The mapping is shown in Table~\ref{tab:los_score}.
+
+\begin{table}[H]
+  \centering
+  \caption{Length-of-Stay Score Encoding (LACE Index)}
+  \label{tab:los_score}
+  \begin{tabular}{lc}
+    \toprule
+    Length of Stay (days) & Score \\
+    \midrule
+    $\leq 1$    & 1 \\
+    2           & 2 \\
+    3           & 3 \\
+    4--6        & 4 \\
+    7--14       & 5 \\
+    $> 14$      & 7 \\
+    \bottomrule
+  \end{tabular}
+\end{table}
+
+\noindent The original \texttt{length\_of\_stay} column was dropped after encoding.
+
+\subsubsection{\texttt{age} $\to$ \texttt{age\_group}}
+% Binned into clinical risk tiers: 0–18, 19–25, 26–40, 41–65, 66–80, 81+.
+% Rationale: age has a non-linear relationship with readmission risk; bins capture clinical tiers.
+% Original column dropped.
+
+\par Raw age was binned into rough age groups to capture the non-linear relationship between age and readmission risk, as observed during EDA.
+
+\subsubsection{\texttt{number\_of\_prior\_visits} (type conversion)}
+% Cast from object/string to float to allow downstream imputation and modelling.
+
+\par \texttt{number\_of\_prior\_visits} was cast to \texttt{float} to allow downstream imputation and use in numeric models.
+
+% =============================================================================
+\section{Feature Selection Decisions}
+% =============================================================================
+
+\par The following variables were removed from the dataset:
+
+\begin{itemize}
+  \item \textbf{\texttt{weight\_kg}}: dropped because \texttt{adjusted\_weight\_kg} is highly correlated and is presumed to be the clinically adjusted version of the same measurement.
+  \item \textbf{\texttt{age}}: replaced by \texttt{age\_group} (see Section~\ref{subsec:single-var}).
+  \item \textbf{\texttt{length\_of\_stay}}: replaced by \texttt{length\_of\_stay\_score} (see Section~\ref{subsec:single-var}).
+  \item \textbf{\texttt{medications\_prescribed}}: replaced by \texttt{is\_prescribed} (see Section~\ref{subsec:single-var}).
+\end{itemize}
+
+\noindent Oversampling and standardization techniques were not applied at this stage,
+as more thorough experimentation seems needed to find the best approach for this dataset.
+
+\par Imputing techniques were also kept as simple as possible for this baseline version.
+\texttt{number\_of\_prior\_visits} was imputed to 0, but like medication imputing, will be explored further in future iterations.
+
+% =============================================================================
+\section{Final Dataset Summary}
+\label{sec:dataset-summary}
+% Describe the final shape, remaining variables, and any last-minute decisions.
+% =============================================================================
+
+\par \texttt{number\_of\_prior\_visits} missing values were imputed to 0 as a conservative default.
+
+\par The final preprocessed dataset contains \textbf{7,951 rows} and the columns listed in Table~\ref{tab:dataset_info}.
+
+\begin{table}
+  \caption{Dataset Info}
+  \label{tab:dataset_info}
+  \begin{tabular}{lrl}
+    \toprule
+    Column & Non-Null Count & Dtype \\
+    \midrule
+    patient\_id & 7951 & int64 \\
+    gender & 7951 & str \\
+    ethnicity & 7951 & str \\
+    hospital\_id & 7951 & str \\
+    height\_m & 7951 & float64 \\
+    smoker & 7951 & bool \\
+    bmi & 7951 & float64 \\
+    adjusted\_weight\_kg & 7951 & float64 \\
+    has\_diabetes & 7951 & int64 \\
+    has\_hypertension & 7951 & int64 \\
+    exercise\_frequency & 7951 & str \\
+    diet\_type & 7951 & str \\
+    number\_of\_prior\_visits & 7951 & float64 \\
+    type\_of\_treatment & 7951 & str \\
+    readmission\_within\_30\_days & 7951 & int64 \\
+    is\_prescribed & 7951 & int64 \\
+    length\_of\_stay\_score & 7951 & int64 \\
+    age\_group & 7951 & category \\
+    \bottomrule
+  \end{tabular}
+\end{table}
+
+\par The file was saved to \texttt{data/interim/healthcare\_readmissions\_dataset\_train\_preprocessed.csv}.
+
+% =============================================================================
+\begin{thebibliography}{9}
+  \bibitem{van2010derivation}
+  van Walraven, C., Dhalla, I.A., Bell, C., et al.\ (2010).
+  Derivation and validation of an index to predict early death or unplanned readmission after discharge from hospital to the community.
+  \textit{CMAJ}, 182(6), 551--557.
+\end{thebibliography}
+
+\end{document}
