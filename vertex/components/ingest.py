@@ -23,10 +23,12 @@ def load_validate_data(
         df_transformed.columns = (
             df_transformed.columns.str.strip().str.lower().str.replace(" ", "_")
         )
-        df_transformed.columns = df_transformed.columns.str.replace("(", "").str.replace(")", "")
+        df_transformed.columns = df_transformed.columns.str.replace(
+            "(", ""
+        ).str.replace(")", "")
         return df_transformed
 
-    df = pd.read_csv(input_dataset.uri)
+    df = pd.read_csv(input_dataset.uri, keep_default_na=False, na_values=[""])
 
     if df.empty:
         raise ValueError("Input dataset is empty")
@@ -44,7 +46,9 @@ def load_validate_data(
     print(df[target_col].value_counts(dropna=False))
 
     if df[target_col].dropna().nunique() < 2:
-        raise ValueError(f"Target column '{target_col}' must contain at least two classes")
+        raise ValueError(
+            f"Target column '{target_col}' must contain at least two classes"
+        )
 
     df.to_csv(output_dataset.path, index=False)
 

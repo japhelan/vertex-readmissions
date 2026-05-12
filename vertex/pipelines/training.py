@@ -1,5 +1,4 @@
-from kfp.v2 import dsl
-from kfp.v2.dsl import Dataset
+from kfp.v2.dsl import Dataset, Input
 from kfp.dsl import pipeline
 
 from vertex.components.ingest import load_validate_data
@@ -15,9 +14,8 @@ from vertex.components.evaluate import evaluate_model
 
 @pipeline(name="readmissions-training-pipeline")
 def training_pipeline(
-    training_dataset_path: str,
+    training_dataset: Input[Dataset],
     dataset_version: str = "v0.0",
-    dataset_resource_name: str = "",
     model_type: str = "xgboost",
     hyperparams_json: str = "{}",
     test_size: float = 0.2,
@@ -25,16 +23,9 @@ def training_pipeline(
     target_col: str = "readmission_within_30_days",
     id_col: str = "patient_id",
 ):
-    imported_dataset = dsl.importer(
-        artifact_uri=training_dataset_path,
-        artifact_class=Dataset,
-        reimport=False,
-        metadata={"resourceName": dataset_resource_name},
-    )
-
     validated = (
-        load_validate_data(
-            input_dataset=imported_dataset.output,
+        load_validate_data(  # pyright: ignore[reportCallIssue]
+            input_dataset=training_dataset,
             target_col=target_col,
             id_col=id_col,
         )
@@ -43,7 +34,7 @@ def training_pipeline(
     )
 
     split = (
-        split_data(
+        split_data(  # pyright: ignore[reportCallIssue]
             input_dataset=validated.outputs["output_dataset"],
             test_size=test_size,
             random_state=random_state,
@@ -55,7 +46,7 @@ def training_pipeline(
     )
 
     oversampled = (
-        oversample_training(
+        oversample_training(  # pyright: ignore[reportCallIssue]
             input_dataset=split.outputs["train_dataset"],
             random_state=random_state,
             target_col=target_col,
@@ -66,7 +57,7 @@ def training_pipeline(
     )
 
     preprocessed_train = (
-        fit_apply_preprocessing_v1(
+        fit_apply_preprocessing_v1(  # pyright: ignore[reportCallIssue]
             input_dataset=oversampled.outputs["output_dataset"],
             target_col=target_col,
             id_col=id_col,
@@ -76,7 +67,7 @@ def training_pipeline(
     )
 
     preprocessed_val = (
-        apply_preprocessing_v1(
+        apply_preprocessing_v1(  # pyright: ignore[reportCallIssue]
             input_dataset=split.outputs["validation_dataset"],
             preprocessing_artifacts=preprocessed_train.outputs[
                 "preprocessing_artifacts"
@@ -89,7 +80,7 @@ def training_pipeline(
     )
 
     trained = (
-        train_model(
+        train_model(  # pyright: ignore[reportCallIssue]
             train_dataset=preprocessed_train.outputs["output_dataset"],
             model_type=model_type,
             hyperparams_json=hyperparams_json,
@@ -101,7 +92,7 @@ def training_pipeline(
     )
 
     (
-        evaluate_model(
+        evaluate_model(  # pyright: ignore[reportCallIssue]
             val_dataset=preprocessed_val.outputs["output_dataset"],
             model_artifact=trained.outputs["model_artifact"],
             target_col=target_col,

@@ -32,16 +32,29 @@ def fit_apply_preprocessing_v1(
         ).astype(str)
         X = X.drop(columns=["age"])
         X["medications_prescribed"] = (
-            X["medications_prescribed"].replace("", pd.NA).astype(float).apply(lambda x: 1 if x > 0 else 0)
+            X["medications_prescribed"]
+            .replace("", pd.NA)
+            .astype(float)
+            .apply(lambda x: 1 if x > 0 else 0)
         )
-        X["number_of_prior_visits"] = X["number_of_prior_visits"].replace("", pd.NA).astype(float)
+        X["number_of_prior_visits"] = (
+            X["number_of_prior_visits"].replace("", pd.NA).astype(float)
+        )
         X["length_of_stay_score"] = X["length_of_stay"].apply(
-            lambda x: 1 if x <= 1 else (2 if x <= 2 else (3 if x <= 3 else (4 if x <= 6 else (5 if x <= 14 else 7))))
+            lambda x: (
+                1
+                if x <= 1
+                else (
+                    2
+                    if x <= 2
+                    else (3 if x <= 3 else (4 if x <= 6 else (5 if x <= 14 else 7)))
+                )
+            )
         )
         X = X.drop(columns=["length_of_stay"])
         return X
 
-    df = pd.read_csv(input_dataset.path)
+    df = pd.read_csv(input_dataset.path, keep_default_na=False, na_values=[""])
     print(f"Input training shape: {df.shape}")
 
     ids = df[[id_col]].copy()
@@ -50,25 +63,42 @@ def fit_apply_preprocessing_v1(
 
     X = engineer_features(X)
 
-    num_cols = ["height_m", "bmi", "adjusted_weight_kg", "number_of_prior_visits", "length_of_stay_score"]
+    num_cols = [
+        "height_m",
+        "bmi",
+        "adjusted_weight_kg",
+        "number_of_prior_visits",
+        "length_of_stay_score",
+    ]
     cat_cols = X.select_dtypes(include=["object", "category"]).columns.tolist()
 
     preprocessor = ColumnTransformer(
         transformers=[
             (
                 "num",
-                Pipeline([
-                    ("impute", SimpleImputer(strategy="median")),
-                    ("scale", StandardScaler()),
-                ]),
+                Pipeline(
+                    [
+                        ("impute", SimpleImputer(strategy="median")),
+                        ("scale", StandardScaler()),
+                    ]
+                ),
                 num_cols,
             ),
             (
                 "cat",
-                Pipeline([
-                    ("impute", SimpleImputer(strategy="most_frequent")),
-                    ("encode", OneHotEncoder(drop="first", sparse_output=False, handle_unknown="ignore")),
-                ]),
+                Pipeline(
+                    [
+                        ("impute", SimpleImputer(strategy="most_frequent")),
+                        (
+                            "encode",
+                            OneHotEncoder(
+                                drop="first",
+                                sparse_output=False,
+                                handle_unknown="ignore",
+                            ),
+                        ),
+                    ]
+                ),
                 cat_cols,
             ),
         ],
@@ -86,7 +116,9 @@ def fit_apply_preprocessing_v1(
     prepared_df.to_csv(output_dataset.path, index=False)
 
     os.makedirs(preprocessing_artifacts.path, exist_ok=True)
-    joblib.dump(preprocessor, os.path.join(preprocessing_artifacts.path, "preprocessor.joblib"))
+    joblib.dump(
+        preprocessor, os.path.join(preprocessing_artifacts.path, "preprocessor.joblib")
+    )
     print("Preprocessing artifact saved:", os.listdir(preprocessing_artifacts.path))
 
     preprocessing_metrics.log_metric("input_features", int(X.shape[1]))
@@ -120,19 +152,34 @@ def apply_preprocessing_v1(
         ).astype(str)
         X = X.drop(columns=["age"])
         X["medications_prescribed"] = (
-            X["medications_prescribed"].replace("", pd.NA).astype(float).apply(lambda x: 1 if x > 0 else 0)
+            X["medications_prescribed"]
+            .replace("", pd.NA)
+            .astype(float)
+            .apply(lambda x: 1 if x > 0 else 0)
         )
-        X["number_of_prior_visits"] = X["number_of_prior_visits"].replace("", pd.NA).astype(float)
+        X["number_of_prior_visits"] = (
+            X["number_of_prior_visits"].replace("", pd.NA).astype(float)
+        )
         X["length_of_stay_score"] = X["length_of_stay"].apply(
-            lambda x: 1 if x <= 1 else (2 if x <= 2 else (3 if x <= 3 else (4 if x <= 6 else (5 if x <= 14 else 7))))
+            lambda x: (
+                1
+                if x <= 1
+                else (
+                    2
+                    if x <= 2
+                    else (3 if x <= 3 else (4 if x <= 6 else (5 if x <= 14 else 7)))
+                )
+            )
         )
         X = X.drop(columns=["length_of_stay"])
         return X
 
-    df = pd.read_csv(input_dataset.path)
+    df = pd.read_csv(input_dataset.path, keep_default_na=False, na_values=[""])
     print(f"Input validation shape: {df.shape}")
 
-    preprocessor_path = os.path.join(preprocessing_artifacts.path, "preprocessor.joblib")
+    preprocessor_path = os.path.join(
+        preprocessing_artifacts.path, "preprocessor.joblib"
+    )
     if not os.path.exists(preprocessor_path):
         raise ValueError(f"Missing preprocessor artifact: {preprocessor_path}")
 

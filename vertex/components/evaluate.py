@@ -22,7 +22,7 @@ def evaluate_model(
         recall_score,
     )
 
-    df = pd.read_csv(val_dataset.path)
+    df = pd.read_csv(val_dataset.path, keep_default_na=False, na_values=[""])
     X = df.drop(columns=[id_col, target_col])
     y = df[target_col]
 

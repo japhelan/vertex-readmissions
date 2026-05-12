@@ -15,7 +15,7 @@ def oversample_training(
     import pandas as pd
     from imblearn.over_sampling import RandomOverSampler
 
-    df = pd.read_csv(input_dataset.path)
+    df = pd.read_csv(input_dataset.path, keep_default_na=False, na_values=[""])
 
     print(f"Input shape: {df.shape}")
     print("Class distribution BEFORE oversampling:")

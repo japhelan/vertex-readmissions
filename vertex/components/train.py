@@ -22,7 +22,7 @@ def train_model(
     from sklearn.metrics import roc_auc_score, f1_score
     from xgboost import XGBClassifier
 
-    df = pd.read_csv(train_dataset.path)
+    df = pd.read_csv(train_dataset.path, keep_default_na=False, na_values=[""])
     X = df.drop(columns=[id_col, target_col])
     y = df[target_col]
 

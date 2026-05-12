@@ -18,7 +18,7 @@ def split_data(
     from sklearn.model_selection import train_test_split
     import pandas as pd
 
-    df = pd.read_csv(input_dataset.path)
+    df = pd.read_csv(input_dataset.path, keep_default_na=False, na_values=[""])
 
     X = df.drop(columns=[target_col, id_col])
     y = df[target_col]
