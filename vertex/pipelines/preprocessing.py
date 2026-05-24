@@ -1,4 +1,3 @@
-from kfp.v2.dsl import Dataset, Input
 from kfp.dsl import pipeline
 
 from vertex.components.ingest import load_validate_data
@@ -12,7 +11,7 @@ from vertex.components.preprocessing import (
 
 @pipeline(name="readmissions-preprocessing-pipeline")
 def preprocessing_pipeline(
-    training_dataset: Input[Dataset],
+    dataset_gcs_uri: str,
     dataset_version: str = "v0.0",
     test_size: float = 0.2,
     random_state: int = 42,
@@ -21,7 +20,7 @@ def preprocessing_pipeline(
 ):
     validated = (
         load_validate_data(  # pyright: ignore[reportCallIssue]
-            input_dataset=training_dataset,
+            dataset_gcs_uri=dataset_gcs_uri,
             target_col=target_col,
             id_col=id_col,
         )

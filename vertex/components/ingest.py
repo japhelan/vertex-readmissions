@@ -1,4 +1,4 @@
-from kfp.v2.dsl import component, Input, Output, Dataset
+from kfp.dsl import component, Output, Dataset
 
 
 @component(
@@ -6,7 +6,7 @@ from kfp.v2.dsl import component, Input, Output, Dataset
     base_image="python:3.10-slim",
 )
 def load_validate_data(
-    input_dataset: Input[Dataset],
+    dataset_gcs_uri: str,
     output_dataset: Output[Dataset],
     target_col: str = "readmission_within_30_days",
     id_col: str = "patient_id",
@@ -28,7 +28,7 @@ def load_validate_data(
         ).str.replace(")", "")
         return df_transformed
 
-    df = pd.read_csv(input_dataset.uri, keep_default_na=False, na_values=[""])
+    df = pd.read_csv(dataset_gcs_uri, keep_default_na=False, na_values=[""])
 
     if df.empty:
         raise ValueError("Input dataset is empty")
@@ -52,5 +52,5 @@ def load_validate_data(
 
     df.to_csv(output_dataset.path, index=False)
 
-    output_dataset.metadata["source_path"] = input_dataset.uri
+    output_dataset.metadata["source_path"] = dataset_gcs_uri
     output_dataset.metadata["row_count"] = len(df)

@@ -41,6 +41,47 @@
         }
       }
     },
+    "comp-evaluate-model": {
+      "executorLabel": "exec-evaluate-model",
+      "inputDefinitions": {
+        "artifacts": {
+          "model_artifact": {
+            "artifactType": {
+              "schemaTitle": "system.Model",
+              "schemaVersion": "0.0.1"
+            }
+          },
+          "val_dataset": {
+            "artifactType": {
+              "schemaTitle": "system.Dataset",
+              "schemaVersion": "0.0.1"
+            }
+          }
+        },
+        "parameters": {
+          "id_col": {
+            "defaultValue": "patient_id",
+            "isOptional": true,
+            "parameterType": "STRING"
+          },
+          "target_col": {
+            "defaultValue": "readmission_within_30_days",
+            "isOptional": true,
+            "parameterType": "STRING"
+          }
+        }
+      },
+      "outputDefinitions": {
+        "artifacts": {
+          "eval_metrics": {
+            "artifactType": {
+              "schemaTitle": "system.Metrics",
+              "schemaVersion": "0.0.1"
+            }
+          }
+        }
+      }
+    },
     "comp-fit-apply-preprocessing-v1": {
       "executorLabel": "exec-fit-apply-preprocessing-v1",
       "inputDefinitions": {
@@ -118,46 +159,6 @@
         }
       }
     },
-    "comp-oversample-training": {
-      "executorLabel": "exec-oversample-training",
-      "inputDefinitions": {
-        "artifacts": {
-          "input_dataset": {
-            "artifactType": {
-              "schemaTitle": "system.Dataset",
-              "schemaVersion": "0.0.1"
-            }
-          }
-        },
-        "parameters": {
-          "id_col": {
-            "defaultValue": "patient_id",
-            "isOptional": true,
-            "parameterType": "STRING"
-          },
-          "random_state": {
-            "defaultValue": 42.0,
-            "isOptional": true,
-            "parameterType": "NUMBER_INTEGER"
-          },
-          "target_col": {
-            "defaultValue": "readmission_within_30_days",
-            "isOptional": true,
-            "parameterType": "STRING"
-          }
-        }
-      },
-      "outputDefinitions": {
-        "artifacts": {
-          "output_dataset": {
-            "artifactType": {
-              "schemaTitle": "system.Dataset",
-              "schemaVersion": "0.0.1"
-            }
-          }
-        }
-      }
-    },
     "comp-split-data": {
       "executorLabel": "exec-split-data",
       "inputDefinitions": {
@@ -214,6 +215,57 @@
           }
         }
       }
+    },
+    "comp-train-model": {
+      "executorLabel": "exec-train-model",
+      "inputDefinitions": {
+        "artifacts": {
+          "train_dataset": {
+            "artifactType": {
+              "schemaTitle": "system.Dataset",
+              "schemaVersion": "0.0.1"
+            }
+          }
+        },
+        "parameters": {
+          "hyperparams_json": {
+            "defaultValue": "{}",
+            "isOptional": true,
+            "parameterType": "STRING"
+          },
+          "id_col": {
+            "defaultValue": "patient_id",
+            "isOptional": true,
+            "parameterType": "STRING"
+          },
+          "model_type": {
+            "defaultValue": "xgboost",
+            "isOptional": true,
+            "parameterType": "STRING"
+          },
+          "target_col": {
+            "defaultValue": "readmission_within_30_days",
+            "isOptional": true,
+            "parameterType": "STRING"
+          }
+        }
+      },
+      "outputDefinitions": {
+        "artifacts": {
+          "model_artifact": {
+            "artifactType": {
+              "schemaTitle": "system.Model",
+              "schemaVersion": "0.0.1"
+            }
+          },
+          "train_metrics": {
+            "artifactType": {
+              "schemaTitle": "system.Metrics",
+              "schemaVersion": "0.0.1"
+            }
+          }
+        }
+      }
     }
   },
   "deploymentSpec": {
@@ -244,6 +296,32 @@
           }
         }
       },
+      "exec-evaluate-model": {
+        "container": {
+          "args": [
+            "--executor_input",
+            "{{$}}",
+            "--function_to_execute",
+            "evaluate_model"
+          ],
+          "command": [
+            "sh",
+            "-c",
+            "\nif ! [ -x \"$(command -v pip)\" ]; then\n    python3 -m ensurepip || python3 -m ensurepip --user || apt-get install python3-pip\nfi\n\nPIP_DISABLE_PIP_VERSION_CHECK=1 python3 -m pip install --quiet --no-warn-script-location 'pandas' 'scikit-learn' 'joblib' 'xgboost'  &&  python3 -m pip install --quiet --no-warn-script-location 'kfp==2.16.0' '--no-deps' 'typing-extensions>=3.7.4,<5; python_version<\"3.9\"' && \"$0\" \"$@\"\n",
+            "sh",
+            "-ec",
+            "program_path=$(mktemp -d)\n\nprintf \"%s\" \"$0\" > \"$program_path/ephemeral_component.py\"\n_KFP_RUNTIME=true python3 -m kfp.dsl.executor_main                         --component_module_path                         \"$program_path/ephemeral_component.py\"                         \"$@\"\n",
+            "\nimport kfp\nfrom kfp import dsl\nfrom kfp.dsl import *\nfrom typing import *\n\ndef evaluate_model(\n    val_dataset: Input[Dataset],\n    model_artifact: Input[Model],\n    eval_metrics: Output[Metrics],\n    target_col: str = \"readmission_within_30_days\",\n    id_col: str = \"patient_id\",\n):\n    import joblib\n    import pandas as pd\n    from sklearn.metrics import (\n        roc_auc_score,\n        average_precision_score,\n        f1_score,\n        precision_score,\n        recall_score,\n    )\n\n    df = pd.read_csv(val_dataset.path, keep_default_na=False, na_values=[\"\"])\n    X = df.drop(columns=[id_col, target_col])\n    y = df[target_col]\n\n    model = joblib.load(model_artifact.path)\n    preds = model.predict(X)\n    proba = model.predict_proba(X)[:, 1]\n\n    roc_auc = roc_auc_score(y, proba)\n    pr_auc = average_precision_score(y, proba)\n    f1 = f1_score(y, preds)\n    precision = precision_score(y, preds)\n    recall = recall_score(y, preds)\n\n    eval_metrics.log_metric(\"val_roc_auc\", float(roc_auc))\n    eval_metrics.log_metric(\"val_pr_auc\", float(pr_auc))\n    eval_metrics.log_metric(\"val_f1\", float(f1))\n    eval_metrics.log_metric(\"val_precision\", float(precision))\n    eval_metrics.log_metric(\"val_recall\", float(recall))\n\n    print(\n        f\"ROC-AUC: {roc_auc:.4f} | PR-AUC: {pr_auc:.4f} | \"\n        f\"F1: {f1:.4f} | Precision: {precision:.4f} | Recall: {recall:.4f}\"\n    )\n\n"
+          ],
+          "image": "python:3.10-slim",
+          "resources": {
+            "cpuLimit": 1.0,
+            "memoryLimit": 4.0,
+            "resourceCpuLimit": "1",
+            "resourceMemoryLimit": "4G"
+          }
+        }
+      },
       "exec-fit-apply-preprocessing-v1": {
         "container": {
           "args": [
@@ -263,10 +341,10 @@
           ],
           "image": "python:3.10-slim",
           "resources": {
-            "cpuLimit": 2.0,
-            "memoryLimit": 8.0,
-            "resourceCpuLimit": "2",
-            "resourceMemoryLimit": "8G"
+            "cpuLimit": 1.0,
+            "memoryLimit": 4.0,
+            "resourceCpuLimit": "1",
+            "resourceMemoryLimit": "4G"
           }
         }
       },
@@ -286,32 +364,6 @@
             "-ec",
             "program_path=$(mktemp -d)\n\nprintf \"%s\" \"$0\" > \"$program_path/ephemeral_component.py\"\n_KFP_RUNTIME=true python3 -m kfp.dsl.executor_main                         --component_module_path                         \"$program_path/ephemeral_component.py\"                         \"$@\"\n",
             "\nimport kfp\nfrom kfp import dsl\nfrom kfp.dsl import *\nfrom typing import *\n\ndef load_validate_data(\n    dataset_gcs_uri: str,\n    output_dataset: Output[Dataset],\n    target_col: str = \"readmission_within_30_days\",\n    id_col: str = \"patient_id\",\n):\n    import pandas as pd\n    import numpy as np\n\n    def format_columns(df: pd.DataFrame) -> pd.DataFrame:\n        df_transformed = df.copy()\n\n        if \"PatientID\" in df_transformed.columns:\n            df_transformed = df_transformed.rename(columns={\"PatientID\": \"patient_id\"})\n\n        df_transformed.columns = (\n            df_transformed.columns.str.strip().str.lower().str.replace(\" \", \"_\")\n        )\n        df_transformed.columns = df_transformed.columns.str.replace(\n            \"(\", \"\"\n        ).str.replace(\")\", \"\")\n        return df_transformed\n\n    df = pd.read_csv(dataset_gcs_uri, keep_default_na=False, na_values=[\"\"])\n\n    if df.empty:\n        raise ValueError(\"Input dataset is empty\")\n\n    print(f\"Dataset shape: {df.shape}\")\n\n    df = df.loc[:, ~df.columns.str.contains(r\"^Unnamed\")]\n    df = format_columns(df)\n\n    missing = [c for c in [target_col, id_col] if c not in df.columns]\n    if missing:\n        raise ValueError(f\"Missing required columns: {missing}\")\n\n    print(\"Target distribution:\")\n    print(df[target_col].value_counts(dropna=False))\n\n    if df[target_col].dropna().nunique() < 2:\n        raise ValueError(\n            f\"Target column '{target_col}' must contain at least two classes\"\n        )\n\n    df.to_csv(output_dataset.path, index=False)\n\n    output_dataset.metadata[\"source_path\"] = dataset_gcs_uri\n    output_dataset.metadata[\"row_count\"] = len(df)\n\n"
-          ],
-          "image": "python:3.10-slim",
-          "resources": {
-            "cpuLimit": 1.0,
-            "memoryLimit": 4.0,
-            "resourceCpuLimit": "1",
-            "resourceMemoryLimit": "4G"
-          }
-        }
-      },
-      "exec-oversample-training": {
-        "container": {
-          "args": [
-            "--executor_input",
-            "{{$}}",
-            "--function_to_execute",
-            "oversample_training"
-          ],
-          "command": [
-            "sh",
-            "-c",
-            "\nif ! [ -x \"$(command -v pip)\" ]; then\n    python3 -m ensurepip || python3 -m ensurepip --user || apt-get install python3-pip\nfi\n\nPIP_DISABLE_PIP_VERSION_CHECK=1 python3 -m pip install --quiet --no-warn-script-location 'pandas' 'numpy' 'scikit-learn' 'imbalanced-learn'  &&  python3 -m pip install --quiet --no-warn-script-location 'kfp==2.16.0' '--no-deps' 'typing-extensions>=3.7.4,<5; python_version<\"3.9\"' && \"$0\" \"$@\"\n",
-            "sh",
-            "-ec",
-            "program_path=$(mktemp -d)\n\nprintf \"%s\" \"$0\" > \"$program_path/ephemeral_component.py\"\n_KFP_RUNTIME=true python3 -m kfp.dsl.executor_main                         --component_module_path                         \"$program_path/ephemeral_component.py\"                         \"$@\"\n",
-            "\nimport kfp\nfrom kfp import dsl\nfrom kfp.dsl import *\nfrom typing import *\n\ndef oversample_training(\n    input_dataset: Input[Dataset],\n    output_dataset: Output[Dataset],\n    target_col: str = \"readmission_within_30_days\",\n    id_col: str = \"patient_id\",\n    random_state: int = 42,\n):\n    import pandas as pd\n    from imblearn.over_sampling import RandomOverSampler\n\n    df = pd.read_csv(input_dataset.path, keep_default_na=False, na_values=[\"\"])\n\n    print(f\"Input shape: {df.shape}\")\n    print(\"Class distribution BEFORE oversampling:\")\n    print(df[target_col].value_counts(dropna=False))\n\n    missing = [c for c in [target_col, id_col] if c not in df.columns]\n    if missing:\n        raise ValueError(f\"Missing required columns: {missing}\")\n\n    X = df.drop(columns=[target_col])\n    y = df[target_col]\n\n    ros = RandomOverSampler(random_state=random_state)\n    X_resampled, y_resampled = ros.fit_resample(X, y)\n\n    resampled_df = X_resampled.copy()\n    resampled_df[target_col] = y_resampled\n\n    print(\"Class distribution AFTER oversampling:\")\n    print(resampled_df[target_col].value_counts(dropna=False))\n    print(f\"Output shape: {resampled_df.shape}\")\n\n    resampled_df.to_csv(output_dataset.path, index=False)\n\n"
           ],
           "image": "python:3.10-slim",
           "resources": {
@@ -347,11 +399,37 @@
             "resourceMemoryLimit": "4G"
           }
         }
+      },
+      "exec-train-model": {
+        "container": {
+          "args": [
+            "--executor_input",
+            "{{$}}",
+            "--function_to_execute",
+            "train_model"
+          ],
+          "command": [
+            "sh",
+            "-c",
+            "\nif ! [ -x \"$(command -v pip)\" ]; then\n    python3 -m ensurepip || python3 -m ensurepip --user || apt-get install python3-pip\nfi\n\nPIP_DISABLE_PIP_VERSION_CHECK=1 python3 -m pip install --quiet --no-warn-script-location 'pandas' 'scikit-learn' 'joblib' 'xgboost'  &&  python3 -m pip install --quiet --no-warn-script-location 'kfp==2.16.0' '--no-deps' 'typing-extensions>=3.7.4,<5; python_version<\"3.9\"' && \"$0\" \"$@\"\n",
+            "sh",
+            "-ec",
+            "program_path=$(mktemp -d)\n\nprintf \"%s\" \"$0\" > \"$program_path/ephemeral_component.py\"\n_KFP_RUNTIME=true python3 -m kfp.dsl.executor_main                         --component_module_path                         \"$program_path/ephemeral_component.py\"                         \"$@\"\n",
+            "\nimport kfp\nfrom kfp import dsl\nfrom kfp.dsl import *\nfrom typing import *\n\ndef train_model(\n    train_dataset: Input[Dataset],\n    model_artifact: Output[Model],\n    train_metrics: Output[Metrics],\n    model_type: str = \"xgboost\",\n    hyperparams_json: str = \"{}\",\n    target_col: str = \"readmission_within_30_days\",\n    id_col: str = \"patient_id\",\n):\n    import json\n    import joblib\n    import pandas as pd\n    from sklearn.linear_model import LogisticRegression\n    from sklearn.ensemble import RandomForestClassifier\n    from sklearn.metrics import roc_auc_score, f1_score\n    from xgboost import XGBClassifier\n\n    df = pd.read_csv(train_dataset.path, keep_default_na=False, na_values=[\"\"])\n    X = df.drop(columns=[id_col, target_col])\n    y = df[target_col]\n\n    hyperparams = json.loads(hyperparams_json)\n\n    if model_type == \"logistic\":\n        model = LogisticRegression(max_iter=1000, **hyperparams)\n    elif model_type == \"random_forest\":\n        model = RandomForestClassifier(**hyperparams)\n    elif model_type == \"xgboost\":\n        model = XGBClassifier(eval_metric=\"logloss\", **hyperparams)\n    else:\n        raise ValueError(f\"Unknown model_type: {model_type}\")\n\n    model.fit(X, y)\n\n    train_preds = model.predict(X)\n    train_proba = model.predict_proba(X)[:, 1]\n\n    train_metrics.log_metric(\"train_roc_auc\", float(roc_auc_score(y, train_proba)))\n    train_metrics.log_metric(\"train_f1\", float(f1_score(y, train_preds)))\n    train_metrics.log_metric(\"model_type\", model_type)\n\n    joblib.dump(model, model_artifact.path)\n    print(f\"Model trained and saved: {model_type}\")\n\n"
+          ],
+          "image": "python:3.10-slim",
+          "resources": {
+            "cpuLimit": 2.0,
+            "memoryLimit": 8.0,
+            "resourceCpuLimit": "2",
+            "resourceMemoryLimit": "8G"
+          }
+        }
       }
     }
   },
   "pipelineInfo": {
-    "name": "readmissions-preprocessing-pipeline"
+    "name": "readmissions-training-pipeline-no-oversample"
   },
   "root": {
     "dag": {
@@ -395,6 +473,45 @@
             "name": "apply-preprocessing-v1"
           }
         },
+        "evaluate-model": {
+          "cachingOptions": {
+            "enableCache": true
+          },
+          "componentRef": {
+            "name": "comp-evaluate-model"
+          },
+          "dependentTasks": [
+            "apply-preprocessing-v1",
+            "train-model"
+          ],
+          "inputs": {
+            "artifacts": {
+              "model_artifact": {
+                "taskOutputArtifact": {
+                  "outputArtifactKey": "model_artifact",
+                  "producerTask": "train-model"
+                }
+              },
+              "val_dataset": {
+                "taskOutputArtifact": {
+                  "outputArtifactKey": "output_dataset",
+                  "producerTask": "apply-preprocessing-v1"
+                }
+              }
+            },
+            "parameters": {
+              "id_col": {
+                "componentInputParameter": "id_col"
+              },
+              "target_col": {
+                "componentInputParameter": "target_col"
+              }
+            }
+          },
+          "taskInfo": {
+            "name": "evaluate-model"
+          }
+        },
         "fit-apply-preprocessing-v1": {
           "cachingOptions": {
             "enableCache": true
@@ -403,14 +520,14 @@
             "name": "comp-fit-apply-preprocessing-v1"
           },
           "dependentTasks": [
-            "oversample-training"
+            "split-data"
           ],
           "inputs": {
             "artifacts": {
               "input_dataset": {
                 "taskOutputArtifact": {
-                  "outputArtifactKey": "output_dataset",
-                  "producerTask": "oversample-training"
+                  "outputArtifactKey": "train_dataset",
+                  "producerTask": "split-data"
                 }
               }
             },
@@ -451,41 +568,6 @@
             "name": "load-validate-data"
           }
         },
-        "oversample-training": {
-          "cachingOptions": {
-            "enableCache": true
-          },
-          "componentRef": {
-            "name": "comp-oversample-training"
-          },
-          "dependentTasks": [
-            "split-data"
-          ],
-          "inputs": {
-            "artifacts": {
-              "input_dataset": {
-                "taskOutputArtifact": {
-                  "outputArtifactKey": "train_dataset",
-                  "producerTask": "split-data"
-                }
-              }
-            },
-            "parameters": {
-              "id_col": {
-                "componentInputParameter": "id_col"
-              },
-              "random_state": {
-                "componentInputParameter": "random_state"
-              },
-              "target_col": {
-                "componentInputParameter": "target_col"
-              }
-            }
-          },
-          "taskInfo": {
-            "name": "oversample-training"
-          }
-        },
         "split-data": {
           "cachingOptions": {
             "enableCache": true
@@ -523,6 +605,44 @@
           "taskInfo": {
             "name": "split-data"
           }
+        },
+        "train-model": {
+          "cachingOptions": {
+            "enableCache": true
+          },
+          "componentRef": {
+            "name": "comp-train-model"
+          },
+          "dependentTasks": [
+            "fit-apply-preprocessing-v1"
+          ],
+          "inputs": {
+            "artifacts": {
+              "train_dataset": {
+                "taskOutputArtifact": {
+                  "outputArtifactKey": "output_dataset",
+                  "producerTask": "fit-apply-preprocessing-v1"
+                }
+              }
+            },
+            "parameters": {
+              "hyperparams_json": {
+                "componentInputParameter": "hyperparams_json"
+              },
+              "id_col": {
+                "componentInputParameter": "id_col"
+              },
+              "model_type": {
+                "componentInputParameter": "model_type"
+              },
+              "target_col": {
+                "componentInputParameter": "target_col"
+              }
+            }
+          },
+          "taskInfo": {
+            "name": "train-model"
+          }
         }
       }
     },
@@ -536,8 +656,18 @@
           "isOptional": true,
           "parameterType": "STRING"
         },
+        "hyperparams_json": {
+          "defaultValue": "{}",
+          "isOptional": true,
+          "parameterType": "STRING"
+        },
         "id_col": {
           "defaultValue": "patient_id",
+          "isOptional": true,
+          "parameterType": "STRING"
+        },
+        "model_type": {
+          "defaultValue": "xgboost",
           "isOptional": true,
           "parameterType": "STRING"
         },

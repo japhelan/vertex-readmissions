@@ -115,11 +115,62 @@ def log_dataset_to_gcs(
         )
 
 
+def register_vertex_dataset(
+    dataset_version: str,
+    bucket_root_uri: str,
+    project_id: str,
+    location: str,
+) -> tuple:
+    """
+    Get or create a Vertex AI TabularDataset for the given dataset version.
+
+    Reuses an existing dataset with the matching display name, or creates one
+    with up to 3 retries for transient errors.
+
+    Returns:
+        (dataset, gcs_uri) — the TabularDataset object and its GCS source URI.
+    """
+    import time
+
+    gcs_uri = f"{bucket_root_uri}/datasets/readmissions/{dataset_version}/train.csv"
+    display_name = f"readmissions-{dataset_version}"
+
+    aiplatform.init(project=project_id, location=location)
+
+    existing = aiplatform.TabularDataset.list(
+        filter=f'display_name="{display_name}"',
+        order_by="create_time desc",
+    )
+
+    if existing:
+        dataset = existing[0]
+        print(f"Reusing existing dataset: {dataset.resource_name}")
+    else:
+        for attempt in range(3):
+            try:
+                dataset = aiplatform.TabularDataset.create(
+                    display_name=display_name,
+                    gcs_source=[gcs_uri],
+                )
+                break
+            except Exception as e:
+                if attempt < 2:
+                    wait = 15 * (attempt + 1)
+                    print(f"Attempt {attempt + 1} failed: {e}. Retrying in {wait}s...")
+                    time.sleep(wait)
+                else:
+                    raise
+
+    print(f"Dataset registered : {dataset.resource_name}")
+    print(f"GCS source         : {gcs_uri}")
+    return dataset, gcs_uri
+
+
 def _extract_task_metrics(pipeline_job, task_name: str = "evaluate-model") -> dict:
     """Pull logged metrics out of a completed pipeline task's Metrics artifact."""
     for task in pipeline_job.task_details:
         if task.task_name == task_name:
-            artifact_list = task.outputs.get("metrics")
+            artifact_list = task.outputs.get("eval_metrics")
             if artifact_list and artifact_list.artifacts:
                 return dict(artifact_list.artifacts[0].metadata)
     return {}
@@ -135,6 +186,7 @@ def log_pipeline_run(
     EXPERIMENT_NAME: str = "readmissions-pipeline-runs",
     wait_for_completion: bool = False,
     eval_task_name: str = "evaluate-model",
+    hyperparams: dict | None = None,
 ):
     """
     Record which dataset version and model version a pipeline job was run against.
@@ -148,6 +200,7 @@ def log_pipeline_run(
         EXPERIMENT_NAME:        Vertex Experiment to log into.
         wait_for_completion:    Block until the pipeline finishes and log eval metrics.
         eval_task_name:         KFP task name that produces the Metrics artifact.
+        hyperparams:            Dict of hyperparameter values to log alongside run metadata.
     """
     run_name = re.sub(
         r"[^a-z0-9-]+",
@@ -157,15 +210,16 @@ def log_pipeline_run(
 
     aiplatform.init(project=PROJECT_ID, location=LOCATION, experiment=EXPERIMENT_NAME)
     aiplatform.start_run(run=run_name)
-    aiplatform.log_params(
-        {
-            "dataset_version": dataset_version,
-            "training_dataset_path": training_dataset_path,
-            "model_version": model_version,
-            "pipeline_job_display_name": pipeline_job.display_name,
-            "pipeline_resource_name": pipeline_job.resource_name,
-        }
-    )
+    params = {
+        "dataset_version": dataset_version,
+        "training_dataset_path": training_dataset_path,
+        "model_version": model_version,
+        "pipeline_job_display_name": pipeline_job.display_name,
+        "pipeline_resource_name": pipeline_job.resource_name,
+    }
+    if hyperparams:
+        params.update({f"hp_{k}": v for k, v in hyperparams.items()})
+    aiplatform.log_params(params)
 
     if wait_for_completion:
         print("Waiting for pipeline to complete...")

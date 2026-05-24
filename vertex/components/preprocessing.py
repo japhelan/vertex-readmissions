@@ -1,4 +1,4 @@
-from kfp.v2.dsl import component, Input, Output, Dataset, Artifact, Metrics
+from kfp.dsl import component, Input, Output, Dataset, Artifact, Metrics
 
 
 @component(

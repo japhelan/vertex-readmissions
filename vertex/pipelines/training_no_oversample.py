@@ -1,4 +1,5 @@
 from kfp.dsl import pipeline
+from kfp import compiler
 
 from vertex.components.ingest import load_validate_data
 from vertex.components.split import split_data
@@ -11,8 +12,8 @@ from vertex.components.train import train_model
 from vertex.components.evaluate import evaluate_model
 
 
-@pipeline(name="readmissions-training-pipeline")
-def training_pipeline(
+@pipeline(name="readmissions-training-pipeline-no-oversample")
+def training_pipeline_no_oversample(
     dataset_gcs_uri: str,
     dataset_version: str = "v0.0",
     model_type: str = "xgboost",
@@ -44,25 +45,14 @@ def training_pipeline(
         .set_memory_limit("4G")
     )
 
-    oversampled = (
-        oversample_training(  # pyright: ignore[reportCallIssue]
+    preprocessed_train = (
+        fit_apply_preprocessing_v1(  # pyright: ignore[reportCallIssue]
             input_dataset=split.outputs["train_dataset"],
-            random_state=random_state,
             target_col=target_col,
             id_col=id_col,
         )
         .set_cpu_limit("1")
         .set_memory_limit("4G")
-    )
-
-    preprocessed_train = (
-        fit_apply_preprocessing_v1(  # pyright: ignore[reportCallIssue]
-            input_dataset=oversampled.outputs["output_dataset"],
-            target_col=target_col,
-            id_col=id_col,
-        )
-        .set_cpu_limit("2")
-        .set_memory_limit("8G")
     )
 
     preprocessed_val = (
@@ -100,3 +90,17 @@ def training_pipeline(
         .set_cpu_limit("1")
         .set_memory_limit("4G")
     )
+
+
+if __name__ == "__main__":
+    import pathlib
+
+    output_path = (
+        pathlib.Path(__file__).parent
+        / "readmissions_training_no_oversample_pipeline.json"
+    )
+    compiler.Compiler().compile(
+        pipeline_func=training_pipeline_no_oversample,
+        package_path=str(output_path),
+    )
+    print(f"Pipeline compiled to {output_path}")
